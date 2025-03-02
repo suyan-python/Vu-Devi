@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* body {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 300;
+} */
+
+body {
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+/* Animated Gradient Text */
+.animated-gradient-text {
+  font-weight: bold;
+  background: linear-gradient(
+    90deg,
+    #00e5ff,
+    /* Dark Blue */ #2159ff,
+    /* Dark Gray */ #7700ff,
+    /* Purple */ #a653ff,
+    /* Light Gray */ #ffffff /* White */
+  );
+  background-size: 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientAnimation 5s ease-in-out infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
