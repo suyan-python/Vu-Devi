@@ -40,3 +40,49 @@ body {
     background-position: 0%;
   }
 }
+
+.neon-border {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Animated gradient border */
+.neon-border::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(60deg, #0040ff, #1f2937, #007bff, #1f2937);
+  background-size: 300%;
+  border-radius: inherit;
+  z-index: -2;
+  animation: neonBorderAnimation 3s linear infinite;
+}
+
+/* Inner cover to mask the gradient so only the border shows */
+.neon-border::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #3b404a; /* Matches your button's bg-blue-600 */
+  border-radius: inherit;
+  z-index: -1;
+}
+
+@keyframes neonBorderAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

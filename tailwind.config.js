@@ -8,7 +8,7 @@ export default {
         md: "10px",
       },
       backgroundImage: {
-        suyan: "url('/src/assets/team/suyan2.png')",
+        service: "url('../assets/service.svg')",
       },
     },
   },
@@ -17,5 +17,5 @@ export default {
       backdropFilter: ["responsive", "hover", "focus"],
     },
   },
-  plugins: [require("tailwindcss-animate"), require("tailwindcss-filters")],
+  plugins: [],
 };

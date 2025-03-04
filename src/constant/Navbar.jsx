@@ -35,7 +35,7 @@ function Navbar() {
             </div>
             <div className="items">
               <NavLink to={"/application"}>
-                <button className="border-2 border-blue-800 text-white px-3 py-1.5 rounded-2xl hover:bg-blue-800 hover:text-white transition-all hover:cursor-pointer">
+                <button className="relative text-white font-semibold px-4 py-1.5 rounded-full text-lg transition duration-300 shadow-lg neon-border hover:cursor-pointer">
                   Apply for job
                 </button>
               </NavLink>

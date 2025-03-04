@@ -1,8 +1,18 @@
-/* CSS for animated background with darker tones */
+/* CSS for animated background with professional dark tones */
 .bg-animate {
-  background: linear-gradient(260deg, #1f2937, #1e3a8a, #1f2937, #000000);
+  background: linear-gradient(260deg, #1f2937, #34495e, #1f2937, #000000);
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
+  /* Subtle shadow for depth and a refined glow */
+  box-shadow: 0 0 20px rgba(52, 73, 94, 0.4);
+}
+
+.bg-animate2 {
+  background: linear-gradient(260deg, #1f2937, #094c8e, #1f2937, #004ede);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  /* Subtle shadow for depth and a refined glow */
+  box-shadow: 0 0 20px rgba(52, 73, 94, 0.4);
 }
 
 @keyframes gradientAnimation {

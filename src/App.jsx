@@ -6,6 +6,8 @@ import JobApplicationForm from "./components/JobApplicationForm";
 import ScrollToTop from "./ScrollToTop";
 
 import "./animation.css";
+import Contact from "./pages/Contact";
+import FooterBT from "./constant/FooterBt";
 
 function App() {
   return (
@@ -15,8 +17,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/application" element={<JobApplicationForm />} />
         </Routes>
+        <FooterBT />
       </Router>
     </div>
   );

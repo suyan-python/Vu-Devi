@@ -16,10 +16,15 @@ export default function JobApplicationForm({ jobId }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl mx-auto">
-      <h2 className="text-2xl font-bold">Apply for Position #{jobId}</h2>
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-lg mx-auto p-6 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 shadow-lg rounded-lg text-white"
+    >
+      <h2 className="text-2xl font-bold text-center mb-6">
+        Apply for Position #{jobId}
+      </h2>
 
-      <div>
+      <div className="mb-4">
         <label className="block mb-2 font-medium">Full Name</label>
         <input
           type="text"
@@ -29,7 +34,7 @@ export default function JobApplicationForm({ jobId }) {
         />
       </div>
 
-      <div>
+      <div className="mb-4">
         <label className="block mb-2 font-medium">Email</label>
         <input
           type="email"
@@ -39,7 +44,7 @@ export default function JobApplicationForm({ jobId }) {
         />
       </div>
 
-      <div>
+      <div className="mb-4">
         <label className="block mb-2 font-medium">Resume (PDF)</label>
         <input
           type="file"
@@ -52,7 +57,7 @@ export default function JobApplicationForm({ jobId }) {
         />
       </div>
 
-      <div>
+      <div className="mb-6">
         <label className="block mb-2 font-medium">Cover Letter</label>
         <textarea
           rows="4"
@@ -65,7 +70,7 @@ export default function JobApplicationForm({ jobId }) {
 
       <button
         type="submit"
-        className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+        className="w-full bg-gray-600 text-white px-6 py-3 rounded hover:bg-gray-700 transition-all"
       >
         Submit Application
       </button>
