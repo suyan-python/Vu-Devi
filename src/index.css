@@ -16,10 +16,10 @@ body {
   font-weight: bold;
   background: linear-gradient(
     90deg,
-    #00e5ff,
-    /* Dark Blue */ #2159ff,
-    /* Dark Gray */ #7700ff,
-    /* Purple */ #a653ff,
+    #3b82f6,
+    /* Dark Blue */ #ffffff,
+    /* Dark Gray */ #1e7faf,
+    /* Purple */ #00cd59,
     /* Light Gray */ #ffffff /* White */
   );
   background-size: 300%;

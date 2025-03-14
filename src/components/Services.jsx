@@ -33,7 +33,7 @@ function Services() {
               className="bg-white p-8 rounded-3xl shadow-lg text-center transition transform hover:scale-105 hover:shadow-xl duration-300 flex flex-col justify-between"
             >
               <div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-blue-500 mb-4">
+                <h3 className="text-xl sm:text-3xl md:text-3xl font-semibold text-blue-500 mb-4">
                   {service.title}
                 </h3>
                 <p className="text-gray-700 text-base sm:text-lg md:text-xl">

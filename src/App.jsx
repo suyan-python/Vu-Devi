@@ -9,6 +9,8 @@ import ScrollToTop from "./ScrollToTop";
 import "./animation.css";
 import Contact from "./pages/Contact";
 import FooterBT from "./constant/FooterBt";
+import Services from "./components/Services";
+import Footer from "./constant/Footer";
 
 function App() {
   return (
@@ -19,10 +21,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/application" element={<JobApplicationForm />} />
         </Routes>
         <FooterBT />
+        <Footer />
       </Router>
     </div>
   );
