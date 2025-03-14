@@ -3,26 +3,28 @@ import Services from "./Services";
 
 function Hero() {
   return (
-    <section className="hero relative py-24   ">
-      <div className="main flex flex-col md:flex-row">
-        {/* Left Section - Yellow Background */}
-        <div className="w-full md:w-1/2 bg-white bg-opacity-20 rounded-br-4xl rounded-tr-4xl p-8 md:p-12 flex flex-col justify-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight uppercase text-blue-500">
+    <section className="hero relative py-24 px-6 sm:px-12">
+      <div className="main flex flex-col sm:flex-row">
+        {/* Left Section - White Background */}
+        <div className="w-full sm:w-1/2 bg-white bg-opacity-20 rounded-br-4xl rounded-tr-4xl p-8 sm:p-12 flex flex-col justify-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 tracking-tight uppercase text-blue-500">
             VU DEVI SERVICES PVT LTD
           </h1>
-          <p className="text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
-            Founded in 2013, Vu Devi Services streamlines medical documentation
-            outsourcing for global healthcare providers. Our expert team
-            leverages innovative technology to deliver precise, compliant
-            solutions—empowering you to focus on patient care.
-          </p>
-          <button className="relative text-white font-semibold px-8 py-3 rounded-full text-lg transition duration-300 shadow-lg neon-border hover:cursor-pointer">
+          <div className="my-4 sm:my-7">
+            <p className="text-lg sm:text-xl leading-relaxed mb-6 sm:mb-8 max-w-full sm:max-w-2xl">
+              Founded in 2013, Vu Devi Services streamlines medical
+              documentation outsourcing for global healthcare providers. Our
+              expert team leverages innovative technology to deliver precise,
+              compliant solutions—empowering you to focus on patient care.
+            </p>
+          </div>
+          <button className="relative text-white font-semibold px-8 py-3 rounded-full text-lg transition duration-300 shadow-lg bg-blue-500 hover:cursor-pointer hover:bg-blue-600">
             Explore More
           </button>
         </div>
 
-        {/* Right Section - Red Background */}
-        <div className="w-full md:w-1/2  p-8 md:p-12 flex items-center justify-center">
+        {/* Right Section - Services */}
+        <div className="w-full sm:w-1/2 p-8 sm:p-12 flex items-center justify-center">
           <div>
             <Services />
           </div>

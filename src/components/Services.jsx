@@ -2,13 +2,15 @@ import React from "react";
 
 function Services() {
   return (
-    <section className="relative w-full py-20">
-      <div className="relative max-w-7xl mx-auto px-6 md:px-12">
-        <h2 className="text-5xl font-bold text-center mb-12 text-white">
+    <section className="w-full py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        {/* Section Title */}
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-blue-500">
           Our Services
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
               title: "Medical Documentation",
@@ -28,16 +30,18 @@ function Services() {
           ].map((service, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-xl shadow-lg text-center transition transform hover:scale-105 duration-300 flex flex-col justify-between h-full"
+              className="bg-white p-8 rounded-3xl shadow-lg text-center transition transform hover:scale-105 hover:shadow-xl duration-300 flex flex-col justify-between"
             >
               <div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-blue-500 mb-4">
                   {service.title}
                 </h3>
-                <p className="text-gray-600">{service.description}</p>
+                <p className="text-gray-700 text-base sm:text-lg md:text-xl">
+                  {service.description}
+                </p>
               </div>
-              <button className="bg-blue-500 px-4 py-2 mt-6 rounded-full text-white self-center">
-                Read More
+              <button className="bg-blue-500 px-8 py-3 mt-6 rounded-full text-white font-medium hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                Learn More
               </button>
             </div>
           ))}

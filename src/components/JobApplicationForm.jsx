@@ -18,7 +18,7 @@ export default function JobApplicationForm({ jobId }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-lg mx-auto p-6 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 shadow-lg rounded-lg text-white"
+      className="max-w-lg mx-auto p-6 bg-gray-500 shadow-lg rounded-lg text-white"
     >
       <h2 className="text-2xl font-bold text-center mb-6">
         Apply for Position #{jobId}
