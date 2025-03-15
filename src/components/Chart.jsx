@@ -1,70 +1,67 @@
-import React, { Component } from "react";
-import CanvasJSReact from "@canvasjs/react-charts";
+import * as React from "react";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
-var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+export default function CustomerGrowthChart() {
+  const data = [
+    { year: "2020", Clients: 1000 },
+    { year: "2021", Clients: 1500 },
+    { year: "2022", Clients: 2500 },
+    { year: "2023", Clients: 4000 },
+    { year: "2024", Clients: 6000 },
+    { year: "2025", Clients: 8000 },
+  ];
 
-class Chart extends Component {
-  render() {
-    const options = {
-      animationEnabled: true,
-      title: {
-        text: "Number of New Customers",
-      },
-      axisY: {
-        title: "Number of Customers",
-      },
-      toolTip: {
-        shared: true,
-      },
-      data: [
-        {
-          type: "spline",
-          name: "2016",
-          showInLegend: true,
-          dataPoints: [
-            { y: 155, label: "Jan" },
-            { y: 150, label: "Feb" },
-            { y: 152, label: "Mar" },
-            { y: 148, label: "Apr" },
-            { y: 142, label: "May" },
-            { y: 150, label: "Jun" },
-            { y: 146, label: "Jul" },
-            { y: 149, label: "Aug" },
-            { y: 153, label: "Sept" },
-            { y: 158, label: "Oct" },
-            { y: 154, label: "Nov" },
-            { y: 150, label: "Dec" },
-          ],
-        },
-        {
-          type: "spline",
-          name: "2017",
-          showInLegend: true,
-          dataPoints: [
-            { y: 172, label: "Jan" },
-            { y: 173, label: "Feb" },
-            { y: 175, label: "Mar" },
-            { y: 172, label: "Apr" },
-            { y: 162, label: "May" },
-            { y: 165, label: "Jun" },
-            { y: 172, label: "Jul" },
-            { y: 168, label: "Aug" },
-            { y: 175, label: "Sept" },
-            { y: 170, label: "Oct" },
-            { y: 165, label: "Nov" },
-            { y: 169, label: "Dec" },
-          ],
-        },
-      ],
-    };
-
-    return (
-      <div>
-        <CanvasJSChart options={options} />
-      </div>
-    );
-  }
+  return (
+    <ResponsiveContainer width="100%" height={300}>
+      <LineChart data={data}>
+        <CartesianGrid strokeDasharray="4 4" stroke="#dcdcdc" />
+        <XAxis
+          dataKey="year"
+          stroke="#555"
+          tick={{ fontSize: 12, fontFamily: "Arial, sans-serif" }}
+          axisLine={{ stroke: "#555" }}
+        />
+        <YAxis
+          stroke="#555"
+          tick={{ fontSize: 12, fontFamily: "Arial, sans-serif" }}
+          axisLine={{ stroke: "#555" }}
+        />
+        <Tooltip
+          contentStyle={{
+            backgroundColor: "#fff",
+            borderColor: "#ddd",
+            fontSize: "12px",
+            fontFamily: "Arial, sans-serif",
+          }}
+          labelStyle={{
+            fontWeight: "bold",
+            color: "#555",
+          }}
+        />
+        <Legend
+          wrapperStyle={{
+            fontSize: "12px",
+            fontFamily: "Arial, sans-serif",
+            color: "#555",
+          }}
+        />
+        <Line
+          type="monotone"
+          dataKey="Clients"
+          stroke="#2c3e50" // Dark classic color
+          strokeWidth={2}
+          dot={false} // Removed the active dot to make it cleaner
+        />
+      </LineChart>
+    </ResponsiveContainer>
+  );
 }
-
-export default Chart;

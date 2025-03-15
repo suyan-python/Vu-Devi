@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="bg-gradient-to-t from-blue-200 via-blue-400 to-blue-800 text-white py-16 w-full">
+    <footer className="bg-gradient-to-t from-blue-400 via-blue-800 to-blue-900 text-white py-16 w-full">
       <div className="max-w-full mx-auto px-6 sm:px-12 ">
         {/* Footer Top Section */}
         <div className="flex flex-col sm:flex-row justify-between items-center mb-12">
@@ -63,7 +63,7 @@ function Footer() {
                     +123-456-7890
                   </a>
                 </li>
-                <li>Address: 123 Main St, City, Country</li>
+                <li>Address: Balkumari-Gwarko, Lalitpur, Nepal</li>
               </ul>
             </div>
           </div>
@@ -102,7 +102,7 @@ function Footer() {
           {/* Footer Disclaimer */}
         </div>
         <div className="text-center">
-          <p className="text-lg animated-gradient-text">
+          <p className=" animated-gradient-text font-light">
             &copy; 2025 Vu Devi Services Pvt Ltd. All Rights Reserved.
           </p>
         </div>

@@ -5,8 +5,8 @@ function Hero() {
   return (
     <section className="hero relative py-24 px-6 sm:px-12">
       <div className="main flex flex-col sm:flex-row">
-        {/* Left Section - White Background */}
-        <div className="w-full sm:w-1/2 bg-white bg-opacity-20 rounded-br-4xl rounded-tr-4xl p-8 sm:p-12 flex flex-col justify-center">
+        {/* Left Section - White Background (40%) */}
+        <div className="w-full sm:w-2/5  bg-opacity-20 rounded-br-4xl rounded-tr-4xl p-8 sm:p-12 flex flex-col justify-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 tracking-tight uppercase text-blue-500">
             VU DEVI SERVICES PVT LTD
           </h1>
@@ -23,9 +23,9 @@ function Hero() {
           </button>
         </div>
 
-        {/* Right Section - Services */}
-        <div className="w-full sm:w-1/2 p-8 sm:p-12 flex items-center justify-center">
-          <div>
+        {/* Right Section - Services (60%) */}
+        <div className="w-full sm:w-3/5 p-4 sm:p-8 flex items-center justify-center">
+          <div className="max-w-[90%]">
             <Services />
           </div>
         </div>
