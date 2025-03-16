@@ -144,10 +144,10 @@ Knowledge of medical terminologies.
                 (Word and Excel) and a typing speed of a minimum of 40 words per
                 minute.
               </p>
-              <p className="font-semibold">
-                Starting Salary (gross): 40,000 - 50,000 per month
+              <p className="font-semibold mt-4">
+                • Starting Salary (gross): 40,000 - 50,000 per month
               </p>
-              <p className="text-red-500 font-semibold text-center my-7">
+              <p className="text-red-500 font-semibold text-center my-5">
                 *We need a commitment of at least 18 months*
               </p>
               <div className="flex justify-end mt-6">
