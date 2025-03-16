@@ -11,7 +11,23 @@ export default function JobApplicationForm() {
   const [resumeName, setResumeName] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
+  const jobDescription = `
+Online data entry and analysis.
+Write, edit, and review a variety of scientific and medical documents.
+Follow standard procedures to manage data and present it accordingly.
+Prepare documents within established timelines and follow well-defined processes.
+Prepare documents of high quality in terms of scientific content, with attention to format, consistency, and accuracy.
+Team player- communicate, rely on, and assist other team members as needed.
+Able to navigate through frequent changes to instructions.
+Able to show initiative.
+Able to work quickly yet efficiently to achieve productivity goals.
+Able to work according to US-based timelines and holiday coverage.
+Able to check email and notifications throughout the day.
+Excellent communication/language skills.
+Knowledge of medical terminologies. 
+  `;
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage(""); // Reset error message
@@ -102,9 +118,48 @@ export default function JobApplicationForm() {
           Apply for a Position
         </h2>
 
+        {/* Button for displaying job description modal */}
+        <div className="text-center my-4">
+          <button
+            type="button"
+            onClick={() => setShowModal(true)}
+            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all"
+          >
+            Job Description
+          </button>
+        </div>
+
+        {/* Modal for Job Description */}
+        {showModal && (
+          <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black/60 z-50 transition-opacity duration-300 ease-in-out">
+            <div className="bg-white p-8 rounded-lg shadow-2xl max-w-lg w-full transform transition-all duration-500 scale-100 hover:scale-105">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                Job Description
+              </h3>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                {jobDescription}
+              </p>
+              <p className="font-semibold">
+                Starting Salary (gross): 40,000 - 50,000 per month
+              </p>
+              <p className="text-red-500 font-semibold text-center my-7">
+                *We need a commitment of at least 18 months*
+              </p>
+              <div className="flex justify-end mt-6">
+                <button
+                  onClick={() => setShowModal(false)}
+                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all transform hover:scale-105"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
         <div className="mb-5">
           <label className="block text-gray-700 font-medium mb-2">
-            Full Name
+            Full Name <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -118,7 +173,9 @@ export default function JobApplicationForm() {
         </div>
 
         <div className="mb-5">
-          <label className="block text-gray-700 font-medium mb-2">Email</label>
+          <label className="block text-gray-700 font-medium mb-2">
+            Email <span className="text-red-500">*</span>
+          </label>
           <input
             type="email"
             required
@@ -132,7 +189,7 @@ export default function JobApplicationForm() {
 
         <div className="mb-5">
           <label className="block text-gray-700 font-medium mb-2">
-            Resume (PDF)
+            Resume (PDF) <span className="text-red-500">*</span>
           </label>
           <input
             type="file"
@@ -178,24 +235,6 @@ export default function JobApplicationForm() {
               setFormData((prev) => ({ ...prev, coverLetter: e.target.value }))
             }
           ></textarea>
-        </div>
-
-        <div className="text-center my-3">
-          <div>
-            <a
-              href="https://www.typing.com/student/tests"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 font-medium"
-            >
-              Take a Typing Test
-            </a>
-          </div>
-          <div className="text-red-400 text-xs font-bold">
-            *Please take a typing test before submitting your application*{" "}
-            <br />
-            *Attach the typing result with your application*
-          </div>
         </div>
 
         <button

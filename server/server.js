@@ -47,7 +47,7 @@ app.post("/apply", upload.single("resume"), async (req, res) => {
   try {
     const { name, email, coverLetter } = req.body;
 
-    if (!name || !email || !coverLetter || !req.file) {
+    if (!name || !email || !req.file) {
       return res.status(400).json({ error: "All fields are required!" });
     }
 
