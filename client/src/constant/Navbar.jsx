@@ -17,6 +17,21 @@ function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const navLinks = [
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About Us" },
+    { to: "/services", label: "Services" },
+    { to: "/contact", label: "Contact" },
+    { to: "/application", label: "Apply for Job", isButton: true },
+  ];
+
+  // Function to get the active class
+  const getActiveClass = ({ isActive }) => {
+    return isActive
+      ? "text-white font-bold bg-blue-700 p-1.5 rounded-xl"
+      : "text-blue-500 hover:text-blue-300 font-semibold";
+  };
+
   return (
     <>
       {/* Navbar */}
@@ -24,12 +39,12 @@ function Navbar() {
         className={`fixed top-0 left-0 w-full z-50 px-6 md:px-32 py-3 transition-all duration-300 text-blue-500 font-medium ${
           isScrolled
             ? "bg-white/30 shadow-lg backdrop-blur-xl"
-            : "bg-white/30  shadow-md"
+            : "bg-white/30 shadow-md"
         }`}
       >
         <div className="flex justify-between items-center">
           {/* Logo Section */}
-          <h1 className="text-xl font-bold">Vu Devi Services</h1>
+          <h1 className="text-xl md:text-2xl font-bold">Vu Devi Services</h1>
 
           {/* Mobile Menu Toggle (Hamburger Icon) */}
           <div className="md:hidden">
@@ -53,23 +68,22 @@ function Navbar() {
 
           {/* Desktop Navbar Links */}
           <div className="hidden md:flex items-center gap-7">
-            <NavLink to="/" className="hover:text-blue-300">
-              Home
-            </NavLink>
-            <NavLink to="/about" className="hover:text-blue-300">
-              About Us
-            </NavLink>
-            <NavLink to="/services" className="hover:text-blue-300">
-              Services
-            </NavLink>
-            <NavLink to="/contact" className="hover:text-blue-300">
-              Contact
-            </NavLink>
-            <NavLink to="/application">
-              <button className="text-white font-semibold px-4 py-2 rounded-full text-lg transition duration-300 shadow-lg bg-blue-500 hover:bg-blue-700 cursor-pointer">
-                Apply for Job
-              </button>
-            </NavLink>
+            {navLinks.map((link, index) => (
+              <NavLink
+                key={index}
+                to={link.to}
+                className={getActiveClass}
+                end={!link.isButton}
+              >
+                {link.isButton ? (
+                  <button className="text-white font-semibold px-4 py-2 rounded-full text-lg transition duration-300 shadow-lg bg-blue-500 hover:bg-blue-700 cursor-pointer">
+                    {link.label}
+                  </button>
+                ) : (
+                  link.label
+                )}
+              </NavLink>
+            ))}
           </div>
         </div>
       </div>
@@ -86,39 +100,23 @@ function Navbar() {
         >
           ✖
         </button>
-        <NavLink
-          to="/"
-          className="text-xl text-blue-500 hover:text-blue-700 mb-6"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/about"
-          className="text-xl text-blue-500 hover:text-blue-700 mb-6"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          About Us
-        </NavLink>
-        <NavLink
-          to="/services"
-          className="text-xl text-blue-500 hover:text-blue-700 mb-6"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Services
-        </NavLink>
-        <NavLink
-          to="/contact"
-          className="text-xl text-blue-500 hover:text-blue-700 mb-6"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Contact
-        </NavLink>
-        <NavLink to="/application">
-          <button className="text-white font-semibold px-6 py-3 mt-4 rounded-full text-lg transition duration-300 shadow-lg bg-blue-500 hover:bg-blue-700">
-            Apply for Job
-          </button>
-        </NavLink>
+        {navLinks.map((link, index) => (
+          <NavLink
+            key={index}
+            to={link.to}
+            className={`text-xl text-blue-500 hover:text-blue-700 mb-6`}
+            onClick={() => setIsMenuOpen(false)}
+            end={!link.isButton}
+          >
+            {link.isButton ? (
+              <button className="text-white font-semibold px-6 py-3 mt-4 rounded-full text-lg transition duration-300 shadow-lg bg-blue-500 hover:bg-blue-700">
+                {link.label}
+              </button>
+            ) : (
+              link.label
+            )}
+          </NavLink>
+        ))}
       </div>
 
       {/* Prevent content from overlapping with Navbar */}

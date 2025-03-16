@@ -21,47 +21,49 @@ export default function CustomerGrowthChart() {
   ];
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
-      <LineChart data={data}>
-        <CartesianGrid strokeDasharray="4 4" stroke="#dcdcdc" />
-        <XAxis
-          dataKey="year"
-          stroke="#555"
-          tick={{ fontSize: 12, fontFamily: "Arial, sans-serif" }}
-          axisLine={{ stroke: "#555" }}
-        />
-        <YAxis
-          stroke="#555"
-          tick={{ fontSize: 12, fontFamily: "Arial, sans-serif" }}
-          axisLine={{ stroke: "#555" }}
-        />
-        <Tooltip
-          contentStyle={{
-            backgroundColor: "#fff",
-            borderColor: "#ddd",
-            fontSize: "12px",
-            fontFamily: "Arial, sans-serif",
-          }}
-          labelStyle={{
-            fontWeight: "bold",
-            color: "#555",
-          }}
-        />
-        <Legend
-          wrapperStyle={{
-            fontSize: "12px",
-            fontFamily: "Arial, sans-serif",
-            color: "#555",
-          }}
-        />
-        <Line
-          type="monotone"
-          dataKey="Clients"
-          stroke="#2c3e50" // Dark classic color
-          strokeWidth={2}
-          dot={false} // Removed the active dot to make it cleaner
-        />
-      </LineChart>
-    </ResponsiveContainer>
+    <div className="w-full h-72 sm:h-96 md:h-80 lg:h-96 xl:h-[400px]">
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart data={data}>
+          <CartesianGrid strokeDasharray="4 4" stroke="#dcdcdc" />
+          <XAxis
+            dataKey="year"
+            stroke="#555"
+            tick={{ fontSize: 12, fontFamily: "Arial, sans-serif" }}
+            axisLine={{ stroke: "#555" }}
+          />
+          <YAxis
+            stroke="#555"
+            tick={{ fontSize: 12, fontFamily: "Arial, sans-serif" }}
+            axisLine={{ stroke: "#555" }}
+          />
+          <Tooltip
+            contentStyle={{
+              backgroundColor: "#fff",
+              borderColor: "#ddd",
+              fontSize: "12px",
+              fontFamily: "Arial, sans-serif",
+            }}
+            labelStyle={{
+              fontWeight: "bold",
+              color: "#555",
+            }}
+          />
+          <Legend
+            wrapperStyle={{
+              fontSize: "12px",
+              fontFamily: "Arial, sans-serif",
+              color: "#555",
+            }}
+          />
+          <Line
+            type="monotone"
+            dataKey="Clients"
+            stroke="#2c3e50"
+            strokeWidth={2}
+            dot={false}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 }

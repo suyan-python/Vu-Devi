@@ -132,12 +132,17 @@ Knowledge of medical terminologies.
         {/* Modal for Job Description */}
         {showModal && (
           <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black/60 z-50 transition-opacity duration-300 ease-in-out">
-            <div className="bg-white p-8 rounded-lg shadow-2xl max-w-lg w-full transform transition-all duration-500 scale-100 hover:scale-105">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+            <div className="bg-white p-8 rounded-lg shadow-2xl max-w-lg w-full transform transition-all duration-500 scale-100 ">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4 cursor-pointer">
                 Job Description
               </h3>
               <p className="text-gray-700 text-lg leading-relaxed">
                 {jobDescription}
+              </p>
+              <p className="font-semibold my-">
+                Candidate must have good skills in Microsoft Office package
+                (Word and Excel) and a typing speed of a minimum of 40 words per
+                minute.
               </p>
               <p className="font-semibold">
                 Starting Salary (gross): 40,000 - 50,000 per month
@@ -148,7 +153,7 @@ Knowledge of medical terminologies.
               <div className="flex justify-end mt-6">
                 <button
                   onClick={() => setShowModal(false)}
-                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all transform hover:scale-105"
+                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all"
                 >
                   Close
                 </button>

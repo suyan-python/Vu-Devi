@@ -17,6 +17,7 @@
     "@mui/styled-engine-sc": "^6.4.6",
     "@mui/x-charts": "^7.27.1",
     "@tailwindcss/vite": "^4.0.9",
+    "framer-motion": "^12.5.0",
     "link-react": "^3.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

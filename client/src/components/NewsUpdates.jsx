@@ -1,17 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Chart from "./Chart";
 
 function NewsUpdates() {
-  // State to manage expanded news items
   const [expanded, setExpanded] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   // Function to toggle visibility
   const toggleExpand = (index) => {
     setExpanded(expanded === index ? null : index);
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="py-16 px-6 md:px-12 bg-green-50">
+    <section
+      ref={sectionRef}
+      className={`py-16 px-6 md:px-12 bg-green-50 transition-all duration-1000 transform ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
         <h2 className="text-4xl font-bold text-green-500 text-center mb-12">
@@ -54,7 +83,7 @@ function NewsUpdates() {
             {/* News Item 2 */}
             <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-500 transition hover:shadow-lg duration-300">
               <h3 className="text-2xl font-semibold text-gray-800 mb-3">
-                New jobs openings
+                New Jobs Openings
               </h3>
               <p className="text-gray-600">
                 Strengthening our commitment to HIPAA and GDPR compliance with
@@ -80,7 +109,8 @@ function NewsUpdates() {
                 {expanded === 2 ? "Read Less ▲" : "Read More ▼"}
               </button>
             </div>
-            {/* News Item 2 */}
+
+            {/* Another News Item */}
             <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-500 transition hover:shadow-lg duration-300">
               <h3 className="text-2xl font-semibold text-gray-800 mb-3">
                 🔐 Enhancing Security & Compliance
@@ -91,7 +121,7 @@ function NewsUpdates() {
               </p>
 
               {/* Hidden Content */}
-              {expanded === 2 && (
+              {expanded === 3 && (
                 <div className="mt-3 text-gray-600">
                   <p>
                     Our new security infrastructure includes end-to-end
@@ -104,38 +134,9 @@ function NewsUpdates() {
               {/* Read More Button */}
               <button
                 className="mt-4 text-green-500 font-medium focus:outline-none"
-                onClick={() => toggleExpand(2)}
+                onClick={() => toggleExpand(3)}
               >
-                {expanded === 2 ? "Read Less ▲" : "Read More ▼"}
-              </button>
-            </div>
-            {/* News Item 2 */}
-            <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-500 transition hover:shadow-lg duration-300">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-3">
-                🔐 Enhancing Security & Compliance
-              </h3>
-              <p className="text-gray-600">
-                Strengthening our commitment to HIPAA and GDPR compliance with
-                advanced security measures.
-              </p>
-
-              {/* Hidden Content */}
-              {expanded === 2 && (
-                <div className="mt-3 text-gray-600">
-                  <p>
-                    Our new security infrastructure includes end-to-end
-                    encryption, multi-layer authentication, and AI-driven fraud
-                    detection.
-                  </p>
-                </div>
-              )}
-
-              {/* Read More Button */}
-              <button
-                className="mt-4 text-green-500 font-medium focus:outline-none"
-                onClick={() => toggleExpand(2)}
-              >
-                {expanded === 2 ? "Read Less ▲" : "Read More ▼"}
+                {expanded === 3 ? "Read Less ▲" : "Read More ▼"}
               </button>
             </div>
           </div>

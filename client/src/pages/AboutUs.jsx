@@ -1,19 +1,30 @@
 import React from "react";
+import { motion } from "framer-motion"; // Importing Framer Motion
 
 function AboutUs() {
   return (
-    <section className="relative py-16 px-6  overflow-hidden">
+    <section className="relative py-16 px-6 overflow-hidden">
       {/* Blurred Blue Gradient Background */}
       <div className="absolute inset-0 flex items-center justify-center before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(circle,_rgba(0,102,255,0.4)_0%,_rgba(0,102,255,0)_70%)] before:blur-3xl before:opacity-80"></div>
 
       <div className="relative max-w-6xl mx-auto">
-        {/* Section Title */}
-        <h2 className="text-4xl font-bold  text-center mb-10">
+        {/* Section Title with Animation */}
+        <motion.h2
+          className="text-4xl font-bold text-center mb-10"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           Welcome to <span className="text-blue-500">Vu Devi Services</span>
-        </h2>
+        </motion.h2>
 
-        {/* Company Overview */}
-        <div className="bg-white p-8 rounded-xl shadow-lg transition duration-300 mb-12">
+        {/* Company Overview with Animation */}
+        <motion.div
+          className="bg-white p-8 rounded-xl shadow-lg transition duration-300 mb-12"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
           <h3 className="text-2xl font-semibold text-gray-800 mb-4">
             Who We Are
           </h3>
@@ -30,11 +41,16 @@ function AboutUs() {
             truly matters—
             <strong>delivering exceptional patient care</strong>.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Vision & Mission Section */}
+        {/* Vision & Mission Section with Animation */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <div className="p-8 rounded-xl shadow-md border-l-4 border-blue-700 bg-white">
+          <motion.div
+            className="p-8 rounded-xl shadow-md border-l-4 border-blue-700 bg-white"
+            initial={{ opacity: 0, x: -200 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <h3 className="text-2xl font-semibold text-blue-600 mb-2">
               🎯 Our Vision
             </h3>
@@ -44,9 +60,14 @@ function AboutUs() {
               <strong> efficiency, compliance, and innovation</strong> in the
               industry.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="p-8 rounded-xl shadow-md border-l-4 border-green-700 bg-white">
+          <motion.div
+            className="p-8 rounded-xl shadow-md border-l-4 border-green-700 bg-white"
+            initial={{ opacity: 0, x: 200 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <h3 className="text-2xl font-semibold text-gray-800 mb-2">
               🌟 Our Mission
             </h3>
@@ -60,11 +81,16 @@ function AboutUs() {
               </strong>
               .
             </p>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Core Values Section */}
-        <div className="bg-white p-8 rounded-xl shadow-lg transition duration-300 mb-12">
+        {/* Core Values Section with Animation */}
+        <motion.div
+          className="bg-white p-8 rounded-xl shadow-lg transition duration-300 mb-12"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
           <h3 className="text-2xl font-semibold text-gray-800 mb-4">
             Our Core Values
           </h3>
@@ -90,29 +116,49 @@ function AboutUs() {
               are at our core.
             </li>
           </ul>
-        </div>
+        </motion.div>
 
-        {/* Why Choose Us Section */}
-        <div className="p-8 rounded-xl transition duration-300 mb-12">
+        {/* Why Choose Us Section with Animation */}
+        <motion.div
+          className="p-8 rounded-xl transition duration-300 mb-12"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
           <h3 className="text-2xl font-semibold text-gray-800 mb-4">
             Why Choose Vu Devi Services?
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-700">
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <motion.div
+              className="bg-white p-6 rounded-lg shadow-md"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <h4 className="font-semibold text-blue-600">Expertise</h4>
               <p>
                 10+ years of experience in{" "}
                 <strong>medical documentation & healthcare outsourcing</strong>.
               </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            </motion.div>
+            <motion.div
+              className="bg-white p-6 rounded-lg shadow-md"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <h4 className="font-semibold text-blue-600">Compliance</h4>
               <p>
                 Adhering to{" "}
                 <strong>global medical standards & regulations</strong>.
               </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            </motion.div>
+            <motion.div
+              className="bg-white p-6 rounded-lg shadow-md"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <h4 className="font-semibold text-blue-600">
                 Advanced Technology
               </h4>
@@ -120,19 +166,29 @@ function AboutUs() {
                 Utilizing the latest{" "}
                 <strong>AI-driven documentation tools</strong>.
               </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            </motion.div>
+            <motion.div
+              className="bg-white p-6 rounded-lg shadow-md"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <h4 className="font-semibold text-blue-600">Global Reach</h4>
               <p>
                 Serving <strong>clients worldwide</strong> with 24/7 operational
                 support.
               </p>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Meet Our Team Section */}
-        <div className="bg-white p-12 rounded-xl shadow-lg transition duration-300 text-center mb-12">
+        {/* Meet Our Team Section with Animation */}
+        <motion.div
+          className="bg-white p-12 rounded-xl shadow-lg transition duration-300 text-center mb-12"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
           <h3 className="text-3xl font-semibold text-blue-500 mb-6">
             Meet Our Founder
           </h3>
@@ -192,7 +248,7 @@ function AboutUs() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
