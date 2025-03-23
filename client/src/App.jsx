@@ -11,6 +11,8 @@ import Contact from "./pages/Contact";
 import FooterBT from "./constant/FooterBt";
 import Services from "./pages/Services";
 import Footer from "./constant/Footer";
+import WholeTeam from "./pages/WholeTeam";
+import DocInfo from "./bio/DocInfo";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/application" element={<JobApplicationForm />} />
+          <Route path="/team" element={<WholeTeam />} />
+          <Route path="/team/:doctorId" element={<DocInfo />} />
         </Routes>
         <FooterBT />
         <Footer />

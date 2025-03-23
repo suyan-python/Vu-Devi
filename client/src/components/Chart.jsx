@@ -12,12 +12,19 @@ import {
 
 export default function CustomerGrowthChart() {
   const data = [
-    { year: "2020", Clients: 1000 },
-    { year: "2021", Clients: 1500 },
-    { year: "2022", Clients: 2500 },
-    { year: "2023", Clients: 4000 },
-    { year: "2024", Clients: 6000 },
-    { year: "2025", Clients: 8000 },
+    { year: "2013", Team: 2 },
+    { year: "2014", Team: 5 },
+    { year: "2015", Team: 10 },
+    { year: "2016", Team: 13 },
+    { year: "2017", Team: 15 },
+    { year: "2018", Team: 20 },
+    { year: "2019", Team: 25 },
+    { year: "2020", Team: 35 },
+    { year: "2021", Team: 35 },
+    { year: "2022", Team: 35 },
+    { year: "2023", Team: 35 },
+    { year: "2024", Team: 45 },
+    { year: "2025", Team: 50 },
   ];
 
   return (
@@ -57,7 +64,7 @@ export default function CustomerGrowthChart() {
           />
           <Line
             type="monotone"
-            dataKey="Clients"
+            dataKey="Team"
             stroke="#2c3e50"
             strokeWidth={2}
             dot={false}

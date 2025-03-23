@@ -145,11 +145,10 @@ function NewsUpdates() {
             {/* Heading */}
             <div className="text-center md:text-left flex-1">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-green-500 mb-4">
-                Our Clients per Year
+                Our Team per year
               </h2>
               <p className="text-lg text-gray-700 mb-6">
-                We’re excited to share the growth and success of our new
-                customer base.
+                We’re excited to share the growth and success.
               </p>
               <button className="bg-green-500 px-6 py-3 rounded-full text-white font-medium hover:bg-green-700 transition duration-300">
                 View More Insights

@@ -82,11 +82,11 @@ function Services() {
               <p className="text-gray-700 text-base sm:text-lg">
                 {service.description}
               </p>
-              <NavLink to={"/services"}>
+              {/* <NavLink to={"/services"}>
                 <button className="bg-blue-600 px-6 py-3 mt-6 rounded-full text-white font-medium hover:bg-blue-700 transition duration-300 transform hover:scale-105">
                   Learn More
                 </button>
-              </NavLink>
+              </NavLink> */}
             </motion.div>
           ))}
         </div>
