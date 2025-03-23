@@ -33,14 +33,33 @@ const jobApplicationSchema = new mongoose.Schema({
 const JobApplication = mongoose.model("JobApplication", jobApplicationSchema);
 
 // Multer Storage Config (File Uploads)
+// const storage = multer.diskStorage({
+//   destination: "uploads/",
+//   filename: (req, file, cb) => {
+//     cb(null, `${Date.now()}-${file.originalname}`);
+//   },
+// });
+
 const storage = multer.diskStorage({
   destination: "uploads/",
   filename: (req, file, cb) => {
+    if (file.mimetype !== "application/pdf") {
+      return cb(new Error("Only PDF files are allowed"), false);
+    }
     cb(null, `${Date.now()}-${file.originalname}`);
   },
 });
 
-const upload = multer({ storage });
+// const upload = multer({ storage });
+const upload = multer({
+  storage,
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype !== "application/pdf") {
+      return cb(new Error("Only PDF files are allowed"), false);
+    }
+    cb(null, true);
+  },
+});
 
 // API Route to Handle Form Submission
 app.post("/apply", upload.single("resume"), async (req, res) => {
@@ -99,3 +118,60 @@ app.get("/check-email", async (req, res) => {
 // Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// **************************************************************************************************************************************************************************
+
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+const Admin = require("./models/Admin");
+// const JobApplication = require("./models/JobApplication");
+
+const router = express.Router();
+
+// Secret key for JWT
+const SECRET_KEY = process.env.JWT_SECRET || "your-secret-key";
+
+// Admin Login Route
+router.post("/admin/login", async (req, res) => {
+  const { username, password } = req.body;
+  try {
+    const admin = await Admin.findOne({ username });
+    if (!admin) return res.status(401).json({ error: "Invalid credentials" });
+
+    const isMatch = await bcrypt.compare(password, admin.password);
+    if (!isMatch) return res.status(401).json({ error: "Invalid credentials" });
+
+    const token = jwt.sign({ adminId: admin._id }, SECRET_KEY, {
+      expiresIn: "1h",
+    });
+    res.json({ token });
+  } catch (error) {
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+// Middleware to Protect Admin Routes
+const verifyAdmin = (req, res, next) => {
+  const token = req.headers.authorization?.split(" ")[1];
+  if (!token) return res.status(401).json({ error: "Unauthorized" });
+
+  try {
+    const decoded = jwt.verify(token, SECRET_KEY);
+    req.adminId = decoded.adminId;
+    next();
+  } catch (error) {
+    return res.status(403).json({ error: "Invalid token" });
+  }
+};
+
+// Get All Job Applications (Protected)
+router.get("/admin/applications", verifyAdmin, async (req, res) => {
+  try {
+    const applications = await JobApplication.find();
+    res.json(applications);
+  } catch (error) {
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+module.exports = router;

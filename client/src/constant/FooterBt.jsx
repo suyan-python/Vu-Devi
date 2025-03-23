@@ -5,7 +5,7 @@ const FooterBT = () => {
   const location = useLocation();
 
   // Determine background color based on the current path
-  const getNavbarBackgroundColor = () => {
+  const getFooterBackgroundColor = () => {
     switch (location.pathname) {
       case "/":
         return "bg-animate2";
@@ -27,76 +27,53 @@ const FooterBT = () => {
   };
 
   if (location.pathname === "/inaya/home") {
-    return null; // Return null to hide the Navbar on this page
+    return null; // Hide footer on this page
   }
 
   return (
     <footer
-      className={`${getNavbarBackgroundColor()} text-white py-1 w-full fixed bottom-0 left-0 z-50`}
+      className={`${getFooterBackgroundColor()} text-white py-2 w-full fixed bottom-0 left-0 z-50`}
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
-        {/* Logo or main link */}
+        {/* Company Branding */}
         <Link
           to="/"
-          className="text-[12px] lg:text-xl md:text-2xl font-bold hover:text-yellow-400 transition duration-300 "
+          className="text-sm md:text-lg font-bold hover:text-yellow-400 transition duration-300"
         >
-          Services
+          Vu Devi Services Pvt. Ltd.
         </Link>
 
         {/* Information section */}
-        <div className="flex flex-row md:text-xs md:flex-row gap-4">
-          {/* Information items */}
-          <div className=" hidden flex-col lg:flex items-center space-x-2 animate-pulse">
-            <div>
-              <span className="font-semibold text-xs md:text-sm">
-                Trustworthy
-              </span>
-            </div>
-            <div>
-              <span className="text-yellow-300 text-xs md:text-sm">
-                Outsourcing
-              </span>
-            </div>
+        <div className="flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm">
+          {/* Business Type */}
+          <div className="hidden lg:flex flex-col items-center animate-pulse">
+            <span className="font-semibold">Industry:</span>
+            <span className="text-yellow-300">Outsourcing services</span>
           </div>
 
-          <div className="flex-col  justify-center lg:flex items-center  animate-pulse text-[8px] lg:text-xs">
-            <div>
-              <span className="font-semibold  md:text-sm">Location:</span>
-            </div>
-
-            <div>
-              <span className="text-yellow-300  md:text-sm">
-                Balkumari, Lalitpur
-              </span>
-            </div>
+          {/* Location */}
+          <div className="flex flex-col items-center animate-pulse">
+            <span className="font-semibold">Location:</span>
+            <span className="text-yellow-300">Balkumari, Lalitpur, Nepal</span>
           </div>
 
-          <div className="flex-col lg:flex items-center animate-pulse text-[8px] lg:text-xs">
-            <div>
-              <span className="font-semibold  md:text-sm">Contact:</span>
-            </div>
-            <div>
-              <a
-                href="tel:+9779851174646"
-                className="text-yellow-300  md:text-sm"
-              >
-                +977 9851174646
-              </a>
-            </div>
+          {/* Contact Number */}
+          <div className="flex flex-col items-center animate-pulse">
+            <span className="font-semibold">Contact:</span>
+            <a href="tel:+9779851174646" className="text-yellow-300">
+              +977 9851174646
+            </a>
           </div>
 
-          <div className="flex flex-col lg:flex justify-center items-center animate-pulse text-[8px] lg:text-xs">
-            <div>
-              <span className="font-semibold  md:text-sm">Email:</span>
-            </div>
-            <div>
-              <a
-                href="mailto:jewel.himalayan.2021@gmail.com"
-                className="text-yellow-300  md:text-sm"
-              >
-                vudeviservices@gmail.com
-              </a>
-            </div>
+          {/* Email */}
+          <div className="flex flex-col items-center animate-pulse">
+            <span className="font-semibold">Email:</span>
+            <a
+              href="mailto:vudeviservices@gmail.com"
+              className="text-yellow-300"
+            >
+              info@vudeviservices.com
+            </a>
           </div>
         </div>
       </div>

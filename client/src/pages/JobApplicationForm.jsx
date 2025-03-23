@@ -145,7 +145,7 @@ Knowledge of medical terminologies.
                 minute.
               </p>
               <p className="font-semibold mt-4">
-                • Starting Salary (gross): 40,000 - 50,000 per month
+                • Starting Salary (gross): Rs. 40,000 - Rs.50,000 per month
               </p>
               <p className="text-red-500 font-semibold text-center my-5">
                 *We need a commitment of at least 18 months*

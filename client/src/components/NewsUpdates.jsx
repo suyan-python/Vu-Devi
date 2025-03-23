@@ -73,7 +73,7 @@ function NewsUpdates() {
 
               {/* Read More Button */}
               <button
-                className="mt-4 text-green-500 font-medium focus:outline-none"
+                className="mt-4 text-green-500 font-medium focus:outline-none cursor-pointer"
                 onClick={() => toggleExpand(1)}
               >
                 {expanded === 1 ? "Read Less ▲" : "Read More ▼"}
@@ -103,7 +103,7 @@ function NewsUpdates() {
 
               {/* Read More Button */}
               <button
-                className="mt-4 text-green-500 font-medium focus:outline-none"
+                className="mt-4 text-green-500 font-medium focus:outline-none cursor-pointer"
                 onClick={() => toggleExpand(2)}
               >
                 {expanded === 2 ? "Read Less ▲" : "Read More ▼"}
@@ -113,7 +113,7 @@ function NewsUpdates() {
             {/* Another News Item */}
             <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-500 transition hover:shadow-lg duration-300">
               <h3 className="text-2xl font-semibold text-gray-800 mb-3">
-                🔐 Enhancing Security & Compliance
+                Enhancing Security & Compliance
               </h3>
               <p className="text-gray-600">
                 Strengthening our commitment to HIPAA and GDPR compliance with
@@ -133,7 +133,7 @@ function NewsUpdates() {
 
               {/* Read More Button */}
               <button
-                className="mt-4 text-green-500 font-medium focus:outline-none"
+                className="mt-4 text-green-500 font-medium focus:outline-none cursor-pointer"
                 onClick={() => toggleExpand(3)}
               >
                 {expanded === 3 ? "Read Less ▲" : "Read More ▼"}

@@ -101,7 +101,7 @@ function Footer() {
 
           {/* Footer Disclaimer */}
         </div>
-        <div className="text-center py-5">
+        <div className="text-center py-7">
           <p className=" animated-gradient-text font-light">
             &copy; 2025 Vu Devi Services Pvt Ltd. All Rights Reserved.
           </p>
