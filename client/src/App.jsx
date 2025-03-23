@@ -13,6 +13,7 @@ import Services from "./pages/Services";
 import Footer from "./constant/Footer";
 import WholeTeam from "./pages/WholeTeam";
 import DocInfo from "./bio/DocInfo";
+import TeamFun from "./pages/TeamFun";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/application" element={<JobApplicationForm />} />
           <Route path="/team" element={<WholeTeam />} />
           <Route path="/team/:doctorId" element={<DocInfo />} />
+          <Route path="/teamfun" element={<TeamFun />} />
         </Routes>
         <FooterBT />
         <Footer />

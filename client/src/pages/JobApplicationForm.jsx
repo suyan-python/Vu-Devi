@@ -216,7 +216,6 @@ Knowledge of medical terminologies.
           >
             {resumeName ? resumeName : "Choose File"}
           </label>
-
           {/* Preview for the resume */}
           {resumeName && (
             <div className="mt-2 text-sm text-gray-500">
@@ -226,6 +225,18 @@ Knowledge of medical terminologies.
               <span className="text-xs text-gray-400">PDF file selected</span>
             </div>
           )}
+          <div className="my-7 text-center">
+            <p className="text-xs text-red-500 font-semibold">
+              **Please take typing test and submit the result along your CV**
+            </p>
+            <a
+              href="https://www.typing.com/student/tests"
+              target="blank"
+              className="text-blue-500 italic underline cursor-pointer"
+            >
+              Click Typing Test
+            </a>
+          </div>
         </div>
 
         <div className="mb-6">

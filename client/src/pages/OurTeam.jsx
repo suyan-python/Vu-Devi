@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import bandana from "../assets/leads/bandana.JPG";
 
 function OurTeam() {
   const navigate = useNavigate();
@@ -11,15 +12,15 @@ function OurTeam() {
       role: "Medical Report Writer Lead",
       description:
         "Accurate and compliant medical reports tailored to global standards.",
-      image: "/images/nikita.jpg",
+      image: "/assets/leads/bandana.JPG",
       link: "/team/nikita",
     },
     {
-      name: "Dr. Rajikya Shakya",
+      name: "Dr. Rajiya Shakya",
       role: "Data Analytics & Healthcare Operations",
       description:
         "Efficient data handling and analytics for healthcare institutions.",
-      image: "/images/rajikya.jpg",
+      image: "/assets/leads/bandana.JPG",
       link: "/team/rajikya",
     },
     {
@@ -27,7 +28,7 @@ function OurTeam() {
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
-      image: "/images/bandana.jpg",
+      image: bandana,
       link: "/team/bandana",
     },
   ];

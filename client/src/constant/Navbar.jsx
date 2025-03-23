@@ -28,7 +28,7 @@ function Navbar() {
   // Function to get the active class
   const getActiveClass = ({ isActive }) => {
     return isActive
-      ? "text-green-500 font-bold p-1.5 rounded-xl"
+      ? "text-purple-600 font-bold p-1.5 rounded-xl"
       : "text-blue-500 hover:text-blue-300 font-semibold";
   };
 

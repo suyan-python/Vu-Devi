@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import bandana from "../assets/leads/bandana.JPG";
 
 const doctorData = {
   nikita: {
@@ -9,27 +10,61 @@ const doctorData = {
     joiningDate: "March 10, 2018",
     image: "/images/nikita.jpg",
     bio: "Dr. Nikita Shakya is an expert in crafting precise and compliant medical reports, ensuring adherence to global standards. With over 6 years of experience in the medical field, she has contributed to numerous healthcare projects.",
-    teamMembers: ["John Doe", "Emily Carter", "Sam Wilson"],
+    mail: "nikita@reportprep.com",
+    teamMembers: [
+      "John Doe",
+      "Emily Carter",
+      "Sam Wilson",
+      "Sam Wilson",
+      "Sam Wilson",
+      "Sam Wilson",
+      "Sam Wilson",
+      "Sam Wilson",
+      "Sam Wilson",
+      "Sam Wilson",
+    ],
   },
   rajikya: {
-    name: "Rajikya Shakya",
+    name: "Dr. Rajiya Shakya",
     designation: "Data & Analytics Lead",
     joiningDate: "August 22, 2019",
     image: "/images/rajikya.jpg",
     bio: "Rajikya specializes in handling large-scale healthcare data, ensuring efficiency in medical data processing and analytics. His leadership has streamlined data operations in multiple hospitals.",
-    teamMembers: ["Michael Scott", "Angela Martin", "Kevin Malone"],
+    mail: "rajiya@reportprep.com",
+    teamMembers: [
+      "Michael Scott",
+      "Angela Martin",
+      "Kevin Malone",
+      "Kevin Malone",
+      "Kevin Malone",
+      "Kevin Malone",
+      "Kevin Malone",
+      "Kevin Malone",
+      "Kevin Malone",
+    ],
   },
   bandana: {
-    name: "Bandana Manandhar",
+    name: "Dr. Bandana Manandhar",
     designation: "Backend Operations Lead",
     joiningDate: "January 5, 2020",
-    image: "/images/bandana.jpg",
+    image: bandana,
     bio: "Bandana is responsible for backend operations, ensuring seamless healthcare support systems. She has played a key role in integrating new technologies into medical report listing systems.",
-    teamMembers: ["Sarah Johnson", "David Warner", "Sophia Miller"],
+    mail: "bandana@reportprep.com",
+    teamMembers: [
+      "Sarah Johnson",
+      "David Warner",
+      "Sophia Miller",
+      "Sophia Miller",
+      "Sophia Miller",
+      "Sophia Miller",
+      "Sophia Miller",
+      "Sophia Miller",
+      "Sophia Miller",
+    ],
   },
 };
 
-function Nikita() {
+function DocInfo() {
   const { doctorId } = useParams();
   const navigate = useNavigate();
   const doctor = doctorData[doctorId];
@@ -64,6 +99,16 @@ function Nikita() {
             className="w-48 h-48 rounded-full mx-auto object-cover shadow-lg mb-6"
           />
           <h2 className="text-3xl font-bold text-blue-600">{doctor.name}</h2>
+
+          {doctor.mail && (
+            <a
+              href={`mailto:${doctor.mail}`}
+              className="text-blue-500 hover:text-blue-700 hover:underline block mt-2"
+            >
+              {doctor.mail}
+            </a>
+          )}
+
           <p className="text-lg text-gray-700 font-semibold">
             {doctor.designation}
           </p>
@@ -81,7 +126,7 @@ function Nikita() {
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
             {doctor.teamMembers.map((member, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="bg-white p-6 rounded-lg shadow-md text-center transition transform hover:scale-105 hover:shadow-xl duration-300"
                 initial={{ opacity: 0, y: 20 }}
@@ -92,7 +137,7 @@ function Nikita() {
                   {member}
                 </h4>
                 <p className="text-gray-600 text-sm">Medical Staff</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -101,4 +146,4 @@ function Nikita() {
   );
 }
 
-export default Nikita;
+export default DocInfo;

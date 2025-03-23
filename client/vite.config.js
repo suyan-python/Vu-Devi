@@ -9,4 +9,5 @@ export default defineConfig({
     host: "0.0.0.0", // Allow access from local network
     open: true, // Automatically open the browser when the server starts
   },
+  assetsInclude: ["**/*.JPG"], // Allow JPG as assets
 });

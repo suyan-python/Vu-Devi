@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import bandana from "../assets/leads/bandana.JPG";
 
 function WholeTeam() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ function WholeTeam() {
       link: "/team/nikita",
     },
     {
-      name: "Dr. Rajikya Shakya",
+      name: "Dr. Rajiya Shakya",
       role: "Data Analytics & Healthcare Operations",
       description:
         "Efficient data handling and analytics for healthcare institutions.",
@@ -27,7 +28,7 @@ function WholeTeam() {
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
-      image: "/images/bandana.jpg",
+      image: bandana,
       link: "/team/bandana",
     },
   ];
