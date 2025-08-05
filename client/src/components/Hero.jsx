@@ -2,29 +2,38 @@ import React, { useState, useEffect, useRef } from "react";
 import Services from "../pages/Services";
 import { NavLink } from "react-router-dom";
 import OurTeam from "../pages/OurTeam";
+import Logo from '../assets/logo/logo.png'
 
-function Hero() {
+function Hero()
+{
   const [isVisible, setIsVisible] = useState(false);
   const heroRef = useRef(null);
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+      ([entry]) =>
+      {
+        if (entry.isIntersecting)
+        {
           setIsVisible(true);
-        } else {
+        } else
+        {
           setIsVisible(false);
         }
       },
       { threshold: 0.1 }
     );
 
-    if (heroRef.current) {
+    if (heroRef.current)
+    {
       observer.observe(heroRef.current);
     }
 
-    return () => {
-      if (heroRef.current) {
+    return () =>
+    {
+      if (heroRef.current)
+      {
         observer.unobserve(heroRef.current);
       }
     };
@@ -33,18 +42,15 @@ function Hero() {
   return (
     <section
       ref={heroRef}
-      className={`relative px-6 sm:px-12 lg:px-16 xl:px-24 py-12 sm:py-16 md:py-20 text-white transition-all duration-1000 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      }`}
+      className={`relative px-6 sm:px-12 lg:px-16 xl:px-24 py-12 sm:py-16 md:py-20 text-white transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
     >
       <div className="flex flex-col lg:flex-row justify-between items-center gap-8 xl:gap-12">
         {/* Left Content Section */}
         <div className="w-full lg:w-3/6 space-y-6 sm:space-y-8">
-          <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent leading-tight">
-            VU DEVI SERVICES PVT LTD
-          </h1>
+          <img src={Logo} alt="" />
 
-          <p className="text-lg sm:text-xl text-gray-800 leading-relaxed">
+          <p className="test text-lg sm:text-xl text-tedBlack leading-relaxed">
             Founded in 2013, Vu Devi Services streamlines medical documentation
             outsourcing for global healthcare providers. Our expert team
             leverages innovative technology to deliver precise, compliant
@@ -54,7 +60,7 @@ function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
             <NavLink
               to="/about"
-              className="flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 text-lg font-semibold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+              className="flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 text-lg font-semibold text-white bg-red-600 rounded-xl hover:bg-red-700 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
             >
               Explore More
               <svg
@@ -73,7 +79,7 @@ function Hero() {
 
             <NavLink
               to="/team"
-              className="flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-500 rounded-xl hover:bg-gradient-to-l transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+              className="flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-red-500 rounded-xl hover:bg-gradient-to-l transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
             >
               Meet Our Team
               <svg

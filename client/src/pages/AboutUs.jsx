@@ -1,13 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion"; // Importing Framer Motion
 
-function AboutUs() {
+function AboutUs()
+{
   return (
     <section className="relative py-16 px-6 overflow-hidden">
-      {/* Blurred Blue Gradient Background */}
-      <div className="absolute inset-0 flex items-center justify-center before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(circle,_rgba(0,102,255,0.4)_0%,_rgba(0,102,255,0)_70%)] before:blur-3xl before:opacity-80"></div>
+      {/* Blurred red Gradient Background */}
+      <div className="absolute inset-0 flex items-center justify-center before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(circle,_rgba(220,20,60,0.4)_0%,_rgba(220,20,60,0)_70%)] before:blur-3xl before:opacity-80"></div>
 
-      <div className="relative max-w-6xl mx-auto">
+
+      <div className="relative max-w-6xl mx-auto text-white">
         {/* Section Title with Animation */}
         <motion.h2
           className="text-4xl font-bold text-center mb-10"
@@ -15,7 +17,7 @@ function AboutUs() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Welcome to <span className="text-blue-500">Vu Devi Services</span>
+          Welcome to <span className="text-red-500">Vu Devi Services</span>
         </motion.h2>
 
         {/* Company Overview with Animation */}
@@ -46,12 +48,12 @@ function AboutUs() {
         {/* Vision & Mission Section with Animation */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <motion.div
-            className="p-8 rounded-xl shadow-md border-l-4 border-blue-700 bg-white"
+            className="p-8 rounded-xl shadow-md border-l-4 border-red-700 bg-white"
             initial={{ opacity: 0, x: -200 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-semibold text-blue-600 mb-2">
+            <h3 className="text-2xl font-semibold text-red-600 mb-2">
               🎯 Our Vision
             </h3>
             <p className="text-gray-700">
@@ -63,7 +65,7 @@ function AboutUs() {
           </motion.div>
 
           <motion.div
-            className="p-8 rounded-xl shadow-md border-l-4 border-green-700 bg-white"
+            className="p-8 rounded-xl shadow-md border-l-4 border-red-700 bg-white"
             initial={{ opacity: 0, x: 200 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -125,7 +127,7 @@ function AboutUs() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          <h3 className="text-2xl font-semibold text-red-500 mb-4">
             Why Choose Vu Devi Services?
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-700">
@@ -135,7 +137,7 @@ function AboutUs() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h4 className="font-semibold text-blue-600">Expertise</h4>
+              <h4 className="font-semibold text-red-600">Expertise</h4>
               <p>
                 10+ years of experience in{" "}
                 <strong>medical documentation & healthcare outsourcing</strong>.
@@ -147,7 +149,7 @@ function AboutUs() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h4 className="font-semibold text-blue-600">Compliance</h4>
+              <h4 className="font-semibold text-red-600">Compliance</h4>
               <p>
                 Adhering to{" "}
                 <strong>global medical standards & regulations</strong>.
@@ -159,7 +161,7 @@ function AboutUs() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h4 className="font-semibold text-blue-600">
+              <h4 className="font-semibold text-red-600">
                 Advanced Technology
               </h4>
               <p>
@@ -173,7 +175,7 @@ function AboutUs() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h4 className="font-semibold text-blue-600">Global Reach</h4>
+              <h4 className="font-semibold text-red-600">Global Reach</h4>
               <p>
                 Serving <strong>clients worldwide</strong> with 24/7 operational
                 support.
@@ -189,7 +191,7 @@ function AboutUs() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <h3 className="text-3xl font-semibold text-blue-500 mb-6">
+          <h3 className="text-3xl font-semibold text-red-500 mb-6">
             Meet Our Founder
           </h3>
 
@@ -206,7 +208,7 @@ function AboutUs() {
                 />
               </div>
               {/* Name & Designation */}
-              <p className="text-blue-500 font-semibold text-2xl mt-4">
+              <p className="text-red-500 font-semibold text-2xl mt-4">
                 Mr. Binayak Malla
               </p>
               <p className="text-gray-600 text-lg">
@@ -217,7 +219,7 @@ function AboutUs() {
             {/* Right Column: Introduction & Vision */}
             <div className="max-w-md text-left">
               <p className="text-gray-900 text-6xl font-extrabold leading-tight">
-                Hi, there <p className="text-blue-500"> I'm Binayak!</p>
+                Hi, there <p className="text-red-500"> I'm Binayak!</p>
               </p>
               <p className="text-gray-700 text-lg mt-4">
                 A passionate entrepreneur, innovator, and problem-solver. My
@@ -242,7 +244,7 @@ function AboutUs() {
               </p>
 
               <div className="mt-6">
-                <button className="px-6 py-3 bg-blue-500 text-white text-lg font-medium rounded-lg shadow-md hover:bg-gray-700 transition">
+                <button className="px-6 py-3 bg-red-500 text-white text-lg font-medium rounded-lg shadow-md hover:bg-gray-700 transition">
                   Learn More About Our Vision
                 </button>
               </div>

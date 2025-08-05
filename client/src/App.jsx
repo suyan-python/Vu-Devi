@@ -14,10 +14,13 @@ import Footer from "./constant/Footer";
 import WholeTeam from "./pages/WholeTeam";
 import DocInfo from "./bio/DocInfo";
 import TeamFun from "./pages/TeamFun";
+import BackgroundAnimation from "./components/BackgroundAnimation";
 
-function App() {
+function App()
+{
   return (
     <div>
+      <BackgroundAnimation />
       <Router>
         <ScrollToTop />
         <Navbar />

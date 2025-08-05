@@ -1,54 +1,63 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import Logo from "../assets/logo/logo.png"
 
-function Navbar() {
+function Navbar()
+{
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
+  useEffect(() =>
+  {
+    const handleScroll = () =>
+    {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () => {
+  const toggleMenu = () =>
+  {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const navLinks = [
     { to: "/", label: "Home" },
-    { to: "/about", label: "About Us" },
+    { to: "/about", label: "Vudevi" },
+    { to: "/team", label: "Our Team" },
     { to: "/services", label: "Services" },
     { to: "/contact", label: "Contact" },
     { to: "/application", label: "Apply for Job", isButton: true },
   ];
 
   // Function to get the active class
-  const getActiveClass = ({ isActive }) => {
+  const getActiveClass = ({ isActive }) =>
+  {
     return isActive
-      ? "text-purple-600 font-bold p-1.5 rounded-xl"
-      : "text-blue-500 hover:text-blue-300 font-semibold";
+      ? "text-white font-bold p-1.5 rounded-xl"
+      : "text-red-500 hover:text-red-300 font-semibold";
   };
 
   return (
     <>
       {/* Navbar */}
       <div
-        className={`fixed top-0 left-0 w-full z-50 px-6 md:px-32 py-3 transition-all duration-300 text-blue-500 font-medium ${
-          isScrolled
-            ? "bg-white/30 shadow-lg backdrop-blur-xl"
-            : "bg-white/30 shadow-md"
-        }`}
+        className={`fixed top-0  w-full z-50 px-4 py-3 transition-all duration-500 text-red-500 font-medium px-32 ${isScrolled
+          ? " bg-transparent backdrop-blur-[20px] shadow-red-400 shadow-md rounded-3xl mr-36"
+          : "bg-slate-100/20  shadow-md max-w-full"
+          }`}
       >
+
         <div className="flex justify-between items-center">
           {/* Logo Section */}
-          <h1 className="text-xl md:text-2xl font-bold">Vu Devi Services</h1>
+          <Link to="/">
+            <img src={Logo} alt="vudevi services" className="w-16" />
+          </Link>
 
           {/* Mobile Menu Toggle (Hamburger Icon) */}
           <div className="md:hidden">
-            <button onClick={toggleMenu} className="hover:text-blue-300">
+            <button onClick={toggleMenu} className="hover:text-red-300">
               <svg
                 className="w-7 h-7"
                 fill="none"
@@ -76,7 +85,7 @@ function Navbar() {
                 end={!link.isButton}
               >
                 {link.isButton ? (
-                  <button className="text-white font-semibold px-4 py-2 rounded-full text-lg transition duration-300 shadow-lg bg-blue-500 hover:bg-blue-700 cursor-pointer">
+                  <button className="text-white font-semibold px-4 py-2 rounded-full text-lg transition duration-300 shadow-lg bg-red-500 hover:bg-red-700 cursor-pointer">
                     {link.label}
                   </button>
                 ) : (
@@ -90,13 +99,12 @@ function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 w-full h-screen bg-white shadow-lg transition-transform transform ${
-          isMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } md:hidden flex flex-col items-center justify-center z-50`}
+        className={`fixed top-0 left-0 w-full h-screen bg-white shadow-lg transition-transform transform ${isMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } md:hidden flex flex-col items-center justify-center z-50`}
       >
         <button
           onClick={toggleMenu}
-          className="absolute top-6 right-6 text-blue-500 hover:text-blue-700"
+          className="absolute top-6 right-6 text-red-500 hover:text-red-700"
         >
           ✖
         </button>
@@ -104,12 +112,12 @@ function Navbar() {
           <NavLink
             key={index}
             to={link.to}
-            className={`text-xl text-blue-500 hover:text-blue-700 mb-6`}
+            className={`text-xl text-red-500 hover:text-red-700 mb-6`}
             onClick={() => setIsMenuOpen(false)}
             end={!link.isButton}
           >
             {link.isButton ? (
-              <button className="text-white font-semibold px-6 py-3 mt-4 rounded-full text-lg transition duration-300 shadow-lg bg-blue-500 hover:bg-blue-700">
+              <button className="text-white font-semibold px-6 py-3 mt-4 rounded-full text-lg transition duration-300 shadow-lg bg-red-500 hover:bg-red-700">
                 {link.label}
               </button>
             ) : (

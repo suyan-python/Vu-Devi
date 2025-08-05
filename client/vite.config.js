@@ -1,13 +1,13 @@
+import tailwindcss from "@tailwindcss/vite";
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react()],
   server: {
-    host: "0.0.0.0", // Allow access from local network
-    open: true, // Automatically open the browser when the server starts
+    host: "0.0.0.0",
   },
-  assetsInclude: ["**/*.JPG"], // Allow JPG as assets
+  assetsInclude: ["**/*.JPG"],
 });

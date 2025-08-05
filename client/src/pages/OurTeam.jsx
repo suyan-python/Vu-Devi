@@ -38,7 +38,7 @@ function OurTeam() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Title with Animation */}
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-blue-600"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-red-600"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -65,12 +65,12 @@ function OurTeam() {
               />
 
               {/* Always Visible Name Overlay */}
-              <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-blue-500 via-blue-300 to-white text-white text-center px-4 flex items-center justify-center text-lg font-semibold opacity-100 transition-opacity duration-300 truncate">
+              <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-red-700 via-red-500 to-black text-white text-center px-4 flex items-center justify-center text-lg font-semibold opacity-100 transition-opacity duration-300 truncate">
                 {member.name}
               </div>
 
               {/* Hover Bio Section */}
-              <div className="absolute inset-0 bg-blue-500 bg-opacity-70 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="absolute inset-0 bg-red-500 bg-opacity-70 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <h3 className="text-xl sm:text-2xl font-semibold text-center">
                   {member.name}
                 </h3>

@@ -1,14 +1,17 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const FooterBT = () => {
+const FooterBT = () =>
+{
   const location = useLocation();
 
   // Determine background color based on the current path
-  const getFooterBackgroundColor = () => {
-    switch (location.pathname) {
+  const getFooterBackgroundColor = () =>
+  {
+    switch (location.pathname)
+    {
       case "/":
-        return "bg-animate2";
+        return "bg-animate3";
       case "/process":
         return "bg-black";
       case "/farming":
@@ -25,10 +28,6 @@ const FooterBT = () => {
         return "bg-gray-800";
     }
   };
-
-  if (location.pathname === "/inaya/home") {
-    return null; // Hide footer on this page
-  }
 
   return (
     <footer
