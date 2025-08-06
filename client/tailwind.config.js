@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -10,6 +9,7 @@ export default {
         tedRed: "#E62B1E",
         lightText: "#F3F3F3",
         subText: "#A0A0A0",
+        themeColor: "#133a41",
       },
       backdropBlur: {
         md: "10px",

@@ -4,53 +4,71 @@ import { motion } from "framer-motion";
 import
 {
   FaFileMedical,
+  FaClipboardList,
+  FaKeyboard,
   FaDatabase,
-  FaHeadset,
-  FaUserMd,
   FaChartBar,
   FaClipboardCheck,
+  FaShieldAlt,
+  FaUserMd
 } from "react-icons/fa";
 
 function Services()
 {
   const services = [
     {
+      title: "Medical Report Writing",
+      description:
+        "Comprehensive and accurate medical reports tailored for clinical, insurance, and legal requirements.",
+      icon: <FaFileMedical className="text-red-500 text-5xl mx-auto mb-4" />,
+    },
+    {
+      title: "Medical Listing",
+      description:
+        "Systematic listing and categorization of medical services, products, and procedures as per global healthcare standards.",
+      icon: <FaClipboardList className="text-red-500 text-5xl mx-auto mb-4" />,
+    },
+    {
+      title: "Medical Data Entry",
+      description:
+        "Secure and accurate entry of patient records, clinical data, and medical histories into healthcare systems.",
+      icon: <FaKeyboard className="text-red-500 text-5xl mx-auto mb-4" />,
+    },
+    {
       title: "Medical Documentation",
       description:
-        "Accurate and compliant medical reports tailored to global standards.",
+        "Detailed and structured documentation of clinical encounters, diagnoses, and treatment plans for improved patient care.",
       icon: <FaFileMedical className="text-red-500 text-5xl mx-auto mb-4" />,
     },
     {
       title: "Data Processing",
       description:
-        "Efficient data handling and analytics for healthcare institutions.",
+        "Streamlined management, cleansing, and transformation of healthcare data for better decision-making.",
       icon: <FaDatabase className="text-red-500 text-5xl mx-auto mb-4" />,
-    },
-    {
-      title: "Healthcare Support",
-      description:
-        "End-to-end backend support ensuring seamless healthcare operations.",
-      icon: <FaHeadset className="text-red-500 text-5xl mx-auto mb-4" />,
-    },
-    {
-      title: "Medical Consultation",
-      description:
-        "Expert medical advice from certified professionals to ensure quality care.",
-      icon: <FaUserMd className="text-red-500 text-5xl mx-auto mb-4" />,
     },
     {
       title: "Healthcare Analytics",
       description:
-        "AI-driven insights and reports to optimize healthcare decision-making.",
+        "Advanced analytics and data visualization to derive actionable insights and optimize healthcare outcomes.",
       icon: <FaChartBar className="text-red-500 text-5xl mx-auto mb-4" />,
     },
     {
       title: "Compliance Audits",
       description:
-        "Ensuring regulatory compliance and quality assurance for healthcare providers.",
-      icon: (
-        <FaClipboardCheck className="text-red-500 text-5xl mx-auto mb-4" />
-      ),
+        "Thorough audits to ensure healthcare operations meet regulatory standards, improve quality, and minimize risk.",
+      icon: <FaClipboardCheck className="text-red-500 text-5xl mx-auto mb-4" />,
+    },
+    {
+      title: "Data Security & Privacy",
+      description:
+        "Robust protection of sensitive health data through secure systems and privacy-compliant processes.",
+      icon: <FaShieldAlt className="text-red-500 text-5xl mx-auto mb-4" />,
+    },
+    {
+      title: "Clinical Support Services",
+      description:
+        "Assisting healthcare professionals with accurate documentation, record updates, and administrative efficiency.",
+      icon: <FaUserMd className="text-red-500 text-5xl mx-auto mb-4" />,
     },
   ];
 

@@ -50,11 +50,8 @@ function Hero()
         <div className="w-full lg:w-3/6 space-y-6 sm:space-y-8">
           <img src={Logo} alt="" />
 
-          <p className="test text-lg sm:text-xl text-tedBlack leading-relaxed">
-            Founded in 2013, Vu Devi Services streamlines medical documentation
-            outsourcing for global healthcare providers. Our expert team
-            leverages innovative technology to deliver precise, compliant
-            solutions—empowering you to focus on patient care.
+          <p className="text-lg sm:text-xl text-tedBlack leading-relaxed">
+            Founded in 2013, Vu Devi Services Pvt. Ltd. is a trusted name in the Business Process Outsourcing (BPO) industry, with a commitment to delivering accurate, timely, and high-quality medical documentation services to international clients.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">

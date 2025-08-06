@@ -3,7 +3,7 @@ import React from "react";
 function Footer()
 {
   return (
-    <footer className="bg-gradient-to-t from-red-800 via-red-900 to-gray-900 text-white pt-8 mb-8 w-full">
+    <footer className="bg-gradient-to-t from-themeColor via-darkThemeColor to-gray-900 text-white pt-8 mb-8 w-full z-10">
       <div className="max-w-full mx-auto px-6 sm:px-12 ">
         {/* Footer Top Section */}
         <div className="flex flex-col sm:flex-row justify-between items-center mb-12">

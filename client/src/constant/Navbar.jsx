@@ -42,61 +42,63 @@ function Navbar()
   return (
     <>
       {/* Navbar */}
-      <div
-        className={`fixed top-0  w-full z-50 px-4 py-3 transition-all duration-500 text-red-500 font-medium px-32 ${isScrolled
-          ? " bg-transparent backdrop-blur-[20px] shadow-red-400 shadow-md rounded-3xl mr-36"
-          : "bg-slate-100/20  shadow-md max-w-full"
-          }`}
-      >
+      <nav className="fixed top-0 w-full z-50 transition-all duration-500">
+        <div
+          className={`mx-auto w-full max-w-full py-3 font-medium transition-all duration-500
+      ${isScrolled
+              ? "px-36 bg-transparent backdrop-blur-[20px] shadow-[#133a41] shadow-md"
+              : "px-7 bg-slate-700/30 shadow-md"
+            }`}
+        >
 
-        <div className="flex justify-between items-center">
-          {/* Logo Section */}
-          <Link to="/">
-            <img src={Logo} alt="vudevi services" className="w-16" />
-          </Link>
+          <div className="flex justify-between items-center">
+            {/* Logo Section */}
+            <Link to="/">
+              <img src={Logo} alt="vudevi services" className="w-16" />
+            </Link>
 
-          {/* Mobile Menu Toggle (Hamburger Icon) */}
-          <div className="md:hidden">
-            <button onClick={toggleMenu} className="hover:text-red-300">
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </button>
-          </div>
+            {/* Mobile Menu Toggle (Hamburger Icon) */}
+            <div className="md:hidden">
+              <button onClick={toggleMenu} className="hover:text-red-300">
+                <svg
+                  className="w-7 h-7"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
 
-          {/* Desktop Navbar Links */}
-          <div className="hidden md:flex items-center gap-7">
-            {navLinks.map((link, index) => (
-              <NavLink
-                key={index}
-                to={link.to}
-                className={getActiveClass}
-                end={!link.isButton}
-              >
-                {link.isButton ? (
-                  <button className="text-white font-semibold px-4 py-2 rounded-full text-lg transition duration-300 shadow-lg bg-red-500 hover:bg-red-700 cursor-pointer">
-                    {link.label}
-                  </button>
-                ) : (
-                  link.label
-                )}
-              </NavLink>
-            ))}
+            {/* Desktop Navbar Links */}
+            <div className="hidden md:flex items-center gap-7">
+              {navLinks.map((link, index) => (
+                <NavLink
+                  key={index}
+                  to={link.to}
+                  className={getActiveClass}
+                  end={!link.isButton}
+                >
+                  {link.isButton ? (
+                    <button className="text-white font-semibold px-4 py-2 rounded-full text-lg transition duration-300 shadow-lg bg-red-500 hover:bg-red-700 cursor-pointer">
+                      {link.label}
+                    </button>
+                  ) : (
+                    link.label
+                  )}
+                </NavLink>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-
+      </nav>
       {/* Mobile Menu */}
       <div
         className={`fixed top-0 left-0 w-full h-screen bg-white shadow-lg transition-transform transform ${isMenuOpen ? "translate-x-0" : "-translate-x-full"

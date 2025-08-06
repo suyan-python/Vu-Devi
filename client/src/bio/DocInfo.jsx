@@ -12,16 +12,26 @@ const doctorData = {
     bio: "Dr. Nikita Shakya is an expert in crafting precise and compliant medical reports, ensuring adherence to global standards. With over 6 years of experience in the medical field, she has contributed to numerous healthcare projects.",
     mail: "nikita@reportprep.com",
     teamMembers: [
-      "John Doe",
-      "Emily Carter",
-      "Sam Wilson",
-      "Sam Wilson",
-      "Sam Wilson",
-      "Sam Wilson",
-      "Sam Wilson",
-      "Sam Wilson",
-      "Sam Wilson",
-      "Sam Wilson",
+      "Abhishek Chaurasiya",
+      "Akriti Shrestha",
+      "Anup Subedi",
+      "Apekshya Subedi",
+      "Apurva Bhandari",
+      "Birendra Yadav",
+      "Khush-Boo Gurung",
+      "Manoj Kumar Shrestha",
+      "Prakash Acharya",
+      "Rajendra Kumar Singh",
+      "Shikha Pradhan",
+      "Shristi Manandhar",
+      "Sujan Gautam",
+      "Dipesh Ghimire",
+      "Chitij Karki",
+      "Suvechhya Sigdel",
+      "Sangita K.C.",
+      "Rushmi Maharjan",
+      "Niguma Rayamajhi",
+      "Shushil Sah",
     ],
   },
   rajikya: {
@@ -32,15 +42,19 @@ const doctorData = {
     bio: "Rajikya specializes in handling large-scale healthcare data, ensuring efficiency in medical data processing and analytics. His leadership has streamlined data operations in multiple hospitals.",
     mail: "rajiya@reportprep.com",
     teamMembers: [
-      "Michael Scott",
-      "Angela Martin",
-      "Kevin Malone",
-      "Kevin Malone",
-      "Kevin Malone",
-      "Kevin Malone",
-      "Kevin Malone",
-      "Kevin Malone",
-      "Kevin Malone",
+      "Aayushma Pokharel",
+      "Anamika Shahi",
+      "Anish Phuyal",
+      "Anjila Ghimire",
+      "Diggaj Shrestha",
+      "Raghuveer Bohara",
+      "Sajana Poudel",
+      "Sarita Ale",
+      "Sheema Koirala",
+      "Sushma Kc",
+      "Tripti Halwai",
+      "Umesh Kunwar",
+      "Subekshya Satta",
     ],
   },
   bandana: {
@@ -51,12 +65,39 @@ const doctorData = {
     bio: "Bandana is responsible for backend operations, ensuring seamless healthcare support systems. She has played a key role in integrating new technologies into medical report listing systems.",
     mail: "bandana@reportprep.com",
     teamMembers: [
-      "Sarah Johnson",
-      "David Warner",
-      "Sophia Miller",
-      "Sophia Miller",
-      "Sophia Miller",
-      "Sophia Miller",
+      "Arju Khadka",
+      "Bandu Manandhar",
+      "Krija Shrestha",
+      "Namita Sangroula",
+      "Priyanka Chaudary",
+      "Priyasha Mahara",
+      "Sakshi Dhungel",
+      "Sameera Shrestha",
+      "Shruti Gautam",
+      "Soney Khadka",
+      "Sushmita Khadka",
+      "Suyan Man Amatya",
+      "Swastika Neupane",
+      "Nilima Mulmi",
+      "Simran Thapa",
+    ],
+  },
+  ravi: {
+    name: "Ravi Sunder Shrestha",
+    designation: "Data Analyst",
+    joiningDate: "January 5, 2020",
+    image: bandana,
+    bio: "Ravi is responsible for backend operations, ensuring seamless healthcare support systems. She has played a key role in integrating new technologies into medical report listing systems.",
+    mail: "bandana@reportprep.com",
+    teamMembers: [
+      "Dipendra Thapa",
+      "Karna Bahadur Bam",
+      "Rojin Shakya",
+      "Sammyek Ratna Bajracharya",
+      "Rajjak Miyan",
+      "Deepak Maharjan",
+      "Mahesh Shahi",
+      "Suman Dahal ",
       "Sophia Miller",
       "Sophia Miller",
       "Sophia Miller",
@@ -64,12 +105,14 @@ const doctorData = {
   },
 };
 
-function DocInfo() {
+function DocInfo()
+{
   const { doctorId } = useParams();
   const navigate = useNavigate();
   const doctor = doctorData[doctorId];
 
-  if (!doctor) {
+  if (!doctor)
+  {
     return (
       <div className="text-center text-red-500 text-2xl">Doctor Not Found</div>
     );
