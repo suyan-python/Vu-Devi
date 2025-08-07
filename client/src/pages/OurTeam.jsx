@@ -9,6 +9,14 @@ function OurTeam()
 
   const teamMembers = [
     {
+      name: "Ravi Sunder Shrestha",
+      role: "Medical Report Writer Lead",
+      description:
+        "Accurate and compliant medical reports tailored to global standards.",
+      image: "/assets/leads/bandana.JPG",
+      link: "/team/nikita",
+    },
+    {
       name: "Dr. Nikita Shakya",
       role: "Medical Report Writer Lead",
       description:
@@ -17,7 +25,7 @@ function OurTeam()
       link: "/team/nikita",
     },
     {
-      name: "Dr. Rajiya Shakya",
+      name: "Pt. Rajiya Shakya",
       role: "Data Analytics & Healthcare Operations",
       description:
         "Efficient data handling and analytics for healthcare institutions.",
@@ -25,7 +33,7 @@ function OurTeam()
       link: "/team/rajikya",
     },
     {
-      name: "Dr. Bandana Manandhar",
+      name: "Bandana Manandhar",
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
@@ -35,7 +43,7 @@ function OurTeam()
   ];
 
   return (
-    <section className="w-full py-16 ">
+    <section className="w-full">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Title with Animation */}
         <motion.h2
@@ -52,7 +60,7 @@ function OurTeam()
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
-              className="relative group cursor-pointer overflow-hidden rounded-3xl shadow-lg transition transform hover:scale-105 hover:shadow-xl duration-300"
+              className="relative group cursor-pointer  overflow-hidden rounded-3xl shadow-lg transition transform hover:scale-105 hover:shadow-xl duration-300"
               onClick={() => navigate(member.link)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -62,7 +70,7 @@ function OurTeam()
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-50"
               />
 
               {/* Always Visible Name Overlay */}
@@ -71,7 +79,7 @@ function OurTeam()
               </div>
 
               {/* Hover Bio Section */}
-              <div className="absolute inset-0 bg-themeColor bg-opacity-70 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="absolute inset-0 backdrop-blur-sm bg-opacity-70 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <h3 className="text-xl sm:text-2xl font-semibold text-center">
                   {member.name}
                 </h3>
@@ -79,6 +87,7 @@ function OurTeam()
                   {member.role}
                 </p>
                 <p className="mt-2 text-center px-6">{member.description}</p>
+                <button className="px-3 py-1 rounded-md bg-[#25727f] hover:bg-[#234045] cursor-pointer transition-all duration-500" onClick={() => navigate(member.link)} >View Team</button>
               </div>
             </motion.div>
           ))}

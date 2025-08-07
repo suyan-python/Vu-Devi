@@ -42,7 +42,7 @@ function Hero()
   return (
     <section
       ref={heroRef}
-      className={`relative px-6 sm:px-12 lg:px-16 xl:px-24 py-12 sm:py-16 md:py-20 text-white transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      className={`relative px-6 sm:px-12 lg:px-16 xl:px-24 text-white transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
     >
       <div className="flex flex-col lg:flex-row justify-between items-center gap-8 xl:gap-12">
@@ -92,7 +92,7 @@ function Hero()
         </div>
 
         <div className="w-full lg:w-3/4 mt-8 lg:mt-0 sm:p-8 flex items-center justify-center">
-          <div className="w-full max-w-4xl py-8 rounded-xl shadow-lg space-y-8">
+          <div className="w-full max-w-4xl py-8 rounded-xl shadow-lg">
             <OurTeam />
           </div>
         </div>

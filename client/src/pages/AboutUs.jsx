@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion"; // Importing Framer Motion
+import Binayak from "../assets/person/binayak2.jpeg"
 
 function AboutUs()
 {
@@ -202,7 +203,7 @@ function AboutUs()
               {/* Image Container */}
               <div className="w-80 h-96 md:w-96 md:h-[500px] overflow-hidden rounded-2xl shadow-lg border border-gray-300">
                 <img
-                  src="/path-to-founder-image.jpg"
+                  src={Binayak}
                   alt="Founder"
                   className="w-full h-full object-cover"
                 />
@@ -212,12 +213,12 @@ function AboutUs()
                 Mr. Binayak Malla
               </p>
               <p className="text-gray-600 text-lg">
-                Founder & CEO, Vu Devi Services
+                Founder & CEO
               </p>
             </div>
 
             {/* Right Column: Introduction & Vision */}
-            <div className="max-w-md text-left">
+            <div className="max-w-md text-justify">
               <p className="text-gray-900 text-6xl font-extrabold leading-tight">
                 Hi, there <p className="text-red-500"> I'm Binayak!</p>
               </p>
@@ -243,11 +244,11 @@ function AboutUs()
                 action."
               </p>
 
-              <div className="mt-6">
+              {/* <div className="mt-6">
                 <button className="px-6 py-3 bg-red-500 text-white text-lg font-medium rounded-lg shadow-md hover:bg-gray-700 transition">
                   Learn More About Our Vision
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </motion.div>

@@ -37,7 +37,7 @@ const FooterBT = () =>
         {/* Company Branding */}
         <Link
           to="/"
-          className="text-sm md:text-lg font-bold hover:text-yellow-400 transition duration-300"
+          className="text-sm md:text-lg font-bold hover:text-red-700 transition duration-300"
         >
           Vu Devi Services Pvt. Ltd.
         </Link>

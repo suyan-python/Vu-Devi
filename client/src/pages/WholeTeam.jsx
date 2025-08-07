@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import bandana from "../assets/leads/bandana.JPG";
 
-function WholeTeam() {
+function WholeTeam()
+{
   const navigate = useNavigate();
 
   const teamLeads = [
@@ -16,7 +17,7 @@ function WholeTeam() {
       link: "/team/nikita",
     },
     {
-      name: "Dr. Rajiya Shakya",
+      name: "Pt. Rajiya Shakya",
       role: "Data Analytics & Healthcare Operations",
       description:
         "Efficient data handling and analytics for healthcare institutions.",
@@ -24,7 +25,7 @@ function WholeTeam() {
       link: "/team/rajikya",
     },
     {
-      name: "Dr. Bandana Manandhar",
+      name: "Bandana Manandhar",
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
