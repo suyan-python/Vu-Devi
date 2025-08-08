@@ -35,8 +35,8 @@ function Navbar()
   const getActiveClass = ({ isActive }) =>
   {
     return isActive
-      ? "text-white font-bold p-1.5 rounded-xl"
-      : "text-red-500 hover:text-red-300 font-semibold";
+      ? "text-white font-bold p-1.5 rounded-xl bg-red-500"
+      : "text-red-700 hover:text-red-900 font-semibold";
   };
 
   return (
@@ -87,7 +87,7 @@ function Navbar()
                   end={!link.isButton}
                 >
                   {link.isButton ? (
-                    <button className="text-white font-semibold px-4 py-2 rounded-full text-lg transition duration-300 shadow-lg bg-red-500 hover:bg-red-700 cursor-pointer">
+                    <button className="text-white font-semibold px-4 py-2 rounded-full text-lg transition duration-300 shadow-lg bg-red-700 hover:bg-red-900 cursor-pointer">
                       {link.label}
                     </button>
                   ) : (
@@ -119,7 +119,7 @@ function Navbar()
             end={!link.isButton}
           >
             {link.isButton ? (
-              <button className="text-white font-semibold px-6 py-3 mt-4 rounded-full text-lg transition duration-300 shadow-lg bg-red-500 hover:bg-red-700">
+              <button className="text-white font-semibold px-6 py-3 mt-4 rounded-full text-lg transition duration-300 shadow-lg bg-red-700 hover:bg-red-900">
                 {link.label}
               </button>
             ) : (

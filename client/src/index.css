@@ -25,6 +25,15 @@ body {
   overflow-x: hidden;
 }
 
+.header {
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Montserrat", sans-serif;
+}
+.subheader {
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Inter", sans-serif;
+}
+
 themeColor {
   background-color: #133a41;
 }

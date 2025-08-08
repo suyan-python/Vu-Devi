@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-export default function JobApplicationForm() {
+export default function JobApplicationForm()
+{
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -28,26 +29,31 @@ Able to check email and notifications throughout the day.
 Excellent communication/language skills.
 Knowledge of medical terminologies. 
   `;
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) =>
+  {
     e.preventDefault();
     setErrorMessage(""); // Reset error message
 
     // Check if email already exists
-    try {
+    try
+    {
       const emailCheckResponse = await fetch(
         `http://localhost:5000/check-email?email=${formData.email}`
       );
       const emailCheckData = await emailCheckResponse.json();
 
-      if (!emailCheckResponse.ok) {
+      if (!emailCheckResponse.ok)
+      {
         throw new Error(emailCheckData.error);
       }
 
-      if (emailCheckData.exists) {
+      if (emailCheckData.exists)
+      {
         setErrorMessage("You have already applied with this email.");
         return;
       }
-    } catch (error) {
+    } catch (error)
+    {
       console.error("Error checking email:", error);
       setErrorMessage("Something went wrong. Please try again later.");
       return;
@@ -60,14 +66,16 @@ Knowledge of medical terminologies.
     formDataToSend.append("resume", formData.resume);
     formDataToSend.append("coverLetter", formData.coverLetter);
 
-    try {
+    try
+    {
       const response = await fetch("http://localhost:5000/apply", {
         method: "POST",
         body: formDataToSend,
       });
 
       const data = await response.json();
-      if (response.ok) {
+      if (response.ok)
+      {
         setShowSuccess(true);
         setFormData({
           name: "",
@@ -76,10 +84,12 @@ Knowledge of medical terminologies.
           coverLetter: "",
         });
         setResumeName("");
-      } else {
+      } else
+      {
         setErrorMessage(data.error);
       }
-    } catch (error) {
+    } catch (error)
+    {
       console.error("Error submitting application:", error);
       setErrorMessage("Submission failed. Try again later.");
     }
@@ -123,7 +133,7 @@ Knowledge of medical terminologies.
           <button
             type="button"
             onClick={() => setShowModal(true)}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all"
+            className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-all font-semibold cursor-pointer"
           >
             Job Description
           </button>
@@ -139,7 +149,7 @@ Knowledge of medical terminologies.
               <p className="text-gray-700 text-lg leading-relaxed">
                 {jobDescription}
               </p>
-              <p className="font-semibold my-">
+              <p className="font-semibold my-5">
                 Candidate must have good skills in Microsoft Office package
                 (Word and Excel) and a typing speed of a minimum of 40 words per
                 minute.
@@ -153,7 +163,7 @@ Knowledge of medical terminologies.
               <div className="flex justify-end mt-6">
                 <button
                   onClick={() => setShowModal(false)}
-                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all"
+                  className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-all cursor-pointer"
                 >
                   Close
                 </button>
@@ -194,7 +204,7 @@ Knowledge of medical terminologies.
 
         <div className="mb-5">
           <label className="block text-gray-700 font-medium mb-2">
-            Resume (PDF) <span className="text-red-500">*</span>
+            Resume (PDF) / Typing Speed <span className="text-red-500">*</span>
           </label>
           <input
             type="file"
@@ -202,9 +212,11 @@ Knowledge of medical terminologies.
             required
             className="hidden"
             id="resume-upload"
-            onChange={(e) => {
+            onChange={(e) =>
+            {
               const file = e.target.files[0];
-              if (file) {
+              if (file)
+              {
                 setFormData((prev) => ({ ...prev, resume: file }));
                 setResumeName(file.name);
               }
@@ -255,7 +267,7 @@ Knowledge of medical terminologies.
 
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-blue-700 transition-all"
+          className="w-full bg-red-600 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-red-700 transition-all"
         >
           Submit Application
         </button>

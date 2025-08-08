@@ -7,6 +7,7 @@ import JobApplicationForm from "./pages/JobApplicationForm";
 import ScrollToTop from "./ScrollToTop";
 
 import "./animation.css";
+import "./index.css"
 import Contact from "./pages/Contact";
 import FooterBT from "./constant/FooterBt";
 import Services from "./pages/Services";
@@ -15,6 +16,7 @@ import WholeTeam from "./pages/WholeTeam";
 import DocInfo from "./bio/DocInfo";
 import TeamFun from "./pages/TeamFun";
 import BackgroundAnimation from "./components/BackgroundAnimation";
+
 
 function App()
 {

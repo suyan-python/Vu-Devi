@@ -52,16 +52,16 @@ function Footer()
                 <li>
                   Email:{" "}
                   <a
-                    href="mailto:info@vudeviservices.com"
+                    href="mailto:vudeviservices@gmail.com"
                     className="hover:underline"
                   >
-                    info@vudeviservices.com
+                    vudeviservices@gmail.com
                   </a>
                 </li>
                 <li>
                   Phone:{" "}
                   <a href="tel:+1234567890" className="hover:underline">
-                    +123-456-7890
+                    +977
                   </a>
                 </li>
                 <li>Address: Balkumari-Gwarko, Lalitpur, Nepal</li>

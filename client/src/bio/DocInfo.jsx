@@ -7,7 +7,7 @@ const doctorData = {
   nikita: {
     name: "Dr. Nikita Shakya",
     designation: "Medical Report Writer Lead",
-    joiningDate: "March 10, 2018",
+    joiningDate: "December, 2020",
     image: "/images/nikita.jpg",
     bio: "Dr. Nikita Shakya is an expert in crafting precise and compliant medical reports, ensuring adherence to global standards. With over 6 years of experience in the medical field, she has contributed to numerous healthcare projects.",
     mail: "nikita@reportprep.com",
@@ -37,7 +37,7 @@ const doctorData = {
   rajikya: {
     name: "Pt. Rajiya Shakya",
     designation: "Physiotherapy report writer Lead",
-    joiningDate: "August 22, 2019",
+    joiningDate: "March, 2018",
     image: "/images/rajikya.jpg",
     bio: "Rajikya specializes in handling large-scale healthcare data, ensuring efficiency in medical data processing and analytics. His leadership has streamlined data operations in multiple hospitals.",
     mail: "rajiya@reportprep.com",
@@ -60,7 +60,7 @@ const doctorData = {
   bandana: {
     name: "Bandana Manandhar",
     designation: "Backend Operations Lead",
-    joiningDate: "January 5, 2020",
+    joiningDate: "April, 2018",
     image: bandana,
     bio: "Bandana is responsible for backend operations, ensuring seamless healthcare support systems. She has played a key role in integrating new technologies into medical report listing systems.",
     mail: "bandana@reportprep.com",
@@ -84,11 +84,11 @@ const doctorData = {
   },
   ravi: {
     name: "Ravi Sunder Shrestha",
-    designation: "Data Analyst",
-    joiningDate: "January 5, 2020",
-    image: bandana,
+    designation: "Downloader",
+    joiningDate: "February, 2014",
+    image: '/image',
     bio: "Ravi is responsible for backend operations, ensuring seamless healthcare support systems. She has played a key role in integrating new technologies into medical report listing systems.",
-    mail: "bandana@reportprep.com",
+    mail: "ravi@reportprep.com",
     teamMembers: [
       "Dipendra Thapa",
       "Karna Bahadur Bam",
@@ -98,9 +98,6 @@ const doctorData = {
       "Deepak Maharjan",
       "Mahesh Shahi",
       "Suman Dahal ",
-      "Sophia Miller",
-      "Sophia Miller",
-      "Sophia Miller",
     ],
   },
 };
@@ -123,7 +120,7 @@ function DocInfo()
       <div className="max-w-5xl mx-auto px-6 md:px-12">
         {/* Back Button */}
         <button
-          className="mb-6 text-blue-600 hover:underline cursor-pointer"
+          className="mb-6 text-red-600 hover:underline cursor-pointer"
           onClick={() => navigate(-1)}
         >
           ← Back to Team
@@ -141,12 +138,12 @@ function DocInfo()
             alt={doctor.name}
             className="w-48 h-48 rounded-full mx-auto object-cover shadow-lg mb-6"
           />
-          <h2 className="text-3xl font-bold text-blue-600">{doctor.name}</h2>
+          <h2 className="text-3xl font-bold text-red-600">{doctor.name}</h2>
 
           {doctor.mail && (
             <a
               href={`mailto:${doctor.mail}`}
-              className="text-blue-500 hover:text-blue-700 hover:underline block mt-2"
+              className="text-red-500 hover:text-red-700 hover:underline block mt-2"
             >
               {doctor.mail}
             </a>
@@ -164,7 +161,7 @@ function DocInfo()
 
         {/* Team Members Section */}
         <div className="mt-12">
-          <h3 className="text-2xl font-semibold text-center text-blue-600">
+          <h3 className="text-2xl font-semibold text-center text-red-600">
             Team Members
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">

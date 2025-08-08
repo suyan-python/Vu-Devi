@@ -1,5 +1,6 @@
 import * as React from "react";
-import {
+import
+{
   LineChart,
   Line,
   XAxis,
@@ -10,7 +11,8 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-export default function CustomerGrowthChart() {
+export default function CustomerGrowthChart()
+{
   const data = [
     { year: "2013", Team: 2 },
     { year: "2014", Team: 5 },
@@ -28,44 +30,44 @@ export default function CustomerGrowthChart() {
   ];
 
   return (
-    <div className="w-full h-72 sm:h-96 md:h-80 lg:h-96 xl:h-[400px]">
+    <div className="w-full h-72 sm:h-96 md:h-80 lg:h-96 xl:h-[400px] ">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="4 4" stroke="#dcdcdc" />
           <XAxis
             dataKey="year"
-            stroke="#555"
+            stroke="#ffff"
             tick={{ fontSize: 12, fontFamily: "Arial, sans-serif" }}
-            axisLine={{ stroke: "#555" }}
+            axisLine={{ stroke: "#ffff" }}
           />
           <YAxis
-            stroke="#555"
+            stroke="#ffff"
             tick={{ fontSize: 12, fontFamily: "Arial, sans-serif" }}
-            axisLine={{ stroke: "#555" }}
+            axisLine={{ stroke: "#ffff" }}
           />
           <Tooltip
             contentStyle={{
               backgroundColor: "#fff",
-              borderColor: "#ddd",
+              borderColor: "#ffff",
               fontSize: "12px",
               fontFamily: "Arial, sans-serif",
             }}
             labelStyle={{
               fontWeight: "bold",
-              color: "#555",
+              color: "#ffff",
             }}
           />
           <Legend
             wrapperStyle={{
               fontSize: "12px",
               fontFamily: "Arial, sans-serif",
-              color: "#555",
+              color: "#ffff",
             }}
           />
           <Line
             type="monotone"
             dataKey="Team"
-            stroke="#2c3e50"
+            stroke="#ffff"
             strokeWidth={2}
             dot={false}
           />

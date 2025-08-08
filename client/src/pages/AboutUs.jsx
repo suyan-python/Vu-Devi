@@ -49,13 +49,13 @@ function AboutUs()
         {/* Vision & Mission Section with Animation */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <motion.div
-            className="p-8 rounded-xl shadow-md border-l-4 border-red-700 bg-white"
+            className="p-8 rounded-xl shadow-md border-l-8 border-red-700 bg-white"
             initial={{ opacity: 0, x: -200 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
             <h3 className="text-2xl font-semibold text-red-600 mb-2">
-              🎯 Our Vision
+              Our Vision
             </h3>
             <p className="text-gray-700">
               To be the <strong>leading provider</strong> of medical
@@ -66,13 +66,13 @@ function AboutUs()
           </motion.div>
 
           <motion.div
-            className="p-8 rounded-xl shadow-md border-l-4 border-red-700 bg-white"
+            className="p-8 rounded-xl shadow-md border-l-8 border-green-500 bg-white"
             initial={{ opacity: 0, x: 200 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
             <h3 className="text-2xl font-semibold text-gray-800 mb-2">
-              🌟 Our Mission
+              Our Mission
             </h3>
             <p className="text-gray-700">
               Our mission is to deliver{" "}
@@ -186,72 +186,7 @@ function AboutUs()
         </motion.div>
 
         {/* Meet Our Team Section with Animation */}
-        <motion.div
-          className="bg-white p-12 rounded-xl shadow-lg transition duration-300 text-center mb-12"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h3 className="text-3xl font-semibold text-red-500 mb-6">
-            Meet Our Founder
-          </h3>
 
-          {/* Two-Column Layout */}
-          <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-10">
-            {/* Left Column: Image & Name */}
-            <div className="flex flex-col items-center">
-              {/* Image Container */}
-              <div className="w-80 h-96 md:w-96 md:h-[500px] overflow-hidden rounded-2xl shadow-lg border border-gray-300">
-                <img
-                  src={Binayak}
-                  alt="Founder"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              {/* Name & Designation */}
-              <p className="text-red-500 font-semibold text-2xl mt-4">
-                Mr. Binayak Malla
-              </p>
-              <p className="text-gray-600 text-lg">
-                Founder & CEO
-              </p>
-            </div>
-
-            {/* Right Column: Introduction & Vision */}
-            <div className="max-w-md text-justify">
-              <p className="text-gray-900 text-6xl font-extrabold leading-tight">
-                Hi, there <p className="text-red-500"> I'm Binayak!</p>
-              </p>
-              <p className="text-gray-700 text-lg mt-4">
-                A passionate entrepreneur, innovator, and problem-solver. My
-                journey began with a simple goal: to create technology-driven
-                solutions that make a difference.
-              </p>
-
-              <p className="text-gray-700 text-lg mt-4">
-                With over a decade of experience in industry transformation, I
-                believe in the power of
-                <span className="text-gray-900 font-semibold">
-                  {" "}
-                  innovation, strategy, and people
-                </span>
-                to drive success. At Vu Devi Services, we don’t just build
-                businesses—we build <i>impactful solutions</i>.
-              </p>
-
-              <p className="text-gray-800 font-semibold text-lg mt-6">
-                "Great ideas start with a vision, but success comes from
-                action."
-              </p>
-
-              {/* <div className="mt-6">
-                <button className="px-6 py-3 bg-red-500 text-white text-lg font-medium rounded-lg shadow-md hover:bg-gray-700 transition">
-                  Learn More About Our Vision
-                </button>
-              </div> */}
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

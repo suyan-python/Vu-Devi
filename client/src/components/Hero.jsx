@@ -45,12 +45,12 @@ function Hero()
       className={`relative px-6 sm:px-12 lg:px-16 xl:px-24 text-white transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
     >
-      <div className="flex flex-col lg:flex-row justify-between items-center gap-8 xl:gap-12">
+      <div className="subheader flex flex-col lg:flex-row justify-between items-center gap-8 xl:gap-12 ">
         {/* Left Content Section */}
         <div className="w-full lg:w-3/6 space-y-6 sm:space-y-8">
           <img src={Logo} alt="" />
 
-          <p className="text-lg sm:text-xl text-tedBlack leading-relaxed">
+          <p className=" text-lg sm:text-xl text-tedBlack leading-relaxed">
             Founded in 2013, Vu Devi Services Pvt. Ltd. is a trusted name in the Business Process Outsourcing (BPO) industry, with a commitment to delivering accurate, timely, and high-quality medical documentation services to international clients.
           </p>
 
