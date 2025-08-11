@@ -1,7 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import bandana from "../assets/leads/bandana.JPG";
+import ravi from "../assets/leads/ravi.png";
+import nikita from "../assets/leads/nikita.png";
+import rajiya from "../assets/leads/rajiya.png";
+import bandana from "../assets/leads/bandana2.png";
+
 
 function WholeTeam()
 {
@@ -13,7 +17,7 @@ function WholeTeam()
       role: "Downloader",
       description:
         "Accurate and compliant medical reports tailored to global standards.",
-      image: "/images/nikita.jpg",
+      image: ravi,
       link: "/team/ravi",
     },
     {
@@ -21,7 +25,7 @@ function WholeTeam()
       role: "Medical Report Writer Lead",
       description:
         "Accurate and compliant medical reports tailored to global standards.",
-      image: "/images/nikita.jpg",
+      image: nikita,
       link: "/team/nikita",
     },
     {
@@ -29,7 +33,7 @@ function WholeTeam()
       role: "Data Analytics & Healthcare Operations",
       description:
         "Efficient data handling and analytics for healthcare institutions.",
-      image: "/images/rajikya.jpg",
+      image: rajiya,
       link: "/team/rajikya",
     },
     {

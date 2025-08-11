@@ -20,8 +20,8 @@ function Navbar()
   const toggleMenu = () =>
   {
     setIsMenuOpen(!isMenuOpen);
-  };
 
+  };
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "/about", label: "Vudevi" },

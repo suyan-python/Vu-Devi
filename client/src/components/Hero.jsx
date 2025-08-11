@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import Services from "../pages/Services";
+import React, { useState, useEffect, useRef, Suspense } from "react";
 import { NavLink } from "react-router-dom";
-import OurTeam from "../pages/OurTeam";
-import Logo from '../assets/logo/logo.png'
+import Logo from "../assets/logo/logo.png";
+
+// Lazy load OurTeam to improve initial load time
+const OurTeam = React.lazy(() => import("../pages/OurTeam"));
 
 function Hero()
 {
@@ -12,91 +13,69 @@ function Hero()
   useEffect(() =>
   {
     const observer = new IntersectionObserver(
-      ([entry]) =>
-      {
-        if (entry.isIntersecting)
-        {
-          setIsVisible(true);
-        } else
-        {
-          setIsVisible(false);
-        }
-      },
+      ([entry]) => setIsVisible(entry.isIntersecting),
       { threshold: 0.1 }
     );
-
-    if (heroRef.current)
-    {
-      observer.observe(heroRef.current);
-    }
-
-    return () =>
-    {
-      if (heroRef.current)
-      {
-        observer.unobserve(heroRef.current);
-      }
-    };
+    if (heroRef.current) observer.observe(heroRef.current);
+    return () => heroRef.current && observer.unobserve(heroRef.current);
   }, []);
 
   return (
     <section
       ref={heroRef}
-      className={`relative px-6 sm:px-12 lg:px-16 xl:px-24 text-white transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      className={`relative px-6 sm:px-12 lg:px-16 xl:px-24 transition-all duration-1000 min-h-screen flex flex-col justify-center bg-gradient-to-br from-[#132427] via-[#25727f] to-red-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
     >
-      <div className="subheader flex flex-col lg:flex-row justify-between items-center gap-8 xl:gap-12 ">
-        {/* Left Content Section */}
-        <div className="w-full lg:w-3/6 space-y-6 sm:space-y-8">
-          <img src={Logo} alt="" />
+      <div className="max-w-full mx-auto flex flex-col lg:flex-row items-center gap-12">
+        {/* Left Section */}
+        <div className="w-full lg:w-1/2 text-white space-y-8">
+          {/* Logo */}
+          <img
+            src={Logo}
+            alt="Vu Devi Services"
+            className="w-48 sm:w-56 drop-shadow-lg"
+            loading="eager"
+          />
 
-          <p className=" text-lg sm:text-xl text-tedBlack leading-relaxed">
-            Founded in 2013, Vu Devi Services Pvt. Ltd. is a trusted name in the Business Process Outsourcing (BPO) industry, with a commitment to delivering accurate, timely, and high-quality medical documentation services to international clients.
+          {/* Headline */}
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+            Excellence in{" "}
+            <span className="text-red-600">Medical Documentation</span> Since 2013
+          </h1>
+
+          {/* Description */}
+          <p className="text-lg sm:text-xl text-gray-100 leading-relaxed max-w-xl">
+            Vu Devi Services Pvt. Ltd. delivers accurate, timely, and high-quality
+            medical documentation to international clients, blending precision with care.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4">
             <NavLink
               to="/about"
-              className="flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 text-lg font-semibold text-white bg-red-600 rounded-xl hover:bg-red-700 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+              className="px-8 py-4 text-lg font-semibold text-white bg-[#133a41] rounded-xl hover:bg-yellow-600 transform hover:-translate-y-1 transition-all duration-300 shadow-lg"
             >
               Explore More
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
             </NavLink>
-
             <NavLink
               to="/team"
-              className="flex items-center justify-center gap-2 px-8 py-4 sm:py-3.5 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-red-500 rounded-xl hover:bg-gradient-to-l transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+              className="px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-[#25727f] to-red-600 rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg"
             >
-              Meet Our Team
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
-              </svg>
+              Our Team
             </NavLink>
           </div>
         </div>
 
-        <div className="w-full lg:w-3/4 mt-8 lg:mt-0 sm:p-8 flex items-center justify-center">
-          <div className="w-full max-w-4xl py-8 rounded-xl shadow-lg">
+        {/* Right Section - Team Preview */}
+        <div className="w-full">
+          <Suspense fallback={<div className="text-white">Loading team...</div>}>
             <OurTeam />
-          </div>
+          </Suspense>
         </div>
       </div>
+
+      {/* Bottom Decorative Divider */}
+
     </section>
   );
 }
