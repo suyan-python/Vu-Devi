@@ -36,38 +36,38 @@ export default function CustomerGrowthChart()
           <CartesianGrid strokeDasharray="4 4" stroke="#dcdcdc" />
           <XAxis
             dataKey="year"
-            stroke="#ffff"
+            stroke="#133a41"
             tick={{ fontSize: 12, fontFamily: "Arial, sans-serif" }}
-            axisLine={{ stroke: "#ffff" }}
+            axisLine={{ stroke: "#133a41" }}
           />
           <YAxis
-            stroke="#ffff"
+            stroke="#133a41"
             tick={{ fontSize: 12, fontFamily: "Arial, sans-serif" }}
-            axisLine={{ stroke: "#ffff" }}
+            axisLine={{ stroke: "#133a41" }}
           />
           <Tooltip
             contentStyle={{
               backgroundColor: "#fff",
-              borderColor: "#ffff",
+              borderColor: "#133a41",
               fontSize: "12px",
               fontFamily: "Arial, sans-serif",
             }}
             labelStyle={{
               fontWeight: "bold",
-              color: "#ffff",
+              color: "#133a41",
             }}
           />
           <Legend
             wrapperStyle={{
               fontSize: "12px",
               fontFamily: "Arial, sans-serif",
-              color: "#ffff",
+              color: "#133a41",
             }}
           />
           <Line
             type="monotone"
             dataKey="Team"
-            stroke="#ffff"
+            stroke="#133a41"
             strokeWidth={2}
             dot={false}
           />

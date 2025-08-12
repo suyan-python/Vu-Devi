@@ -19,9 +19,8 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  /* background-color: #4d4d4d; */
-  /* background-color: #121212; */
-  background-color: #133a41;
+  color: #133a41;
+  background-color: #fff4f4;
   overflow-x: hidden;
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import ravi from "../assets/leads/ravi.png";
-import nikita from "../assets/leads/nikita.png";
+import nikita from "../assets/leads/nikita2.png";
 import rajiya from "../assets/leads/rajiya.png";
 import bandana from "../assets/leads/bandana2.png";
 
@@ -77,7 +77,7 @@ function WholeTeam()
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Title with Animation */}
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-red-700"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -86,7 +86,7 @@ function WholeTeam()
         </motion.h2>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {teamLeads.map((member, index) => (
             <motion.div
               key={index}
@@ -100,7 +100,7 @@ function WholeTeam()
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75"
+                className="w-full h-[400px] object-contain bg-white transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75"
               />
 
               {/* Always Visible Name Overlay */}
@@ -127,7 +127,7 @@ function WholeTeam()
       <div className="max-w-7xl mx-auto px-6 md:px-12 my-10">
         {/* Section Title with Animation */}
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-red-700"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 "
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

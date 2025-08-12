@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, Suspense } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/logo/logo.png";
 
-// Lazy load OurTeam to improve initial load time
+// Lazy load OurTeam
 const OurTeam = React.lazy(() => import("../pages/OurTeam"));
 
 function Hero()
@@ -23,43 +23,40 @@ function Hero()
   return (
     <section
       ref={heroRef}
-      className={`relative px-6 sm:px-12 lg:px-16 xl:px-24 transition-all duration-1000 min-h-screen flex flex-col justify-center bg-gradient-to-br from-[#132427] via-[#25727f] to-red-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      className={`relative transition-all duration-1000 min-h-screen flex ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
     >
-      <div className="max-w-full mx-auto flex flex-col lg:flex-row items-center gap-12">
+      <div className="max-w-fit mx-auto w-full px-6 sm:px-12 lg:px-16 xl:px-24 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+
         {/* Left Section */}
-        <div className="w-full lg:w-1/2 text-white space-y-8">
-          {/* Logo */}
+        <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
           <img
             src={Logo}
             alt="Vu Devi Services"
-            className="w-48 sm:w-56 drop-shadow-lg"
+            className="w-40 sm:w-56 md:w-80 mx-auto lg:mx-0 drop-shadow-lg"
             loading="eager"
           />
 
-          {/* Headline */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+          <h1 className="text-2xl sm:text-4xl lg:text-6xl font-extrabold leading-tight text-[#133a41]">
             Excellence in{" "}
-            <span className="text-red-600">Medical Documentation</span> Since 2013
+            <span className="text-red-700">Medical Documentation</span> Since 2013
           </h1>
 
-          {/* Description */}
-          <p className="text-lg sm:text-xl text-gray-100 leading-relaxed max-w-xl">
+          <p className="text-base sm:text-lg md:text-xl text-[#133a41] leading-relaxed max-w-xl mx-auto lg:mx-0">
             Vu Devi Services Pvt. Ltd. delivers accurate, timely, and high-quality
             medical documentation to international clients, blending precision with care.
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <NavLink
               to="/about"
-              className="px-8 py-4 text-lg font-semibold text-white bg-[#133a41] rounded-xl hover:bg-yellow-600 transform hover:-translate-y-1 transition-all duration-300 shadow-lg"
+              className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-white bg-[#133a41] rounded-xl hover:bg-yellow-600 transform hover:-translate-y-1 transition-all duration-300 shadow-lg"
             >
               Explore More
             </NavLink>
             <NavLink
               to="/team"
-              className="px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-[#25727f] to-red-600 rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg"
+              className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-white bg-gradient-to-r from-[#25727f] to-red-600 rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg"
             >
               Our Team
             </NavLink>
@@ -67,15 +64,14 @@ function Hero()
         </div>
 
         {/* Right Section - Team Preview */}
-        <div className="w-full">
-          <Suspense fallback={<div className="text-white">Loading team...</div>}>
-            <OurTeam />
+        <div className="flex justify-center lg:justify-end">
+          <Suspense fallback={<div className="text-[#133a41]">Loading team...</div>}>
+            <div className="w-full max-w-md sm:max-w-lg lg:max-w-none">
+              <OurTeam />
+            </div>
           </Suspense>
         </div>
       </div>
-
-      {/* Bottom Decorative Divider */}
-
     </section>
   );
 }

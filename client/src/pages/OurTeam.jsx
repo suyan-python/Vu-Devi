@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import ravi from "../assets/leads/ravi.png";
-import nikita from "../assets/leads/nikita.png";
+import nikita from "../assets/leads/nikita2.png";
 import rajiya from "../assets/leads/rajiya.png";
 import bandana from "../assets/leads/bandana2.png";
 
@@ -46,26 +46,25 @@ function OurTeam()
   const navigate = useNavigate();
 
   return (
-    <section className="w-full py-12 bg-gradient-to-b from-white/20 to-gray-200/20 rounded-4xl">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section className="w-full px-4 sm:px-6 md:px-8">
+      <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-white"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 text-[#133a41]"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Our Team Leads
+          Meet Our Team Leads
         </motion.h2>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 sm:gap-8 justify-items-center max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
-              className="relative group cursor-pointer overflow-hidden rounded-2xl shadow-md hover:shadow-xl bg-white transition-transform duration-300 will-change-transform"
-              whileHover={{ scale: 1.03 }}
+              className="relative group cursor-pointer overflow-hidden rounded-2xl shadow-md hover:shadow-xl bg-white transition-transform duration-300 will-change-transform w-full max-w-xs sm:max-w-sm md:max-w-md"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -77,11 +76,11 @@ function OurTeam()
                 src={member.image}
                 alt={member.name}
                 loading="lazy"
-                className="w-full h-[350px] object-cover transform transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-[300px] sm:h-[320px] md:h-[350px] object-contain object-center transform transition-transform duration-500 group-hover:scale-110"
               />
 
               {/* Name Overlay */}
-              <div className="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/70 to-transparent text-white font-semibold text-center text-lg">
+              <div className="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-[#133a41] to-transparent text-white font-semibold text-center text-lg">
                 {member.name}
               </div>
 

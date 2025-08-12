@@ -10,7 +10,7 @@ function AboutUs()
       <div className="absolute inset-0 flex items-center justify-center before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(circle,_rgba(220,20,60,0.4)_0%,_rgba(220,20,60,0)_70%)] before:blur-3xl before:opacity-80"></div>
 
 
-      <div className="relative max-w-6xl mx-auto text-white">
+      <div className="relative max-w-6xl mx-auto ">
         {/* Section Title with Animation */}
         <motion.h2
           className="text-4xl font-bold text-center mb-10"
@@ -18,7 +18,7 @@ function AboutUs()
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Welcome to <span className="text-red-500">Vu Devi Services</span>
+          Welcome to <span className="text-red-700">Vu Devi Services</span>
         </motion.h2>
 
         {/* Company Overview with Animation */}
@@ -28,10 +28,10 @@ function AboutUs()
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          <h3 className="text-2xl font-semibold  mb-4">
             Who We Are
           </h3>
-          <p className="text-gray-600">
+          <p className="">
             Vu Devi Services is a trusted partner in{" "}
             <strong>
               medical documentation, data processing, and healthcare support
@@ -54,10 +54,10 @@ function AboutUs()
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-semibold text-red-600 mb-2">
+            <h3 className="text-2xl font-semibold text-red-700 mb-2">
               Our Vision
             </h3>
-            <p className="text-gray-700">
+            <p className="">
               To be the <strong>leading provider</strong> of medical
               documentation and healthcare support, ensuring
               <strong> efficiency, compliance, and innovation</strong> in the
@@ -71,10 +71,10 @@ function AboutUs()
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-semibold text-gray-800 mb-2">
+            <h3 className="text-2xl font-semibold  mb-2">
               Our Mission
             </h3>
-            <p className="text-gray-700">
+            <p className="">
               Our mission is to deliver{" "}
               <strong>precise, high-quality services</strong> while maintaining
               the highest
@@ -94,10 +94,10 @@ function AboutUs()
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          <h3 className="text-2xl font-semibold  mb-4">
             Our Core Values
           </h3>
-          <ul className="list-disc list-inside text-gray-700 text-lg">
+          <ul className="list-disc list-inside  text-lg">
             <li>
               <strong>Integrity:</strong> We operate with honesty and
               transparency.
@@ -128,17 +128,17 @@ function AboutUs()
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <h3 className="text-2xl font-semibold text-red-500 mb-4">
+          <h3 className="text-2xl font-semibold text-red-700 mb-4">
             Why Choose Vu Devi Services?
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-700">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 ">
             <motion.div
               className="bg-white p-6 rounded-lg shadow-md"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h4 className="font-semibold text-red-600">Expertise</h4>
+              <h4 className="font-semibold text-red-700">Expertise</h4>
               <p>
                 10+ years of experience in{" "}
                 <strong>medical documentation & healthcare outsourcing</strong>.
@@ -150,7 +150,7 @@ function AboutUs()
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h4 className="font-semibold text-red-600">Compliance</h4>
+              <h4 className="font-semibold text-red-700">Compliance</h4>
               <p>
                 Adhering to{" "}
                 <strong>global medical standards & regulations</strong>.
@@ -162,7 +162,7 @@ function AboutUs()
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h4 className="font-semibold text-red-600">
+              <h4 className="font-semibold text-red-700">
                 Advanced Technology
               </h4>
               <p>
@@ -176,7 +176,7 @@ function AboutUs()
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h4 className="font-semibold text-red-600">Global Reach</h4>
+              <h4 className="font-semibold text-red-700">Global Reach</h4>
               <p>
                 Serving <strong>clients worldwide</strong> with 24/7 operational
                 support.

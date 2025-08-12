@@ -7,7 +7,6 @@ function NewsUpdates()
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  // Function to toggle visibility
   const toggleExpand = (index) =>
   {
     setExpanded(expanded === index ? null : index);
@@ -18,15 +17,9 @@ function NewsUpdates()
     const observer = new IntersectionObserver(
       ([entry]) =>
       {
-        if (entry.isIntersecting)
-        {
-          setIsVisible(true);
-        } else
-        {
-          setIsVisible(false);
-        }
+        setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.1 }
+      { threshold: 0.15 }
     );
 
     if (sectionRef.current)
@@ -36,139 +29,119 @@ function NewsUpdates()
 
     return () =>
     {
-      if (sectionRef.current)
-      {
-        observer.unobserve(sectionRef.current);
-      }
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className={`py-16 px-6 md:px-12 transition-all duration-1000 transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
+      className={`py-20 px-6 sm:px-12 md:px-16 transition-all duration-700 transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+        } bg-gray-100/50`}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-4xl font-bold text-red-500 text-center mb-12">
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-red-700 text-center mb-16 tracking-wide">
           Latest News & Updates
         </h2>
 
-        <div>
-          {/* News Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-7">
-            {/* News Item 1 */}
-            <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-500 transition hover:shadow-lg duration-300">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-3">
-                New Partnership with Global Hospitals
-              </h3>
-              <p className="text-gray-600">
-                We have partnered with top hospitals to expand our services
-                internationally.
-              </p>
+        {/* News Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 max-w-6xl mx-auto">
+          {[1, 2, 3].map((idx) =>
+          {
+            const newsData = [
+              {
+                title: "New Partnership with Global Hospitals",
+                summary:
+                  "We have partnered with top hospitals to expand our services internationally.",
+                details:
+                  "Our latest collaboration enables us to bring cutting-edge medical documentation solutions to a wider audience, ensuring seamless healthcare processes.",
+              },
+              {
+                title: "New Jobs Openings",
+                summary:
+                  "Strengthening our commitment to HIPAA and GDPR compliance with advanced security measures.",
+                details:
+                  "Our new security infrastructure includes end-to-end encryption, multi-layer authentication, and AI-driven fraud detection.",
+              },
+              {
+                title: "Enhancing Security & Compliance",
+                summary:
+                  "Strengthening our commitment to HIPAA and GDPR compliance with advanced security measures.",
+                details:
+                  "Our new security infrastructure includes end-to-end encryption, multi-layer authentication, and AI-driven fraud detection.",
+              },
+            ];
 
-              {/* Hidden Content */}
-              {expanded === 1 && (
-                <div className="mt-3 text-gray-600">
-                  <p>
-                    Our latest collaboration enables us to bring cutting-edge
-                    medical documentation solutions to a wider audience,
-                    ensuring seamless healthcare processes.
-                  </p>
-                </div>
-              )}
+            const news = newsData[idx - 1];
 
-              {/* Read More Button */}
-              <button
-                className="mt-4 text-red-500 font-medium focus:outline-none cursor-pointer"
-                onClick={() => toggleExpand(1)}
+            return (
+              <div
+                key={idx}
+                className=" p-8 rounded-2xl shadow-lg border-t-8 border-red-600 transition-transform hover:-translate-y-1 hover:shadow-2xl duration-300 cursor-pointer"
+                onClick={() => toggleExpand(idx)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) =>
+                {
+                  if (e.key === "Enter" || e.key === " ")
+                  {
+                    e.preventDefault();
+                    toggleExpand(idx);
+                  }
+                }}
+                aria-expanded={expanded === idx}
+                aria-controls={`news-details-${idx}`}
               >
-                {expanded === 1 ? "Read Less ▲" : "Read More ▼"}
-              </button>
-            </div>
+                <h3 className="text-2xl font-semibold text-[#133a41] mb-3">{news.title}</h3>
+                <p className="text-gray-700">{news.summary}</p>
 
-            {/* News Item 2 */}
-            <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-500 transition hover:shadow-lg duration-300">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-3">
-                New Jobs Openings
-              </h3>
-              <p className="text-gray-600">
-                Strengthening our commitment to HIPAA and GDPR compliance with
-                advanced security measures.
-              </p>
-
-              {/* Hidden Content */}
-              {expanded === 2 && (
-                <div className="mt-3 text-gray-600">
-                  <p>
-                    Our new security infrastructure includes end-to-end
-                    encryption, multi-layer authentication, and AI-driven fraud
-                    detection.
+                {expanded === idx && (
+                  <p
+                    id={`news-details-${idx}`}
+                    className="mt-4 text-gray-600 leading-relaxed"
+                  >
+                    {news.details}
                   </p>
-                </div>
-              )}
+                )}
 
-              {/* Read More Button */}
-              <button
-                className="mt-4 text-red-500 font-medium focus:outline-none cursor-pointer"
-                onClick={() => toggleExpand(2)}
-              >
-                {expanded === 2 ? "Read Less ▲" : "Read More ▼"}
-              </button>
-            </div>
+                <button
+                  className="mt-6 text-red-600 font-semibold focus:outline-none hover:underline"
+                  onClick={(e) =>
+                  {
+                    e.stopPropagation();
+                    toggleExpand(idx);
+                  }}
+                  aria-expanded={expanded === idx}
+                  aria-controls={`news-details-${idx}`}
+                >
+                  {expanded === idx ? "Read Less ▲" : "Read More ▼"}
+                </button>
+              </div>
+            );
+          })}
+        </div>
 
-            {/* Another News Item */}
-            <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-500 transition hover:shadow-lg duration-300">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-3">
-                Enhancing Security & Compliance
-              </h3>
-              <p className="text-gray-600">
-                Strengthening our commitment to HIPAA and GDPR compliance with
-                advanced security measures.
-              </p>
 
-              {/* Hidden Content */}
-              {expanded === 3 && (
-                <div className="mt-3 text-gray-600">
-                  <p>
-                    Our new security infrastructure includes end-to-end
-                    encryption, multi-layer authentication, and AI-driven fraud
-                    detection.
-                  </p>
-                </div>
-              )}
-
-              {/* Read More Button */}
-              <button
-                className="mt-4 text-red-500 font-medium focus:outline-none cursor-pointer"
-                onClick={() => toggleExpand(3)}
-              >
-                {expanded === 3 ? "Read Less ▲" : "Read More ▼"}
-              </button>
-            </div>
+        {/* Insights Section */}
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-12 md:gap-24 bg-gray-50 p-12 rounded-2xl shadow-md max-w-7xl mx-auto border border-gray-300">
+          <div className="flex-1 text-center md:text-left">
+            <h2 className="text-4xl sm:text-4xl md:text-4xl  font-semibold mb-4 tracking-wide text-gray-800">
+              Our Team per Year
+            </h2>
+            <p className="text-gray-600 mb-8 max-w-md mx-auto md:mx-0 leading-relaxed">
+              We’re excited to share the growth and success over the years through data-driven insights.
+            </p>
+            <button className="bg-[#133a41] text-white font-medium px-6 py-2 rounded-lg shadow-sm hover:bg-gray-800 transition-colors duration-300">
+              View More Insights
+            </button>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8 py-16 px-6">
-            {/* Heading */}
-            <div className="text-center md:text-left flex-1">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-red-500 mb-4">
-                Our Team per year
-              </h2>
-              <p className="text-lg text-slate-300 mb-6">
-                We’re excited to share the growth and success.
-              </p>
-              <button className="bg-red-500 px-6 py-3 rounded-full text-white font-medium hover:bg-red-700 transition duration-300">
-                View More Insights
-              </button>
-            </div>
-
-            {/* Chart */}
-            <div className="flex-1 flex justify-center items-center">
-              <Chart />
-            </div>
+          <div className="flex-1 max-w-lg mx-auto">
+            <Chart />
           </div>
         </div>
+
       </div>
     </section>
   );

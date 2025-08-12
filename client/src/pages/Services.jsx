@@ -77,7 +77,7 @@ function Services()
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Title with Animation */}
         <motion.h2
-          className="header text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-[#25727f]"
+          className="header text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-[#133a41]"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

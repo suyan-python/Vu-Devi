@@ -35,8 +35,8 @@ function Navbar()
   const getActiveClass = ({ isActive }) =>
   {
     return isActive
-      ? "text-white font-bold p-1.5 rounded-xl bg-red-500"
-      : "text-red-700 hover:text-red-900 font-semibold";
+      ? "text-white font-bold p-2 rounded-full bg-[#133a41]"
+      : " hover:text-red-900 font-semibold";
   };
 
   return (
@@ -46,15 +46,15 @@ function Navbar()
         <div
           className={`mx-auto w-full max-w-full py-3 font-medium transition-all duration-500
       ${isScrolled
-              ? "px-36 bg-transparent backdrop-blur-[20px] shadow-[#133a41] shadow-md"
-              : "px-7 bg-slate-700/30 shadow-md"
+              ? "px-36  backdrop-blur-[20px] shadow-inner"
+              : "px-7 shadow-md"
             }`}
         >
 
           <div className="flex justify-between items-center">
             {/* Logo Section */}
             <Link to="/">
-              <img src={Logo} alt="vudevi services" className="w-16" />
+              <img src={Logo} alt="vudevi services" className="w-20" />
             </Link>
 
             {/* Mobile Menu Toggle (Hamburger Icon) */}
@@ -87,7 +87,7 @@ function Navbar()
                   end={!link.isButton}
                 >
                   {link.isButton ? (
-                    <button className="text-white font-semibold px-4 py-2 rounded-full text-lg transition duration-300 shadow-lg bg-red-700 hover:bg-red-900 cursor-pointer">
+                    <button className=" text-red-700 font-semibold px-4 py-2 rounded-full text-lg transition duration-300   cursor-pointer">
                       {link.label}
                     </button>
                   ) : (
