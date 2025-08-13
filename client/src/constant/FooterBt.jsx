@@ -47,19 +47,19 @@ const FooterBT = () =>
           {/* Business Type */}
           <div className="hidden lg:flex flex-col items-center animate-pulse">
             <span className="font-semibold">Industry:</span>
-            <span className="text-red-500">Outsourcing services</span>
+            <span className="text-slate-300">Outsourcing services</span>
           </div>
 
           {/* Location */}
           <div className="flex flex-col items-center animate-pulse">
             <span className="font-semibold">Location:</span>
-            <span className="text-red-500">Balkumari, Lalitpur, Nepal</span>
+            <span className="text-slate-300">Balkumari, Lalitpur, Nepal</span>
           </div>
 
           {/* Contact Number */}
           <div className="flex flex-col items-center animate-pulse">
             <span className="font-semibold">Contact:</span>
-            <a href="tel:+9779851174646" className="text-red-500">
+            <a href="tel:+9779851174646" className="text-slate-300">
               +977 9851174646
             </a>
           </div>
@@ -69,9 +69,9 @@ const FooterBT = () =>
             <span className="font-semibold">Email:</span>
             <a
               href="mailto:vudeviservices@gmail.com"
-              className="text-red-500"
+              className="text-slate-300"
             >
-              info@vudeviservices.com
+              vudeviservices@gmail.com
             </a>
           </div>
         </div>

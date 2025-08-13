@@ -1,16 +1,34 @@
-/* src/components/BackgroundAnimation.css */
-.animated-bg {
+/* Common style for all blobs */
+.blob {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(circle at 50% 50%, #85011ba0, transparent 20%);
   filter: blur(50px);
   animation: moveBlob 40s ease-in-out infinite;
   z-index: -1;
 }
 
+/* First blob */
+.blob1 {
+  background: radial-gradient(circle at 50% 50%, #85011ba0, transparent 20%);
+  animation-delay: 0s;
+}
+
+/* Second blob - slightly different red tone */
+.blob2 {
+  background: radial-gradient(circle at 30% 70%, #a61c2cb0, transparent 20%);
+  animation-delay: 10s; /* Staggered for variety */
+}
+
+/* Third blob - even lighter variation */
+.blob3 {
+  background: radial-gradient(circle at 70% 30%, #133a41, transparent 20%);
+  animation-delay: 20s;
+}
+
+/* Animation keyframes */
 @keyframes moveBlob {
   0% {
     transform: translate(-20%, -10%) scale(1);
