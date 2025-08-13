@@ -41,7 +41,7 @@ function NewsUpdates()
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-red-700 text-center mb-16 tracking-wide">
+        <h2 className="text-4xl sm:text-5xl font-extrabold  text-center mb-16 tracking-wide">
           Latest News & Updates
         </h2>
 
@@ -78,7 +78,7 @@ function NewsUpdates()
             return (
               <div
                 key={idx}
-                className=" p-8 rounded-2xl shadow-lg border-t-8 border-red-600 transition-transform hover:-translate-y-1 hover:shadow-2xl duration-300 cursor-pointer"
+                className=" p-8 rounded-2xl shadow-lg border-t-4 border-red-600 transition-transform hover:-translate-y-1 hover:shadow-2xl duration-300 cursor-pointer"
                 onClick={() => toggleExpand(idx)}
                 role="button"
                 tabIndex={0}

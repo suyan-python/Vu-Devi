@@ -6,7 +6,6 @@ import nikita from "../assets/leads/nikita2.png";
 import rajiya from "../assets/leads/rajiya.png";
 import bandana from "../assets/leads/bandana2.png";
 
-
 function WholeTeam()
 {
   const navigate = useNavigate();
@@ -19,14 +18,16 @@ function WholeTeam()
         "Accurate and compliant medical reports tailored to global standards.",
       image: ravi,
       link: "/team/ravi",
+      date: "February, 2014"
     },
     {
       name: "Dr. Nikita Shakya",
-      role: "Medical Report Writer Lead",
+      role: "Medical Report Writer Team Lead",
       description:
         "Accurate and compliant medical reports tailored to global standards.",
       image: nikita,
       link: "/team/nikita",
+      date: "December, 2020"
     },
     {
       name: "Pt. Rajiya Shakya",
@@ -35,6 +36,7 @@ function WholeTeam()
         "Efficient data handling and analytics for healthcare institutions.",
       image: rajiya,
       link: "/team/rajikya",
+      date: 'March, 2018'
     },
     {
       name: "Bandana Manandhar",
@@ -43,41 +45,115 @@ function WholeTeam()
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: bandana,
       link: "/team/bandana",
+      date: "April, 2018"
     },
   ];
+
   const coreTeams = [
     {
-      name: "Ashish",
+      name: "Aayushma Pokharel",
       role: "Medical Report Writer Lead",
       description:
         "Accurate and compliant medical reports tailored to global standards.",
       image: "/images/nikita.jpg",
-
+      date: 'April, 2023'
     },
     {
-      name: "Anup",
+      name: "Dilasha Shakya",
       role: "Data Analytics & Healthcare Operations",
       description:
         "Efficient data handling and analytics for healthcare institutions.",
       image: "/images/rajikya.jpg",
-
+      date: 'August, 2016'
     },
     {
-      name: "Prakash",
+      name: "Dipendra Thapa",
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: "/images/bandana.jpg",
-
+      date: 'March, 2019'
+    },
+    {
+      name: "Karna Bahadur Bam",
+      role: "Medical Report Writer/Lister Lead",
+      description:
+        "End-to-end backend support ensuring seamless healthcare operations.",
+      image: "/images/bandana.jpg",
+      date: 'November, 2019'
+    },
+    {
+      name: "Namita Sangroula",
+      role: "Medical Report Writer/Lister Lead",
+      description:
+        "End-to-end backend support ensuring seamless healthcare operations.",
+      image: "/images/bandana.jpg",
+      date: 'January, 2021'
+    },
+    {
+      name: "Priyasha Mahara",
+      role: "Medical Report Writer/Lister Lead",
+      description:
+        "End-to-end backend support ensuring seamless healthcare operations.",
+      image: "/images/bandana.jpg",
+      date: 'July, 2022'
+    },
+    {
+      name: "Rahul Lama",
+      role: "Medical Report Writer/Lister Lead",
+      description:
+        "End-to-end backend support ensuring seamless healthcare operations.",
+      image: "/images/bandana.jpg",
+      date: 'June, 2021'
+    },
+    {
+      name: "Rojin Shakya",
+      role: "Medical Report Writer/Lister Lead",
+      description:
+        "End-to-end backend support ensuring seamless healthcare operations.",
+      image: "/images/bandana.jpg",
+      date: 'June, 2022'
+    },
+    {
+      name: "Sammyek Ratna Bajracharya",
+      role: "Medical Report Writer/Lister Lead",
+      description:
+        "End-to-end backend support ensuring seamless healthcare operations.",
+      image: "/images/bandana.jpg",
+      date: 'May, 2021'
+    },
+    {
+      name: "Sarita Ale",
+      role: "Medical Report Writer/Lister Lead",
+      description:
+        "End-to-end backend support ensuring seamless healthcare operations.",
+      image: "/images/bandana.jpg",
+      date: 'August, 2023'
+    },
+    {
+      name: "Shristi Manandhar",
+      role: "Medical Report Writer/Lister Lead",
+      description:
+        "End-to-end backend support ensuring seamless healthcare operations.",
+      image: "/images/bandana.jpg",
+      date: 'April, 2022'
+    },
+    {
+      name: "Tripti Halwai",
+      role: "Medical Report Writer/Lister Lead",
+      description:
+        "End-to-end backend support ensuring seamless healthcare operations.",
+      image: "/images/bandana.jpg",
+      date: 'May, 2022'
     },
   ];
 
   return (
-    <section className="w-full py-16 ">
+    <section className="w-full py-20 bg-gray-50/20">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* Section Title with Animation */}
+        {/* ===== Team Leads ===== */}
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-14 text-[#133a41]"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -85,93 +161,82 @@ function WholeTeam()
           Team Leads
         </motion.h2>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        {/* Horizontal scroll on small screens, grid on large */}
+        <div className="flex gap-8 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible">
           {teamLeads.map((member, index) => (
             <motion.div
               key={index}
-              className="relative group cursor-pointer overflow-hidden rounded-3xl shadow-lg transition transform hover:scale-105 hover:shadow-xl duration-300"
+              className="bg-white min-w-[250px] sm:min-w-0 rounded-3xl shadow-md hover:shadow-xl overflow-hidden transition-all duration-300"
               onClick={() => navigate(member.link)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.15 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
             >
-              {/* Team Member Image */}
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-full h-[400px] object-contain bg-white transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75"
-              />
-
-              {/* Always Visible Name Overlay */}
-              <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-[#25727f] via-[#133a41] to-transparent text-white text-center px-4 flex items-center justify-center text-lg font-semibold opacity-100 transition-opacity duration-300 truncate">
-                {member.name}
+              <div className="relative w-full aspect-[4/5] overflow-hidden">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-contain p-6 bg-white transition-transform duration-500 hover:scale-105"
+                />
               </div>
-
-              {/* Hover Bio Section */}
-              <div className="absolute inset-0 backdrop-blur-sm  flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <h3 className="text-xl sm:text-2xl font-semibold text-center">
-                  {member.name}
-                </h3>
-                <p className="text-sm sm:text-lg italic text-center">
-                  {member.role}
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-[#133a41]">{member.name}</h3>
+                <p className="text-[#25727f] font-medium">{member.role}</p>
+                <p className="text-[#25727f] text-xs italic">Since: {member.date}</p>
+                <p className="mt-3 text-gray-600 text-sm leading-relaxed">
+                  {member.description}
                 </p>
-                <p className="mt-2 text-center px-6">{member.description}</p>
-                <button className="my-4  px-3 py-1 rounded-md bg-[#25727f] hover:bg-[#234045] cursor-pointer transition-all duration-500" onClick={() => navigate(member.link)} >View Team</button>
+                <button className="mt-4 px-4 py-2 rounded-lg bg-[#25727f] text-white hover:bg-[#1b555c] transition-colors text-sm">
+                  View Team
+                </button>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 my-10">
-        {/* Section Title with Animation */}
+      {/* ===== Divider ===== */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <hr className="my-20 border-gray-300" />
+      </div>
+
+      {/* ===== Core Team ===== */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 "
+          className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 text-[#133a41]"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Core Team
+          Some of our Experienced Employees
         </motion.h2>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {coreTeams.map((member, index) => (
             <motion.div
               key={index}
-              className="relative group cursor-pointer overflow-hidden rounded-3xl shadow-lg transition transform hover:scale-105 hover:shadow-xl duration-300"
+              className="bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.15 }}
+              transition={{ duration: 0.6, delay: index * 0.05 }}
             >
-              {/* Team Member Image */}
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75"
-              />
-
-              {/* Always Visible Name Overlay */}
-              <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-[#25727f] via-[#133a41] to-transparent text-white text-center px-4 flex items-center justify-center text-lg font-semibold opacity-100 transition-opacity duration-300 truncate">
-                {member.name}
+              <div className="relative w-full aspect-square overflow-hidden">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                />
               </div>
-
-              {/* Hover Bio Section */}
-              <div className="absolute inset-0 backdrop-blur-sm bg-opacity-70 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <h3 className="text-xl sm:text-2xl font-semibold text-center">
-                  {member.name}
-                </h3>
-                <p className="text-sm sm:text-lg italic text-center">
-                  {member.role}
-                </p>
-                <p className="mt-2 text-center px-6">{member.description}</p>
-
+              <div className="p-3">
+                <h3 className="text-sm font-semibold text-[#133a41] truncate">{member.name}</h3>
+                <p className="text-xs text-[#25727f] font-medium truncate">{member.role}</p>
+                <p className="text-[#25727f] text-xs italic">Since: {member.date}</p>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
     </section>
   );
 }

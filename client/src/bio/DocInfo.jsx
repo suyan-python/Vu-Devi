@@ -1,14 +1,17 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import bandana from "../assets/leads/bandana.JPG";
+import ravi from "../assets/leads/ravi.png";
+import nikita2 from "../assets/leads/nikita2.png";
+import rajiya from "../assets/leads/rajiya.png";
+import bandana from "../assets/leads/bandana2.png";
 
 const doctorData = {
   nikita: {
     name: "Dr. Nikita Shakya",
     designation: "Medical Report Writer Lead",
     joiningDate: "December, 2020",
-    image: "/images/nikita.jpg",
+    image: nikita2,
     bio: "Dr. Nikita Shakya is an expert in crafting precise and compliant medical reports, ensuring adherence to global standards. With over 6 years of experience in the medical field, she has contributed to numerous healthcare projects.",
     mail: "nikita@reportprep.com",
     teamMembers: [
@@ -34,11 +37,11 @@ const doctorData = {
       "Dr. Shushil Sah",
     ],
   },
-  rajikya: {
+  rajiya: {
     name: "Pt. Rajiya Shakya",
     designation: "Physiotherapy report writer Lead",
     joiningDate: "March, 2018",
-    image: "/images/rajikya.jpg",
+    image: rajiya,
     bio: "Rajikya specializes in handling large-scale healthcare data, ensuring efficiency in medical data processing and analytics. His leadership has streamlined data operations in multiple hospitals.",
     mail: "rajiya@reportprep.com",
     teamMembers: [
@@ -86,7 +89,7 @@ const doctorData = {
     name: "Ravi Sunder Shrestha",
     designation: "Downloader",
     joiningDate: "February, 2014",
-    image: '/image',
+    image: ravi,
     bio: "Ravi is responsible for backend operations, ensuring seamless healthcare support systems. She has played a key role in integrating new technologies into medical report listing systems.",
     mail: "ravi@reportprep.com",
     teamMembers: [
@@ -138,7 +141,7 @@ function DocInfo()
             alt={doctor.name}
             className="w-48 h-48 rounded-full mx-auto object-cover shadow-lg mb-6"
           />
-          <h2 className="text-3xl font-bold text-red-600">{doctor.name}</h2>
+          <h2 className="text-3xl font-bold ">{doctor.name}</h2>
 
           {doctor.mail && (
             <a
@@ -149,19 +152,19 @@ function DocInfo()
             </a>
           )}
 
-          <p className="text-lg text-gray-700 font-semibold">
+          <p className="text-lg  font-semibold">
             {doctor.designation}
           </p>
-          <p className="text-md text-gray-500 italic">
+          <p className="text-md  italic">
             Joined: {doctor.joiningDate}
           </p>
 
-          <p className="mt-4 text-gray-700 text-lg">{doctor.bio}</p>
+          <p className="mt-4  text-lg">{doctor.bio}</p>
         </motion.div>
 
         {/* Team Members Section */}
         <div className="mt-12">
-          <h3 className="text-2xl font-semibold text-center text-red-600">
+          <h3 className="text-2xl font-semibold text-center ">
             Team Members
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
@@ -173,10 +176,10 @@ function DocInfo()
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <h4 className="text-lg font-semibold text-gray-800">
+                <h4 className="text-lg font-semibold ">
                   {member}
                 </h4>
-                <p className="text-gray-600 text-sm">Medical Staff</p>
+                <p className=" text-sm">Medical Staff</p>
               </div>
             ))}
           </div>

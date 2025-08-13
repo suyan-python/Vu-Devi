@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import Logo from "../assets/logo/logo.png"
+import { motion, AnimatePresence } from "framer-motion";
+import Logo from "../assets/logo/logo.png";
 
 function Navbar()
 {
@@ -9,19 +10,11 @@ function Navbar()
 
   useEffect(() =>
   {
-    const handleScroll = () =>
-    {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () =>
-  {
-    setIsMenuOpen(!isMenuOpen);
-
-  };
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "/about", label: "Vudevi" },
@@ -31,106 +24,94 @@ function Navbar()
     { to: "/application", label: "Apply for Job", isButton: true },
   ];
 
-  // Function to get the active class
   const getActiveClass = ({ isActive }) =>
-  {
-    return isActive
-      ? "text-white font-bold p-2 rounded-full bg-[#133a41]"
-      : " hover:text-red-900 font-semibold";
-  };
+    isActive
+      ? "text-white font-semibold p-2 rounded-full bg-[#133a41]"
+      : "hover:text-red-700 font-semibold transition-colors duration-300";
 
   return (
     <>
       {/* Navbar */}
-      <nav className="fixed top-0 w-full z-50 transition-all duration-500">
+      <nav
+        className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? "backdrop-blur-md shadow-lg py-3" : "py-5"
+          }`}
+      >
         <div
-          className={`mx-auto w-full max-w-full py-3 font-medium transition-all duration-500
-      ${isScrolled
-              ? "px-36  backdrop-blur-[20px] shadow-inner"
-              : "px-7 shadow-md"
-            }`}
+          className={`mx-auto max-w-7xl px-6 md:px-12 flex justify-between items-center transition-all duration-500`}
         >
+          {/* Logo */}
+          <Link to="/">
+            <img src={Logo} alt="Vu Devi Services" className="w-20 md:w-24" />
+          </Link>
 
-          <div className="flex justify-between items-center">
-            {/* Logo Section */}
-            <Link to="/">
-              <img src={Logo} alt="vudevi services" className="w-20" />
-            </Link>
-
-            {/* Mobile Menu Toggle (Hamburger Icon) */}
-            <div className="md:hidden">
-              <button onClick={toggleMenu} className="hover:text-red-300">
-                <svg
-                  className="w-7 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-
-            {/* Desktop Navbar Links */}
-            <div className="hidden md:flex items-center gap-7">
-              {navLinks.map((link, index) => (
-                <NavLink
-                  key={index}
-                  to={link.to}
-                  className={getActiveClass}
-                  end={!link.isButton}
-                >
-                  {link.isButton ? (
-                    <button className=" text-red-700 font-semibold px-4 py-2 rounded-full text-lg transition duration-300   cursor-pointer">
-                      {link.label}
-                    </button>
-                  ) : (
-                    link.label
-                  )}
+          {/* Desktop Links */}
+          <div className="hidden md:flex items-center gap-6 lg:gap-10">
+            {navLinks.map((link, idx) =>
+              link.isButton ? (
+                <NavLink key={idx} to={link.to} className="hidden md:inline-block">
+                  <button className="font-extrabold px-5 py-2 rounded-full text-white bg-[#133a41] hover:bg-red-700 transition-all duration-300">
+                    {link.label}
+                  </button>
                 </NavLink>
-              ))}
-            </div>
+              ) : (
+                <NavLink key={idx} to={link.to} className={getActiveClass} end>
+                  {link.label}
+                </NavLink>
+              )
+            )}
+          </div>
+
+          {/* Mobile Hamburger */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+              className="text-gray-800 hover:text-red-700 transition-colors duration-300"
+            >
+              {isMenuOpen ? (
+                <span className="text-3xl">✖</span>
+              ) : (
+                <span className="text-3xl">☰</span>
+              )}
+            </button>
           </div>
         </div>
       </nav>
-      {/* Mobile Menu */}
-      <div
-        className={`fixed top-0 left-0 w-full h-screen bg-white shadow-lg transition-transform transform ${isMenuOpen ? "translate-x-0" : "-translate-x-full"
-          } md:hidden flex flex-col items-center justify-center z-50`}
-      >
-        <button
-          onClick={toggleMenu}
-          className="absolute top-6 right-6 text-red-500 hover:text-red-700"
-        >
-          ✖
-        </button>
-        {navLinks.map((link, index) => (
-          <NavLink
-            key={index}
-            to={link.to}
-            className={`text-xl text-red-500 hover:text-red-700 mb-6`}
-            onClick={() => setIsMenuOpen(false)}
-            end={!link.isButton}
-          >
-            {link.isButton ? (
-              <button className="text-white font-semibold px-6 py-3 mt-4 rounded-full text-lg transition duration-300 shadow-lg bg-red-700 hover:bg-red-900">
-                {link.label}
-              </button>
-            ) : (
-              link.label
-            )}
-          </NavLink>
-        ))}
-      </div>
 
-      {/* Prevent content from overlapping with Navbar */}
-      <div className="pt-20"></div>
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="fixed top-0 left-0 w-full h-screen bg-white z-40 flex flex-col items-center justify-center gap-6 md:hidden shadow-lg"
+          >
+            {navLinks.map((link, idx) =>
+              link.isButton ? (
+                <NavLink key={idx} to={link.to} onClick={() => setIsMenuOpen(false)}>
+                  <button className="font-semibold px-6 py-3 rounded-full bg-[#133a41] text-white hover:bg-red-700 transition-all duration-300">
+                    {link.label}
+                  </button>
+                </NavLink>
+              ) : (
+                <NavLink
+                  key={idx}
+                  to={link.to}
+                  className="text-2xl text-gray-800 hover:text-red-700 transition-colors duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                  end
+                >
+                  {link.label}
+                </NavLink>
+              )
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Spacer to prevent overlap */}
+      <div className="pt-24 md:pt-28"></div>
     </>
   );
 }

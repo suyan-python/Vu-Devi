@@ -1,9 +1,6 @@
-import React, { useState, useEffect, useRef, Suspense } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/logo/logo.png";
-
-// Lazy load OurTeam
-const OurTeam = React.lazy(() => import("../pages/OurTeam"));
 
 function Hero()
 {
@@ -20,13 +17,45 @@ function Hero()
     return () => heroRef.current && observer.unobserve(heroRef.current);
   }, []);
 
+  const stats = [
+    { value: 10, label: "Years Experience", icon: "⏳" },
+    { value: 500, label: "Projects Completed", icon: "📄" },
+    { value: 50, label: "Trusted Partners", icon: "🤝" },
+  ];
+
+  const [counters, setCounters] = useState(stats.map(() => 0));
+
+  useEffect(() =>
+  {
+    if (!isVisible) return;
+
+    const intervals = stats.map((stat, index) =>
+    {
+      const increment = stat.value / 100; // smoother increment
+      return setInterval(() =>
+      {
+        setCounters((prev) =>
+        {
+          const newCounters = [...prev];
+          if (newCounters[index] < stat.value)
+          {
+            newCounters[index] = Math.min(newCounters[index] + increment, stat.value);
+          }
+          return newCounters;
+        });
+      }, 20);
+    });
+
+    return () => intervals.forEach((i) => clearInterval(i));
+  }, [isVisible]);
+
   return (
     <section
       ref={heroRef}
-      className={`relative transition-all duration-1000 min-h-screen flex ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      className={`relative transition-all duration-1000 min-h-screen flex items-center ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
     >
-      <div className="max-w-fit mx-auto w-full px-6 sm:px-12 lg:px-16 xl:px-24 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+      <div className="max-w-fit mx-auto w-full px-6 sm:px-12 lg:px-16 xl:px-24 grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 items-center">
 
         {/* Left Section */}
         <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
@@ -63,14 +92,29 @@ function Hero()
           </div>
         </div>
 
-        {/* Right Section - Team Preview */}
-        <div className="flex justify-center lg:justify-end">
-          <Suspense fallback={<div className="text-[#133a41]">Loading team...</div>}>
-            <div className="w-full max-w-md sm:max-w-lg lg:max-w-none">
-              <OurTeam />
+        {/* Right Section */}
+        <div className="relative">
+          <div className="bg-white/30 backdrop-blur-md rounded-3xl p-8 flex flex-col gap-6 items-center shadow-lg">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#133a41] mb-6">
+              Our Journey in Numbers
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
+              {stats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center bg-gray-50 rounded-xl shadow-md p-6 hover:scale-105 transform transition-transform duration-300"
+                >
+
+                  <p className="text-[#dc143c] text-3xl sm:text-4xl font-extrabold mt-2">
+                    {Math.floor(counters[index])}+
+                  </p>
+                  <p className="text-gray-700 text-center mt-1">{stat.label}</p>
+                </div>
+              ))}
             </div>
-          </Suspense>
+          </div>
         </div>
+
       </div>
     </section>
   );

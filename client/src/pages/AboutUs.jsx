@@ -129,7 +129,7 @@ function AboutUs()
           transition={{ duration: 0.8 }}
         >
           <h3 className="text-2xl font-semibold text-red-700 mb-4">
-            Why Choose Vu Devi Services?
+            Why Vu Devi Services?
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 ">
             <motion.div

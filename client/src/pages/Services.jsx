@@ -73,7 +73,7 @@ function Services()
   ];
 
   return (
-    <section className="w-full py-16 bg-slate-400/10 my-8 ">
+    <section className="w-full py-16  my-8 ">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Title with Animation */}
         <motion.h2
