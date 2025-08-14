@@ -12,7 +12,7 @@ function MeetFounder()
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <h3 className="header text-5xl font-bold  mb-12 text-center">
+                <h3 className="header text-5xl font-semibold  mb-12 text-center">
                     Meet Our Founder
                 </h3>
 
@@ -31,7 +31,7 @@ function MeetFounder()
 
 
                         {/* Name & Designation */}
-                        <p className="text-red-700 font-semibold text-3xl mt-6">
+                        <p className="header text-red-700 font-semibold text-3xl mt-6">
                             Mr. Binayak Malla
                         </p>
                         <p className=" text-lg">Founder & CEO</p>
@@ -40,7 +40,7 @@ function MeetFounder()
 
                     {/* Right Column: Introduction & Vision */}
                     <div className="subheader max-w-xl">
-                        <p className=" text-5xl font-extrabold leading-snug">
+                        <p className=" header text-5xl font-extrabold leading-snug">
                             Hi there,{" "}
                             <span className="text-red-700 block">I'm Binayak</span>
                         </p>

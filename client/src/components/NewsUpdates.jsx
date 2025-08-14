@@ -41,7 +41,7 @@ function NewsUpdates()
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-4xl sm:text-5xl font-extrabold  text-center mb-16 tracking-wide">
+        <h2 className="header text-4xl sm:text-5xl font-extrabold  text-center mb-16 tracking-wide">
           Latest News & Updates
         </h2>
 
@@ -78,7 +78,7 @@ function NewsUpdates()
             return (
               <div
                 key={idx}
-                className=" p-8 rounded-2xl shadow-lg border-t-4 border-red-600 transition-transform hover:-translate-y-1 hover:shadow-2xl duration-300 cursor-pointer"
+                className=" subheader p-8 rounded-2xl shadow-lg border-t-4 border-red-600 transition-transform hover:-translate-y-1 hover:shadow-2xl duration-300 cursor-pointer"
                 onClick={() => toggleExpand(idx)}
                 role="button"
                 tabIndex={0}
@@ -124,9 +124,9 @@ function NewsUpdates()
 
 
         {/* Insights Section */}
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-12 md:gap-24 bg-gray-50 p-12 rounded-2xl shadow-md max-w-7xl mx-auto border border-gray-300">
+        <div className=" subheader flex flex-col md:flex-row items-center md:items-start justify-between gap-12 md:gap-24 bg-gray-50 p-12 rounded-2xl shadow-md max-w-7xl mx-auto border border-gray-300">
           <div className="flex-1 text-center md:text-left">
-            <h2 className="text-4xl sm:text-4xl md:text-4xl  font-semibold mb-4 tracking-wide text-gray-800">
+            <h2 className="header text-4xl sm:text-4xl md:text-4xl  font-semibold mb-4 tracking-wide text-gray-800">
               Our Team per Year
             </h2>
             <p className="text-gray-600 mb-8 max-w-md mx-auto md:mx-0 leading-relaxed">

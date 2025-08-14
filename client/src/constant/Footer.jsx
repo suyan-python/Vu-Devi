@@ -1,16 +1,17 @@
 import React from "react";
+import logo from "../assets/logo/logo.png"
 
 function Footer()
 {
   return (
-    <footer className="bg-gradient-to-t from-themeColor via-darkThemeColor to-gray-900 text-white pt-8 mb-8 w-full z-10">
+    <footer className=" pt-8 mb-8 w-full z-10 px-32">
       <div className="max-w-full mx-auto px-6 sm:px-12 ">
         {/* Footer Top Section */}
         <div className="flex flex-col sm:flex-row justify-between items-center mb-12">
           {/* Company Info */}
           <div className="mb-8 sm:mb-0 w-full sm:w-1/2">
-            <h3 className="text-3xl font-semibold">Vu Devi Services</h3>
-            <p className="text-lg text-white mt-4 max-w-xs sm:max-w-md">
+            <img src={logo} className="w-28" alt="" />
+            <p className="text-lg  mt-4 max-w-xs sm:max-w-md">
               Empowering healthcare with reliable outsourcing solutions.
               Dedicated to delivering excellence in medical documentation, data
               processing, and healthcare support.

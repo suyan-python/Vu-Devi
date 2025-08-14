@@ -11,7 +11,7 @@ const FooterBT = () =>
     switch (location.pathname)
     {
       case "/":
-        return "bg-animate4";
+        return "bg-animate3";
       case "/process":
         return "bg-black";
       case "/farming":

@@ -21,13 +21,13 @@ function WholeTeam()
       date: "February, 2014"
     },
     {
-      name: "Dr. Nikita Shakya",
-      role: "Medical Report Writer Team Lead",
+      name: "Bandana Manandhar",
+      role: "Medical Report Writer/Lister Lead",
       description:
-        "Accurate and compliant medical reports tailored to global standards.",
-      image: nikita,
-      link: "/team/nikita",
-      date: "December, 2020"
+        "End-to-end backend support ensuring seamless healthcare operations.",
+      image: bandana,
+      link: "/team/bandana",
+      date: "April, 2018"
     },
     {
       name: "Pt. Rajiya Shakya",
@@ -39,13 +39,13 @@ function WholeTeam()
       date: 'March, 2018'
     },
     {
-      name: "Bandana Manandhar",
-      role: "Medical Report Writer/Lister Lead",
+      name: "Dr. Nikita Shakya",
+      role: "Medical Report Writer Team Lead",
       description:
-        "End-to-end backend support ensuring seamless healthcare operations.",
-      image: bandana,
-      link: "/team/bandana",
-      date: "April, 2018"
+        "Accurate and compliant medical reports tailored to global standards.",
+      image: nikita,
+      link: "/team/nikita",
+      date: "December, 2020"
     },
   ];
 
@@ -153,7 +153,7 @@ function WholeTeam()
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* ===== Team Leads ===== */}
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-14 text-[#133a41]"
+          className="header text-3xl sm:text-4xl md:text-5xl font-semibold text-center mb-14 text-[#133a41]"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -162,7 +162,7 @@ function WholeTeam()
         </motion.h2>
 
         {/* Horizontal scroll on small screens, grid on large */}
-        <div className="flex gap-8 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible">
+        <div className="subheader flex gap-8 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible">
           {teamLeads.map((member, index) => (
             <motion.div
               key={index}

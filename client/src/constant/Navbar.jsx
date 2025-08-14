@@ -33,12 +33,10 @@ function Navbar()
     <>
       {/* Navbar */}
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? "backdrop-blur-md shadow-lg py-3" : "py-5"
+        className={`subheader fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? "backdrop-blur-md shadow-lg py-3" : "py-5"
           }`}
       >
-        <div
-          className={`mx-auto max-w-7xl px-6 md:px-12 flex justify-between items-center transition-all duration-500`}
-        >
+        <div className="mx-auto max-w-6xl px-6 flex justify-between items-center transition-all duration-500">
           {/* Logo */}
           <Link to="/">
             <img src={Logo} alt="Vu Devi Services" className="w-20 md:w-24" />
@@ -89,7 +87,11 @@ function Navbar()
           >
             {navLinks.map((link, idx) =>
               link.isButton ? (
-                <NavLink key={idx} to={link.to} onClick={() => setIsMenuOpen(false)}>
+                <NavLink
+                  key={idx}
+                  to={link.to}
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   <button className="font-semibold px-6 py-3 rounded-full bg-[#133a41] text-white hover:bg-red-700 transition-all duration-300">
                     {link.label}
                   </button>
@@ -110,7 +112,7 @@ function Navbar()
         )}
       </AnimatePresence>
 
-      {/* Spacer to prevent overlap */}
+      {/* Spacer to prevent content overlap */}
       <div className="pt-24 md:pt-28"></div>
     </>
   );

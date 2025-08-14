@@ -77,7 +77,7 @@ function Services()
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Title with Animation */}
         <motion.h2
-          className="header text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-[#133a41]"
+          className="header text-3xl sm:text-4xl md:text-5xl font-semibold text-center mb-12 text-[#133a41]"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -90,7 +90,7 @@ function Services()
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white p-8 rounded-3xl shadow-lg text-center transition transform hover:scale-105 hover:shadow-xl duration-300 flex flex-col justify-between min-h-[270px]"
+              className="subheader bg-gradient-to-b from-white/70 to-red-400/30 p-8 rounded-3xl shadow-lg text-center transition transform hover:scale-105 hover:shadow-xl duration-300 flex flex-col justify-between min-h-[270px]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.15 }}
