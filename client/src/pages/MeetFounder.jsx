@@ -32,7 +32,7 @@ function MeetFounder()
 
                         {/* Name & Designation */}
                         <p className="header text-red-700 font-semibold text-3xl mt-6">
-                            Mr. Binayak Malla
+                            Binayak Malla
                         </p>
                         <p className=" text-lg">Founder & CEO</p>
 
@@ -40,7 +40,7 @@ function MeetFounder()
 
                     {/* Right Column: Introduction & Vision */}
                     <div className="subheader max-w-xl">
-                        <p className=" header text-5xl font-extrabold leading-snug">
+                        <p className=" header text-5xl  leading-snug text-yellow-500">
                             Hi there,{" "}
                             <span className="text-red-700 block">I'm Binayak</span>
                         </p>
@@ -60,7 +60,7 @@ function MeetFounder()
                             businesses—we build <i>impactful solutions</i> that last.
                         </p>
 
-                        <p className=" font-semibold text-lg mt-8 italic border-l-4 border-red-700 pl-4">
+                        <p className=" header font-semibold text-lg mt-8 italic border-l-4 border-red-700 pl-4">
                             "Great ideas start with a vision, but success comes from action."
                         </p>
                     </div>

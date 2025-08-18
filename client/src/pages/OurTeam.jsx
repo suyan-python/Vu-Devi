@@ -8,20 +8,20 @@ import { useNavigate } from "react-router-dom";
 
 const teamMembers = [
   {
-    name: "Ravi Sunder Shrestha",
-    role: "Medical Report Writer Lead",
-    quote:
-      "Every report we deliver carries the weight of our commitment to precision and care. My mission is to ensure our work meets the highest global standards.",
-    image: ravi,
-    link: "/team/ravi",
-  },
-  {
     name: "Dr. Nikita Shakya",
     role: "Medical Report Writer Lead",
     quote:
       "Medical documentation is not just about accuracy — it's about trust. We work to bridge that gap every single day for our clients worldwide.",
     image: nikita,
     link: "/team/nikita",
+  },
+  {
+    name: "Pt. Rajiya Shakya",
+    role: "Data Analytics & Healthcare Operations",
+    quote:
+      "Data tells stories that can transform healthcare. I’m passionate about turning complex information into actionable insights.",
+    image: rajiya,
+    link: "/team/rajiya",
   },
   {
     name: "Pt. Bandana Manandhar",
@@ -32,12 +32,12 @@ const teamMembers = [
     link: "/team/bandana",
   },
   {
-    name: "Pt. Rajiya Shakya",
-    role: "Data Analytics & Healthcare Operations",
+    name: "Ravi Sunder Shrestha",
+    role: "Medical Report Writer Lead",
     quote:
-      "Data tells stories that can transform healthcare. I’m passionate about turning complex information into actionable insights.",
-    image: rajiya,
-    link: "/team/rajiya",
+      "Every report we deliver carries the weight of our commitment to precision and care. My mission is to ensure our work meets the highest global standards.",
+    image: ravi,
+    link: "/team/ravi",
   },
 ];
 
@@ -47,64 +47,69 @@ function OurTeam()
 
   return (
     <section className="w-full px-4 sm:px-6 md:px-8 py-16">
-      <div className="max-w-7xl mx-auto bg-white/50 rounded-3xl py-8 px-2">
+      <div className="max-w-7xl mx-auto bg-white/50 rounded-3xl py-12 px-6">
         {/* Section Title */}
-        <motion.h2
-          className="header text-3xl sm:text-4xl md:text-5xl font-semibold text-center mb-16 text-[#133a41]"
+        <motion.div
+          className="text-center mb-16"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h1>Meet Our Leadership Team</h1>
-          <span className="subheader text-[18px] font-normal text-gray-500">
+          <h2 className="header text-3xl sm:text-4xl md:text-5xl font-semibold text-[#133a41]">
+            Meet Our Leadership Team
+          </h2>
+          <p className="subheader mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
             A group of passionate professionals dedicated to shaping our vision and driving our success forward
-          </span>
-        </motion.h2>
+          </p>
+        </motion.div>
 
-        {/* Alternating Layout */}
-        {teamMembers.map((member, index) => (
-          <motion.div
-            key={index}
-            className={`flex flex-col md:flex-row items-center gap-10 mb-20 ${index % 2 === 1 ? "md:flex-row-reverse" : ""
-              }`}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-          >
-            {/* Image */}
-            <div className="w-full md:w-1/2 flex justify-center">
-              <img
-                src={member.image}
-                alt={member.name}
-                className={`rounded-2xl shadow-lg w-full h-auto max-w-md object-contain bg-white  ${index % 2 === 1 ? "border-l-8" : "border-r-8"
-                  }`}
-              />
-            </div>
+        {/* Team Layout */}
+        <div className="space-y-20">
+          {teamMembers.map((member, index) => (
+            <motion.div
+              key={index}
+              className={`flex flex-col md:flex-row items-center gap-12 ${index % 2 === 1 ? "md:flex-row-reverse" : ""
+                }`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              {/* Image */}
+              <div className="w-full md:w-1/2 flex justify-center">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className={`rounded-2xl shadow-lg w-full max-w-sm object-cover ${index % 2 === 1 ? "border-l-8" : "border-r-8"}`}
+                />
+              </div>
 
-            {/* Text Content */}
-            <div className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center px-12">
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#133a41]">{member.name}</h3>
-              <p className="text-[#25727f] font-semibold mb-4">{member.role}</p>
-              <blockquote className="italic text-gray-700 leading-relaxed text-lg">
-                “{member.quote}”
-              </blockquote>
-              <button
-                className="mt-4 px-4 py-2 bg-[#25727f] hover:bg-[#1b555c] rounded-lg text-sm transition-colors text-white"
-                onClick={(e) =>
-                {
-                  e.stopPropagation();
-                  navigate(member.link);
-                }}
-              >
-                View Team
-              </button>
-            </div>
-          </motion.div>
-
-
-        ))}
+              {/* Text */}
+              <div className="subheader w-full md:w-1/2 text-center md:text-left flex flex-col justify-center max-w-lg">
+                <h3 className="header text-2xl sm:text-3xl font-bold text-[#133a41]">
+                  {member.name}
+                </h3>
+                <p className="text-[#25727f] font-medium mt-2 mb-4">
+                  {member.role}
+                </p>
+                <blockquote className="italic text-gray-700 leading-relaxed text-lg mb-6">
+                  “{member.quote}”
+                </blockquote>
+                <button
+                  className="mx-auto md:mx-0 px-5 py-2 bg-[#25727f] hover:bg-[#1b555c] rounded-lg text-sm font-medium transition-colors text-white"
+                  onClick={(e) =>
+                  {
+                    e.stopPropagation();
+                    navigate(member.link);
+                  }}
+                >
+                  View Team
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

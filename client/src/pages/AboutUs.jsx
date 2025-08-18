@@ -1,19 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion"; // Importing Framer Motion
-import Binayak from "../assets/person/binayak2.jpeg"
 
 function AboutUs()
 {
   return (
-    <section className="relative py-16 px-6 overflow-hidden">
+    <section className="relative py-28 px-6 overflow-hidden">
       {/* Blurred red Gradient Background */}
       <div className="absolute inset-0 flex items-center justify-center before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(circle,_rgba(220,20,60,0.4)_0%,_rgba(220,20,60,0)_70%)] before:blur-3xl before:opacity-80"></div>
 
 
-      <div className="relative max-w-6xl mx-auto ">
+      <div className="relative max-w-6xl mx-auto">
         {/* Section Title with Animation */}
         <motion.h2
-          className="text-4xl font-bold text-center mb-10"
+          className="header text-5xl font-semibold text-center mb-10"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -23,7 +22,7 @@ function AboutUs()
 
         {/* Company Overview with Animation */}
         <motion.div
-          className="bg-white p-8 rounded-xl shadow-lg transition duration-300 mb-12"
+          className="subheader not-first:bg-white p-8 rounded-xl shadow-lg transition duration-300 mb-12"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
@@ -47,7 +46,7 @@ function AboutUs()
         </motion.div>
 
         {/* Vision & Mission Section with Animation */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="subheader grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <motion.div
             className="p-8 rounded-xl shadow-md border-l-8 border-red-700 bg-white"
             initial={{ opacity: 0, x: -200 }}
@@ -89,7 +88,7 @@ function AboutUs()
 
         {/* Core Values Section with Animation */}
         <motion.div
-          className="bg-white p-8 rounded-xl shadow-lg transition duration-300 mb-12"
+          className="subheader bg-white p-8 rounded-xl shadow-lg transition duration-300 mb-12"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
@@ -123,12 +122,12 @@ function AboutUs()
 
         {/* Why Choose Us Section with Animation */}
         <motion.div
-          className="p-8 rounded-xl transition duration-300 mb-12"
+          className="subheader p-8 rounded-xl transition duration-300 mb-12"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <h3 className="text-2xl font-semibold text-red-700 mb-4">
+          <h3 className="header text-2xl font-semibold text-red-700 mb-4">
             Why Vu Devi Services?
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 ">

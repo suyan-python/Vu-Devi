@@ -119,11 +119,11 @@ function DocInfo()
   }
 
   return (
-    <section className="w-full py-16">
+    <section className="w-full py-16 mt-28">
       <div className="max-w-5xl mx-auto px-6 md:px-12">
         {/* Back Button */}
         <button
-          className="mb-6 text-red-600 hover:underline cursor-pointer"
+          className="mb-6  hover:underline cursor-pointer"
           onClick={() => navigate(-1)}
         >
           ← Back to Team

@@ -12,22 +12,13 @@ function WholeTeam()
 
   const teamLeads = [
     {
-      name: "Dr. Ravi Sunder Shrestha",
-      role: "Downloader",
+      name: "Dr. Nikita Shakya",
+      role: "Medical Report Writer Team Lead",
       description:
         "Accurate and compliant medical reports tailored to global standards.",
-      image: ravi,
-      link: "/team/ravi",
-      date: "February, 2014"
-    },
-    {
-      name: "Bandana Manandhar",
-      role: "Medical Report Writer/Lister Lead",
-      description:
-        "End-to-end backend support ensuring seamless healthcare operations.",
-      image: bandana,
-      link: "/team/bandana",
-      date: "April, 2018"
+      image: nikita,
+      link: "/team/nikita",
+      date: "December, 2020",
     },
     {
       name: "Pt. Rajiya Shakya",
@@ -36,17 +27,27 @@ function WholeTeam()
         "Efficient data handling and analytics for healthcare institutions.",
       image: rajiya,
       link: "/team/rajikya",
-      date: 'March, 2018'
+      date: "March, 2018",
     },
     {
-      name: "Dr. Nikita Shakya",
-      role: "Medical Report Writer Team Lead",
+      name: "Pt. Bandana Manandhar",
+      role: "Medical Report Writer/Lister Lead",
+      description:
+        "End-to-end backend support ensuring seamless healthcare operations.",
+      image: bandana,
+      link: "/team/bandana",
+      date: "April, 2018",
+    },
+    {
+      name: "Dr. Ravi Sunder Shrestha",
+      role: "Downloader",
       description:
         "Accurate and compliant medical reports tailored to global standards.",
-      image: nikita,
-      link: "/team/nikita",
-      date: "December, 2020"
+      image: ravi,
+      link: "/team/ravi",
+      date: "February, 2014",
     },
+
   ];
 
   const coreTeams = [
@@ -56,7 +57,7 @@ function WholeTeam()
       description:
         "Accurate and compliant medical reports tailored to global standards.",
       image: "/images/nikita.jpg",
-      date: 'April, 2023'
+      date: "April, 2023",
     },
     {
       name: "Dilasha Shakya",
@@ -64,7 +65,7 @@ function WholeTeam()
       description:
         "Efficient data handling and analytics for healthcare institutions.",
       image: "/images/rajikya.jpg",
-      date: 'August, 2016'
+      date: "August, 2016",
     },
     {
       name: "Dipendra Thapa",
@@ -72,7 +73,7 @@ function WholeTeam()
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: "/images/bandana.jpg",
-      date: 'March, 2019'
+      date: "March, 2019",
     },
     {
       name: "Karna Bahadur Bam",
@@ -80,7 +81,7 @@ function WholeTeam()
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: "/images/bandana.jpg",
-      date: 'November, 2019'
+      date: "November, 2019",
     },
     {
       name: "Namita Sangroula",
@@ -88,7 +89,7 @@ function WholeTeam()
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: "/images/bandana.jpg",
-      date: 'January, 2021'
+      date: "January, 2021",
     },
     {
       name: "Priyasha Mahara",
@@ -96,7 +97,7 @@ function WholeTeam()
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: "/images/bandana.jpg",
-      date: 'July, 2022'
+      date: "July, 2022",
     },
     {
       name: "Rahul Lama",
@@ -104,7 +105,7 @@ function WholeTeam()
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: "/images/bandana.jpg",
-      date: 'June, 2021'
+      date: "June, 2021",
     },
     {
       name: "Rojin Shakya",
@@ -112,7 +113,7 @@ function WholeTeam()
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: "/images/bandana.jpg",
-      date: 'June, 2022'
+      date: "June, 2022",
     },
     {
       name: "Sammyek Ratna Bajracharya",
@@ -120,7 +121,7 @@ function WholeTeam()
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: "/images/bandana.jpg",
-      date: 'May, 2021'
+      date: "May, 2021",
     },
     {
       name: "Sarita Ale",
@@ -128,7 +129,7 @@ function WholeTeam()
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: "/images/bandana.jpg",
-      date: 'August, 2023'
+      date: "August, 2023",
     },
     {
       name: "Shristi Manandhar",
@@ -136,7 +137,7 @@ function WholeTeam()
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: "/images/bandana.jpg",
-      date: 'April, 2022'
+      date: "April, 2022",
     },
     {
       name: "Tripti Halwai",
@@ -144,12 +145,12 @@ function WholeTeam()
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: "/images/bandana.jpg",
-      date: 'May, 2022'
+      date: "May, 2022",
     },
   ];
 
   return (
-    <section className="w-full py-20 bg-gray-50/20">
+    <section className="w-full py-28 bg-gray-50/20">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* ===== Team Leads ===== */}
         <motion.h2
@@ -161,12 +162,11 @@ function WholeTeam()
           Team Leads
         </motion.h2>
 
-        {/* Horizontal scroll on small screens, grid on large */}
-        <div className="subheader flex gap-8 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible">
+        <div className="subheader flex gap-6 overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible">
           {teamLeads.map((member, index) => (
             <motion.div
               key={index}
-              className="bg-white min-w-[250px] sm:min-w-0 rounded-3xl shadow-md hover:shadow-xl overflow-hidden transition-all duration-300"
+              className="flex flex-col bg-white rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 min-w-[250px] sm:min-w-0"
               onClick={() => navigate(member.link)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -176,16 +176,24 @@ function WholeTeam()
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-contain p-6 bg-white transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-contain p-4 bg-white transition-transform duration-500 hover:scale-105"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-[#133a41]">{member.name}</h3>
-                <p className="text-[#25727f] font-medium">{member.role}</p>
-                <p className="text-[#25727f] text-xs italic">Since: {member.date}</p>
-                <p className="mt-3 text-gray-600 text-sm leading-relaxed">
-                  {member.description}
-                </p>
+              <div className="p-6 flex flex-col justify-between h-full">
+                <div>
+                  <h3 className="text-xl font-bold text-[#133a41] truncate">
+                    {member.name}
+                  </h3>
+                  <p className="text-[#25727f] font-medium truncate">
+                    {member.role}
+                  </p>
+                  <p className="text-[#25727f] text-xs italic">
+                    Since: {member.date}
+                  </p>
+                  <p className="mt-2 text-gray-600 text-sm leading-relaxed">
+                    {member.description}
+                  </p>
+                </div>
                 <button className="mt-4 px-4 py-2 rounded-lg bg-[#25727f] text-white hover:bg-[#1b555c] transition-colors text-sm">
                   View Team
                 </button>
@@ -201,21 +209,21 @@ function WholeTeam()
       </div>
 
       {/* ===== Core Team ===== */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         <motion.h2
-          className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 text-[#133a41]"
+          className="header text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 text-[#133a41]"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Some of our Experienced Employees
+          Experienced Employees
         </motion.h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div className="subheader grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {coreTeams.map((member, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition-all duration-300"
+              className="flex flex-col bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.05 }}
@@ -227,16 +235,23 @@ function WholeTeam()
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
-              <div className="p-3">
-                <h3 className="text-sm font-semibold text-[#133a41] truncate">{member.name}</h3>
-                <p className="text-xs text-[#25727f] font-medium truncate">{member.role}</p>
-                <p className="text-[#25727f] text-xs italic">Since: {member.date}</p>
+              <div className="p-3 flex flex-col justify-between h-full">
+                <div>
+                  <h3 className="text-sm font-semibold text-[#133a41] truncate">
+                    {member.name}
+                  </h3>
+                  <p className="text-xs text-[#25727f] font-medium truncate">
+                    {member.role}
+                  </p>
+                  <p className="text-[#25727f] text-xs italic">
+                    Since: {member.date}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-
     </section>
   );
 }

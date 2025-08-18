@@ -26,20 +26,20 @@ function Navbar()
 
   const getActiveClass = ({ isActive }) =>
     isActive
-      ? "text-white font-semibold p-2 rounded-full bg-[#133a41]"
-      : "hover:text-red-700 font-semibold transition-colors duration-300";
+      ? "text-red-700 font-semibold p-2 rounded-xl"
+      : "hover:text-red-700  transition-colors duration-300";
 
   return (
     <>
       {/* Navbar */}
       <nav
-        className={`subheader fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? "backdrop-blur-md shadow-lg py-3" : "py-5"
+        className={`header fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? "backdrop-blur-md shadow-lg py-3" : "py-3"
           }`}
       >
         <div className="mx-auto max-w-6xl px-6 flex justify-between items-center transition-all duration-500">
           {/* Logo */}
           <Link to="/">
-            <img src={Logo} alt="Vu Devi Services" className="w-20 md:w-24" />
+            <img src={Logo} alt="Vu Devi Services" className="w-20 md:w-24 " />
           </Link>
 
           {/* Desktop Links */}
@@ -47,7 +47,7 @@ function Navbar()
             {navLinks.map((link, idx) =>
               link.isButton ? (
                 <NavLink key={idx} to={link.to} className="hidden md:inline-block">
-                  <button className="font-extrabold px-5 py-2 rounded-full text-white bg-[#133a41] hover:bg-red-700 transition-all duration-300">
+                  <button className="font-bold px-5 py-2 rounded-xl text-white bg-[#133a41] hover:bg-red-700 transition-all duration-300">
                     {link.label}
                   </button>
                 </NavLink>
@@ -113,7 +113,7 @@ function Navbar()
       </AnimatePresence>
 
       {/* Spacer to prevent content overlap */}
-      <div className="pt-24 md:pt-28"></div>
+
     </>
   );
 }

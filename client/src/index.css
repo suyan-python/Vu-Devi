@@ -20,13 +20,15 @@ body {
   padding: 0;
   height: 100%;
   color: #133a41;
-  background-color: #fff4f4;
+  /* background-color: #fff4f4; */
+  background-color: #fffff7;
   overflow-x: hidden;
 }
 
 .header {
   /* font-family: "Poppins", sans-serif; */
-  font-family: "Montserrat", sans-serif;
+  /* font-family: "Montserrat", sans-serif; */
+  font-family: "Bricolage Grotesque", sans-serif;
 }
 .subheader {
   /* font-family: "Roboto", sans-serif; */

@@ -25,7 +25,7 @@ const FooterBT = () =>
       case "/inaya":
         return "bg-amber-900";
       default:
-        return "bg-gray-800";
+        return "bg-animate3";
     }
   };
 

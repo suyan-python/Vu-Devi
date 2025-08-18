@@ -41,7 +41,7 @@ function NewsUpdates()
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <h2 className="header text-4xl sm:text-5xl font-extrabold  text-center mb-16 tracking-wide">
+        <h2 className="header text-4xl sm:text-5xl font-semibold  text-center mb-16 tracking-wide">
           Latest News & Updates
         </h2>
 
