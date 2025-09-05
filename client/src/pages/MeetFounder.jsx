@@ -4,7 +4,7 @@ import Binayak from "../assets/person/binayak2.jpeg"
 function MeetFounder()
 {
     return (
-        <div className="min-h-screen flex items-center justify-center px-6">
+        <div className="min-h-screen flex items-center justify-center px-6 my-8">
 
             <motion.div
                 className="bg-white/10 p-12 rounded-2xl shadow-xl transition duration-300 text-center md:text-left w-full max-w-7xl"
@@ -34,7 +34,7 @@ function MeetFounder()
                         <p className="header text-red-700 font-semibold text-3xl mt-6">
                             Binayak Malla
                         </p>
-                        <p className=" text-lg">Founder & CEO</p>
+                        {/* <p className=" text-lg">Founder & CEO</p> */}
 
                     </div>
 

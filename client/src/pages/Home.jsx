@@ -4,6 +4,7 @@ import MeetFounder from "./MeetFounder";
 import OurTeam from "./OurTeam";
 import Services from "./Services";
 import EmployeeOfTheMonth from "./EmployeeMonth";
+import MeetManagement from "./MeetManagement";
 
 export default function Home()
 {
@@ -11,9 +12,10 @@ export default function Home()
     <div>
       <Hero />
       <EmployeeOfTheMonth />
+      <MeetFounder />
+      <MeetManagement />
       <OurTeam />
       <Services />
-      <MeetFounder />
       <NewsUpdates />
     </div>
   );
