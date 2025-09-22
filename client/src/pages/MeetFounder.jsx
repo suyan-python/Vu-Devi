@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from "framer-motion"; // Importing Framer Motion
 import Binayak from "../assets/person/binayak2.jpeg"
+
 function MeetFounder()
 {
     return (

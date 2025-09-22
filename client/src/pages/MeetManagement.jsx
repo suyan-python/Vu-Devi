@@ -1,11 +1,11 @@
 import React from 'react'
 import { motion } from "framer-motion";
-// import Dilasha from "../assets/person/dilasha.jpeg";
+import Dilasha from "../assets/person/all/Dilasha Shakya.png";
 
 function MeetManagement()
 {
     return (
-        <div className="min-h-screen flex items-center justify-center px-6">
+        <div className="min-h-screen flex items-center justify-center px-6 lg:mt-0">
             <motion.div
                 className="bg-white/10 p-12 rounded-2xl shadow-xl transition duration-300 text-center md:text-left w-full max-w-7xl"
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -46,7 +46,7 @@ function MeetManagement()
                     <div className="flex flex-col items-center text-center order-1 md:order-2">
                         <div className="w-96 h-[550px] overflow-hidden rounded-3xl shadow-lg border border-gray-200">
                             <img
-                                src={'Dilasha'}
+                                src={Dilasha}
                                 alt="Management Head"
                                 className="w-full h-full object-cover"
                             />

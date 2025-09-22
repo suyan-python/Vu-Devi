@@ -16,6 +16,8 @@ import WholeTeam from "./pages/WholeTeam";
 import DocInfo from "./bio/DocInfo";
 import TeamFun from "./pages/TeamFun";
 import BackgroundAnimation from "./components/BackgroundAnimation";
+import AdminDashboard from "../admin/AdminDashboard";
+import AdminLogin from "../admin/AdminLogin";
 
 
 function App()
@@ -28,6 +30,8 @@ function App()
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />

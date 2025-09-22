@@ -13,6 +13,9 @@ export default function JobApplicationForm()
   const [showSuccess, setShowSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const jobDescription = `
 Online data entry and analysis.
@@ -32,81 +35,70 @@ Knowledge of medical terminologies.
   const handleSubmit = async (e) =>
   {
     e.preventDefault();
-    setErrorMessage(""); // Reset error message
+    setLoading(true);
+    setErrorMessage("");
 
-    // Check if email already exists
     try
     {
       const emailCheckResponse = await fetch(
-        `http://localhost:5000/check-email?email=${formData.email}`
+        `${API_URL}/api/applications/check-email?email=${formData.email}`
       );
       const emailCheckData = await emailCheckResponse.json();
 
-      if (!emailCheckResponse.ok)
-      {
-        throw new Error(emailCheckData.error);
-      }
-
       if (emailCheckData.exists)
       {
-        setErrorMessage("You have already applied with this email.");
+        setErrorMessage("⚠️ You have already applied with this email.");
+        setLoading(false);
         return;
       }
-    } catch (error)
-    {
-      console.error("Error checking email:", error);
-      setErrorMessage("Something went wrong. Please try again later.");
-      return;
-    }
 
-    // Proceed with application submission
-    const formDataToSend = new FormData();
-    formDataToSend.append("name", formData.name);
-    formDataToSend.append("email", formData.email);
-    formDataToSend.append("resume", formData.resume);
-    formDataToSend.append("coverLetter", formData.coverLetter);
+      const formDataToSend = new FormData();
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("resume", formData.resume);
+      formDataToSend.append("coverLetter", formData.coverLetter);
 
-    try
-    {
-      const response = await fetch("http://localhost:5000/apply", {
+      const response = await fetch(`${API_URL}/api/applications/apply`, {
         method: "POST",
         body: formDataToSend,
       });
 
       const data = await response.json();
+
       if (response.ok)
       {
         setShowSuccess(true);
-        setFormData({
-          name: "",
-          email: "",
-          resume: null,
-          coverLetter: "",
-        });
+        setFormData({ name: "", email: "", resume: null, coverLetter: "" });
         setResumeName("");
       } else
       {
-        setErrorMessage(data.error);
+        setErrorMessage(data.error || "Submission failed.");
       }
     } catch (error)
     {
       console.error("Error submitting application:", error);
-      setErrorMessage("Submission failed. Try again later.");
+      setErrorMessage("❌ Submission failed. Try again later.");
+    } finally
+    {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="relative">
+    <div className="relative my-32">
       {showSuccess && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-green-200/40 bg-opacity-50 z-50">
-          <div className="bg-white p-6 rounded-lg shadow-xl text-center">
-            <h3 className="text-2xl font-semibold text-green-600">Success!</h3>
-            <p className="mt-2 text-gray-700">
-              Your application has been submitted successfully. Thank you!
+        <div className="subheader fixed inset-0 flex items-center justify-center bg-blue-400/20 z-50 px-4">
+          <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-2xl text-center w-full max-w-md">
+            <h3 className="text-xl sm:text-2xl font-semibold text-green-600">
+              Application Received Success!
+            </h3>
+            <p className="mt-3 text-gray-700 text-sm sm:text-base">
+              Thank you for applying! We will review your application and get
+              back to you shortly.
             </p>
             <button
               onClick={() => setShowSuccess(false)}
-              className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all"
+              className="mt-6 bg-[#0d1b2a] text-white px-6 py-2 sm:py-3 rounded-lg text-sm sm:text-base hover:bg-[#1b263b] transition-all"
             >
               Okay
             </button>
@@ -133,7 +125,7 @@ Knowledge of medical terminologies.
           <button
             type="button"
             onClick={() => setShowModal(true)}
-            className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-all font-semibold cursor-pointer"
+            className="bg-red-700 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-all font-semibold cursor-pointer"
           >
             Job Description
           </button>
@@ -141,29 +133,43 @@ Knowledge of medical terminologies.
 
         {/* Modal for Job Description */}
         {showModal && (
-          <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black/60 z-50 transition-opacity duration-300 ease-in-out">
-            <div className="bg-white p-8 rounded-lg shadow-2xl max-w-lg w-full transform transition-all duration-500 scale-100 ">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4 cursor-pointer">
+          <div
+            className="fixed inset-0 flex items-center justify-center bg-black/60 z-50"
+            onClick={() => setShowModal(false)} // close on outside click
+          >
+            <div
+              className="bg-white p-6 sm:p-8 rounded-lg shadow-2xl w-11/12 max-w-lg max-h-[90vh] overflow-y-auto relative"
+              onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
+            >
+              <button
+                onClick={() => setShowModal(false)}
+                className="absolute top-3 right-3 text-gray-500 hover:text-red-600 text-2xl font-bold"
+              >
+                ×
+              </button>
+
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
                 Job Description
               </h3>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                {jobDescription}
+              <p className="text-gray-700 text-base leading-relaxed">{jobDescription}</p>
+
+              <p className="font-semibold my-5 text-sm sm:text-base">
+                Candidate must have good skills in Microsoft Office package (Word and
+                Excel) and a typing speed of a minimum of 40 words per minute.
               </p>
-              <p className="font-semibold my-5">
-                Candidate must have good skills in Microsoft Office package
-                (Word and Excel) and a typing speed of a minimum of 40 words per
-                minute.
-              </p>
-              <p className="font-semibold mt-4">
+
+              <p className="font-semibold mt-4 text-sm sm:text-base">
                 • Starting Salary (gross): Rs. 40,000 - Rs.50,000 per month
               </p>
-              <p className="text-red-500 font-semibold text-center my-5">
+
+              <p className="text-red-500 font-semibold text-center my-5 text-sm sm:text-base">
                 *We need a commitment of at least 18 months*
               </p>
+
               <div className="flex justify-end mt-6">
                 <button
                   onClick={() => setShowModal(false)}
-                  className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-all cursor-pointer"
+                  className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-all"
                 >
                   Close
                 </button>
@@ -171,6 +177,7 @@ Knowledge of medical terminologies.
             </div>
           </div>
         )}
+
 
         <div className="mb-5">
           <label className="block text-gray-700 font-medium mb-2">
@@ -267,9 +274,11 @@ Knowledge of medical terminologies.
 
         <button
           type="submit"
-          className="w-full bg-red-600 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-red-700 transition-all"
+          disabled={loading}
+          className={`w-full bg-[#0d1b2a] text-white px-6 py-3 rounded-lg text-base sm:text-lg font-semibold transition-all shadow-md hover:shadow-lg hover:bg-[#1b263b] ${loading ? "opacity-60 cursor-not-allowed" : ""
+            }`}
         >
-          Submit Application
+          {loading ? "Submitting..." : "Submit Application"}
         </button>
       </form>
     </div>

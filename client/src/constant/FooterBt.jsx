@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const FooterBT = () =>
 {
   const location = useLocation();
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   // Determine background color based on the current path
   const getFooterBackgroundColor = () =>
@@ -29,9 +31,40 @@ const FooterBT = () =>
     }
   };
 
+  useEffect(() =>
+  {
+    const handleScroll = () =>
+    {
+      const currentScrollY = window.scrollY;
+
+      if (window.innerWidth <= 768)
+      {
+        if (currentScrollY > lastScrollY.current)
+        {
+          // scrolling down
+          setIsVisible(false);
+        } else
+        {
+          // scrolling up
+          setIsVisible(true);
+        }
+      } else
+      {
+        setIsVisible(true); // always visible on desktop
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <footer
-      className={`${getFooterBackgroundColor()} text-white py-2 w-full fixed bottom-0 left-0 z-50`}
+      className={`${getFooterBackgroundColor()} text-white py-2 w-full fixed bottom-0 left-0 z-50
+      transform transition-all duration-500 ease-in-out
+      ${isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
         {/* Company Branding */}
