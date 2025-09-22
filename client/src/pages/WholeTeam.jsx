@@ -6,6 +6,19 @@ import nikita from "../assets/leads/nikita2.png";
 import rajiya from "../assets/leads/rajiya.png";
 import bandana from "../assets/leads/bandana2.png";
 
+import aayushma from "../assets/person/all/Aayushma Pokhrel.png"
+import dipendra from "../assets/person/all/Dipendra Thapa.png"
+import karna from "../assets/person/all/Karna Bahadur Bam.png"
+import namita from "../assets/person/all/Namita Sangroula.png"
+import priyasha from "../assets/person/all/Priyasha Mahara.png"
+import rahul from "../assets/person/all/Rahul Lama.png"
+import rojin from "../assets/person/all/Rojin Shakya.png"
+import sammyek from "../assets/person/all/sammyek ratna .png"
+import sarita from "../assets/person/all/SARITA ALE.png"
+import shristi from "../assets/person/all/Shristi Manandhar.png"
+import tripti from "../assets/person/all/Tripti Rajkarnikar.png"
+
+
 function WholeTeam()
 {
   const navigate = useNavigate();
@@ -21,7 +34,7 @@ function WholeTeam()
       date: "December, 2020",
     },
     {
-      name: "Pt. Rajiya Shakya",
+      name: "Rajiya Shakya",
       role: "Data Analytics & Healthcare Operations",
       description:
         "Efficient data handling and analytics for healthcare institutions.",
@@ -30,7 +43,7 @@ function WholeTeam()
       date: "March, 2018",
     },
     {
-      name: "Pt. Bandana Manandhar",
+      name: "Bandana Manandhar",
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
@@ -39,7 +52,7 @@ function WholeTeam()
       date: "April, 2018",
     },
     {
-      name: "Dr. Ravi Sunder Shrestha",
+      name: "Ravi Sunder Shrestha",
       role: "Downloader",
       description:
         "Accurate and compliant medical reports tailored to global standards.",
@@ -56,23 +69,15 @@ function WholeTeam()
       role: "Medical Report Writer Lead",
       description:
         "Accurate and compliant medical reports tailored to global standards.",
-      image: "/images/nikita.jpg",
+      image: aayushma,
       date: "April, 2023",
-    },
-    {
-      name: "Dilasha Shakya",
-      role: "Data Analytics & Healthcare Operations",
-      description:
-        "Efficient data handling and analytics for healthcare institutions.",
-      image: "/images/rajikya.jpg",
-      date: "August, 2016",
     },
     {
       name: "Dipendra Thapa",
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
-      image: "/images/bandana.jpg",
+      image: dipendra,
       date: "March, 2019",
     },
     {
@@ -80,7 +85,7 @@ function WholeTeam()
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
-      image: "/images/bandana.jpg",
+      image: karna,
       date: "November, 2019",
     },
     {
@@ -88,7 +93,7 @@ function WholeTeam()
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
-      image: "/images/bandana.jpg",
+      image: namita,
       date: "January, 2021",
     },
     {
@@ -96,7 +101,7 @@ function WholeTeam()
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
-      image: "/images/bandana.jpg",
+      image: priyasha,
       date: "July, 2022",
     },
     {
@@ -104,7 +109,7 @@ function WholeTeam()
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
-      image: "/images/bandana.jpg",
+      image: rahul,
       date: "June, 2021",
     },
     {
@@ -112,7 +117,7 @@ function WholeTeam()
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
-      image: "/images/bandana.jpg",
+      image: rojin,
       date: "June, 2022",
     },
     {
@@ -120,7 +125,7 @@ function WholeTeam()
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
-      image: "/images/bandana.jpg",
+      image: sammyek,
       date: "May, 2021",
     },
     {
@@ -128,7 +133,7 @@ function WholeTeam()
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
-      image: "/images/bandana.jpg",
+      image: sarita,
       date: "August, 2023",
     },
     {
@@ -136,7 +141,7 @@ function WholeTeam()
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
-      image: "/images/bandana.jpg",
+      image: shristi,
       date: "April, 2022",
     },
     {
@@ -144,7 +149,7 @@ function WholeTeam()
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
-      image: "/images/bandana.jpg",
+      image: tripti,
       date: "May, 2022",
     },
   ];
@@ -232,7 +237,7 @@ function WholeTeam()
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
                 />
               </div>
               <div className="p-3 flex flex-col justify-between h-full">
