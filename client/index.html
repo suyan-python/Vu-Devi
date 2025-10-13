@@ -75,26 +75,34 @@
     rel="stylesheet"
   />
 
+  <body>
+    <!-- React mounts here -->
+    <div id="root"></div>
+
+    <!-- Vite entry point -->
+    <script type="module" src="/src/main.jsx"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Vu Devi Services Pvt. Ltd.",
+        "url": "https://www.vudeviservices.com",
+        "logo": "https://www.vudeviservices.com/logo.png",
+        "sameAs": [
+          "https://www.linkedin.com/company/vudeviservices",
+          "https://www.facebook.com/vudeviservices"
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+977-XXXXXXXXXX",
+            "contactType": "customer support",
+            "areaServed": "NP"
+          }
+        ]
+      }
+    </script>
+  </body>
+
   <!-- Structured Data (JSON-LD) for Organization -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Vu Devi Services Pvt. Ltd.",
-      "url": "https://www.vudeviservices.com",
-      "logo": "https://www.vudeviservices.com/logo.png",
-      "sameAs": [
-        "https://www.linkedin.com/company/vudeviservices",
-        "https://www.facebook.com/vudeviservices"
-      ],
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "telephone": "+977-XXXXXXXXXX",
-          "contactType": "customer support",
-          "areaServed": "NP"
-        }
-      ]
-    }
-  </script>
 </head>

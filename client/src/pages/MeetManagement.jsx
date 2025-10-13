@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from "framer-motion";
-import Dilasha from "../assets/person/all/Dilasha Shakya.png";
+import Dilasha from "../assets/person/all/dilasha.jpeg";
 
 function MeetManagement()
 {

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vudeviservices.com.np/sitemap.xml

@@ -92,8 +92,8 @@ const FooterBT = () =>
           {/* Contact Number */}
           <div className="flex flex-col items-center animate-pulse">
             <span className="font-semibold">Contact:</span>
-            <a href="tel:+9779851174646" className="text-slate-300">
-              +977 9851174646
+            <a href="tel:+9779817576110" className="text-slate-300">
+              +977 9817576110
             </a>
           </div>
 
