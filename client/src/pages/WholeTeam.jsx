@@ -34,16 +34,16 @@ function WholeTeam()
       date: "December, 2020",
     },
     {
-      name: "Rajiya Shakya",
+      name: "Dr. Rajiya Shakya[PT]",
       role: "Data Analytics & Healthcare Operations",
       description:
         "Efficient data handling and analytics for healthcare institutions.",
       image: rajiya,
-      link: "/team/rajikya",
+      link: "/team/rajiya",
       date: "March, 2018",
     },
     {
-      name: "Bandana Manandhar",
+      name: "Dr. Bandana Manandhar[PT]",
       role: "Medical Report Writer/Lister Lead",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
@@ -53,7 +53,7 @@ function WholeTeam()
     },
     {
       name: "Ravi Sunder Shrestha",
-      role: "Downloader",
+      role: "Medical Report Downloader",
       description:
         "Accurate and compliant medical reports tailored to global standards.",
       image: ravi,
@@ -65,8 +65,8 @@ function WholeTeam()
 
   const coreTeams = [
     {
-      name: "Aayushma Pokharel",
-      role: "Medical Report Writer Lead",
+      name: "Dr. Aayushma Pokharel",
+      role: "Medical Report Writer",
       description:
         "Accurate and compliant medical reports tailored to global standards.",
       image: aayushma,
@@ -74,7 +74,7 @@ function WholeTeam()
     },
     {
       name: "Dipendra Thapa",
-      role: "Medical Report Writer/Lister Lead",
+      role: "Medical Report File Downloader",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: dipendra,
@@ -82,7 +82,7 @@ function WholeTeam()
     },
     {
       name: "Karna Bahadur Bam",
-      role: "Medical Report Writer/Lister Lead",
+      role: "Medical Report File Downloader",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: karna,
@@ -90,7 +90,7 @@ function WholeTeam()
     },
     {
       name: "Namita Sangroula",
-      role: "Medical Report Writer/Lister Lead",
+      role: "Medical Report File Lister",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: namita,
@@ -98,7 +98,7 @@ function WholeTeam()
     },
     {
       name: "Priyasha Mahara",
-      role: "Medical Report Writer/Lister Lead",
+      role: "Medical Report File Lister",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: priyasha,
@@ -106,7 +106,7 @@ function WholeTeam()
     },
     {
       name: "Rahul Lama",
-      role: "Medical Report Writer/Lister Lead",
+      role: "Finance Department",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: rahul,
@@ -114,7 +114,7 @@ function WholeTeam()
     },
     {
       name: "Rojin Shakya",
-      role: "Medical Report Writer/Lister Lead",
+      role: "Medical Report File Downloader",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: rojin,
@@ -122,7 +122,7 @@ function WholeTeam()
     },
     {
       name: "Sammyek Ratna Bajracharya",
-      role: "Medical Report Writer/Lister Lead",
+      role: "Medical Report File Downloader",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: sammyek,
@@ -130,23 +130,23 @@ function WholeTeam()
     },
     {
       name: "Sarita Ale",
-      role: "Medical Report Writer/Lister Lead",
+      role: "Medical Report Writer",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: sarita,
       date: "August, 2023",
     },
     {
-      name: "Shristi Manandhar",
-      role: "Medical Report Writer/Lister Lead",
+      name: "Dr. Shristi Manandhar",
+      role: "Medical Report Writer",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: shristi,
       date: "April, 2022",
     },
     {
-      name: "Tripti Halwai",
-      role: "Medical Report Writer/Lister Lead",
+      name: "Dr. Tripti Halwai",
+      role: "Medical Report Writer",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: tripti,
@@ -245,7 +245,7 @@ function WholeTeam()
                   <h3 className="text-sm font-semibold text-[#133a41] truncate">
                     {member.name}
                   </h3>
-                  <p className="text-xs text-[#25727f] font-medium truncate">
+                  <p className="text-xs text-[#25727f] font-semibold truncate">
                     {member.role}
                   </p>
                   <p className="text-[#25727f] text-xs italic">

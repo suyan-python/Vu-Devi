@@ -36,13 +36,14 @@ const doctorData = {
       "Dr. Niguma Rayamajhi",
       "Dr. Shushil Sah",
     ],
+    role: "Medical Report Writer",
   },
   rajiya: {
     name: "Pt. Rajiya Shakya",
     designation: "Physiotherapy report writer Lead",
     joiningDate: "March, 2018",
     image: rajiya,
-    bio: "Rajikya specializes in handling large-scale healthcare data, ensuring efficiency in medical data processing and analytics. His leadership has streamlined data operations in multiple hospitals.",
+    bio: "Rajiya specializes in handling large-scale healthcare data, ensuring efficiency in medical data processing and analytics. His leadership has streamlined data operations in multiple hospitals.",
     mail: "rajiya@reportprep.com",
     teamMembers: [
       "Aayushma Pokharel",
@@ -59,6 +60,7 @@ const doctorData = {
       "Umesh Kunwar",
       "Subekshya Satta",
     ],
+    role: "Medical Report Writer",
   },
   bandana: {
     name: "Bandana Manandhar",
@@ -77,13 +79,13 @@ const doctorData = {
       "Sakshi Dhungel",
       "Sameera Shrestha",
       "Shruti Gautam",
-      "Soney Khadka",
       "Sushmita Khadka",
-      "Er. Suyan Man Amatya",
+      "Suyan Man Amatya",
       "Swastika Neupane",
       "Nilima Mulmi",
       "Simran Thapa",
     ],
+    role: "Medical Report Lister",
   },
   ravi: {
     name: "Ravi Sunder Shrestha",
@@ -102,6 +104,7 @@ const doctorData = {
       "Mahesh Shahi",
       "Suman Dahal ",
     ],
+    role: "Medical Report Downloader",
   },
 };
 
@@ -179,7 +182,9 @@ function DocInfo()
                 <h4 className="text-lg font-semibold ">
                   {member}
                 </h4>
-                <p className=" text-sm">Medical Staff</p>
+                <p className=" text-sm">
+                  {doctor.role}
+                </p>
               </div>
             ))}
           </div>
