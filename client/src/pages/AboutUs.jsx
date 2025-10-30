@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion"; // Importing Framer Motion
+import MeetFounder from "./MeetFounder";
+import MeetManagement from "./MeetManagement";
 
 function AboutUs()
 {
@@ -182,9 +184,12 @@ function AboutUs()
               </p>
             </motion.div>
           </div>
+
+          <MeetFounder />
+          <MeetManagement />
+
         </motion.div>
 
-        {/* Meet Our Team Section with Animation */}
 
       </div>
     </section>

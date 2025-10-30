@@ -7,7 +7,7 @@ function MeetManagement()
     return (
         <div className="min-h-screen flex items-center justify-center px-6 lg:mt-0">
             <motion.div
-                className="bg-white/10 p-12 rounded-2xl shadow-xl transition duration-300 text-center md:text-left w-full max-w-7xl"
+                className="bg-white/70 p-12 rounded-2xl shadow-xl transition duration-300 text-center md:text-left w-full max-w-7xl"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
@@ -52,7 +52,7 @@ function MeetManagement()
                             />
                         </div>
 
-                        <p className="header text-red-700 font-semibold text-3xl mt-6">
+                        <p className="header text-red-700 font-medium text-3xl mt-6">
                             Dilasha Shakya
                         </p>
                         {/* <p className="text-lg">Management Head</p> */}

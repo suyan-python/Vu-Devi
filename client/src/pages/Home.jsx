@@ -12,8 +12,8 @@ export default function Home()
     <div>
       <Hero />
       <EmployeeOfTheMonth />
-      <MeetFounder />
-      <MeetManagement />
+      {/* <MeetFounder /> */}
+      {/* <MeetManagement /> */}
       <OurTeam />
       <Services />
       <NewsUpdates />

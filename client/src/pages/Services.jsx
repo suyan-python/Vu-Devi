@@ -96,7 +96,7 @@ function Services()
               <h3 className="text-xl font-medium text-[#133a41]">
                 {service.title}
               </h3>
-              <p className="text-gray-600 text-base leading-relaxed max-w-xs">
+              <p className="text-gray-600 text-base leading-relaxed max-w-xs px-2">
                 {service.description}
               </p>
             </motion.div>
