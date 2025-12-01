@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import back1 from "../assets/background/back.png";
+import back from "../assets/background/back3.jpg";
 
 function Hero()
 {
   const [currentIndex] = useState(0);
-  const images = [back1];
+  const images = [back];
 
   return (
     <section className="relative h-screen flex justify-center overflow-hidden">
@@ -22,12 +22,12 @@ function Hero()
       <div className="absolute inset-0 bg-gradient-to-t from-[#133a41]/40 via-white/20 to-transparent -z-10"></div>
 
       {/* Hero Content */}
-      <div className="max-w-4xl text-center relative z-10 flex flex-col items-center justify-center h-full px-4 pb-40">
-        <h1 className="text-4xl lg:text-6xl font-semibold text-[#133a41]">
+      <div className="subheader max-w-4xl text-center relative z-10 flex flex-col items-center justify-center h-full px-4 pb-40">
+        <h1 className="header text-4xl lg:text-6xl font-semibold text-[#133a41]">
           Excellence in{" "}
           <span className="text-red-700">Medical Documentation</span> Since 2013
         </h1>
-        <p className="mt-4 text-lg lg:text-2xl text-[#133a41] max-w-2xl mx-auto">
+        <p className=" mt-4 text-lg lg:text-2xl text-[#133a41] max-w-2xl mx-auto">
           Vu Devi Services Pvt. Ltd. delivers accurate, timely, and high-quality
           medical documentation to international clients, blending precision
           with care.

@@ -1,26 +1,21 @@
 import React from "react";
-import khushbu from "../assets/person/khushboo.jpeg";
-import anjila from "../assets/person/anjila.jpeg";
+
+import tripti from "../assets/person/tripti.jpeg";
+import arju from "../assets/person/arju.jpeg";
 import bandana from "../assets/person/bandana.jpeg";
 
 const employees = [
     {
-        name: "Dr. Khushbu Gurung",
-        designation: "Medical Report Writer",
-        team: "Team: Nikita",
-        image: khushbu,
-    },
-    {
-        name: "Pt. Anjila Ghimire",
+        name: "Pt. Tripti Halwai",
         designation: "Pt. Report Writer",
         team: "Team: Rajiya",
-        image: anjila,
+        image: tripti,
     },
     {
-        name: "Ms. Bandana Manandhar",
+        name: "Ms. Arju Khadka",
         designation: "LSU",
         team: "Team: Bandana",
-        image: bandana,
+        image: arju,
     },
 ];
 
