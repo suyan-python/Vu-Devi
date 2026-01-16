@@ -16,16 +16,16 @@ const teamMembers = [
     link: "/team/nikita",
   },
   {
-    name: "Pt. Rajiya Shakya",
-    role: "Data Analytics & Healthcare Operations",
+    name: "Dr. Rajiya Shakya  [PT]",
+    role: "Medical Report Writer, PT Lead",
     quote:
       "Data tells stories that can transform healthcare. I’m passionate about turning complex information into actionable insights.",
     image: rajiya,
     link: "/team/rajiya",
   },
   {
-    name: "Pt. Bandana Manandhar",
-    role: "Medical Report Writer / Lister Lead",
+    name: "Dr. Bandana Manandhar [PT]",
+    role: "Medical Report Writer, Lister Lead",
     quote:
       "In healthcare, seamless backend support isn’t just efficiency — it’s patient safety. That’s what drives my work every day.",
     image: bandana,
@@ -33,7 +33,7 @@ const teamMembers = [
   },
   {
     name: "Ravi Sunder Shrestha",
-    role: "Medical Report Writer Lead",
+    role: "Data Analyst Lead",
     quote:
       "Every report we deliver carries the weight of our commitment to precision and care. My mission is to ensure our work meets the highest global standards.",
     image: ravi,

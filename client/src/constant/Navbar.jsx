@@ -47,7 +47,7 @@ function Navbar()
             {navLinks.map((link, idx) =>
               link.isButton ? (
                 <NavLink key={idx} to={link.to} className="hidden md:inline-block">
-                  <button className="font-bold px-5 py-2 rounded-xl text-white bg-[#133a41] hover:bg-red-700 transition-all duration-300">
+                  <button className="font-bold px-3 py-2 rounded-xl text-white bg-[#133a41] hover:bg-red-700 transition-all cursor-pointer duration-300">
                     {link.label}
                   </button>
                 </NavLink>

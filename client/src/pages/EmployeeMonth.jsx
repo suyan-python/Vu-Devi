@@ -1,21 +1,27 @@
 import React from "react";
 
-import tripti from "../assets/person/tripti.jpeg";
-import arju from "../assets/person/arju.jpeg";
-import bandana from "../assets/person/bandana.jpeg";
+import apurva from "../assets/month/apurva.jpeg";
+import sarita from "../assets/month/sarita.jpeg";
+import sameera from "../assets/month/sameera.jpeg";
 
 const employees = [
     {
-        name: "Pt. Tripti Halwai",
-        designation: "Pt. Report Writer",
-        team: "Team: Rajiya",
-        image: tripti,
+        name: "Dr. Apurva Bhandari",
+        designation: "Medical Report Writer",
+        team: "Team: Nikita",
+        image: apurva,
     },
     {
-        name: "Ms. Arju Khadka",
+        name: "Pt. Sarita Ale",
+        designation: "Pt. Report Writer",
+        team: "Team: Rajiya",
+        image: sarita,
+    },
+    {
+        name: "Ms. Sameera Shrestha",
         designation: "LSU",
         team: "Team: Bandana",
-        image: arju,
+        image: sameera,
     },
 ];
 
@@ -30,7 +36,7 @@ const EmployeeOfTheMonth = () =>
                     <div>
                         <h2 className="header text-5xl font-semibold text-white mb-3 leading-snug">
                             Employees of the Month -{" "}
-                            <span className="text-red-700 drop-shadow-md">September</span>
+                            <span className="text-red-700 drop-shadow-md">November</span>
                         </h2>
                         <div className="w-full h-0.5 bg-red-700 rounded-full shadow-lg"></div>
                     </div>
