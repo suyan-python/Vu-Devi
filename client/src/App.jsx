@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Navbar from "./constant/Navbar";
@@ -20,31 +20,50 @@ import AdminDashboard from "../admin/AdminDashboard";
 import AdminLogin from "../admin/AdminLogin";
 
 
-function App()
+function AppRoutes()
 {
+  const location = useLocation();
+
+  // Hide navbar & footer on admin routes
+  const isAdminRoute =
+    location.pathname === "/admin" ||
+    location.pathname === "/admin/login";
+
   return (
-    <div>
-      {/* <BackgroundAnimation /> */}
-      <Router>
-        <ScrollToTop />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/application" element={<JobApplicationForm />} />
-          <Route path="/team" element={<WholeTeam />} />
-          <Route path="/team/:doctorId" element={<DocInfo />} />
-          <Route path="/teamfun" element={<TeamFun />} />
-        </Routes>
-        <FooterBT />
-        <Footer />
-      </Router>
-    </div>
+    <>
+      {!isAdminRoute && <Navbar />}
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/application" element={<JobApplicationForm />} />
+        <Route path="/team" element={<WholeTeam />} />
+        <Route path="/team/:doctorId" element={<DocInfo />} />
+        <Route path="/teamfun" element={<TeamFun />} />
+
+        {/* ADMIN */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+      </Routes>
+
+      {!isAdminRoute && (
+        <>
+          <FooterBT />
+          <Footer />
+        </>
+      )}
+    </>
   );
 }
 
-export default App;
+export default function App()
+{
+  return (
+    <Router>
+      <ScrollToTop />
+      <AppRoutes />
+    </Router>
+  );
+}
