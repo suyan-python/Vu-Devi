@@ -24,7 +24,7 @@ function App()
 {
   return (
     <div>
-      <BackgroundAnimation />
+      {/* <BackgroundAnimation /> */}
       <Router>
         <ScrollToTop />
         <Navbar />

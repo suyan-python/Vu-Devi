@@ -6,6 +6,8 @@ import nikita2 from "../assets/leads/nikita2.png";
 import rajiya from "../assets/leads/rajiya.png";
 import bandana from "../assets/leads/bandana2.png";
 
+import { Mail, Calendar, UserCheck, ArrowLeft, Users, Briefcase } from "lucide-react";
+
 const doctorData = {
   nikita: {
     name: "Dr. Nikita Shakya",
@@ -122,70 +124,103 @@ function DocInfo()
   }
 
   return (
-    <section className="w-full py-16 mt-28">
-      <div className="max-w-5xl mx-auto px-6 md:px-12">
-        {/* Back Button */}
+    <section className="w-full py-16 bg-[#fffff7] min-h-screen mt-20">
+      <div className="max-w-6xl mx-auto px-6">
+
+        {/* Navigation / Breadcrumbs */}
         <button
-          className="mb-6  hover:underline cursor-pointer"
+          className="group flex items-center gap-2 mb-8 text-slate-500 hover:text-[#133a41] transition-colors font-semibold text-sm uppercase tracking-widest"
           onClick={() => navigate(-1)}
         >
-          ← Back to Team
+          <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+          Back to Leadership Team
         </button>
 
-        {/* Doctor Bio Card */}
+        {/* 1. THE LEADERSHIP CARD (The Doctor/Team Lead) */}
         <motion.div
-          className="bg-white p-8 rounded-3xl shadow-lg text-center transition transform hover:scale-105 hover:shadow-xl duration-300"
+          className="bg-white rounded-sm border-t-4 border-[#133a41] shadow-[0_15px_50px_-15px_rgba(19,58,65,0.1)] overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
         >
-          <img
-            src={doctor.image}
-            alt={doctor.name}
-            className="w-48 h-48 rounded-full mx-auto object-cover shadow-lg mb-6"
-          />
-          <h2 className="text-3xl font-bold ">{doctor.name}</h2>
+          <div className="flex flex-col md:flex-row">
+            {/* Image Column */}
+            <div className="w-full md:w-1/3 bg-slate-100">
+              <img
+                src={doctor.image}
+                alt={doctor.name}
+                className="w-full h-full object-cover aspect-[4/5] md:aspect-auto"
+              />
+            </div>
 
-          {doctor.mail && (
-            <a
-              href={`mailto:${doctor.mail}`}
-              className="text-red-500 hover:text-red-700 hover:underline block mt-2"
-            >
-              {doctor.mail}
-            </a>
-          )}
+            {/* Details Column */}
+            <div className="w-full md:w-2/3 p-8 lg:p-12">
+              <div className="flex flex-col h-full">
+                <div className="mb-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#133a41]/5 text-[#133a41] rounded-sm text-[10px] font-bold uppercase tracking-widest mb-3">
+                    <UserCheck size={12} />
+                    Clinical Lead
+                  </div>
+                  <h2 className="text-4xl font-bold text-slate-900">{doctor.name}</h2>
+                  <p className="text-xl text-red-700 font-medium mt-1">{doctor.designation}</p>
+                </div>
 
-          <p className="text-lg  font-semibold">
-            {doctor.designation}
-          </p>
-          <p className="text-md  italic">
-            Joined: {doctor.joiningDate}
-          </p>
+                {/* Metadata Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                  <div className="flex items-center gap-3 text-slate-600">
+                    <Mail size={18} className="text-slate-400" />
+                    <a href={`mailto:${doctor.mail}`} className="hover:text-[#133a41] underline decoration-slate-200 underline-offset-4">
+                      {doctor.mail}
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3 text-slate-600">
+                    <Calendar size={18} className="text-slate-400" />
+                    <span>Tenure: {doctor.joiningDate}</span>
+                  </div>
+                </div>
 
-          <p className="mt-4  text-lg">{doctor.bio}</p>
+                <div className="border-t border-slate-100 pt-6">
+                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Professional Biography</h4>
+                  <p className="text-slate-700 leading-relaxed text-lg">
+                    {doctor.bio}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
-        {/* Team Members Section */}
-        <div className="mt-12">
-          <h3 className="text-2xl font-semibold text-center ">
-            Team Members
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+        {/* 2. TEAM MEMBERS SECTION (The Directory) */}
+        <div className="mt-20">
+          <div className="flex items-center gap-4 mb-10">
+            <h3 className="text-2xl font-bold text-slate-900">Direct Reports & Team</h3>
+            <div className="h-px flex-1 bg-slate-200"></div>
+            <div className="flex items-center gap-2 text-slate-400 font-bold text-xs uppercase tracking-widest">
+              <Users size={16} />
+              {doctor.teamMembers.length} Members
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {doctor.teamMembers.map((member, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-md text-center transition transform hover:scale-105 hover:shadow-xl duration-300"
-                initial={{ opacity: 0, y: 20 }}
+                className="bg-white p-5 rounded-sm border border-slate-200 flex items-center gap-4 shadow-sm hover:shadow-md hover:border-[#133a41]/30 transition-all group"
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                transition={{ delay: index * 0.05 }}
               >
-                <h4 className="text-lg font-semibold ">
-                  {member}
-                </h4>
-                <p className=" text-sm">
-                  {doctor.role}
-                </p>
-              </div>
+                <div className="w-12 h-12 bg-slate-50 rounded-full flex items-center justify-center text-[#133a41] group-hover:bg-[#133a41] group-hover:text-white transition-colors">
+                  <Briefcase size={20} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-800 leading-none mb-1 group-hover:text-[#133a41]">
+                    {member}
+                  </h4>
+                  <p className="text-xs text-slate-500 font-medium uppercase tracking-tight">
+                    {doctor.role}
+                  </p>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>

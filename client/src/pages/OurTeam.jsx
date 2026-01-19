@@ -5,6 +5,7 @@ import nikita from "../assets/leads/nikita2.png";
 import rajiya from "../assets/leads/rajiya.png";
 import bandana from "../assets/leads/bandana2.png";
 import { useNavigate } from "react-router-dom";
+import { Linkedin, Quote, GraduationCap, Award } from "lucide-react";
 
 const teamMembers = [
   {
@@ -46,66 +47,109 @@ function OurTeam()
   const navigate = useNavigate();
 
   return (
-    <section className="w-full px-4 sm:px-6 md:px-8 py-16">
-      <div className="max-w-7xl mx-auto bg-white/50 rounded-3xl py-12 px-6">
-        {/* Section Title */}
+    <section className="bg-[#fffff7] py-24 relative overflow-hidden">
+      {/* Texture Layer - Subtle corporate feel */}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')]"></div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+
+        {/* Header: Institutional Authority */}
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="max-w-3xl mb-24 border-l-4 border-[#133a41] pl-8"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
         >
-          <h2 className="header text-3xl sm:text-4xl md:text-5xl font-semibold text-[#133a41]">
-            Meet Our Leadership Team
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
+            Strategic <span className="text-[#133a41]">Leadership</span>
           </h2>
-          <p className="subheader mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
-            A group of passionate professionals dedicated to shaping our vision and driving our success forward
+          <p className="mt-4 text-lg text-slate-600 leading-relaxed">
+            Our vision is guided by a cohort of seasoned medical documentation experts
+            dedicated to bridging the gap between clinical precision and operational excellence.
           </p>
         </motion.div>
 
-        {/* Team Layout */}
-        <div className="space-y-20">
+        {/* Team Profiles */}
+        <div className="space-y-32">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
-              className={`flex flex-col md:flex-row items-center gap-12 ${index % 2 === 1 ? "md:flex-row-reverse" : ""
+              className={`flex flex-col md:flex-row items-center gap-16 ${index % 2 === 1 ? "md:flex-row-reverse" : ""
                 }`}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.8 }}
             >
-              {/* Image */}
-              <div className="w-full md:w-1/2 flex justify-center">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className={`rounded-2xl shadow-lg w-full max-w-sm object-cover ${index % 2 === 1 ? "border-l-8" : "border-r-8"}`}
-                />
+              {/* Image Column - The "Portrait Frame" */}
+              <div className="w-full md:w-5/12 relative">
+                <div className="relative z-10 rounded-sm overflow-hidden shadow-2xl">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full aspect-[4/5] object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
+                  />
+                  {/* Subtle Name Overlay for Mobile */}
+                  <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent md:hidden">
+                    <h3 className="text-white text-2xl font-bold">{member.name}</h3>
+                    <p className="text-slate-300 text-sm">{member.role}</p>
+                  </div>
+                </div>
+
+                {/* Decorative Background Block (Connects to the background color) */}
+                <div className={`absolute -bottom-6 -right-6 w-full h-full border-2 border-[#133a41]/10 -z-10 rounded-sm ${index % 2 === 1 ? "right-auto -left-6" : ""
+                  }`}></div>
               </div>
 
-              {/* Text */}
-              <div className="subheader w-full md:w-1/2 text-center md:text-left flex flex-col justify-center max-w-lg">
-                <h3 className="header text-2xl sm:text-3xl font-bold text-[#133a41]">
-                  {member.name}
-                </h3>
-                <p className="text-[#25727f] font-medium mt-2 mb-4">
-                  {member.role}
-                </p>
-                <blockquote className="italic text-gray-700 leading-relaxed text-lg mb-6">
-                  “{member.quote}”
-                </blockquote>
-                <button
-                  className="mx-auto md:mx-0 px-5 py-2 bg-[#25727f] hover:bg-[#1b555c] rounded-lg text-sm font-medium transition-colors text-white"
-                  onClick={(e) =>
-                  {
-                    e.stopPropagation();
-                    navigate(member.link);
-                  }}
-                >
-                  View Team
-                </button>
+              {/* Text Column - The "Bio Dossier" */}
+              <div className="w-full md:w-7/12 space-y-6">
+                <div className="hidden md:block">
+                  <h3 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-2">
+                    {member.name}
+                  </h3>
+                  <div className="flex items-center gap-3">
+                    <span className="px-3 py-1 bg-[#133a41]/5 text-[#133a41] text-xs font-bold uppercase tracking-widest rounded">
+                      {member.role}
+                    </span>
+                    <div className="h-px w-12 bg-slate-200"></div>
+                    <a href="#" className="text-slate-400 hover:text-[#0077b5] transition-colors">
+                      <Linkedin size={18} />
+                    </a>
+                  </div>
+                </div>
+
+                <div className="relative">
+                  <Quote className="absolute -top-4 -left-4 text-[#133a41]/5" size={60} />
+                  <p className="italic text-slate-700 text-lg md:text-xl leading-relaxed relative z-10 pl-4 border-l-2 border-slate-100">
+                    “{member.quote}”
+                  </p>
+                </div>
+
+                {/* Professional Qualifications Summary */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                  <div className="flex items-center gap-3 text-sm text-slate-600 font-medium">
+                    <div className="p-2 bg-white shadow-sm rounded-full text-red-700">
+                      <GraduationCap size={16} />
+                    </div>
+                    Expertise in Medical Ethics
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-slate-600 font-medium">
+                    <div className="p-2 bg-white shadow-sm rounded-full text-red-700">
+                      <Award size={16} />
+                    </div>
+                    10+ Years Management
+                  </div>
+                </div>
+
+                <div className="pt-6">
+                  <button
+                    className="group flex items-center gap-3 px-6 py-3 bg-white border border-slate-200 text-slate-800 text-sm font-bold rounded-sm shadow-sm hover:border-[#133a41] hover:text-[#133a41] transition-all duration-300"
+                    onClick={() => navigate(member.link)}
+                  >
+                    View Full Professional Profile
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </button>
+                </div>
               </div>
             </motion.div>
           ))}

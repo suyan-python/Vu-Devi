@@ -1,50 +1,60 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
+import { ChevronRight } from "lucide-react";
 import back from "../assets/background/back3.jpg";
 
 function Hero()
 {
-  const [currentIndex] = useState(0);
-  const images = [back];
-
   return (
-    <section className="relative h-screen flex justify-center overflow-hidden">
-      {/* Background Image */}
-      <img
-        src={images[currentIndex]}
-        alt="Background"
-        className="absolute inset-0 w-full h-full object-cover object-top -z-10"
-        loading="eager"
-        fetchpriority="high"
-      />
+    <section className="relative h-screen w-full flex items-start lg:items-center overflow-hidden">
+      {/* 1. Background Image - Anchored to the bottom to ensure faces are always visible */}
+      <div className="absolute inset-0 -z-20">
+        <img
+          src={back}
+          alt="Medical Professionals"
+          className="w-full h-full object-cover object-bottom scale-100 md:scale-105"
+        />
+        {/* 2. Intelligent Gradient: Dark at top (for text), Transparent at bottom (for faces) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#133a41]/90 via-[#133a41]/40 to-transparent lg:bg-gradient-to-r lg:from-[#133a41]/90 lg:to-transparent"></div>
+      </div>
 
-      {/* Gradient Overlay (optional, helps readability) */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#133a41]/40 via-white/20 to-transparent -z-10"></div>
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-24 md:pt-32 lg:pt-0">
+        <div className="max-w-3xl text-left">
 
-      {/* Hero Content */}
-      <div className="subheader max-w-4xl text-center relative z-10 flex flex-col items-center justify-center h-full px-4 pb-40">
-        <h1 className="header text-4xl lg:text-6xl font-semibold text-[#133a41]">
-          Excellence in{" "}
-          <span className="text-red-700">Medical Documentation</span> Since 2013
-        </h1>
-        <p className=" mt-4 text-lg lg:text-2xl text-[#133a41] max-w-2xl mx-auto">
-          Vu Devi Services Pvt. Ltd. delivers accurate, timely, and high-quality
-          medical documentation to international clients, blending precision
-          with care.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center py-8">
-          <NavLink
-            to="/about"
-            className="px-8 py-3 text-lg text-white bg-[#133a41] rounded-xl shadow-lg hover:-translate-y-1 transition"
-          >
-            Explore More
-          </NavLink>
-          <NavLink
-            to="/team"
-            className="px-8 py-3 text-lg bg-white rounded-xl shadow-lg hover:-translate-y-1 transition"
-          >
-            Our Team
-          </NavLink>
+          {/* Subtle Label */}
+          <p className="text-red-500 font-bold tracking-[0.2em] uppercase text-xs mb-4">
+            Established 2013
+          </p>
+
+          {/* Main Heading - Sized specifically for mobile readability */}
+          <h1 className="header text-3xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-4">
+            Excellence in <br />
+            <span className="text-white">Medical Documentation</span>
+          </h1>
+
+          {/* Description - Shorter on mobile to save space */}
+          <p className="text-base md:text-lg lg:text-xl text-slate-200 mb-8 leading-relaxed max-w-xl border-l-2 border-red-700 pl-4 lg:pl-6">
+            Vu Devi Services Pvt. Ltd. delivers accurate, timely, and high-quality
+            medical documentation to international clients.
+          </p>
+
+          {/* Action Buttons - Stacked on mobile, side-by-side on desktop */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <NavLink
+              to="/about"
+              className="flex items-center justify-center gap-2 px-7 py-3.5 bg-red-700 text-white rounded-lg font-bold text-sm md:text-base hover:bg-red-800 transition-all shadow-lg"
+            >
+              Explore More
+              <ChevronRight size={18} />
+            </NavLink>
+
+            <NavLink
+              to="/team"
+              className="flex items-center justify-center px-7 py-3.5 bg-white/10 backdrop-blur-md text-white border border-white/30 rounded-lg font-bold text-sm md:text-base hover:bg-white hover:text-[#133a41] transition-all"
+            >
+              Our Team
+            </NavLink>
+          </div>
         </div>
       </div>
     </section>

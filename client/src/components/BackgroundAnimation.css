@@ -5,31 +5,62 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  filter: blur(50px);
+  filter: blur(80px);
   animation: moveBlob 40s ease-in-out infinite;
   z-index: -1;
 }
 
 /* First blob */
 
-/* .blob1 {
-  background: radial-gradient(circle at 50% 50%, #85011ba0, transparent 20%);
-  animation-delay: 0s;
+/* Container for the blobs - Place this at the very top of your section */
+/* .blob-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  filter: blur(80px); 
+  opacity: 0.6;
 } */
 
-/* Second blob - slightly different red tone */
-
-/* .blob2 {
-  background: radial-gradient(circle at 30% 70%, #a61c2cb0, transparent 20%);
-  animation-delay: 10s; 
+/* .blob {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
 } */
 
-/* Third blob - even lighter variation */
+.blob1 {
+  /* Soft Red - Top Left */
+  background: radial-gradient(circle, #85011b07 0%, transparent 70%);
+  top: -10%;
+  left: -10%;
+  animation: float 20s infinite alternate;
+}
 
-/* .blob3 {
-  background: radial-gradient(circle at 70% 30%, #133a41, transparent 20%);
-  animation-delay: 20s;
-} */
+.blob2 {
+  /* Deeper Red - Bottom Right */
+  background: radial-gradient(circle, #a61c2c22 0%, transparent 70%);
+  bottom: -10%;
+  right: -5%;
+  animation: float 25s infinite alternate-reverse;
+}
+
+.blob3 {
+  /* Brand Teal - Center/Offset */
+  background: radial-gradient(circle, #133a4115 0%, transparent 70%);
+  top: 30%;
+  left: 20%;
+  animation: float 30s infinite linear;
+}
+
+@keyframes float {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(100px, 50px);
+  }
+}
 
 /* Animation keyframes */
 /* @keyframes moveBlob {
