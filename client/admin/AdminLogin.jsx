@@ -37,7 +37,7 @@ export default function AdminLogin()
             }
         } catch (err)
         {
-            setError("Login failed, try again.");
+            setError("Login failed, try again.", err);
         } finally
         {
             setLoading(false);
@@ -148,8 +148,8 @@ export default function AdminLogin()
                     <div className="p-6 bg-slate-50 border-t border-slate-100 text-center">
                         <div className="flex items-center justify-center gap-2 mb-1">
                             <ShieldCheck className="text-blue-500" size={14} />
-                            <span className="text-[10px] font-black text-slate-900 uppercase tracking-[0.1em]">
-                                Secure by Vu Devi Services
+                            <span className="text-[10px] font-semibold text-slate-700 uppercase tracking-[0.1em]">
+                                Secure by <span className="font-black text-slate-900">Vu Devi Services Pvt. Ltd.</span>
                             </span>
                         </div>
                         <p className="text-[9px] text-slate-400 font-medium">

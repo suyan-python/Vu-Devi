@@ -7,6 +7,11 @@ import
     Mail, Calendar, Users, Clock, Filter, X
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import * as XLSX from "xlsx";
+import { saveAs } from "file-saver";
+import { Download, Eye, Trash2 } from "lucide-react";
+import { FileSpreadsheet, ShieldAlert, ChevronRight } from "lucide-react";
+
 
 export default function AdminDashboard()
 {
@@ -66,6 +71,60 @@ export default function AdminDashboard()
         navigate("/admin/login");              // Redirect to login
     };
 
+    const handleDelete = async (id) =>
+    {
+        if (!window.confirm("Are you sure you want to delete this application?")) return;
+
+        try
+        {
+            const res = await fetch(
+                `${API_URL}/api/admin/applications/${id}`,
+                {
+                    method: "DELETE",
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
+
+            if (!res.ok) throw new Error("Delete failed");
+
+            setApplications((prev) => prev.filter((app) => app._id !== id));
+        } catch (err)
+        {
+            alert("Failed to delete application", err);
+        }
+    };
+
+
+    const exportToExcel = () =>
+    {
+        const exportData = applications.map((app, index) => ({
+            SN: index + 1,
+            Name: app.name,
+            Email: app.email,
+            "Applied Date": new Date(app.appliedAt).toLocaleString(),
+            "Resume URL": app.resumeUrl || "",
+            "Cover Letter": app.coverLetter || "",
+        }));
+
+        const worksheet = XLSX.utils.json_to_sheet(exportData);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Job Applications");
+
+        const excelBuffer = XLSX.write(workbook, {
+            bookType: "xlsx",
+            type: "array",
+        });
+
+        const blob = new Blob([excelBuffer], {
+            type: "application/octet-stream",
+        });
+
+        saveAs(blob, "job_applications.xlsx");
+    };
+
+
 
     if (loading)
         return (
@@ -80,33 +139,68 @@ export default function AdminDashboard()
         <div className="min-h-screen bg-[#f8fafc] pb-20 ">
 
             {/* 1. TOP NAVIGATION BAR */}
-            <nav className="sticky top-0 z-30 bg-white border-b border-slate-200 shadow-sm">
+            <nav className="sticky top-0 z-50 bg-white border-b border-slate-200">
+                {/* Top Thin Security Bar (Adds authenticity) */}
+                <div className="h-1 w-full bg-gradient-to-r from-[#133a41] via-red-700 to-[#133a41]"></div>
+
                 <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-[#133a41] rounded-sm flex items-center justify-center text-white font-bold">V</div>
+
+                    {/* LEFT: System Identity */}
+                    <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-2">
+                            <div className="w-10 h-10 bg-slate-900 flex items-center justify-center text-white rounded-sm shadow-inner group cursor-default">
+                                <ShieldAlert size={20} className="group-hover:text-red-500 transition-colors" />
+                            </div>
+                            <div className="h-8 w-[1px] bg-slate-200 mx-2 hidden sm:block"></div>
+                        </div>
+
                         <div>
-                            <h1 className="text-lg font-bold text-slate-900 leading-none">Admin Dashboard</h1>
-                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Recruitment Portal</p>
+                            <div className="flex items-center gap-2">
+                                <h1 className="text-sm font-black text-slate-900 uppercase tracking-tighter">
+                                    security <span className="text-slate-400">Systems</span>
+                                </h1>
+                                <ChevronRight size={14} className="text-slate-300" />
+                                <span className="text-sm font-bold text-[#133a41]">Admin Portal</span>
+                            </div>
+                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-0.5">
+                                Secure Recruitment Node v2.0
+                            </p>
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-6">
-                        <div className="relative hidden md:block">
-                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+                    {/* RIGHT: System Controls */}
+                    <div className="flex items-center gap-4 lg:gap-8">
+
+                        {/* Enhanced Search - "The Filter Engine" */}
+                        <div className="relative hidden lg:block">
+                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
                             <input
                                 type="text"
-                                placeholder="Search candidates..."
+                                placeholder="Query candidate database..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="w-80 pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 focus:border-[#133a41] outline-none rounded-sm text-sm transition-all"
+                                className="w-72 pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 focus:border-[#133a41] focus:bg-white outline-none rounded-sm text-xs font-medium transition-all"
                             />
                         </div>
-                        <button
-                            onClick={handleLogout}
-                            className="flex items-center gap-2 px-4 py-2 border border-red-200 text-red-700 hover:bg-red-50 font-bold text-xs uppercase tracking-widest transition-all rounded-sm"
-                        >
-                            <LogOut size={16} /> Logout
-                        </button>
+
+                        <div className="flex items-center gap-3">
+                            {/* Export Action - Styled as a Professional Utility */}
+                            <button
+                                onClick={exportToExcel}
+                                className="flex items-center gap-2 px-4 py-2 bg-white border border-emerald-200 text-emerald-700 hover:bg-emerald-700 hover:text-white transition-all duration-300 rounded-sm shadow-sm"
+                            >
+                                <FileSpreadsheet size={16} />
+                                <span className="text-[10px] font-black uppercase tracking-widest">Generate Report</span>
+                            </button>
+
+                            {/* Logout Action */}
+                            <button
+                                onClick={handleLogout}
+                                className="flex items-center gap-2 px-4 py-2 border border-red-100 text-red-600 hover:bg-red-50 font-black text-[10px] uppercase tracking-widest transition-all rounded-sm"
+                            >
+                                <LogOut size={16} /> Exit
+                            </button>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -172,21 +266,41 @@ export default function AdminDashboard()
                             </div>
 
                             {/* Card Actions */}
-                            <div className="p-6 bg-slate-50/50 flex flex-col gap-3 mt-auto">
-                                <a
-                                    href={`${API_URL}/${app.resumePath}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-center gap-2 w-full py-2 bg-white border border-slate-200 text-slate-700 text-xs font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all rounded-sm"
-                                >
-                                    <ExternalLink size={14} /> Download Resume
-                                </a>
-                                <button
-                                    onClick={() => setSelectedApp(app)}
-                                    className="w-full py-3 bg-[#133a41] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#1b4d56] transition-all rounded-sm shadow-sm"
-                                >
-                                    Read Cover Letter
-                                </button>
+                            <div className="p-6 bg-slate-50/80 border-t border-slate-100 mt-auto">
+                                <div className="flex flex-col gap-3">
+
+                                    {/* 1. PRIMARY ACTION: READ COVER LETTER */}
+                                    <button
+                                        onClick={() => setSelectedApp(app)}
+                                        className="w-full flex items-center justify-center gap-2 py-3 bg-[#133a41] text-white text-[10px] font-black uppercase tracking-[0.2em] hover:bg-slate-900 transition-all duration-300 rounded-sm shadow-sm"
+                                    >
+                                        <Eye size={14} /> Read Cover Letter
+                                    </button>
+
+                                    {/* 2. SECONDARY ACTIONS ROW */}
+                                    <div className="flex gap-2">
+                                        {/* Download Resume */}
+                                        <a
+                                            href={`${API_URL}/${app.resumePath}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-widest hover:border-slate-400 hover:text-slate-900 transition-all duration-300 rounded-sm"
+                                        >
+                                            <Download size={14} /> CV.pdf
+                                        </a>
+
+                                        {/* Delete Application */}
+                                        <button
+                                            onClick={() => handleDelete(app._id)}
+                                            className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-white border border-red-100 text-red-700/60 hover:text-red-700 hover:bg-red-50 hover:border-red-200 transition-all duration-300 rounded-sm"
+                                            title="Permanently remove application"
+                                        >
+                                            <Trash2 size={14} />
+                                            <span className="text-[10px] font-bold uppercase tracking-widest">Delete</span>
+                                        </button>
+                                    </div>
+
+                                </div>
                             </div>
                         </motion.div>
                     ))}
