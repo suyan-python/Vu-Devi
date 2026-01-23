@@ -42,9 +42,9 @@ const EmployeeOfTheMonth = () =>
                             <span className="h-[2px] w-12 bg-red-700"></span>
                             <span className="header text-red-700 font-bold uppercase tracking-[0.3em] text-xs">Monthly Distinction</span>
                         </div>
-                        <h2 className="text-5xl lg:text-6xl font-bold text-slate-900">
+                        <h2 className="text-4xl lg:text-6xl font-bold text-slate-900">
                             Honoring Our <br />
-                            <span className="text-[#133a41]">November 2025</span> Awardees
+                            <span className="text-red-700">November 2025</span> Awardees
                         </h2>
                     </div>
 

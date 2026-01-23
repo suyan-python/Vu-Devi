@@ -5,12 +5,7 @@ import { Mail, Phone, MapPin, Clock, Globe, ArrowRight } from "lucide-react";
 function Contact()
 {
   return (
-    <section className="relative w-full py-32 overflow-hidden">
-      {/* 1. Background Blobs (Applying your earlier logic) */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-red-50/50 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-[#133a41]/5 rounded-full blur-[100px]" />
-      </div>
+    <section className="relative w-full py-32 bg-[#f8fafc] overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 items-start">
@@ -83,7 +78,7 @@ function Contact()
           >
             <div className="relative p-2 bg-white shadow-2xl rounded-sm border border-slate-200">
               {/* Map UI Decoration */}
-              <div className="absolute top-6 left-6 z-20 bg-white/90 backdrop-blur-md p-4 shadow-xl border-l-4 border-red-700 hidden sm:block">
+              <div className="absolute top-6 right-6 z-20 bg-white/90 backdrop-blur-md p-4 shadow-xl border-l-4 border-red-700 hidden sm:block">
                 <div className="flex items-center gap-3">
                   <Clock className="text-red-700" size={18} />
                   <div>

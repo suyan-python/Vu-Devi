@@ -118,7 +118,7 @@ export default function JobApplicationForm()
 
 
   return (
-    <section className="min-h-screen py-32 relative overflow-hidden">
+    <section className="min-h-screen py-32 bg-[#f8fafc] relative overflow-hidden">
       {/* Background Subtle Mesh */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute top-20 right-[-10%] w-[500px] h-[500px] bg-red-50/40 rounded-full blur-[120px]" />

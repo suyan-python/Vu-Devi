@@ -94,7 +94,7 @@ const doctorData = {
     designation: "Downloader",
     joiningDate: "February, 2014",
     image: ravi,
-    bio: "Ravi is responsible for backend operations, ensuring seamless healthcare support systems. She has played a key role in integrating new technologies into medical report listing systems.",
+    bio: "Ravi is responsible for backend operations, ensuring seamless healthcare support systems. He has played a key role in integrating new technologies into medical report listing systems.",
     mail: "ravi@reportprep.com",
     teamMembers: [
       "Dipendra Thapa",
