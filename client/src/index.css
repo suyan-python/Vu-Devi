@@ -24,12 +24,14 @@ body {
   background-color: #fffff7;
   /* background-color: #f8fafc; */
   overflow-x: hidden;
+  font-family: "Inter", sans-serif;
 }
 
 .header {
   /* font-family: "Poppins", sans-serif; */
   /* font-family: "Montserrat", sans-serif; */
-  font-family: "Bricolage Grotesque", sans-serif;
+  /* font-family: "Bricolage Grotesque", sans-serif; */
+  font-family: "Inter", sans-serif;
 }
 .subheader {
   /* font-family: "Roboto", sans-serif; */
