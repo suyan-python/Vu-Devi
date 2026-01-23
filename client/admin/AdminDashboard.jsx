@@ -157,7 +157,7 @@ export default function AdminDashboard()
                         <div>
                             <div className="flex items-center gap-2">
                                 <h1 className="text-sm font-black text-slate-900 uppercase tracking-tighter">
-                                    security <span className="text-slate-400">Systems</span>
+                                    Vu Devi /<span className="text-slate-400"> Evolve Vue</span>
                                 </h1>
                                 <ChevronRight size={14} className="text-slate-300" />
                                 <span className="text-sm font-bold text-[#133a41]">Admin Portal</span>
@@ -272,7 +272,7 @@ export default function AdminDashboard()
                                     {/* 1. PRIMARY ACTION: READ COVER LETTER */}
                                     <button
                                         onClick={() => setSelectedApp(app)}
-                                        className="w-full flex items-center justify-center gap-2 py-3 bg-[#133a41] text-white text-[10px] font-black uppercase tracking-[0.2em] hover:bg-slate-900 transition-all duration-300 rounded-sm shadow-sm"
+                                        className="w-full flex items-center justify-center gap-2 py-3 border-1 border-[#133a41] text-[#133a41] text-[10px] font-black uppercase tracking-[0.2em] hover:bg-slate-900 hover:text-white transition-all duration-300 rounded-sm shadow-sm cursor-pointer"
                                     >
                                         <Eye size={14} /> Read Cover Letter
                                     </button>

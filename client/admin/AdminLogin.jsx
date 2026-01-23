@@ -47,33 +47,27 @@ export default function AdminLogin()
     return (
         <div className="flex justify-center items-center min-h-screen bg-[#f8fafc] relative overflow-hidden">
 
-            {/* 1. SECURITY BACKGROUND ELEMENTS */}
-            <div className="absolute inset-0 z-0">
-                {/* Subtle Grid Pattern - Suggests structure/security */}
-                <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')]"></div>
-                {/* Blurred Trust Blobs */}
-                <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#133a41]/5 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-red-50/30 rounded-full blur-[120px]" />
-            </div>
-
             {/* 2. LOGIN CONTAINER */}
             <motion.div
                 className="w-full max-w-md z-10 px-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
             >
-                <div className="bg-white rounded-sm shadow-[0_20px_60px_-15px_rgba(0,0,0,0.07)] border border-slate-200 overflow-hidden">
+                <div className="bg-white rounded-sm  border border-slate-200 overflow-hidden">
 
                     {/* Header Area */}
-                    <div className="bg-slate-900 p-8 text-center relative">
+                    <div className="bg-slate-900 p-8 text-center relative space-y-2">
                         <div className="absolute top-0 left-0 w-full h-1 bg-blue-500"></div>
                         <div className="inline-flex items-center justify-center w-14 h-14 bg-white/10 rounded-full mb-4 backdrop-blur-md">
                             <ShieldCheck className="text-white" size={28} />
                         </div>
                         <h1 className="text-white text-xl font-bold tracking-[0.2em] uppercase">
+                            Vu Devi Services
+                        </h1>
+                        <h1 className="text-white text-xs font-bold tracking-[0.2em] uppercase">
                             Administrative <span className="text-blue-500">Portal</span>
                         </h1>
-                        <p className="text-slate-400 text-[10px] uppercase tracking-widest mt-2">
+                        <p className="text-slate-400 text-[8px] uppercase tracking-widest mt-2">
                             Unauthorized Access is Strictly Prohibited
                         </p>
                     </div>
@@ -94,7 +88,7 @@ export default function AdminLogin()
                         <div className="space-y-4">
                             {/* Email Input */}
                             <div className="group">
-                                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 block">
+                                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 block">
                                     Identity Identifier
                                 </label>
                                 <div className="relative">
@@ -112,7 +106,7 @@ export default function AdminLogin()
 
                             {/* Password Input */}
                             <div className="group">
-                                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 block">
+                                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 block">
                                     Encrypted Access Key
                                 </label>
                                 <div className="relative">
@@ -153,7 +147,7 @@ export default function AdminLogin()
                             </span>
                         </div>
                         <p className="text-[9px] text-slate-400 font-medium">
-                            Enterprise Grade Encryption • SSL Secured Endpoint
+                            • SSL Secured Endpoint
                         </p>
                     </div>
                 </div>
