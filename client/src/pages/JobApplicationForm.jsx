@@ -25,21 +25,6 @@ export default function JobApplicationForm()
 
   const API_URL = import.meta.env.VITE_API_URL;
 
-  const jobDescription = `
-Online data entry and analysis.
-Write, edit, and review a variety of scientific and medical documents.
-Follow standard procedures to manage data and present it accordingly.
-Prepare documents within established timelines and follow well-defined processes.
-Prepare documents of high quality in terms of scientific content, with attention to format, consistency, and accuracy.
-Team player- communicate, rely on, and assist other team members as needed.
-Able to navigate through frequent changes to instructions.
-Able to show initiative.
-Able to work quickly yet efficiently to achieve productivity goals.
-Able to work according to US-based timelines and holiday coverage.
-Able to check email and notifications throughout the day.
-Excellent communication/language skills.
-Knowledge of medical terminologies. 
-  `;
   const handleSubmit = async (e) =>
   {
     e.preventDefault();
@@ -100,6 +85,37 @@ Knowledge of medical terminologies.
     }
   };
 
+  const jobDescription = {
+    overview: [
+      "Online data entry and analysis",
+      "Preparation and review of scientific and medical documents",
+    ],
+    responsibilities: [
+      "Write, edit, and review scientific and medical documents",
+      "Ensure accuracy, consistency, and adherence to formatting standards",
+      "Manage data according to defined processes and procedures",
+      "Meet established timelines and productivity expectations",
+      "Adapt to frequent updates in instructions and workflows",
+      "Collaborate with team members to achieve shared goals",
+    ],
+    qualificaitons: [
+      "Bachelor’s in Physiotherapy,",
+      "Bachelor’s in Pharmacy",
+      "Bachelor’s in Nursing",
+      "Bachelor’s in Public Health",
+      "BBA",
+      "Bachelor’s in Computer Science",
+    ],
+    requirements: [
+      "Strong written communication and language skills",
+      "Knowledge of medical terminology",
+      "High attention to detail and quality standards",
+      "Ability to work efficiently under time constraints",
+      "Comfortable working with US-based timelines and holidays",
+    ],
+    shift: ["6:30am - 3:00pm NST (8:15pm - 4:45am EST) Monday to Friday"]
+  };
+
 
   return (
     <section className="min-h-screen py-32 relative overflow-hidden">
@@ -122,7 +138,8 @@ Knowledge of medical terminologies.
             <span className="text-red-700">Clinical Excellence</span>
           </h1>
           <p className="mt-6 text-slate-600 max-w-2xl mx-auto text-lg italic">
-            "Join a team dedicated to precision, integrity, and the future of global healthcare documentation."
+            "Explore a long-term career opportunity in medical documentation, data entry, and healthcare services with an international medical operations team."
+
           </p>
         </div>
 
@@ -133,7 +150,7 @@ Knowledge of medical terminologies.
             <div className="bg-white p-8 rounded-sm border-l-4 border-red-700 shadow-sm">
               <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
                 <FileText className="text-red-700" size={20} />
-                Position: Documentation Associate
+                Position: Medical Documentation & Data Entry Associate
               </h3>
 
               <div className="space-y-6">
@@ -141,7 +158,7 @@ Knowledge of medical terminologies.
                   <div className="p-2 bg-slate-50 rounded text-[#133a41] h-fit"><Keyboard size={20} /></div>
                   <div>
                     <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Core Requirement</p>
-                    <p className="text-sm font-semibold text-slate-700">40+ WPM Typing Speed & MS Office Mastery</p>
+                    <p className="text-sm font-semibold text-slate-700">Strong typing speed (40+ WPM), proficiency in MS Word, Excel, and digital documentation tools</p>
                   </div>
                 </div>
 
@@ -149,7 +166,10 @@ Knowledge of medical terminologies.
                   <div className="p-2 bg-slate-50 rounded text-[#133a41] h-fit"><Coins size={20} /></div>
                   <div>
                     <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Remuneration</p>
-                    <p className="text-sm font-semibold text-slate-700">Rs. 40,000 — Rs. 50,000 (Gross/Monthly)</p>
+                    <p className="text-sm font-semibold text-slate-700">
+                      Compensation is competitive and negotiable based on qualifications, skills, and relevant experience.
+                    </p>
+
                   </div>
                 </div>
 
@@ -157,16 +177,26 @@ Knowledge of medical terminologies.
                   <div className="p-2 bg-slate-50 rounded text-[#133a41] h-fit"><Clock size={20} /></div>
                   <div>
                     <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Engagement Period</p>
-                    <p className="text-sm font-semibold text-red-700">Minimum 18 Months Commitment</p>
+                    <p className="text-sm font-semibold text-red-700">Long-term role with a minimum commitment of 18 months
+                    </p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-8 pt-6 border-t border-slate-100">
                 <p className="text-xs text-slate-500 leading-relaxed italic">
-                  *Selected candidates will undergo a rigorous clinical terminology assessment before final onboarding.
+                  *Shortlisted candidates will complete a structured assessment covering medical terminology, documentation accuracy, and attention to detail.
+
                 </p>
               </div>
+              <button
+                onClick={() => setShowModal(true)}
+                className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-red-800 hover:text-red-700 transition cursor-pointer"
+              >
+                View Full Job Description
+                <ArrowRight size={14} />
+              </button>
+
             </div>
 
             {/* Application Tips */}
@@ -176,12 +206,13 @@ Knowledge of medical terminologies.
                 Application Tip
               </h4>
               <p className="text-sm text-white/80 leading-relaxed">
-                Ensure your CV highlights experience with medical software or data entry. Attachment of a certified Typing Test result is mandatory.
+                Highlight any experience in medical documentation, healthcare services, data entry, or administrative roles. A recent typing test result is required to validate speed and accuracy.
               </p>
               <a href="https://www.typing.com/student/tests" target="_blank" className="mt-4 inline-flex items-center gap-2 text-xs font-bold text-red-400 hover:text-red-300 transition-colors">
                 TAKE TYPING TEST NOW <ArrowRight size={14} />
               </a>
             </div>
+
           </div>
 
           {/* 3. APPLICATION PORTAL (RIGHT SIDE) */}
@@ -194,7 +225,7 @@ Knowledge of medical terminologies.
             )}
 
             <form className="bg-white p-8 md:p-10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] border border-slate-100" onSubmit={handleSubmit}>
-              <h3 className="text-2xl font-bold text-slate-900 mb-8 border-b pb-4">Application Submission</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-8 border-b pb-4">Apply for Medical Documentation Job in Nepal</h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div className="space-y-2">
@@ -206,7 +237,7 @@ Knowledge of medical terminologies.
                     onChange={(e) =>
                       setFormData((prev) => ({ ...prev, name: e.target.value }))
                     }
-                    placeholder="e.g. Dr. Sameer Thapa"
+                    placeholder="e.g. Sameer Thapa"
                     className="w-full p-3 bg-slate-50 border border-slate-200 focus:border-[#133a41] outline-none transition-all rounded-sm text-sm"
                   />
 
@@ -266,7 +297,7 @@ Knowledge of medical terminologies.
                   onChange={(e) =>
                     setFormData((prev) => ({ ...prev, coverLetter: e.target.value }))
                   }
-                  placeholder="Tell us about your background in medical services..."
+                  placeholder="Briefly describe your education, relevant experience, and interest in medical documentation or healthcare services."
                   className="w-full p-4 bg-slate-50 border border-slate-200 focus:border-[#133a41] outline-none transition-all rounded-sm text-sm resize-none"
                 />
 
@@ -305,7 +336,7 @@ Knowledge of medical terminologies.
               </div>
               <h3 className="text-2xl font-bold text-slate-900">Application Lodged</h3>
               <p className="text-slate-500 mt-4 text-sm leading-relaxed">
-                Your credentials have been successfully transmitted to our HR department. Please monitor your email for next steps.
+                Your application has been successfully received. Our recruitment team will review your profile and contact shortlisted candidates via email.
               </p>
               <button
                 onClick={() => setShowSuccess(false)}
@@ -317,6 +348,113 @@ Knowledge of medical terminologies.
           </motion.div>
         )}
       </AnimatePresence>
+
+      <AnimatePresence>
+        {showModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={() => setShowModal(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              transition={{ duration: 0.25 }}
+              className="bg-white max-w-3xl w-full max-h-[85vh] overflow-y-auto rounded-sm shadow-2xl p-8 md:p-10"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* HEADER */}
+              <div className="mb-8 border-b pb-4">
+                <h2 className="text-2xl font-bold text-slate-900">
+                  Documentation Associate – Medical Operations
+                </h2>
+                <p className="text-sm text-slate-500 mt-2">
+                  Vu Devi Services Pvt. Ltd. | Career Opportunity
+                </p>
+              </div>
+
+              {/* OVERVIEW */}
+              <section className="mb-8">
+                <h3 className="text-sm font-bold uppercase tracking-widest text-[#133a41] mb-4">
+                  Role Overview
+                </h3>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  {jobDescription.overview.map((item, idx) => (
+                    <li key={idx} className="flex gap-2">
+                      <span className="mt-1 w-1.5 h-1.5 bg-red-700 rounded-full" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              {/* RESPONSIBILITIES */}
+              <section className="mb-8">
+                <h3 className="text-sm font-bold uppercase tracking-widest text-[#133a41] mb-4">
+                  Key Responsibilities
+                </h3>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  {jobDescription.responsibilities.map((item, idx) => (
+                    <li key={idx} className="flex gap-2">
+                      <span className="mt-1 w-1.5 h-1.5 bg-slate-400 rounded-full" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              {/* QUALIFICATIONS */}
+              <section className="mb-8">
+                <h3 className="text-sm font-bold uppercase tracking-widest text-[#133a41] mb-4">
+                  Eligible Qualifications
+                </h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700">
+                  {jobDescription.qualificaitons.map((item, idx) => (
+                    <li key={idx} className="flex gap-2">
+                      <span className="mt-1 w-1.5 h-1.5 bg-green-600 rounded-full" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              {/* REQUIREMENTS */}
+              <section className="mb-10">
+                <h3 className="text-sm font-bold uppercase tracking-widest text-[#133a41] mb-4">
+                  Core Requirements
+                </h3>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  {jobDescription.requirements.map((item, idx) => (
+                    <li key={idx} className="flex gap-2">
+                      <span className="mt-1 w-1.5 h-1.5 bg-[#133a41] rounded-full" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              {/* FOOTER NOTE */}
+              <div className="bg-slate-50 border-l-4 border-[#133a41] p-4 text-xs text-slate-600 mb-8">
+                Compensation for this role is <strong>competitive and negotiable</strong>,
+                based on qualifications, skills, and demonstrated competency during the selection process.
+              </div>
+
+              {/* CLOSE BUTTON */}
+              <button
+                onClick={() => setShowModal(false)}
+                className="w-full py-3 bg-[#133a41] text-white font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#1b4d56] transition"
+              >
+                Close Job Description
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+
     </section>
   );
 }
