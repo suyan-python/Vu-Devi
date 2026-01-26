@@ -1,62 +1,96 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ShieldCheck, Microscope, Database } from "lucide-react";
 import back from "../assets/background/back3.jpg";
+import { motion } from "framer-motion";
 
 function Hero()
 {
   return (
-    <section className="relative h-screen w-full flex items-start lg:items-center overflow-hidden">
-      {/* 1. Background Image - Anchored to the bottom to ensure faces are always visible */}
+    <section className="relative h-screen w-full flex items-start overflow-hidden ">
+      {/* 1. ARCHITECTURAL BACKGROUND */}
       <div className="absolute inset-0 -z-20">
         <img
           src={back}
-          alt="Medical Professionals"
-          className="w-full h-full object-cover object-bottom scale-100 md:scale-105"
+          alt="Vu Devi Services Staff"
+          className="w-full h-full object-cover object-bottom"
         />
-        {/* 2. Intelligent Gradient: Dark at top (for text), Transparent at bottom (for faces) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#133a41]/90 via-[#133a41]/40 to-transparent lg:bg-gradient-to-r lg:from-[#133a41]/90 lg:to-transparent"></div>
+        {/* Intelligent Medical Gradient: 
+            White at the top (Clinical Cleanliness) to 
+            Transparent at the bottom (Human Connection)
+        */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-transparent"></div>
       </div>
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-24 md:pt-32 lg:pt-0">
-        <div className="max-w-3xl text-left">
+      {/* 2. CENTRAL COMMAND UI */}
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-20 md:pt-32 flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl text-center"
+        >
+          {/* Institutional Tag */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-50 border border-slate-200 rounded-full mb-5 shadow-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-700 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-800"></span>
+            </span>
+            <p className="text-slate-600 font-black tracking-[0.3em] uppercase text-[9px]">
+              Institutional Excellence • Since 2013
+            </p>
+          </div>
 
-          {/* Subtle Label */}
-          <p className="text-red-500 font-bold tracking-[0.2em] uppercase text-xs mb-4">
-            Established 2013
-          </p>
-
-          {/* Main Heading - Sized specifically for mobile readability */}
-          <h1 className="header text-3xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-4">
-            Excellence in <br />
-            <span className="text-white">Medical Documentation</span>
+          {/* Clinical Headline - Using lg:7xl for Authority */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold text-slate-900 leading-[1.1] tracking-tighter mb-6">
+            Pioneering Precision in <br />
+            <span className="text-red-700  font-light">Medical Documentation</span>
           </h1>
 
-          {/* Description - Shorter on mobile to save space */}
-          <p className="text-base md:text-lg lg:text-xl text-slate-200 mb-8 leading-relaxed max-w-xl border-l-2 border-red-700 pl-4 lg:pl-6">
-            Vu Devi Services Pvt. Ltd. delivers accurate, timely, and high-quality
-            medical documentation to international clients.
+          {/* Medical Credibility Sub-text */}
+          <p className="text-base md:text-xl text-slate-500 mb-10 leading-relaxed max-w-2xl mx-auto font-medium">
+            Bridging the gap between <span className="text-[#133a41] font-bold">clinical workflow</span> and
+            <span className="text-[#133a41] font-bold"> data integrity</span>. We provide HIPAA-compliant solutions tailored for global healthcare practitioners.
           </p>
 
-          {/* Action Buttons - Stacked on mobile, side-by-side on desktop */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          {/* Quick Stats - Direct value for Doctors */}
+          {/* <div className="hidden md:flex justify-center gap-12 mb-12 py-6 border-y border-slate-100">
+            <div className="flex flex-col items-center">
+              <ShieldCheck className="text-red-700 mb-2" size={20} />
+              <span className="text-[10px] font-black uppercase text-slate-400">HIPAA Secure</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <Microscope className="text-red-700 mb-2" size={20} />
+              <span className="text-[10px] font-black uppercase text-slate-400">Clinical Accuracy</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <Database className="text-red-700 mb-2" size={20} />
+              <span className="text-[10px] font-black uppercase text-slate-400">ISO Certified</span>
+            </div>
+          </div> */}
+
+          {/* Professional Action Buttons */}
+          <div className="flex flex-row gap-4 justify-center flex-wrap">
             <NavLink
               to="/about"
-              className="flex items-center justify-center gap-2 px-7 py-3.5 bg-red-700 text-white rounded-lg font-bold text-sm md:text-base hover:bg-red-800 transition-all shadow-lg"
+              className="group flex items-center justify-center gap-3 px-10 py-4 bg-[#133a41] text-white font-black text-xs uppercase tracking-[0.2em] rounded-sm hover:bg-red-700 transition-all duration-500 shadow-xl shadow-[#133a41]/20"
             >
-              Explore More
-              <ChevronRight size={18} />
+              Enterprise Profile
+              <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </NavLink>
 
             <NavLink
               to="/team"
-              className="flex items-center justify-center px-7 py-3.5 bg-white/10 backdrop-blur-md text-white border border-white/30 rounded-lg font-bold text-sm md:text-base hover:bg-white hover:text-[#133a41] transition-all"
+              className="flex items-center justify-center gap-3 px-10 py-4 bg-white text-[#133a41] border-2 border-slate-200 font-black text-xs uppercase tracking-[0.2em] rounded-sm hover:border-red-700 hover:text-red-700 transition-all duration-500"
             >
-              Our Team
+              Medical Board
             </NavLink>
           </div>
-        </div>
+        </motion.div>
       </div>
+
+      {/* Visual Bottom Anchor: Ensures the transition to the staff image is seamless */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent"></div>
     </section>
   );
 }

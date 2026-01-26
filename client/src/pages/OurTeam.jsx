@@ -47,7 +47,7 @@ function OurTeam()
   const navigate = useNavigate();
 
   return (
-    <section className="bg-[#fffff7] py-24 relative overflow-hidden">
+    <section className=" py-24 relative overflow-hidden">
       {/* Texture Layer - Subtle corporate feel */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')]"></div>
 
@@ -60,7 +60,7 @@ function OurTeam()
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
             Strategic <span className="text-[#133a41]">Leadership</span>
           </h2>
           <p className="mt-4 text-lg text-slate-600 leading-relaxed">

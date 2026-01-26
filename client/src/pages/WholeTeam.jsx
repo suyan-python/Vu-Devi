@@ -157,7 +157,7 @@ function WholeTeam()
   ];
 
   return (
-    <section className="w-full py-24 bg-[#fffff7] relative overflow-hidden">
+    <section className="w-full py-24  relative overflow-hidden">
       {/* Texture: Professional Medical Grid */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')]"></div>
 
@@ -229,7 +229,7 @@ function WholeTeam()
         {/* ===== DIVIDER WITH ICON ===== */}
         <div className="relative py-12 flex items-center justify-center">
           <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-slate-200"></div></div>
-          <div className="relative bg-[#fffff7] px-6 text-slate-300"><Users size={32} strokeWidth={1} /></div>
+          <div className="relative  px-6 text-slate-300"><Users size={32} strokeWidth={1} /></div>
         </div>
 
         {/* ===== SECTION 2: THE CORE EXPERIENCED TEAM ===== */}

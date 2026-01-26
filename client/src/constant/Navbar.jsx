@@ -21,7 +21,7 @@ function Navbar()
     { to: "/team", label: "Our Team" },
     { to: "/services", label: "Services" },
     { to: "/contact", label: "Contact" },
-    { to: "/application", label: "Apply for Job", isButton: true },
+    { to: "/application", label: "Career", isButton: true },
   ];
 
   const getActiveClass = ({ isActive }) =>

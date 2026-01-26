@@ -45,7 +45,7 @@ function NewsUpdates()
         {/* 1. SECTION HEADER */}
         <div className="flex flex-col items-center mb-24">
           <motion.h2
-            className="text-4xl lg:text-6xl font-bold text-slate-900 text-center uppercase tracking-tighter"
+            className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 text-center uppercase "
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
           >

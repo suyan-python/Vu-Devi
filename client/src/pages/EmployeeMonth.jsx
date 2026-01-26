@@ -34,7 +34,6 @@ const EmployeeOfTheMonth = () =>
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')]"></div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
-
                 {/* SECTION HEADER: The Month Focus */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 border-b border-slate-200 pb-10">
                     <div className="max-w-2xl">
@@ -42,21 +41,10 @@ const EmployeeOfTheMonth = () =>
                             <span className="h-[2px] w-12 bg-red-700"></span>
                             <span className="header text-red-700 font-bold uppercase tracking-[0.3em] text-xs">Monthly Distinction</span>
                         </div>
-                        <h2 className="text-4xl lg:text-6xl font-bold text-slate-900">
+                        <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 ">
                             Honoring Our <br />
-                            <span className="text-red-700">November 2025</span> Awardees
+                            <span className="text-red-700 font-light">November 2025</span> Employees of the Month
                         </h2>
-                    </div>
-
-                    {/* Professional Context Box */}
-                    <div className="bg-white p-6 border border-slate-200 rounded-sm shadow-sm hidden lg:block">
-                        <div className="flex items-center gap-4 text-[#133a41]">
-                            <Calendar size={32} strokeWidth={1.5} />
-                            <div>
-                                <p className="text-[10px] uppercase font-bold text-slate-400">Review Period</p>
-                                <p className="text-sm font-bold">Nov 01 — Nov 30</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 

@@ -150,7 +150,9 @@ export default function JobApplicationForm()
             <div className="bg-white p-8 rounded-sm border-l-4 border-red-700 shadow-sm">
               <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
                 <FileText className="text-red-700" size={20} />
-                Position: Medical Documentation & Data Entry Associate
+                Position: <p className="underline">
+                  Medical Documents Analyst and Entry
+                </p>
               </h3>
 
               <div className="space-y-6">
@@ -177,7 +179,7 @@ export default function JobApplicationForm()
                   <div className="p-2 bg-slate-50 rounded text-[#133a41] h-fit"><Clock size={20} /></div>
                   <div>
                     <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Engagement Period</p>
-                    <p className="text-sm font-semibold text-red-700">Long-term role with a minimum commitment of 18 months
+                    <p className="text-sm font-semibold text-red-700">Long-term role with a minimum commitment of 24 months
                     </p>
                   </div>
                 </div>
