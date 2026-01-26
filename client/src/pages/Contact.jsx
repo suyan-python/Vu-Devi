@@ -22,9 +22,9 @@ function Contact()
                 <Globe size={12} />
                 Global Operations
               </div>
-              <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight">
+              <h1 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
                 Connect with our <br />
-                <span className="text-[#133a41]">Service Center</span>
+                <span className="text-[#133a41] font-light">Service Center</span>
               </h1>
               <p className="mt-6 text-slate-600 text-lg leading-relaxed border-l-2 border-slate-200 pl-6">
                 Vu Devi Services Pvt. Ltd. provides 24/7 support coordination for international medical documentation projects.

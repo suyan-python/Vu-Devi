@@ -12,7 +12,7 @@ function Footer()
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0f2d33] text-white pt-20 pb-20 border-t-4 border-red-700">
+    <footer className="bg-[#0f2d33] text-white pt-20 pb-20 border-t-4 border-red-800">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
         {/* 1. TOP TIER: BRAND & COMPLIANCE */}

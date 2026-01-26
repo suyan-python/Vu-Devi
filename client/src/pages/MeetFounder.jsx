@@ -53,9 +53,9 @@ const MeetFounder = () =>
                             <p className="text-xs font-black text-slate-400 uppercase tracking-[0.4em]">Leadership Profile</p>
                         </div>
 
-                        <h2 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight mb-8">
+                        <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight mb-8">
                             Driving Global Healthcare <br />
-                            <span className="text-red-700 italic font-light">through Innovation.</span>
+                            <span className="text-red-700  font-light">through Innovation.</span>
                         </h2>
 
                         <div className="space-y-6 text-slate-600 text-lg leading-relaxed">

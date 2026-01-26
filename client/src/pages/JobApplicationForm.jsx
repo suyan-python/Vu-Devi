@@ -133,9 +133,9 @@ export default function JobApplicationForm()
             <Briefcase size={12} />
             Now Hiring: Medical Operations
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
             Build Your Career in <br />
-            <span className="text-red-700">Clinical Excellence</span>
+            <span className="text-red-700 font-light">Clinical Excellence</span>
           </h1>
           <p className="mt-6 text-slate-600 max-w-2xl mx-auto text-lg italic">
             "Explore a long-term career opportunity in medical documentation, data entry, and healthcare services with an international medical operations team."
@@ -193,7 +193,7 @@ export default function JobApplicationForm()
               </div>
               <button
                 onClick={() => setShowModal(true)}
-                className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-red-800 hover:text-red-700 transition cursor-pointer"
+                className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-red-700 hover:text-red-600 transition cursor-pointer"
               >
                 View Full Job Description
                 <ArrowRight size={14} />
@@ -227,7 +227,7 @@ export default function JobApplicationForm()
             )}
 
             <form className="bg-white p-8 md:p-10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] border border-slate-100" onSubmit={handleSubmit}>
-              <h3 className="text-2xl font-bold text-slate-900 mb-8 border-b pb-4">Apply for Medical Documentation Job in Nepal</h3>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-8 border-b pb-4">Apply for Medical Documentation Job in Nepal</h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div className="space-y-2">

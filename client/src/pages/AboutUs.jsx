@@ -14,26 +14,40 @@ function AboutUs()
     <section className="relative py-32 bg-[#f8fafc] overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-6">
 
-        {/* 1. CORPORATE IDENTITY HEADER */}
-        <div className="flex flex-row items-end justify-between mb-20 gap-8 ">
+        <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between mb-16 lg:mb-14 gap-8">
+          {/* Left/Main Column: Institutional Title */}
           <motion.div
-            className="max-w-3xl"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="max-w-3xl text-center lg:text-left"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
+            {/* Institutional Badge - Centered on mobile */}
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#133a41] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-sm mb-6">
               <Award size={12} />
               Established Excellence
             </div>
-            <h2 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight">
+
+            {/* Main Headline - Using tight tracking for authority */}
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tighter text-slate-900 leading-[1.1]">
               The Architecture of <br />
-              <span className="text-red-700  ">Clinical Trust.</span>
+              <span className="text-red-700 font-light ">Clinical Trust.</span>
             </h2>
           </motion.div>
-          <div className="text-right hidden lg:block">
-            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Global Operations</p>
-            <p className="text-sm font-bold text-slate-900">Medical Support Node v4.0</p>
+
+          {/* Right Column: Operational Status - Centered on mobile */}
+          <div className="text-center lg:text-right border-t lg:border-t-0 border-slate-100 pt-6 lg:pt-0 w-full lg:w-auto">
+            <div className="flex lg:block flex-col items-center">
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">
+                Global Operations
+              </p>
+              <div className="flex items-center gap-2 lg:justify-end">
+                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
+                <p className="text-xs font-bold text-slate-900 uppercase tracking-tighter">
+                  Medical Support Node v4.0
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -54,7 +68,7 @@ function AboutUs()
             <div className="absolute top-0 right-0 p-4 opacity-[0.03]">
               <Microscope size={120} />
             </div>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-md md:text-lg text-slate-600 leading-relaxed">
               Vu Devi Services is a specialized partner in <span className="text-slate-900 font-bold">medical documentation and healthcare support</span>. We operate at the intersection of technology and human expertise, providing global providers with compliant, high-fidelity data solutions. Our infrastructure is built to ensure that healthcare professionals can redirect their focus toward <span className="text-red-700 italic">patient outcomes</span> while we manage the complexity of their documentation.
             </p>
           </div>

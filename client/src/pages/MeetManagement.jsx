@@ -26,9 +26,9 @@ const MeetManagement = () =>
                             <p className="text-xs font-black text-slate-400 uppercase tracking-[0.4em]">Operations Executive</p>
                         </div>
 
-                        <h2 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight mb-8">
+                        <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight mb-8">
                             Operational Mastery & <br />
-                            <span className="text-[#133a41] italic font-light">Scalable Growth.</span>
+                            <span className="text-red-700  font-light">Scalable Growth.</span>
                         </h2>
 
                         <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
@@ -37,7 +37,7 @@ const MeetManagement = () =>
                             </p>
 
                             <p>
-                                She believes that effective management is the silent engine of any successful organization. By integrating <span className="text-red-700 font-bold">advanced logistical strategies</span> with a deep commitment to teamwork, she ensures that every client interaction is handled with precision and every internal team member is positioned to thrive.
+                                She believes that effective management is the silent engine of any successful organization. By integrating <span className="text-slate-900 font-bold">advanced logistical strategies</span> with a deep commitment to teamwork, she ensures that every client interaction is handled with precision and every internal team member is positioned to thrive.
                             </p>
                         </div>
 
@@ -61,7 +61,7 @@ const MeetManagement = () =>
                             </div>
                             <a href="#" className="flex items-center gap-2 text-red-700 hover:text-slate-900 transition-colors ml-auto">
                                 <Linkedin size={20} />
-                                <span className="text-[10px] font-black uppercase tracking-widest">Executive Network</span>
+                                <span className="text-[10px] font-black uppercase tracking-widest">Connect on Professional Network</span>
                             </a>
                         </div>
                     </motion.div>

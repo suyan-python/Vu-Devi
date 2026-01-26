@@ -171,8 +171,8 @@ function WholeTeam()
                 <ShieldCheck size={16} />
                 Management Layer
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 ">
-                Strategic <span className="text-[#133a41] not-italic">Team Leads</span>
+              <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 ">
+                Strategic <span className="text-[#133a41] font-light">Team Leads</span>
               </h2>
             </div>
             <p className="text-slate-500 max-w-md text-sm md:text-right italic">

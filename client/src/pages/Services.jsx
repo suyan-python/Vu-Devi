@@ -79,14 +79,15 @@ const Services = () =>
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Institutional Header */}
-        <div className="flex flex-col items-center mb-18 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-700 text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-sm mb-6">
+        <div className="flex flex-col items-center mb-8 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-800 text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-sm mb-6">
             Institutional Capabilities
           </div>
           <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
-            Our Core Clinical Protocols <span className="text-[#133a41] italic font-light">.</span>
+            Our Core <br />
+            <span className="text-red-700  font-light"> Clinical Protocols</span>
           </h2>
-          <div className="w-24 h-1 bg-slate-200 mt-8"></div>
+          <div className="w-24 h-1 bg-slate-200 mt-3"></div>
         </div>
 
         {/* Services Grid */}
