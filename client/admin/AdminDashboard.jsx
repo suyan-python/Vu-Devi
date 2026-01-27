@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import
 {
     Search, LogOut, FileUser, ExternalLink,
-    Mail, Calendar, Users, Clock, Filter, X
+    Mail, Calendar, Users, Clock, Filter, X,
+    FileText
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import * as XLSX from "xlsx";
@@ -96,6 +97,16 @@ export default function AdminDashboard()
         }
     };
 
+    const viewResume = (resumeUrl) =>
+    {
+        if (!resumeUrl)
+        {
+            alert("No resume uploaded for this applicant.");
+            return;
+        }
+        window.open(resumeUrl, "_blank");
+    };
+
 
     const exportToExcel = () =>
     {
@@ -160,7 +171,7 @@ export default function AdminDashboard()
                                     Vu Devi /<span className="text-slate-400"> Evolve Vue</span>
                                 </h1>
                                 <ChevronRight size={14} className="text-slate-300" />
-                                <span className="text-sm font-bold text-[#133a41]">Admin Portal</span>
+                                <span className="text-sm font-bold text-[#133a41] uppercase">Admin Portal</span>
                             </div>
                             <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-0.5">
                                 Secure Recruitment Node v2.0
@@ -239,65 +250,102 @@ export default function AdminDashboard()
                 </div>
 
                 {/* 3. APPLICATIONS GRID (The "Candidate Dossiers") */}
+                {/* 3. APPLICATIONS GRID (The "Candidate Dossiers") */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredApplications.map((app) => (
                         <motion.div
                             key={app._id}
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="bg-white border border-slate-200 hover:border-[#133a41] hover:shadow-xl transition-all duration-300 group flex flex-col"
+                            className="bg-white border border-slate-200 hover:border-[#133a41] hover:shadow-xl transition-all duration-300 group flex flex-col h-full"
                         >
-                            {/* Card Header */}
-                            <div className="p-6 border-b border-slate-50 relative">
+                            {/* Card Header - Fixed height container to ensure vertical alignment */}
+                            <div className="p-6 border-b border-slate-50 relative flex-none h-[180px]">
                                 <div className="absolute top-0 left-0 w-1 h-full bg-slate-200 group-hover:bg-[#133a41] transition-colors"></div>
+
                                 <div className="flex justify-between items-start mb-4">
-                                    <div className="w-12 h-12 bg-slate-50 rounded-full flex items-center justify-center text-[#133a41]">
+                                    <div className="w-12 h-12 bg-slate-50 rounded-full flex items-center justify-center text-[#133a41] flex-none">
                                         <FileUser size={24} />
                                     </div>
-                                    <span className="text-[10px] font-black text-slate-400 uppercase bg-slate-50 px-2 py-1">
+                                    <span className="text-[10px] font-black text-slate-400 uppercase bg-slate-50 px-2 py-1 flex-none">
                                         {new Date(app.appliedAt).toLocaleDateString()}
                                     </span>
                                 </div>
-                                <h2 className="text-xl font-bold text-slate-900 mb-1">{app.name}</h2>
-                                <div className="flex items-center gap-2 text-slate-500 hover:text-[#133a41] transition-colors">
-                                    <Mail size={14} />
-                                    <a href={`mailto:${app.email}`} className="text-sm font-medium">{app.email}</a>
+
+                                {/* Truncated Name: Prevents long names from breaking the grid */}
+                                <h2 className="text-xl font-bold text-slate-900 mb-1 truncate" title={app.name}>
+                                    {app.name}
+                                </h2>
+
+                                {/* Truncated Email: Maintains professional spacing */}
+                                <div className="flex items-center gap-2 text-slate-500 hover:text-[#133a41] transition-colors overflow-hidden">
+                                    <Mail size={14} className="flex-none" />
+                                    <a href={`mailto:${app.email}`} className="text-sm font-medium truncate" title={app.email}>
+                                        {app.email}
+                                    </a>
                                 </div>
                             </div>
 
-                            {/* Card Actions */}
-                            <div className="p-6 bg-slate-50/80 border-t border-slate-100 mt-auto">
-                                <div className="flex flex-col gap-3">
+                            {/* Card Actions Container - Pushed to the bottom via flex-grow */}
+                            <div className="p-6 bg-white border-t border-slate-100 flex-grow flex flex-col">
+                                <div className="flex flex-col gap-5 h-full">
 
-                                    {/* 1. PRIMARY ACTION: READ COVER LETTER */}
+                                    {/* 1. PRIMARY EVALUATION ACTION */}
                                     <button
                                         onClick={() => setSelectedApp(app)}
-                                        className="w-full flex items-center justify-center gap-2 py-3 border-1 border-[#133a41] text-[#133a41] text-[10px] font-black uppercase tracking-[0.2em] hover:bg-slate-900 hover:text-white transition-all duration-300 rounded-sm shadow-sm cursor-pointer"
+                                        className="w-full flex items-center justify-center gap-2 py-3.5  text-[#133a41] border-x-2 border-[#133a41] text-[10px] font-black uppercase tracking-[0.2em] rounded-sm shadow-lg shadow-[#133a41]/10 group cursor-pointer flex-none"
                                     >
-                                        <Eye size={14} /> Read Cover Letter
+                                        <Eye size={14} className="group-hover:scale-110 transition-transform" />
+                                        Review Application Letter
                                     </button>
 
-                                    {/* 2. SECONDARY ACTIONS ROW */}
-                                    <div className="flex gap-2">
-                                        {/* Download Resume */}
+                                    {/* 2. DOCUMENT & DESTRUCTION ROW */}
+                                    <div className="flex items-center gap-3 flex-none">
                                         <a
-                                            href={`${API_URL}/${app.resumePath}`}
+                                            href={app.resumeUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-widest hover:border-slate-400 hover:text-slate-900 transition-all duration-300 rounded-sm"
+                                            className="flex items-center gap-2 px-4 py-2 bg-slate-100 border border-slate-200 text-slate-700 rounded-sm hover:bg-slate-200 transition-colors"
                                         >
-                                            <Download size={14} /> CV.pdf
+                                            <FileText size={14} className="text-red-700" />
+                                            <span className="text-[10px] font-semibold uppercase tracking-tight">RESUME.PDF</span>
+                                            <Download size={12} className="text-slate-400" />
                                         </a>
 
-                                        {/* Delete Application */}
                                         <button
                                             onClick={() => handleDelete(app._id)}
-                                            className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-white border border-red-100 text-red-700/60 hover:text-red-700 hover:bg-red-50 hover:border-red-200 transition-all duration-300 rounded-sm"
-                                            title="Permanently remove application"
+                                            className="ml-auto p-2.5 text-slate-300 hover:text-red-700 hover:bg-red-50 transition-all duration-300 rounded-sm"
+                                            title="Permanently remove application from node"
                                         >
-                                            <Trash2 size={14} />
-                                            <span className="text-[10px] font-bold uppercase tracking-widest">Delete</span>
+                                            <Trash2 size={18} />
                                         </button>
+                                    </div>
+
+                                    {/* 3. METADATA FOOTER - Pushed to the absolute bottom of the card */}
+                                    <div className="pt-4 border-t border-slate-50 space-y-2 mt-auto">
+                                        <div className="flex justify-between items-center gap-4">
+                                            <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest flex-none">Applied Position</span>
+                                            <span className="text-[11px] font-bold text-[#133a41] truncate text-right">{app.jobTitle}</span>
+                                        </div>
+
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Job Type</span>
+                                            <div className="flex items-center gap-1.5 overflow-hidden">
+                                                <span className="px-1.5 py-0.5 bg-red-50 text-red-700 text-[9px] rounded-sm uppercase whitespace-nowrap">
+                                                    {app.jobTag}
+                                                </span>
+                                                <span className="px-1.5 py-0.5 bg-green-50 text-green-700 text-[9px] rounded-sm uppercase whitespace-nowrap">
+                                                    {app.jobLocation}
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex justify-between items-center pt-2">
+                                            <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Source</span>
+                                            <span className="text-[10px] font-semibold text-slate-500 italic underline truncate ml-4" title={app.sourceWebsite}>
+                                                {app.sourceWebsite}
+                                            </span>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -305,6 +353,7 @@ export default function AdminDashboard()
                         </motion.div>
                     ))}
                 </div>
+
             </div>
 
             {/* 4. MODAL: FULL DOCUMENT VIEW */}
