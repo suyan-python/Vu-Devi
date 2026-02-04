@@ -174,7 +174,7 @@ export default function AdminDashboard()
                                 <span className="text-sm font-bold text-[#133a41] uppercase">Admin Portal</span>
                             </div>
                             <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-0.5">
-                                Secure Recruitment Node v2.0
+                                Secure Recruitment v2.1
                             </p>
                         </div>
                     </div>

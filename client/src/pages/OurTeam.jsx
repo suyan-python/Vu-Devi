@@ -120,7 +120,7 @@ function OurTeam()
 
                 <div className="relative">
                   <Quote className="absolute -top-4 -left-4 text-[#133a41]/5" size={60} />
-                  <p className="italic text-slate-700 text-lg md:text-xl leading-relaxed relative z-10 pl-4 border-l-2 border-slate-100">
+                  <p className="italic text-slate-700 text-md md:text-lg leading-relaxed relative z-10 pl-4 border-l-2 border-slate-100">
                     “{member.quote}”
                   </p>
                 </div>

@@ -61,6 +61,10 @@ export default function JobApplicationForm()
       formDataToSend.append("email", formData.email);
       formDataToSend.append("resume", formData.resume);
       formDataToSend.append("coverLetter", formData.coverLetter);
+
+      formDataToSend.append("jobTitle", "Medical Report Writer / Physiotherapy Report Writer");
+      formDataToSend.append("jobTag", "N/A");
+      formDataToSend.append("jobLocation", "N/A");
       formDataToSend.append("sourceWebsite", window.location.hostname);
 
 

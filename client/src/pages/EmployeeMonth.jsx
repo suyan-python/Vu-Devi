@@ -50,7 +50,6 @@ const EmployeeOfTheMonth = () =>
                     </div>
                 </div>
 
-                {/* EMPLOYEE CARDS GRID */}
                 {/* EMPLOYEE OF THE MONTH GRID */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                     {employees.map((emp, idx) => (
@@ -58,32 +57,31 @@ const EmployeeOfTheMonth = () =>
                             key={idx}
                             className="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-500 cursor-pointer"
                         >
-                            {/* Left Accent Bar */}
-                            <div className="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-[#0F3B44] to-[#1F787E]"></div>
-
-                            {/* Image & Badge */}
-                            <div className="relative">
+                            {/* Main Image Section */}
+                            <div className="relative w-full h-80 md:h-96 overflow-hidden">
                                 <img
                                     src={emp.image}
                                     alt={emp.name}
-                                    className="w-full h-64 object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-700"
+                                    className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-700"
                                 />
+                                {/* Gradient overlay for text readability */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0F3B44]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
 
                             {/* Content Section */}
-                            <div className="p-6 flex flex-col justify-between space-y-4">
+                            <div className="p-6 md:p-8 flex flex-col justify-between space-y-5">
                                 {/* Name & Designation */}
                                 <div>
-                                    <h3 className="text-lg md:text-xl font-bold text-slate-900 tracking-tight">{emp.name}</h3>
-                                    <div className="flex items-center gap-2 text-[#D9534F] mt-1">
-                                        <GraduationCap size={16} />
-                                        <span className="text-xs md:text-sm font-medium uppercase tracking-wide">{emp.designation}</span>
+                                    <h3 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">{emp.name}</h3>
+                                    <div className="flex items-center gap-2 text-[#D9534F] mt-2">
+                                        <GraduationCap size={18} />
+                                        <span className="text-sm md:text-base font-medium uppercase tracking-wide">{emp.designation}</span>
                                     </div>
                                 </div>
 
-                                {/* Achievement */}
-                                <div className="bg-[#F7FAFC] rounded-lg p-4 border-l-4 border-[#0F3B44]">
-                                    <p className="text-[10px] md:text-xs uppercase font-semibold text-slate-400 tracking-widest mb-1">
+                                {/* Achievement Section */}
+                                <div className="bg-[#F7FAFC] rounded-lg p-5 border-l-4 border-[#0F3B44] shadow-sm">
+                                    <p className="text-xs md:text-sm uppercase font-semibold text-slate-400 tracking-widest mb-2">
                                         Service Excellence
                                     </p>
                                     <p className="text-sm md:text-base text-slate-700 italic leading-relaxed">
@@ -91,19 +89,20 @@ const EmployeeOfTheMonth = () =>
                                     </p>
                                 </div>
 
-                                {/* Footer Buttons / CTA */}
+                                {/* Footer / Certification */}
                                 <div className="flex justify-between items-center mt-2">
-                                    <span className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-tighter italic">
+                                    <span className="text-xs md:text-sm font-medium text-slate-400 uppercase tracking-tighter italic">
                                         Certified by Vu Devi Services
                                     </span>
-                                    <button className="w-8 h-8 rounded-full border-2 border-slate-200 flex items-center justify-center hover:bg-[#0F3B44] hover:text-white transition-colors">
-                                        <ChevronRight size={14} />
+                                    <button className="w-10 h-10 rounded-full border-2 border-slate-200 flex items-center justify-center hover:bg-[#0F3B44] hover:text-white transition-colors">
+                                        <ChevronRight size={16} />
                                     </button>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
+
 
 
             </div>
