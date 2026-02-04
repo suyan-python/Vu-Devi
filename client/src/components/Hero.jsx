@@ -42,7 +42,7 @@ function Hero()
           </div>
 
           {/* Clinical Headline - Using lg:7xl for Authority */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold text-slate-900 leading-[1.1] tracking-tighter mb-6">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold text-slate-800 leading-[1.1] tracking-tighter mb-6">
             Pioneering Precision in <br />
             <span className="text-red-700  font-light">Medical Documentation</span>
           </h1>

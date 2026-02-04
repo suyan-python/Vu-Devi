@@ -3,9 +3,12 @@ import
 {
   FileText, CheckCircle2, AlertCircle, FileUp,
   Keyboard, Briefcase, GraduationCap, Coins, Clock,
-  ArrowRight
+  ArrowRight,
+  Section,
+  SectionIcon
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import GeneralForm from "./GeneralForm";
 
 export default function JobApplicationForm()
 {
@@ -58,6 +61,9 @@ export default function JobApplicationForm()
       formDataToSend.append("email", formData.email);
       formDataToSend.append("resume", formData.resume);
       formDataToSend.append("coverLetter", formData.coverLetter);
+      formDataToSend.append("sourceWebsite", window.location.hostname);
+
+
 
       const response = await fetch(`${API_URL}/api/applications/apply`, {
         method: "POST",
@@ -85,36 +91,82 @@ export default function JobApplicationForm()
     }
   };
 
-  const jobDescription = {
+  const jobData = {
+    title: "Medical Report Writer / Physiotherapy Report Writer",
+    openings: "10 Positions",
+    company: "Vu Devi Services Pvt. Ltd.",
+    location: "Balkumari, Lalitpur",
+    schedule: "Full-time | Monday–Friday | Work from Office",
+    holidays: "Weekends & U.S. Public Holidays (Nepali holidays not observed)",
+
     overview: [
-      "Online data entry and analysis",
-      "Preparation and review of scientific and medical documents",
+      "Responsible for reviewing patient records and preparing structured medical reports.",
+      "Work focuses on clinical accuracy, documentation standards, and evidence-based reporting.",
+      "Position suited for candidates with strong medical knowledge and attention to detail."
     ],
+
     responsibilities: [
-      "Write, edit, and review scientific and medical documents",
-      "Ensure accuracy, consistency, and adherence to formatting standards",
-      "Manage data according to defined processes and procedures",
-      "Meet established timelines and productivity expectations",
-      "Adapt to frequent updates in instructions and workflows",
-      "Collaborate with team members to achieve shared goals",
+      "Review and analyze medical records, reports, and claims documentation.",
+      "Evaluate diagnosis, treatment history, and work-relatedness using medical evidence.",
+      "Prepare structured medical and physiotherapy reports in required formats.",
+      "Ensure quality, compliance, and formatting standards are met.",
+      "Collaborate with internal teams to maintain accuracy and consistency.",
+      "Apply clinical reasoning and communicate findings clearly.",
+      "Incorporate feedback professionally and improve documentation quality.",
+      "Meet project deadlines and client expectations."
     ],
-    qualificaitons: [
-      "Bachelor’s in Physiotherapy,",
-      "Bachelor’s in Pharmacy",
-      "Bachelor’s in Nursing",
-      "Bachelor’s in Public Health",
-      "BBA",
-      "Bachelor’s in Computer Science",
+
+    qualifications: [
+      "MBBS",
+      "Bachelor’s in Physiotherapy",
+      "Master’s in Physiotherapy"
     ],
+
     requirements: [
-      "Strong written communication and language skills",
-      "Knowledge of medical terminology",
-      "High attention to detail and quality standards",
-      "Ability to work efficiently under time constraints",
-      "Comfortable working with US-based timelines and holidays",
+      "Strong medical terminology and diagnostic knowledge",
+      "Proficiency in Microsoft Office",
+      "Typing speed minimum 40 WPM",
+      "Excellent written and spoken English",
+      "Minimum 2-year commitment required"
     ],
-    shift: ["6:30am - 3:00pm NST (8:15pm - 4:45am EST) Monday to Friday"]
+
+    training: [
+      "1-month paid training program",
+      "Continuous learning and performance-based growth"
+    ],
+
+    application: [
+      "Updated CV",
+      "Screenshot of typing test result (40+ WPM)"
+    ]
   };
+
+  const Section = ({ title, items, color, grid }) =>
+  {
+    if (!items || items.length === 0) return null; // prevents crash
+
+    return (
+      <section className="mb-8">
+        <h3 className="text-sm font-bold uppercase tracking-widest text-[#133a41] mb-4">
+          {title}
+        </h3>
+
+        <ul
+          className={`${grid ? "grid grid-cols-1 sm:grid-cols-2 gap-2" : "space-y-2"
+            } text-sm text-slate-700`}
+        >
+          {items.map((item, idx) => (
+            <li key={idx} className="flex gap-2">
+              <span className={`mt-1 w-1.5 h-1.5 ${color} rounded-full`} />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </section>
+    );
+  };
+
+
 
 
   return (
@@ -146,76 +198,99 @@ export default function JobApplicationForm()
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
           {/* 2. JOB SPECIFICATIONS (LEFT SIDE) */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="bg-white p-8 rounded-sm border-l-4 border-red-700 shadow-sm">
-              <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <FileText className="text-red-700" size={20} />
-                Position: <p className="underline">
-                  Medical Documents Analyst and Entry
-                </p>
-              </h3>
+          <div className="lg:col-span-5">
+            <div className="bg-white rounded-sm shadow-sm border border-slate-100 overflow-hidden">
 
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="p-2 bg-slate-50 rounded text-[#133a41] h-fit"><Keyboard size={20} /></div>
+              {/* HEADER */}
+              <div className="border-l-4 border-red-700 px-8 py-6 bg-slate-50/40">
+                <h3 className="text-[11px] font-black tracking-[0.35em] text-slate-400 uppercase mb-2">
+                  Position
+                </h3>
+                <p className="text-xl font-bold text-slate-900 leading-snug">
+                  Medical Report Writer / Physiotherapy Report Writer
+                </p>
+              </div>
+
+              {/* SPEC GRID */}
+              <div className="px-8 py-8 grid gap-8">
+
+                {/* CORE REQUIREMENT */}
+                <div className="flex gap-5 items-start">
+                  <div className="p-3 bg-slate-50 border border-slate-200 text-[#133a41] rounded-sm">
+                    <Keyboard size={20} />
+                  </div>
                   <div>
-                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Core Requirement</p>
-                    <p className="text-sm font-semibold text-slate-700">Strong typing speed (40+ WPM), proficiency in MS Word, Excel, and digital documentation tools</p>
+                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">
+                      Core Requirement
+                    </p>
+                    <p className="text-sm font-semibold text-slate-700 leading-relaxed">
+                      Strong typing speed (40+ WPM), proficiency in MS Word, Excel, and digital documentation tools.
+                    </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <div className="p-2 bg-slate-50 rounded text-[#133a41] h-fit"><Coins size={20} /></div>
+                {/* REMUNERATION */}
+                <div className="flex gap-5 items-start">
+                  <div className="p-3 bg-slate-50 border border-slate-200 text-[#133a41] rounded-sm">
+                    <Coins size={20} />
+                  </div>
                   <div>
-                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Remuneration</p>
-                    <p className="text-sm font-semibold text-slate-700">
+                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">
+                      Remuneration
+                    </p>
+                    <p className="text-sm font-semibold text-slate-700 leading-relaxed">
                       Compensation is competitive and negotiable based on qualifications, skills, and relevant experience.
                     </p>
-
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <div className="p-2 bg-slate-50 rounded text-[#133a41] h-fit"><Clock size={20} /></div>
+                {/* ENGAGEMENT */}
+                <div className="flex gap-5 items-start">
+                  <div className="p-3 bg-slate-50 border border-slate-200 text-[#133a41] rounded-sm">
+                    <Clock size={20} />
+                  </div>
                   <div>
-                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Engagement Period</p>
-                    <p className="text-sm font-semibold text-red-700">Long-term role with a minimum commitment of 24 months
+                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">
+                      Engagement Period
+                    </p>
+                    <p className="text-sm font-bold text-red-700 leading-relaxed">
+                      Long-term role with a minimum commitment of 24 months
                     </p>
                   </div>
                 </div>
+
               </div>
 
-              <div className="mt-8 pt-6 border-t border-slate-100">
+              {/* ASSESSMENT NOTE */}
+              <div className="px-8 py-5 border-t border-slate-100 bg-slate-50/40">
                 <p className="text-xs text-slate-500 leading-relaxed italic">
-                  *Shortlisted candidates will complete a structured assessment covering medical terminology, documentation accuracy, and attention to detail.
-
+                  Shortlisted candidates will complete a structured assessment covering medical terminology, documentation accuracy, and attention to detail.
                 </p>
               </div>
-              <button
-                onClick={() => setShowModal(true)}
-                className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-red-700 hover:text-red-600 transition cursor-pointer"
-              >
-                View Full Job Description
-                <ArrowRight size={14} />
-              </button>
 
+              {/* ACTION ZONE */}
+              <div className="px-8 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-slate-100">
+
+                <button
+                  onClick={() => setShowModal(true)}
+                  className="inline-flex items-center justify-center gap-2 bg-red-700 hover:bg-red-600 text-white text-xs font-bold tracking-widest uppercase px-6 py-3 transition rounded-sm"
+                >
+                  View Full Job Description
+                  <ArrowRight size={14} />
+                </button>
+
+                <a
+                  href="https://www.typing.com/student/tests"
+                  target="_blank"
+                  className="text-xs font-bold tracking-widest text-red-700 hover:text-red-600 transition uppercase"
+                >
+                  Take Typing Test →
+                </a>
+
+              </div>
             </div>
-
-            {/* Application Tips */}
-            <div className="bg-[#133a41] p-6 text-white rounded-sm">
-              <h4 className="font-bold mb-3 flex items-center gap-2">
-                <GraduationCap size={18} />
-                Application Tip
-              </h4>
-              <p className="text-sm text-white/80 leading-relaxed">
-                Highlight any experience in medical documentation, healthcare services, data entry, or administrative roles. A recent typing test result is required to validate speed and accuracy.
-              </p>
-              <a href="https://www.typing.com/student/tests" target="_blank" className="mt-4 inline-flex items-center gap-2 text-xs font-bold text-red-400 hover:text-red-300 transition-colors">
-                TAKE TYPING TEST NOW <ArrowRight size={14} />
-              </a>
-            </div>
-
           </div>
+
 
           {/* 3. APPLICATION PORTAL (RIGHT SIDE) */}
           <div className="lg:col-span-7">
@@ -226,7 +301,7 @@ export default function JobApplicationForm()
               </div>
             )}
 
-            <form className="bg-white p-8 md:p-10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] border border-slate-100" onSubmit={handleSubmit}>
+            <form className="bg-white p-8 md:p-10  border border-slate-100" onSubmit={handleSubmit}>
               <h3 className="text-2xl font-semibold text-slate-900 mb-8 border-b pb-4">Apply for Medical Documentation Job in Nepal</h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -300,7 +375,7 @@ export default function JobApplicationForm()
                     setFormData((prev) => ({ ...prev, coverLetter: e.target.value }))
                   }
                   placeholder="Briefly describe your education, relevant experience, and interest in medical documentation or healthcare services."
-                  className="w-full p-4 bg-slate-50 border border-slate-200 focus:border-[#133a41] outline-none transition-all rounded-sm text-sm resize-none"
+                  className="w-full p-4 bg-slate-50 border border-slate-200 focus:border-[#133a41] outline-none transition-all rounded-sm text-sm resize-none placeholder-gray-400"
                 />
 
               </div>
@@ -308,7 +383,7 @@ export default function JobApplicationForm()
               <button
                 type="submit"
                 disabled={loading}
-                className={`w-full bg-[#133a41] text-white font-bold py-4 rounded-sm shadow-lg transition-all flex items-center justify-center gap-3 tracking-widest text-xs
+                className={`w-full bg-[#133a41] text-white font-bold py-4 rounded-sm shadow-lg transition-all flex items-center justify-center gap-3 tracking-widest text-xs cursor-pointer
     ${loading ? "opacity-60 cursor-not-allowed" : "hover:bg-[#1b4d56]"}`}
               >
                 {loading ? "SUBMITTING..." : "SUBMIT APPLICATION"}
@@ -319,6 +394,8 @@ export default function JobApplicationForm()
           </div>
         </div>
       </div>
+
+      <GeneralForm />
 
       {/* SUCCESS POPUP (Glassmorphism Style) */}
       <AnimatePresence>
@@ -338,7 +415,7 @@ export default function JobApplicationForm()
               </div>
               <h3 className="text-2xl font-bold text-slate-900">Application Lodged</h3>
               <p className="text-slate-500 mt-4 text-sm leading-relaxed">
-                Your application has been successfully received. Our recruitment team will review your profile and contact shortlisted candidates via email.
+                Your application has been successfully received. Our recruitment team will review your profile and contact shortlisted candidates.
               </p>
               <button
                 onClick={() => setShowSuccess(false)}
@@ -351,6 +428,8 @@ export default function JobApplicationForm()
         )}
       </AnimatePresence>
 
+
+
       <AnimatePresence>
         {showModal && (
           <motion.div
@@ -361,30 +440,52 @@ export default function JobApplicationForm()
             onClick={() => setShowModal(false)}
           >
             <motion.div
-              initial={{ scale: 0.95, y: 20 }}
+              initial={{ scale: 0.96, y: 30 }}
               animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.95, y: 20 }}
+              exit={{ scale: 0.96, y: 30 }}
               transition={{ duration: 0.25 }}
-              className="bg-white max-w-3xl w-full max-h-[85vh] overflow-y-auto rounded-sm shadow-2xl p-8 md:p-10"
+              className="bg-white max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-md shadow-2xl p-8 md:p-10"
               onClick={(e) => e.stopPropagation()}
             >
+
               {/* HEADER */}
-              <div className="mb-8 border-b pb-4">
-                <h2 className="text-2xl font-bold text-slate-900">
-                  Documentation Associate – Medical Operations
+              <div className="mb-6 border-b pb-5">
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+                  {jobData.title}
                 </h2>
-                <p className="text-sm text-slate-500 mt-2">
-                  Vu Devi Services Pvt. Ltd. | Career Opportunity
+                <p className="text-sm text-slate-500 mt-1">
+                  {jobData.company}
                 </p>
+
+                <div className="flex flex-wrap gap-3 mt-4 text-xs font-medium">
+                  <span className="bg-slate-100 px-3 py-1 rounded">{jobData.location}</span>
+                  <span className="bg-slate-100 px-3 py-1 rounded">{jobData.schedule}</span>
+                  <span className="bg-slate-100 px-3 py-1 rounded">{jobData.openings}</span>
+                </div>
               </div>
 
               {/* OVERVIEW */}
+              <Section title="Role Overview" color="bg-red-700" items={jobData.overview} />
+
+              {/* RESPONSIBILITIES */}
+              <Section title="Key Responsibilities" color="bg-slate-400" items={jobData.responsibilities} />
+
+              {/* QUALIFICATIONS */}
+              <Section title="Eligible Qualifications" color="bg-green-600" items={jobData.qualifications} grid />
+
+              {/* REQUIREMENTS */}
+              <Section title="Core Requirements" color="bg-[#133a41]" items={jobData.requirements} />
+
+              {/* TRAINING */}
+              <Section title="Training & Development" color="bg-indigo-600" items={jobData.training} />
+
+              {/* APPLICATION */}
               <section className="mb-8">
                 <h3 className="text-sm font-bold uppercase tracking-widest text-[#133a41] mb-4">
-                  Role Overview
+                  Application Process
                 </h3>
                 <ul className="space-y-2 text-sm text-slate-700">
-                  {jobDescription.overview.map((item, idx) => (
+                  {jobData.application.map((item, idx) => (
                     <li key={idx} className="flex gap-2">
                       <span className="mt-1 w-1.5 h-1.5 bg-red-700 rounded-full" />
                       {item}
@@ -393,63 +494,17 @@ export default function JobApplicationForm()
                 </ul>
               </section>
 
-              {/* RESPONSIBILITIES */}
-              <section className="mb-8">
-                <h3 className="text-sm font-bold uppercase tracking-widest text-[#133a41] mb-4">
-                  Key Responsibilities
-                </h3>
-                <ul className="space-y-2 text-sm text-slate-700">
-                  {jobDescription.responsibilities.map((item, idx) => (
-                    <li key={idx} className="flex gap-2">
-                      <span className="mt-1 w-1.5 h-1.5 bg-slate-400 rounded-full" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </section>
-
-              {/* QUALIFICATIONS */}
-              <section className="mb-8">
-                <h3 className="text-sm font-bold uppercase tracking-widest text-[#133a41] mb-4">
-                  Eligible Qualifications
-                </h3>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700">
-                  {jobDescription.qualificaitons.map((item, idx) => (
-                    <li key={idx} className="flex gap-2">
-                      <span className="mt-1 w-1.5 h-1.5 bg-green-600 rounded-full" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </section>
-
-              {/* REQUIREMENTS */}
-              <section className="mb-10">
-                <h3 className="text-sm font-bold uppercase tracking-widest text-[#133a41] mb-4">
-                  Core Requirements
-                </h3>
-                <ul className="space-y-2 text-sm text-slate-700">
-                  {jobDescription.requirements.map((item, idx) => (
-                    <li key={idx} className="flex gap-2">
-                      <span className="mt-1 w-1.5 h-1.5 bg-[#133a41] rounded-full" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </section>
-
               {/* FOOTER NOTE */}
-              <div className="bg-slate-50 border-l-4 border-[#133a41] p-4 text-xs text-slate-600 mb-8">
-                Compensation for this role is <strong>competitive and negotiable</strong>,
-                based on qualifications, skills, and demonstrated competency during the selection process.
+              <div className="bg-slate-50 border-l-4 border-[#133a41] p-4 text-xs text-slate-600 mb-6">
+                Compensation is <strong>competitive and negotiable</strong> based on qualifications and performance during the selection process.
               </div>
 
-              {/* CLOSE BUTTON */}
+              {/* APPLY BUTTON */}
               <button
                 onClick={() => setShowModal(false)}
                 className="w-full py-3 bg-[#133a41] text-white font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#1b4d56] transition"
               >
-                Close Job Description
+                Apply Now
               </button>
             </motion.div>
           </motion.div>

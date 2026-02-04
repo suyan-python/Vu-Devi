@@ -1,28 +1,30 @@
 import React from "react";
 import { Award, GraduationCap, Calendar, ChevronRight, Medal } from "lucide-react";
 
-import apurva from "../assets/month/apurva.jpeg";
-import sarita from "../assets/month/sarita.jpeg";
-import sameera from "../assets/month/sameera.jpeg";
+import rajendra from "../assets/month/rajendra.jpeg";
+import anamika from "../assets/month/anamika.jpeg";
+import shruti from "../assets/month/shruti.jpeg";
+
+
 
 const employees = [
     {
-        name: "Dr. Apurva Bhandari",
+        name: "Dr. Rajendra Kumar Singh",
         designation: "Medical Report Writer",
         team: "Team: Nikita",
-        image: apurva,
+        image: rajendra,
     },
     {
-        name: "Pt. Sarita Ale",
+        name: "Pt. Anamika Shahi",
         designation: "Pt. Report Writer",
         team: "Team: Rajiya",
-        image: sarita,
+        image: anamika,
     },
     {
-        name: "Ms. Sameera Shrestha",
+        name: "Ms. Shruti Gautam",
         designation: "Medical Lister",
         team: "Team: Bandana",
-        image: sameera,
+        image: shruti,
     },
 ];
 
@@ -41,68 +43,69 @@ const EmployeeOfTheMonth = () =>
                             <span className="h-[2px] w-12 bg-red-700"></span>
                             <span className="header text-red-700 font-bold uppercase tracking-[0.3em] text-xs">Monthly Distinction</span>
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 ">
+                        <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-800 ">
                             Honoring Our <br />
-                            <span className="text-red-700 font-light">November 2025</span> Employees of the Month
+                            <span className="text-red-700 font-light">December 2025</span> Employees of the Month
                         </h2>
                     </div>
                 </div>
 
                 {/* EMPLOYEE CARDS GRID */}
+                {/* EMPLOYEE OF THE MONTH GRID */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                     {employees.map((emp, idx) => (
                         <div
                             key={idx}
-                            className="group relative bg-white flex flex-col transition-all duration-500 hover:-translate-y-2"
+                            className="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-500 cursor-pointer"
                         >
-                            {/* Top Highlight: The Month Ribbon */}
-                            <div className="absolute -top-3 left-6 z-20">
-                                <div className="bg-[#133a41] text-white text-[10px] font-bold px-4 py-1 shadow-md flex items-center gap-2">
-                                    <Medal size={12} />
-                                    MERIT OF PROFESSIONAL INTEGRITY • NOV '25
-                                </div>
-                            </div>
+                            {/* Left Accent Bar */}
+                            <div className="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-[#0F3B44] to-[#1F787E]"></div>
 
-                            {/* Image Section */}
-                            <div className="relative aspect-[3/4] overflow-hidden border-x border-t border-slate-100">
+                            {/* Image & Badge */}
+                            <div className="relative">
                                 <img
                                     src={emp.image}
                                     alt={emp.name}
-                                    className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
+                                    className="w-full h-64 object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-700"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#133a41]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
 
-                            {/* Content Section: Professional Credentials */}
-                            <div className="p-8 border-x border-b border-slate-100 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] bg-white">
-                                <div className="mb-6">
-                                    <h3 className="text-2xl font-bold text-slate-900 mb-1">{emp.name}</h3>
-                                    <div className="flex items-center gap-2 text-red-700">
+                            {/* Content Section */}
+                            <div className="p-6 flex flex-col justify-between space-y-4">
+                                {/* Name & Designation */}
+                                <div>
+                                    <h3 className="text-lg md:text-xl font-bold text-slate-900 tracking-tight">{emp.name}</h3>
+                                    <div className="flex items-center gap-2 text-[#D9534F] mt-1">
                                         <GraduationCap size={16} />
-                                        <span className="text-xs font-bold uppercase tracking-wider">{emp.designation}</span>
+                                        <span className="text-xs md:text-sm font-medium uppercase tracking-wide">{emp.designation}</span>
                                     </div>
                                 </div>
 
-                                <div className="space-y-4 pt-6 border-t border-slate-50">
-                                    <div>
-                                        <p className="text-[10px] uppercase font-bold text-slate-400 tracking-widest mb-1">Service Excellence</p>
-                                        <p className="text-sm text-slate-600 italic leading-relaxed">
-                                            "{emp.achievement || "Outstanding contribution to medical documentation accuracy and team leadership."}"
-                                        </p>
-                                    </div>
+                                {/* Achievement */}
+                                <div className="bg-[#F7FAFC] rounded-lg p-4 border-l-4 border-[#0F3B44]">
+                                    <p className="text-[10px] md:text-xs uppercase font-semibold text-slate-400 tracking-widest mb-1">
+                                        Service Excellence
+                                    </p>
+                                    <p className="text-sm md:text-base text-slate-700 italic leading-relaxed">
+                                        "{emp.achievement || 'Outstanding contribution to medical documentation accuracy and team leadership.'}"
+                                    </p>
                                 </div>
 
-                                {/* Corner Decoration: Official Stamp Look */}
-                                <div className="mt-8 pt-4 flex items-center justify-between border-t border-slate-50 opacity-40 group-hover:opacity-100 transition-opacity">
-                                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter italic">Vu Devi Services Certified</span>
-                                    <div className="w-8 h-8 rounded-full border-2 border-slate-200 flex items-center justify-center">
-                                        <ChevronRight size={14} className="text-slate-300" />
-                                    </div>
+                                {/* Footer Buttons / CTA */}
+                                <div className="flex justify-between items-center mt-2">
+                                    <span className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-tighter italic">
+                                        Certified by Vu Devi Services
+                                    </span>
+                                    <button className="w-8 h-8 rounded-full border-2 border-slate-200 flex items-center justify-center hover:bg-[#0F3B44] hover:text-white transition-colors">
+                                        <ChevronRight size={14} />
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
+
+
             </div>
         </section>
     );

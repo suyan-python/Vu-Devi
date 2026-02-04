@@ -41,3 +41,11 @@ body {
 themeColor {
   background-color: #133a41;
 }
+
+.fieldLabel {
+  @apply flex items-center gap-2 text-[10px] font-black text-slate-500 uppercase tracking-[0.25em];
+}
+
+.fieldInput {
+  @apply w-full bg-white border border-slate-300 rounded-xl px-5 py-3.5 text-[#133a41] focus:border-red-500 focus:ring-1 focus:ring-red-500/30 outline-none transition-all placeholder:text-slate-400 text-sm;
+}
