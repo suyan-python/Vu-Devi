@@ -14,6 +14,7 @@ export default function GeneralForm()
 
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
     const handleChange = (e) =>
     {
@@ -35,6 +36,18 @@ export default function GeneralForm()
 
         try
         {
+            const emailCheckResponse = await fetch(
+                `${API_URL}/api/applications/check-email?email=${formData.email}`
+            );
+            const emailCheckData = await emailCheckResponse.json();
+
+            if (emailCheckData.exists)
+            {
+                setErrorMessage("⚠️ We Already have your Information.");
+                setLoading(false);
+                return;
+            }
+
             const sendData = new FormData();
             sendData.append("name", formData.name);
             sendData.append("email", formData.email);
