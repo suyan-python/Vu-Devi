@@ -1,17 +1,27 @@
 import { useState } from "react";
+import { useParams, Navigate, Link } from "react-router-dom";
 import
 {
   FileText, CheckCircle2, AlertCircle, FileUp,
   Keyboard, Briefcase, GraduationCap, Coins, Clock,
   ArrowRight,
   Section,
-  SectionIcon
+  SectionIcon,
+  ChevronRight,
+  Activity,
+  ShieldCheck
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import GeneralForm from "./GeneralForm";
+import { JOB_DATA } from "../db/jobs";
+import JobModal from "./JobModal";
+import Job from "./Job";
+import JobOpenings from "./JobOpenings";
 
 export default function JobApplicationForm()
 {
+  const { jobId } = useParams();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,6 +36,13 @@ export default function JobApplicationForm()
   const [loading, setLoading] = useState(false);
 
 
+
+  const selectedJob = JOB_DATA.find((job) => job.id === jobId);
+
+  if (!selectedJob)
+  {
+    return <Navigate to="/application" replace />;
+  }
   const API_URL = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async (e) =>
@@ -62,9 +79,9 @@ export default function JobApplicationForm()
       formDataToSend.append("resume", formData.resume);
       formDataToSend.append("coverLetter", formData.coverLetter);
 
-      formDataToSend.append("jobTitle", "Medical Report Writer / Physiotherapy Report Writer");
-      formDataToSend.append("jobTag", "N/A");
-      formDataToSend.append("jobLocation", "N/A");
+      formDataToSend.append("jobTitle", selectedJob.title);
+      formDataToSend.append("jobTag", selectedJob.tag);
+      formDataToSend.append("jobLocation", selectedJob.location);
       formDataToSend.append("sourceWebsite", window.location.hostname);
 
 
@@ -95,55 +112,64 @@ export default function JobApplicationForm()
     }
   };
 
-  const jobData = {
-    title: "Medical Report Writer / Physiotherapy Report Writer",
-    openings: "10 Positions",
-    company: "Vu Devi Services Pvt. Ltd.",
-    location: "Balkumari, Lalitpur",
-    schedule: "Full-time | Monday–Friday | Work from Office",
-    holidays: "Weekends & U.S. Public Holidays (Nepali holidays not observed)",
+  // const jobData = {
+  //   id: "medical-documentation-specialist",
+  //   title: "Medical Report Writer / Physiotherapy Report Writer",
+  //   openings: "10 Positions",
+  //   company: "Vu Devi Services Pvt. Ltd.",
+  //   location: "Balkumari, Lalitpur",
+  //   schedule: "Full-time | Monday–Friday | Work from Office",
+  //   holidays: "Weekends & U.S. Public Holidays (Nepali holidays not observed)",
 
-    overview: [
-      "Responsible for reviewing patient records and preparing structured medical reports.",
-      "Work focuses on clinical accuracy, documentation standards, and evidence-based reporting.",
-      "Position suited for candidates with strong medical knowledge and attention to detail."
-    ],
+  //   overview: [
+  //     "Responsible for reviewing patient records and preparing structured medical reports.",
+  //     "Work focuses on clinical accuracy, documentation standards, and evidence-based reporting.",
+  //     "Position suited for candidates with strong medical knowledge and attention to detail."
+  //   ],
 
-    responsibilities: [
-      "Review and analyze medical records, reports, and claims documentation.",
-      "Evaluate diagnosis, treatment history, and work-relatedness using medical evidence.",
-      "Prepare structured medical and physiotherapy reports in required formats.",
-      "Ensure quality, compliance, and formatting standards are met.",
-      "Collaborate with internal teams to maintain accuracy and consistency.",
-      "Apply clinical reasoning and communicate findings clearly.",
-      "Incorporate feedback professionally and improve documentation quality.",
-      "Meet project deadlines and client expectations."
-    ],
+  //   responsibilities: [
+  //     "Review and analyze medical records, reports, and claims documentation.",
+  //     "Evaluate diagnosis, treatment history, and work-relatedness using medical evidence.",
+  //     "Prepare structured medical and physiotherapy reports in required formats.",
+  //     "Ensure quality, compliance, and formatting standards are met.",
+  //     "Collaborate with internal teams to maintain accuracy and consistency.",
+  //     "Apply clinical reasoning and communicate findings clearly.",
+  //     "Incorporate feedback professionally and improve documentation quality.",
+  //     "Meet project deadlines and client expectations."
+  //   ],
 
-    qualifications: [
-      "MBBS",
-      "Bachelor’s in Physiotherapy",
-      "Master’s in Physiotherapy"
-    ],
+  //   qualifications: [
+  //     "MBBS",
+  //     "Bachelor’s in Physiotherapy",
+  //     "Master’s in Physiotherapy"
+  //   ],
 
-    requirements: [
-      "Strong medical terminology and diagnostic knowledge",
-      "Proficiency in Microsoft Office",
-      "Typing speed minimum 40 WPM",
-      "Excellent written and spoken English",
-      "Minimum 2-year commitment required"
-    ],
+  //   requirements: [
+  //     "Strong medical terminology and diagnostic knowledge",
+  //     "Proficiency in Microsoft Office",
+  //     "Typing speed minimum 40 WPM",
+  //     "Excellent written and spoken English",
+  //     "Minimum 2-year commitment required"
+  //   ],
 
-    training: [
-      "1-month paid training program",
-      "Continuous learning and performance-based growth"
-    ],
+  //   training: [
+  //     "1-month paid training program",
+  //     "Continuous learning and performance-based growth"
+  //   ],
 
-    application: [
-      "Updated CV",
-      "Screenshot of typing test result (40+ WPM)"
-    ]
-  };
+  //   application: [
+  //     "Updated CV",
+  //     "Screenshot of typing test result (40+ WPM)"
+  //   ]
+  // };
+
+  // const selectedJob = jobData.find(
+  //   (job) => job.id === jobId
+  // );
+  // if (!selectedJob)
+  // {
+  //   return <Navigate to="/application" replace />;
+  // }
 
   const Section = ({ title, items, color, grid }) =>
   {
@@ -170,33 +196,19 @@ export default function JobApplicationForm()
     );
   };
 
-
-
-
   return (
     <section className="min-h-screen py-32 bg-[#f8fafc] relative overflow-hidden">
-      {/* Background Subtle Mesh */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-20 right-[-10%] w-[500px] h-[500px] bg-red-50/40 rounded-full blur-[120px]" />
-        <div className="absolute bottom-10 left-[-5%] w-[400px] h-[400px] bg-[#133a41]/5 rounded-full blur-[100px]" />
-      </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 relative z-10 " >
 
         {/* 1. INSTITUTIONAL HEADER */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#133a41] text-white text-[10px] font-bold uppercase tracking-widest rounded-sm mb-4">
-            <Briefcase size={12} />
-            Now Hiring: Medical Operations
-          </div>
           <h1 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
             Build Your Career in <br />
-            <span className="text-red-700 font-light">Clinical Excellence</span>
+            <span className="text-red-700 font-light">
+              {selectedJob.title}
+            </span>
           </h1>
-          <p className="mt-6 text-slate-600 max-w-2xl mx-auto text-lg italic">
-            "Explore a long-term career opportunity in medical documentation, data entry, and healthcare services with an international medical operations team."
-
-          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -211,7 +223,7 @@ export default function JobApplicationForm()
                   Position
                 </h3>
                 <p className="text-xl font-bold text-slate-900 leading-snug">
-                  Medical Report Writer / Physiotherapy Report Writer
+                  {selectedJob.title}
                 </p>
               </div>
 
@@ -273,22 +285,25 @@ export default function JobApplicationForm()
               </div>
 
               {/* ACTION ZONE */}
-              <div className="px-8 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-slate-100">
+              <div className="px-8 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 border-t border-slate-100 ">
 
-                <button
-                  onClick={() => setShowModal(true)}
-                  className="inline-flex items-center justify-center gap-2 bg-red-700 hover:bg-red-600 text-white text-xs font-bold tracking-widest uppercase px-6 py-3 transition rounded-sm"
-                >
+                <button onClick={() => setShowModal(true)} className="cursor-pointer underline text-xs font-bold  text-red-700 hover:text-red-600 transition ">
                   View Full Job Description
-                  <ArrowRight size={14} />
                 </button>
+
+                <JobModal
+                  job={showModal ? selectedJob : null}
+                  onClose={() => setShowModal(false)}
+                />
+
 
                 <a
                   href="https://www.typing.com/student/tests"
                   target="_blank"
-                  className="text-xs font-bold tracking-widest text-red-700 hover:text-red-600 transition uppercase"
+                  className="text-xs font-bold tracking-widest  transition uppercase text-center"
                 >
-                  Take Typing Test →
+                  Take Typing Test
+                  <ArrowRight size={12} className="inline-block ml-1" />
                 </a>
 
               </div>
@@ -306,7 +321,7 @@ export default function JobApplicationForm()
             )}
 
             <form className="bg-white p-8 md:p-10  border border-slate-100" onSubmit={handleSubmit}>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-8 border-b pb-4">Apply for Medical Documentation Job in Nepal</h3>
+              <h3 className="text-xl md:text-3xl font-semibold text-[#133a41] mb-8 border-b pb-4 tracking-tight"> {selectedJob.title} Job Application</h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div className="space-y-2">
@@ -399,7 +414,11 @@ export default function JobApplicationForm()
         </div>
       </div>
 
-      <GeneralForm />
+      <div className="py-20 text-center">
+        <p className=" text-slate-600 text-lg italic">
+          "Explore a long-term career opportunity in medical documentation, data entry, and healthcare services with an international medical operations team."
+        </p>
+      </div>
 
       {/* SUCCESS POPUP (Glassmorphism Style) */}
       <AnimatePresence>
@@ -407,34 +426,64 @@ export default function JobApplicationForm()
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-[#133a41]/60 backdrop-blur-md"
+            className="fixed inset-0 z-[300] flex items-center justify-center p-3 md:p-6 bg-emerald-800/50 "
           >
             <motion.div
-              initial={{ scale: 0.9, y: 20 }}
+              initial={{ scale: 0.95, y: 10 }}
               animate={{ scale: 1, y: 0 }}
-              className="bg-white p-10 max-w-sm w-full text-center shadow-2xl border-t-8 border-green-500"
+              className="bg-white max-w-md w-full shadow-[0_0_50px_rgba(0,0,0,0.2)] rounded-sm overflow-hidden"
             >
-              <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6 text-green-500">
-                <CheckCircle2 size={40} />
+              {/* 1. STATUS HEADER */}
+              <div className="bg-[#133a41] p-4 flex justify-between items-center">
+                <div className="flex items-center gap-2">
+                  <Activity size={14} className="text-emerald-400 animate-pulse" />
+                  <span className="text-[9px] font-black text-white uppercase tracking-[0.3em]">System Transmission: Success</span>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900">Application Lodged</h3>
-              <p className="text-slate-500 mt-4 text-sm leading-relaxed">
-                Your application has been successfully received. Our recruitment team will review your profile and contact shortlisted candidates.
-              </p>
-              <button
-                onClick={() => setShowSuccess(false)}
-                className="mt-8 w-full py-3 bg-slate-900 text-white font-bold text-xs uppercase tracking-[0.2em] cursor-pointer"
-              >
-                Return to Career Hub
-              </button>
+
+              <div className="p-5 md:p-10 text-center">
+                {/* 2. INSTITUTIONAL ICON */}
+                <div className="relative w-24 h-24 mx-auto mb-8">
+                  <div className="relative w-24 h-24 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600 border border-emerald-100">
+                    <ShieldCheck size={48} strokeWidth={1.5} />
+                  </div>
+                </div>
+
+                {/* 3. CLINICAL COPY */}
+                <h3 className="text-2xl font-bold text-slate-900 tracking-tighter uppercase mb-3">
+                  Application Recieved.
+                </h3>
+
+                <div className="space-y-4 mb-10">
+                  <p className="text-slate-500 text-sm leading-relaxed md:px-4">
+                    Your credentials have been successfully uploaded to our <span className="text-[#133a41] font-bold">Database</span>. <br />
+                    Our recruitment team will review your profile and contact shortlisted candidates.
+                  </p>
+
+                  {/* Fake Transaction ID for Authenticity */}
+                  <div className="bg-slate-50 py-3 px-4 inline-block border border-slate-100 rounded-sm">
+                    <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1 text-center">Reference Ticket</p>
+                    <p className="text-xs font-mono font-bold text-slate-700 tracking-wider uppercase">
+                      VDS-{Math.random().toString(36).substr(2, 9).toUpperCase()}
+                    </p>
+                  </div>
+                </div>
+
+                {/* 4. PROFESSIONAL ACTION */}
+                <button
+                  onClick={() => setShowSuccess(false)}
+                  className="group w-full py-4 bg-[#133a41] text-white font-black text-[11px] uppercase tracking-[0.2em] rounded-sm hover:bg-emerald-900 transition-all duration-500 flex items-center justify-center gap-3 shadow-xl shadow-[#133a41]/20"
+                >
+                  Return to Career Portal
+                  <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
-
-
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {showModal && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -452,7 +501,6 @@ export default function JobApplicationForm()
               onClick={(e) => e.stopPropagation()}
             >
 
-              {/* HEADER */}
               <div className="mb-6 border-b pb-5">
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
                   {jobData.title}
@@ -468,22 +516,22 @@ export default function JobApplicationForm()
                 </div>
               </div>
 
-              {/* OVERVIEW */}
+
               <Section title="Role Overview" color="bg-red-700" items={jobData.overview} />
 
-              {/* RESPONSIBILITIES */}
+
               <Section title="Key Responsibilities" color="bg-slate-400" items={jobData.responsibilities} />
 
-              {/* QUALIFICATIONS */}
+
               <Section title="Eligible Qualifications" color="bg-green-600" items={jobData.qualifications} grid />
 
-              {/* REQUIREMENTS */}
+
               <Section title="Core Requirements" color="bg-[#133a41]" items={jobData.requirements} />
 
-              {/* TRAINING */}
+
               <Section title="Training & Development" color="bg-indigo-600" items={jobData.training} />
 
-              {/* APPLICATION */}
+
               <section className="mb-8">
                 <h3 className="text-sm font-bold uppercase tracking-widest text-[#133a41] mb-4">
                   Application Process
@@ -498,12 +546,12 @@ export default function JobApplicationForm()
                 </ul>
               </section>
 
-              {/* FOOTER NOTE */}
+
               <div className="bg-slate-50 border-l-4 border-[#133a41] p-4 text-xs text-slate-600 mb-6">
                 Compensation is <strong>competitive and negotiable</strong> based on qualifications and performance during the selection process.
               </div>
 
-              {/* APPLY BUTTON */}
+
               <button
                 onClick={() => setShowModal(false)}
                 className="w-full py-3 bg-[#133a41] text-white font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#1b4d56] transition"
@@ -513,8 +561,9 @@ export default function JobApplicationForm()
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
 
+      <JobOpenings />
 
     </section>
   );

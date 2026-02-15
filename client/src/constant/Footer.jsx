@@ -95,7 +95,7 @@ function Footer()
                 <div className="flex items-start gap-4">
                   <Mail className="text-red-700 shrink-0" size={20} />
                   <div>
-                    <p className="text-[10px] font-black text-slate-500 uppercase mb-1">Secure Email</p>
+                    <p className="text-[10px] font-black text-slate-500 uppercase mb-1">Email</p>
                     <a href="mailto:vudeviservices@gmail.com" className="text-sm text-slate-300 hover:text-white">vudeviservices@gmail.com</a>
                   </div>
                 </div>

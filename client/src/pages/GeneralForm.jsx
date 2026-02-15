@@ -86,7 +86,7 @@ export default function GeneralForm()
     };
 
     return (
-        <section className="w-full py-24 bg-[#f8fafc]">
+        <section className="w-full py-24 bg-[#f8fafc] border-t-2 border-black">
             <div className="max-w-5xl mx-auto px-6">
 
                 <div className="bg-white border border-slate-200 rounded-xl p-10 md:p-16 shadow-sm">
