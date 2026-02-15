@@ -112,65 +112,6 @@ export default function JobApplicationForm()
     }
   };
 
-  // const jobData = {
-  //   id: "medical-documentation-specialist",
-  //   title: "Medical Report Writer / Physiotherapy Report Writer",
-  //   openings: "10 Positions",
-  //   company: "Vu Devi Services Pvt. Ltd.",
-  //   location: "Balkumari, Lalitpur",
-  //   schedule: "Full-time | Monday–Friday | Work from Office",
-  //   holidays: "Weekends & U.S. Public Holidays (Nepali holidays not observed)",
-
-  //   overview: [
-  //     "Responsible for reviewing patient records and preparing structured medical reports.",
-  //     "Work focuses on clinical accuracy, documentation standards, and evidence-based reporting.",
-  //     "Position suited for candidates with strong medical knowledge and attention to detail."
-  //   ],
-
-  //   responsibilities: [
-  //     "Review and analyze medical records, reports, and claims documentation.",
-  //     "Evaluate diagnosis, treatment history, and work-relatedness using medical evidence.",
-  //     "Prepare structured medical and physiotherapy reports in required formats.",
-  //     "Ensure quality, compliance, and formatting standards are met.",
-  //     "Collaborate with internal teams to maintain accuracy and consistency.",
-  //     "Apply clinical reasoning and communicate findings clearly.",
-  //     "Incorporate feedback professionally and improve documentation quality.",
-  //     "Meet project deadlines and client expectations."
-  //   ],
-
-  //   qualifications: [
-  //     "MBBS",
-  //     "Bachelor’s in Physiotherapy",
-  //     "Master’s in Physiotherapy"
-  //   ],
-
-  //   requirements: [
-  //     "Strong medical terminology and diagnostic knowledge",
-  //     "Proficiency in Microsoft Office",
-  //     "Typing speed minimum 40 WPM",
-  //     "Excellent written and spoken English",
-  //     "Minimum 2-year commitment required"
-  //   ],
-
-  //   training: [
-  //     "1-month paid training program",
-  //     "Continuous learning and performance-based growth"
-  //   ],
-
-  //   application: [
-  //     "Updated CV",
-  //     "Screenshot of typing test result (40+ WPM)"
-  //   ]
-  // };
-
-  // const selectedJob = jobData.find(
-  //   (job) => job.id === jobId
-  // );
-  // if (!selectedJob)
-  // {
-  //   return <Navigate to="/application" replace />;
-  // }
-
   const Section = ({ title, items, color, grid }) =>
   {
     if (!items || items.length === 0) return null; // prevents crash
@@ -202,7 +143,7 @@ export default function JobApplicationForm()
       <div className="max-w-6xl mx-auto px-6 relative z-10 " >
 
         {/* 1. INSTITUTIONAL HEADER */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <h1 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
             Build Your Career in <br />
             <span className="text-red-700 font-light">
@@ -218,17 +159,17 @@ export default function JobApplicationForm()
             <div className="bg-white rounded-sm shadow-sm border border-slate-100 overflow-hidden">
 
               {/* HEADER */}
-              <div className="border-l-4 border-red-700 px-8 py-6 bg-slate-50/40">
+              <div className="border-l-4 border-red-700 md:px-8 px-4 md:py-6 py-3 bg-slate-50/40">
                 <h3 className="text-[11px] font-black tracking-[0.35em] text-slate-400 uppercase mb-2">
                   Position
                 </h3>
-                <p className="text-xl font-bold text-slate-900 leading-snug">
+                <p className="text-lg md:text-xl font-bold text-slate-900 leading-snug">
                   {selectedJob.title}
                 </p>
               </div>
 
               {/* SPEC GRID */}
-              <div className="px-8 py-8 grid gap-8">
+              <div className="p-4 md:p-8  grid gap-8">
 
                 {/* CORE REQUIREMENT */}
                 <div className="flex gap-5 items-start">
@@ -236,10 +177,10 @@ export default function JobApplicationForm()
                     <Keyboard size={20} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">
+                    <p className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">
                       Core Requirement
                     </p>
-                    <p className="text-sm font-semibold text-slate-700 leading-relaxed">
+                    <p className="text-[10px] md:text-sm font-semibold text-slate-700 leading-relaxed">
                       Strong typing speed (40+ WPM), proficiency in MS Word, Excel, and digital documentation tools.
                     </p>
                   </div>
@@ -251,10 +192,10 @@ export default function JobApplicationForm()
                     <Coins size={20} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">
+                    <p className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">
                       Remuneration
                     </p>
-                    <p className="text-sm font-semibold text-slate-700 leading-relaxed">
+                    <p className="text-[10px] md:text-sm font-semibold text-slate-700 leading-relaxed">
                       Compensation is competitive and negotiable based on qualifications, skills, and relevant experience.
                     </p>
                   </div>
@@ -266,10 +207,10 @@ export default function JobApplicationForm()
                     <Clock size={20} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">
+                    <p className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">
                       Engagement Period
                     </p>
-                    <p className="text-sm font-bold text-red-700 leading-relaxed">
+                    <p className="text-[10px] md:text-sm font-bold text-red-700 leading-relaxed">
                       Long-term role with a minimum commitment of 24 months
                     </p>
                   </div>
@@ -279,7 +220,7 @@ export default function JobApplicationForm()
 
               {/* ASSESSMENT NOTE */}
               <div className="px-8 py-5 border-t border-slate-100 bg-slate-50/40">
-                <p className="text-xs text-slate-500 leading-relaxed italic">
+                <p className="text-[10px] md:text-xs text-slate-500 leading-relaxed italic">
                   Shortlisted candidates will complete a structured assessment covering medical terminology, documentation accuracy, and attention to detail.
                 </p>
               </div>
@@ -320,7 +261,7 @@ export default function JobApplicationForm()
               </div>
             )}
 
-            <form className="bg-white p-8 md:p-10  border border-slate-100" onSubmit={handleSubmit}>
+            <form className="bg-white p-4 md:p-8  border border-slate-100" onSubmit={handleSubmit}>
               <h3 className="text-xl md:text-3xl font-semibold text-[#133a41] mb-8 border-b pb-4 tracking-tight"> {selectedJob.title} Job Application</h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -414,8 +355,8 @@ export default function JobApplicationForm()
         </div>
       </div>
 
-      <div className="py-20 text-center">
-        <p className=" text-slate-600 text-lg italic">
+      <div className="py-12 md:py-20 text-center px-3">
+        <p className=" text-slate-600 text-xs md:text-lg italic">
           "Explore a long-term career opportunity in medical documentation, data entry, and healthcare services with an international medical operations team."
         </p>
       </div>

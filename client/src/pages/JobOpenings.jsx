@@ -1,6 +1,6 @@
 import React from 'react'
 import { JOB_DATA } from "../db/jobs";
-import { ArrowUpRight, Globe } from 'lucide-react';
+import { ArrowUpRight, ArrowUpRightIcon, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const JobOpenings = () =>
@@ -48,12 +48,12 @@ const JobOpenings = () =>
                             <div className="mt-7 md:flex items-center md:gap-6 gap-2">
                                 <div>
                                     <p className="text-[7px] md:text-[9px] font-medium text-slate-400 uppercase tracking-widest mb-1">Compensation Package</p>
-                                    <p className="text-xs md:text-sm font-bold text-slate-700">{job.salary}</p>
+                                    <p className="text-[10px] md:text-sm font-bold text-slate-700">{job.salary}</p>
                                 </div>
                                 <div className="w-[1px] h-5 bg-slate-700"></div>
                                 <div>
                                     <p className="text-[7px] md:text-[9px] font-medium text-slate-400 uppercase tracking-widest mb-1">Onboarding</p>
-                                    <p className="text-xs md:text-sm font-bold text-slate-700">{job.hiring}</p>
+                                    <p className="text-[10px] md:text-sm font-bold text-slate-700">{job.hiring}</p>
                                 </div>
                             </div>
                         </div>
@@ -61,12 +61,12 @@ const JobOpenings = () =>
                         <div className="relative z-10 mt-8 md:mt-0 md:ml-12">
                             <Link
                                 to={`/application/apply/${job.id}`}
-                                className="inline-flex items-center justify-center gap-3 px-10 py-5 
+                                className="inline-flex items-center justify-center gap-3 md:px-10 py-5 
                            bg-slate-900 text-white text-[11px] font-medium uppercase tracking-[0.2em]
                            hover:bg-red-700 transition-all duration-500 w-full md:w-auto rounded-md"
                             >
                                 Apply
-                                <ArrowUpRight size={16} />
+                                <ArrowUpRightIcon size={16} />
                             </Link>
                         </div>
                     </div>

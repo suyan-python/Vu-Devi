@@ -14,7 +14,7 @@ const Job = () =>
             <div className="w-full px-6 md:px-12 mb-12 ">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col gap-4">
-                        <div className="text-center mb-16">
+                        <div className="text-center ">
                             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#133a41] text-white text-[10px] font-bold uppercase tracking-widest rounded-sm mb-4">
                                 <Briefcase size={12} />
                                 Active Recruitment: Medical Operations
