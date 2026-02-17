@@ -29,13 +29,13 @@ const JobOpenings = () =>
 
                         <div className="relative z-10 flex-1">
                             <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4">
-                                <span className="px-3 py-1 bg-slate-900 text-white text-[7px] md:text-[9px] font-medium uppercase tracking-widest rounded-sm">
+                                <span className="px-3 py-1 bg-slate-900 text-white text-[6px] md:text-[9px] font-medium uppercase tracking-widest rounded-sm">
                                     {job.tag}
                                 </span>
                                 <span className="text-slate-400 font-mono text-[8px] md:text-[10px] font-medium tracking-tighter">
                                     REF_ID: {job.id.slice(0, 12).toUpperCase()}
                                 </span>
-                                <span className="flex items-center gap-1.5 text-red-700 text-[8px] md:text-[10px] font-medium uppercase tracking-widest">
+                                <span className="flex items-center gap-1.5 text-red-700 text-[7px] md:text-[10px] font-medium uppercase tracking-widest">
                                     <Globe size={12} />
                                     {job.location}
                                 </span>
@@ -47,13 +47,13 @@ const JobOpenings = () =>
 
                             <div className="mt-7 md:flex items-center md:gap-6 gap-2">
                                 <div>
-                                    <p className="text-[7px] md:text-[9px] font-medium text-slate-400 uppercase tracking-widest mb-1">Compensation Package</p>
-                                    <p className="text-[10px] md:text-sm font-bold text-slate-700">{job.salary}</p>
+                                    <p className="text-[6px] md:text-[9px] font-medium text-slate-400 uppercase tracking-widest mb-1">Compensation Package</p>
+                                    <p className="text-[8px] md:text-sm font-bold text-slate-700">{job.salary}</p>
                                 </div>
-                                <div className="w-[1px] h-5 bg-slate-700"></div>
+                                <div className="w-[1px] h-5 bg-slate-700 "></div>
                                 <div>
-                                    <p className="text-[7px] md:text-[9px] font-medium text-slate-400 uppercase tracking-widest mb-1">Onboarding</p>
-                                    <p className="text-[10px] md:text-sm font-bold text-slate-700">{job.hiring}</p>
+                                    <p className="text-[6px] md:text-[9px] font-medium text-slate-400 uppercase tracking-widest mb-1">Onboarding</p>
+                                    <p className="text-[8px] md:text-sm font-bold text-slate-700">{job.hiring}</p>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ const JobOpenings = () =>
                         <div className="relative z-10 mt-8 md:mt-0 md:ml-12">
                             <Link
                                 to={`/application/apply/${job.id}`}
-                                className="inline-flex items-center justify-center gap-3 md:px-10 py-5 
+                                className="inline-flex items-center justify-center gap-3 md:px-10 py-2 md:py-5 px-4 
                            bg-slate-900 text-white text-[11px] font-medium uppercase tracking-[0.2em]
                            hover:bg-red-700 transition-all duration-500 w-full md:w-auto rounded-md"
                             >

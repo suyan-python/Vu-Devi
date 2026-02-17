@@ -78,14 +78,14 @@ const Job = () =>
                             </h2>
 
                             {/* SEO Content */}
-                            <p className="text-slate-600 text-base md:text-lg leading-relaxed max-w-xl">
+                            <p className="text-slate-600 text-xs md:text-lg leading-relaxed max-w-xl">
                                 Our recruitment process is built for healthcare accuracy. We hire and validate
                                 <strong className="text-slate-900"> Clinical Documentation Specialists, Medical Scribes, and Healthcare Documentation Experts </strong>
                                 through structured evaluation protocols aligned with
                                 <strong className="text-slate-900"> HIPAA compliance and global medical data standards</strong>.
                             </p>
 
-                            <p className="text-slate-500 text-base leading-relaxed max-w-xl">
+                            <p className="text-slate-500 text-xs md:text-lg leading-relaxed max-w-xl">
                                 Every candidate undergoes credential verification, domain testing, compliance review,
                                 and documentation accuracy assessment before onboarding. We prioritize long-term
                                 healthcare documentation careers backed by secure digital infrastructure.

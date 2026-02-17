@@ -48,7 +48,7 @@ function Hero()
           </h1>
 
           {/* Medical Credibility Sub-text */}
-          <p className="text-base md:text-xl text-slate-500 mb-10 leading-relaxed max-w-2xl mx-auto font-medium">
+          <p className="text-xs md:text-xl text-slate-500 mb-10 leading-relaxed max-w-2xl mx-auto font-medium">
             Bridging the gap between <span className="text-[#133a41] font-bold">clinical workflow</span> and
             <span className="text-[#133a41] font-bold"> data integrity</span>. We provide HIPAA-compliant solutions tailored for global healthcare practitioners.
           </p>

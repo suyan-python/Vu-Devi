@@ -39,11 +39,11 @@ function NewsUpdates()
   ];
 
   return (
-    <section ref={sectionRef} className="py-16 bg-[#f8fafc] overflow-hidden">
+    <section ref={sectionRef} className="pb-12 md:py-16 bg-[#f8fafc] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* 1. SECTION HEADER */}
-        <div className="flex flex-col items-center mb-24">
+        <div className="flex flex-col items-center mb-12 md:mb-24">
           <motion.h2
             className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 text-center uppercase "
             initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ function NewsUpdates()
                   <Calendar size={12} />
                   {news.date}
                 </div>
-                <span className="px-2 py-0.5 bg-slate-100 text-[9px] font-black text-slate-500 uppercase rounded-sm">
+                <span className="px-2 py-0.5 bg-slate-100 text-[9px] font-bold text-slate-500 uppercase rounded-sm">
                   {news.tag}
                 </span>
               </div>
@@ -98,7 +98,7 @@ function NewsUpdates()
               </AnimatePresence>
 
               <div className="mt-8 flex items-center justify-between">
-                <span className="text-[10px] font-black uppercase text-slate-400 group-hover:text-slate-900">
+                <span className="text-[10px] font-semibold uppercase text-slate-400 group-hover:text-slate-900">
                   {expanded === idx ? "Close File" : "Open Dossier"}
                 </span>
                 <ChevronRight className={`transition-transform duration-300 ${expanded === idx ? "rotate-90 text-red-700" : "text-slate-300 group-hover:translate-x-1"}`} size={18} />
@@ -117,13 +117,13 @@ function NewsUpdates()
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-4">
                 <BarChart3 className="text-red-700" size={20} />
-                <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">Growth Metrics</span>
+                <span className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">Growth Metrics</span>
               </div>
-              <h2 className="text-4xl font-bold text-slate-900 leading-tight mb-6">
+              <h2 className="text-xl md:text-4xl font-bold text-slate-900 leading-tight mb-6">
                 Institutional Scale: <br />
                 <span className="text-[#133a41]">Workforce Evolution</span>
               </h2>
-              <p className="text-slate-500 text-lg mb-10 leading-relaxed max-w-md">
+              <p className="text-slate-500 text-xs md:text-lg mb-10 leading-relaxed max-w-md">
                 Transparency is a core value. Monitor our year-on-year scaling as we expand our medical documentation capabilities.
               </p>
 

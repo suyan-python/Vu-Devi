@@ -47,7 +47,7 @@ function OurTeam()
   const navigate = useNavigate();
 
   return (
-    <section className=" py-24 relative overflow-hidden">
+    <section className=" md:py-24 relative overflow-hidden">
       {/* Texture Layer - Subtle corporate feel */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')]"></div>
 
@@ -60,10 +60,10 @@ function OurTeam()
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
+          <h2 className="text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
             Strategic <span className="text-[#133a41]">Leadership</span>
           </h2>
-          <p className="mt-4 text-lg text-slate-600 leading-relaxed">
+          <p className="mt-4 text-xs md:text-lg text-slate-600 leading-relaxed">
             Our vision is guided by a cohort of seasoned medical documentation experts
             dedicated to bridging the gap between clinical precision and operational excellence.
           </p>
@@ -120,7 +120,7 @@ function OurTeam()
 
                 <div className="relative">
                   <Quote className="absolute -top-4 -left-4 text-[#133a41]/5" size={60} />
-                  <p className="italic text-slate-700 text-md md:text-lg leading-relaxed relative z-10 pl-4 border-l-2 border-slate-100">
+                  <p className="italic text-slate-700 text-xs md:text-lg leading-relaxed relative z-10 pl-4 border-l-2 border-slate-100">
                     “{member.quote}”
                   </p>
                 </div>

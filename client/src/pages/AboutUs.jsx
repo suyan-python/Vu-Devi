@@ -14,7 +14,7 @@ function AboutUs()
     <section className="relative py-32 bg-[#f8fafc] overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-6">
 
-        <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between mb-16 lg:mb-14 gap-8">
+        <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between mb-12 lg:mb-14 gap-8">
           {/* Left/Main Column: Institutional Title */}
           <motion.div
             className="max-w-3xl text-center lg:text-left"
@@ -36,7 +36,7 @@ function AboutUs()
           </motion.div>
 
           {/* Right Column: Operational Status - Centered on mobile */}
-          <div className="text-center lg:text-right border-t lg:border-t-0 border-slate-100 pt-6 lg:pt-0 w-full lg:w-auto">
+          <div className="text-center lg:text-right border-t lg:border-t-0 border-slate-100  lg:pt-0 w-full lg:w-auto">
             <div className="flex lg:block flex-col items-center">
               <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">
                 Global Operations
@@ -59,8 +59,8 @@ function AboutUs()
           viewport={{ once: true }}
         >
           <div className="lg:col-span-4">
-            <h3 className="text-xs font-black text-red-700 uppercase tracking-[0.3em] mb-4">Corporate Identity</h3>
-            <p className="text-2xl font-bold text-slate-800 leading-snug">
+            <h3 className="text-xs font-black text-red-700 uppercase tracking-[0.3em] md:mb-4">Corporate Identity</h3>
+            <p className="text-lg md:text-2xl  text-slate-800 leading-snug">
               Bridging the gap between clinical care and administrative precision.
             </p>
           </div>
@@ -68,7 +68,7 @@ function AboutUs()
             <div className="absolute top-0 right-0 p-4 opacity-[0.03]">
               <Microscope size={120} />
             </div>
-            <p className="text-md md:text-lg text-slate-600 leading-relaxed">
+            <p className="text-xs md:text-lg text-slate-600 leading-relaxed">
               Vu Devi Services is a specialized partner in <span className="text-slate-900 font-bold">medical documentation and healthcare support</span>. We operate at the intersection of technology and human expertise, providing global providers with compliant, high-fidelity data solutions. Our infrastructure is built to ensure that healthcare professionals can redirect their focus toward <span className="text-red-700 italic">patient outcomes</span> while we manage the complexity of their documentation.
             </p>
           </div>
@@ -79,16 +79,16 @@ function AboutUs()
           {/* Vision */}
           <div className="bg-white p-12 hover:bg-slate-50 transition-colors">
             <Target className="text-red-700 mb-6" size={40} />
-            <h3 className="text-2xl font-bold text-slate-900 mb-4 uppercase tracking-tighter">Strategic Vision</h3>
-            <p className="text-slate-600 leading-relaxed">
+            <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-4 uppercase tracking-tighter">Strategic Vision</h3>
+            <p className="text-slate-600 leading-relaxed text-xs md:text-[14px]">
               To be the global benchmark for medical documentation, setting the standard for <strong>precision-driven healthcare outsourcing</strong> through continuous technological evolution.
             </p>
           </div>
           {/* Mission */}
           <div className="bg-white p-12 hover:bg-slate-50 transition-colors">
             <ShieldCheck className="text-[#133a41] mb-6" size={40} />
-            <h3 className="text-2xl font-bold text-slate-900 mb-4 uppercase tracking-tighter">Institutional Mission</h3>
-            <p className="text-slate-600 leading-relaxed">
+            <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-4 uppercase tracking-tighter">Institutional Mission</h3>
+            <p className="text-slate-600 leading-relaxed text-xs md:text-[14px]">
               To empower healthcare entities by delivering <strong>secure, ethical, and high-accuracy services</strong> that integrate seamlessly into the modern clinical workflow.
             </p>
           </div>
