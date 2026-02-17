@@ -100,11 +100,11 @@ export default function GeneralForm()
                             </span>
                         </div>
 
-                        <h2 className="text-3xl md:text-4xl font-semibold text-[#133a41] tracking-tight">
+                        <h2 className="text-2xl md:text-4xl font-semibold text-[#133a41] tracking-tight">
                             General Talent <span className="text-red-500">Inquiry</span>
                         </h2>
 
-                        <p className="text-slate-500 text-sm md:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-slate-500 text-xs md:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
                             Submit your credentials to our centralized recruitment system. Profiles are reviewed for healthcare documentation, medical data processing, and clinical support roles.
                         </p>
                     </div>
@@ -158,7 +158,7 @@ export default function GeneralForm()
                         {/* TRUST + ACTION */}
                         <div className="pt-8 border-t border-slate-200 flex flex-col items-center gap-6">
 
-                            <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-slate-500 font-bold">
+                            <div className="flex items-center gap-2 text-[8px] md:text-[10px] uppercase tracking-widest text-slate-500 font-bold">
                                 <ShieldCheck size={14} className="text-[#133a41]" />
                                 Secure Submission • Data Protected • HIPAA-aligned
                             </div>
@@ -166,7 +166,7 @@ export default function GeneralForm()
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="px-16 py-4 bg-red-500 text-white rounded-xl font-black uppercase tracking-[0.25em] text-xs hover:bg-red-600 transition-all active:scale-95 shadow-sm"
+                                className="md:px-16 md:py-4 py-2 px-3 bg-red-700 text-white rounded-xl font-black uppercase tracking-[0.25em] text-xs hover:bg-red-800 transition-all active:scale-95 shadow-sm"
                             >
                                 {loading ? "Submitting..." : "Submit Credentials"}
                             </button>

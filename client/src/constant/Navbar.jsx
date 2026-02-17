@@ -7,6 +7,36 @@ function Navbar()
 {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showBar, setShowBar] = useState(true);
+
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() =>
+  {
+    const handleScroll = () =>
+    {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 80)
+      {
+        // scrolling down
+        setShowBar(false);
+      } else
+      {
+        // scrolling up
+        setShowBar(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () =>
+    {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
   useEffect(() =>
   {
@@ -30,10 +60,14 @@ function Navbar()
   return (
     <>
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm py-3"
-          : "bg-transparent py-5"
-          }`}
+        className={`fixed top-0 w-full z-50 transition-all duration-350 ease-[cubic-bezier(0.4,0,0.2,1)]
+  ${isScrolled
+            ? "bg-white/80 backdrop-blur-md shadow-sm py-3"
+            : "bg-transparent py-5"
+          }
+  ${showBar ? "translate-y-0" : "-translate-y-full"}
+  md:translate-y-0
+  `}
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-12 flex justify-between items-center">
 
