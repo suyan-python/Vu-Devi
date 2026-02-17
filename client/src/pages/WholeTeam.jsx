@@ -227,7 +227,7 @@ function WholeTeam()
         </div>
 
         {/* ===== DIVIDER WITH ICON ===== */}
-        <div className="relative py-12 flex items-center justify-center">
+        <div className="relative md:py-12 flex items-center justify-center">
           <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-slate-200"></div></div>
           <div className="relative  px-6 text-slate-300"><Users size={32} strokeWidth={1} /></div>
         </div>
@@ -235,7 +235,7 @@ function WholeTeam()
         {/* ===== SECTION 2: THE CORE EXPERIENCED TEAM ===== */}
         <div>
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900">Expert <span className="text-[#133a41]">Clinical Associates</span></h2>
+            <h2 className="text-3xl font-bold text-slate-900">Expert <br /> <span className="text-[#133a41]">Clinical Associates</span></h2>
             <p className="text-slate-500 text-sm mt-2">The backbone of our high-precision documentation services.</p>
           </div>
 

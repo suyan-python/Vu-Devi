@@ -62,7 +62,7 @@ function Navbar()
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-350 ease-[cubic-bezier(0.4,0,0.2,1)]
   ${isScrolled
-            ? "bg-white/80 backdrop-blur-md shadow-sm py-3"
+            ? "bg-white/80 backdrop-blur-md shadow-md py-3"
             : "bg-transparent py-5"
           }
   ${showBar ? "translate-y-0" : "-translate-y-full"}

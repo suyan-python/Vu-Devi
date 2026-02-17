@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Home, Briefcase, Stethoscope, PhoneCall, Info } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react"; // Optional: Use icons for a professional touch
 
 const FooterBT = () =>
 {
@@ -80,35 +81,59 @@ const FooterBT = () =>
       </nav>
 
       {/* DESKTOP FOOTER - Hidden on Mobile */}
-      <footer className="hidden md:block w-full bg-[#133a41] text-white py-2 fixed bottom-0 left-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <div className="text-sm font-semibold">
-            © 2026 Vu Devi Services Pvt. Ltd.
+      <footer
+        className={`hidden md:block fixed bottom-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 
+  transition-all duration-500 ease-in-out
+  ${showBar ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"}`}
+      >
+        <div className="bg-[#133a41] backdrop-blur-md text-white px-12 py-2 rounded-2xl border border-white/10 shadow-2xl flex justify-between items-center">
+
+          {/* Brand Section */}
+          <div className="flex flex-col gap-1">
+            <p className="text-sm font-bold">Vu Devi Services <span className="font-light text-slate-400">Pvt. Ltd.</span></p>
+            <p className="text-[10px] text-slate-400 uppercase tracking-widest">© 2026 All Rights Reserved</p>
           </div>
 
-          <div className="flex gap-8 text-xs text-slate-300">
-            <div className="flex flex-col items-start">
-              <span className="text-white font-bold uppercase text-[10px]">
-                Location
-              </span>
-              <span>Balkumari, Lalitpur, Nepal</span>
+          {/* Info Grid */}
+          <div className="flex gap-10">
+
+            {/* Location */}
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-white/5 rounded-lg text-teal-400">
+                <MapPin size={16} />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[10px] text-slate-400 uppercase font-bold">Location</span>
+                <span className="text-xs font-medium">Balkumari, Lalitpur, Nepal</span>
+              </div>
             </div>
 
-            <div className="flex flex-col items-start">
-              <span className="text-white font-bold uppercase text-[10px]">
-                Contact
-              </span>
-              <a href="tel:+9779817576110">+977 9817576110</a>
+            {/* Contact */}
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-white/5 rounded-lg text-teal-400">
+                <Phone size={16} />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[10px] text-slate-400 uppercase font-bold">Contact</span>
+                <a href="tel:+9779817576110" className="text-xs font-medium hover:text-teal-400 transition-colors">
+                  +977 9817576110
+                </a>
+              </div>
             </div>
 
-            <div className="flex flex-col items-start">
-              <span className="text-white font-bold uppercase text-[10px]">
-                Email
-              </span>
-              <a href="mailto:vudeviservices@gmail.com">
-                vudeviservices@gmail.com
-              </a>
+            {/* Email */}
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-white/5 rounded-lg text-teal-400">
+                <Mail size={16} />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[10px] text-slate-400 uppercase font-bold">Email</span>
+                <a href="mailto:vudeviservices@gmail.com" className="text-xs font-medium hover:text-teal-400 transition-colors">
+                  vudeviservices@gmail.com
+                </a>
+              </div>
             </div>
+
           </div>
         </div>
       </footer>
