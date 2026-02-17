@@ -121,34 +121,34 @@ function AboutUs()
         <div className="bg-slate-900 p-12 lg:p-20 text-white rounded-sm relative overflow-hidden">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-[#133a41]/20 skew-x-12 translate-x-20"></div>
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ">
             <div>
-              <h3 className="text-3xl font-bold mb-6">Why Global Providers Trust <br /><span className="text-red-500 underline decoration-1 underline-offset-8">Vu Devi Services</span></h3>
-              <p className="text-slate-400 text-lg">We don't just process data; we safeguard medical records and ensure business continuity for clinics worldwide.</p>
+              <h3 className="text-xl md:text-3xl font-bold mb-6">Why Global Providers Trust <br /><span className="text-red-500 underline decoration-1 underline-offset-8">Vu Devi Services</span></h3>
+              <p className="text-slate-400 text-xs md:text-lg">We don't just process data; we safeguard medical records and ensure business continuity for clinics worldwide.</p>
             </div>
             <div className="grid grid-cols-2 gap-8">
               <div>
-                <h4 className="text-2xl font-bold text-white mb-1">10+ Years</h4>
-                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Industry Expertise</p>
+                <h4 className="text-xl md:text-2xl font-bold text-white mb-1">10+ Years</h4>
+                <p className="text-[8px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Industry Expertise</p>
               </div>
               <div>
-                <h4 className="text-2xl font-bold text-white mb-1">24/7</h4>
-                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Global Support</p>
+                <h4 className="text-xl md:text-2xl font-bold text-white mb-1">24/7</h4>
+                <p className="text-[8px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Global Support</p>
               </div>
               <div>
-                <h4 className="text-2xl font-bold text-white mb-1">99.9%</h4>
-                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Accuracy Rate</p>
+                <h4 className="text-xl md:text-2xl font-bold text-white mb-1">99.9%</h4>
+                <p className="text-[8px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Accuracy Rate</p>
               </div>
               <div>
-                <h4 className="text-2xl font-bold text-white mb-1">ISO/HIPAA</h4>
-                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Certified Protocols</p>
+                <h4 className="text-xl md:text-2xl font-bold text-white mb-1">ISO/HIPAA</h4>
+                <p className="text-[8px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Certified Protocols</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Founder & Management Mount Points */}
-        <div className="mt-24 space-y-24">
+        <div className="md:mt-24 space-y-24">
           <MeetFounder />
           <MeetManagement />
         </div>

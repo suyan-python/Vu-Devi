@@ -6,7 +6,7 @@ import Dilasha from "../assets/person/all/dilasha.jpeg";
 const MeetManagement = () =>
 {
     return (
-        <section className="py-24 bg-[#f8fafc] border-y border-slate-100 relative overflow-hidden">
+        <section className="py-24 bg-white border-y border-slate-100 relative overflow-hidden">
             {/* Structural Background Accent (Left side for balance) */}
             <div className="absolute top-0 left-0 w-1/3 h-full bg-white hidden lg:block -z-10"></div>
 
@@ -26,12 +26,12 @@ const MeetManagement = () =>
                             <p className="text-xs font-black text-slate-400 uppercase tracking-[0.4em]">Operations Executive</p>
                         </div>
 
-                        <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight mb-8">
+                        <h2 className="text-2xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight mb-8">
                             Operational Mastery & <br />
                             <span className="text-red-700  font-light">Scalable Growth.</span>
                         </h2>
 
-                        <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
+                        <div className="space-y-6 text-slate-600 text-xs md:text-lg leading-relaxed">
                             <p>
                                 As the <span className="text-slate-900 font-bold uppercase text-sm tracking-tighter">Head of Management</span>, Dilasha Shakya orchestrates the core operational pulse of Vu Devi Services. Her focus is the cultivation of a <span className="font-semibold">high-performance culture</span> that balances clinical compliance with human-centric empowerment.
                             </p>
@@ -44,7 +44,7 @@ const MeetManagement = () =>
                         {/* Management Philosophy Block */}
                         <div className="mt-12 p-8 bg-white border-r-4 border-red-700 shadow-sm relative text-right">
                             <Quote className="absolute top-4 left-4 text-slate-100 rotate-180" size={40} />
-                            <p className="text-xl font-serif italic text-slate-800 leading-relaxed">
+                            <p className="text-xs md:text-xl font-serif italic text-slate-800 leading-relaxed">
                                 "Strong teams are the bedrock of resilient organizations; our goal is to achieve collective excellence through strategic empowerment."
                             </p>
                         </div>
@@ -53,15 +53,15 @@ const MeetManagement = () =>
                         <div className="mt-12 flex flex-wrap gap-8 items-center border-t border-slate-200 pt-8">
                             <div className="flex items-center gap-2">
                                 <Users className="text-[#133a41]" size={20} />
-                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Team Empowerment</span>
+                                <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-slate-400">Team Empowerment</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <Zap className="text-[#133a41]" size={20} />
-                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Process Optimization</span>
+                                <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-slate-400">Process Optimization</span>
                             </div>
-                            <a href="#" className="flex items-center gap-2 text-red-700 hover:text-slate-900 transition-colors ml-auto">
+                            <a href="#" className="flex items-center gap-2 text-red-700 hover:text-slate-900 transition-colors ">
                                 <Linkedin size={20} />
-                                <span className="text-[10px] font-black uppercase tracking-widest">Connect on Professional Network</span>
+                                <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest">Connect on Professional Network</span>
                             </a>
                         </div>
                     </motion.div>

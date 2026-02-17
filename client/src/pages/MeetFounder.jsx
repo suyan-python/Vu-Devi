@@ -6,7 +6,7 @@ import Binayak from "../assets/person/binayak2.jpeg";
 const MeetFounder = () =>
 {
     return (
-        <section className="py-24 bg-white border-y border-slate-100 relative overflow-hidden">
+        <section className="py-24 bg-white border-y border-slate-100 relative overflow-hidden ">
             {/* Structural Background Accent */}
             <div className="absolute top-0 right-0 w-1/3 h-full bg-[#f8fafc] hidden lg:block -z-10"></div>
 
@@ -53,12 +53,12 @@ const MeetFounder = () =>
                             <p className="text-xs font-black text-slate-400 uppercase tracking-[0.4em]">Leadership Profile</p>
                         </div>
 
-                        <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight mb-8">
+                        <h2 className="text-2xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight mb-8">
                             Driving Global Healthcare <br />
                             <span className="text-red-700  font-light">through Innovation.</span>
                         </h2>
 
-                        <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
+                        <div className="space-y-6 text-slate-600 text-xs md:text-lg leading-relaxed">
                             <p>
                                 As an entrepreneur and innovator, my journey has been defined by a single
                                 commitment: <span className="text-slate-900 font-bold">transforming complex challenges into seamless technological solutions.</span>
@@ -75,7 +75,7 @@ const MeetFounder = () =>
                         {/* Quote Block */}
                         <div className="mt-12 p-8 bg-slate-50 border-l-4 border-[#133a41] relative">
                             <Quote className="absolute top-4 right-4 text-slate-200" size={40} />
-                            <p className="text-xl font-serif italic text-slate-800 leading-relaxed">
+                            <p className="text-xs md:text-xl font-serif italic text-slate-800 leading-relaxed">
                                 "Great ideas start with a vision, but institutional success is born from the relentless pursuit of clinical integrity."
                             </p>
                         </div>
@@ -84,15 +84,15 @@ const MeetFounder = () =>
                         <div className="mt-12 flex flex-wrap gap-8 items-center border-t border-slate-100 pt-8">
                             <div className="flex items-center gap-2">
                                 <ShieldCheck className="text-red-700" size={20} />
-                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Security Minded</span>
+                                <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-slate-400">Security Minded</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <Award className="text-red-700" size={20} />
-                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Industry Leader</span>
+                                <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-slate-400">Industry Leader</span>
                             </div>
                             <a href="#" className="flex items-center gap-2 text-[#133a41] hover:text-red-700 transition-colors">
                                 <Linkedin size={20} />
-                                <span className="text-[10px] font-black uppercase tracking-widest">Connect on Professional Network</span>
+                                <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest">Connect on Professional Network</span>
                             </a>
                         </div>
                     </motion.div>

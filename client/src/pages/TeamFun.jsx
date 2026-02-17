@@ -16,7 +16,7 @@ function TeamFun()
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <section className="w-full bg-[#fffff7] pb-24 overflow-hidden">
+    <section className="w-full pb-24 overflow-hidden">
 
       {/* 1. THE MINI-HERO (Top Background Image) */}
       <div className="relative h-[50vh] w-full flex items-center justify-center overflow-hidden">
@@ -34,8 +34,8 @@ function TeamFun()
             <Sparkles size={16} className="text-yellow-400" />
             LIFE AT VU DEVI
           </motion.div>
-          <h2 className="header text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
-            Beyond Work: <span className="text-red-500">Our Happy Moments</span>
+          <h2 className="header text-4xl md:text-6xl font-medium text-white drop-shadow-lg">
+            Beyond Work: <br /> <span className="text-red-700 font-light">Our Happy Moments</span>
           </h2>
           <p className="text-white/80 mt-4 max-w-xl mx-auto text-lg font-medium">
             We believe in working hard and celebrating harder. Our culture is the heartbeat of our excellence.

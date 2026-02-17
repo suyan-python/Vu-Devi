@@ -124,7 +124,7 @@ function DocInfo()
   }
 
   return (
-    <section className="w-full py-16 bg-[#fffff7] min-h-screen mt-20">
+    <section className="w-full py-16  min-h-screen mt-20">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Navigation / Breadcrumbs */}

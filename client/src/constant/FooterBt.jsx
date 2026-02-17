@@ -1,11 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-// Use Lucide icons for a clean, professional look
 import { Home, Briefcase, Stethoscope, PhoneCall, Info } from "lucide-react";
 
 const FooterBT = () =>
 {
-  // Navigation items for the mobile bar
+  const [showBar, setShowBar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() =>
+  {
+    const handleScroll = () =>
+    {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 80)
+      {
+        // scrolling down
+        setShowBar(false);
+      } else
+      {
+        // scrolling up
+        setShowBar(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () =>
+    {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   const navItems = [
     { label: "Home", to: "/", icon: <Home size={20} /> },
     { label: "Services", to: "/services", icon: <Stethoscope size={20} /> },
@@ -16,8 +44,9 @@ const FooterBT = () =>
 
   return (
     <>
-      {/* MOBILE BOTTOM NAVIGATION (App Style) - Visible only on Mobile */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full  bg-white  shadow-[0_-4px_10px_rgba(0,0,0,0.05)] z-50">
+      {/* MOBILE BOTTOM NAVIGATION */}
+      <nav className={`md:hidden fixed bottom-0 left-0 w-full bg-white z-50 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] duration-350 ease-[cubic-bezier(0.4,0,0.2,1)]
+ ${showBar ? "translate-y-0" : "translate-y-full"}`}>
         <div className="flex justify-around items-center h-16">
           {navItems.map((item, idx) => (
             <NavLink
@@ -28,17 +57,23 @@ const FooterBT = () =>
                 }`
               }
             >
-              <div className="mb-1">{item.icon}</div>
-              <span className="text-[10px] font-medium uppercase tracking-wider">
-                {item.label}
-              </span>
-              {/* Active Indicator Dot */}
-              <NavLink
-                to={item.to}
-                className={({ isActive }) =>
-                  `h-1 w-1 rounded-full mt-1 ${isActive ? "bg-[#133a41]" : "bg-transparent"}`
-                }
-              />
+              {({ isActive }) => (
+                <>
+                  <div className="mb-1">{item.icon}</div>
+
+                  <span className="text-[8px] font-medium uppercase tracking-wider">
+                    {item.label}
+                  </span>
+
+                  {/* Active Indicator Dot */}
+                  <div
+                    className={`h-1 w-1 rounded-full mt-1 transition-all duration-300 ${isActive
+                      ? "bg-[#133a41] scale-100"
+                      : "bg-transparent scale-0"
+                      }`}
+                  />
+                </>
+              )}
             </NavLink>
           ))}
         </div>
@@ -53,21 +88,32 @@ const FooterBT = () =>
 
           <div className="flex gap-8 text-xs text-slate-300">
             <div className="flex flex-col items-start">
-              <span className="text-white font-bold uppercase text-[10px]">Location</span>
+              <span className="text-white font-bold uppercase text-[10px]">
+                Location
+              </span>
               <span>Balkumari, Lalitpur, Nepal</span>
             </div>
+
             <div className="flex flex-col items-start">
-              <span className="text-white font-bold uppercase text-[10px]">Contact</span>
+              <span className="text-white font-bold uppercase text-[10px]">
+                Contact
+              </span>
               <a href="tel:+9779817576110">+977 9817576110</a>
             </div>
+
             <div className="flex flex-col items-start">
-              <span className="text-white font-bold uppercase text-[10px]">Email</span>
-              <a href="mailto:vudeviservices@gmail.com">vudeviservices@gmail.com</a>
+              <span className="text-white font-bold uppercase text-[10px]">
+                Email
+              </span>
+              <a href="mailto:vudeviservices@gmail.com">
+                vudeviservices@gmail.com
+              </a>
             </div>
           </div>
         </div>
       </footer>
     </>
+
   );
 };
 
