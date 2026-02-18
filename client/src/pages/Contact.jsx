@@ -40,15 +40,15 @@ function Contact()
               viewport={{ once: true }}
             >
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-700 text-white text-[10px] font-bold uppercase tracking-widest rounded-sm mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-700 text-white text-[8px] md:text-[10px] font-bold uppercase tracking-widest rounded-sm mb-6">
                   <Globe size={12} />
                   Global Operations
                 </div>
-                <h1 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
+                <h1 className="text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
                   Connect with our <br />
                   <span className="text-[#133a41] font-light">Service Center</span>
                 </h1>
-                <p className="mt-6 text-slate-600 text-lg leading-relaxed border-l-2 border-slate-200 pl-6">
+                <p className="mt-6 text-slate-600 text-xs md:text-lg leading-relaxed border-l-2 border-slate-200 pl-6">
                   Vu Devi Services Pvt. Ltd. provides 24/7 support coordination for international medical documentation projects.
                 </p>
               </div>
@@ -61,9 +61,9 @@ function Contact()
                     <Mail size={24} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Official Inquiry</p>
+                    <p className="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Official Inquiry</p>
 
-                    <a href="mailto:vudeviservices@gmail.com" className="text-lg font-bold text-slate-800" aria-label="Email Vu Devi Services">vudeviservices@gmail.com</a>
+                    <a href="mailto:vudeviservices@gmail.com" className="text-xs md:text-lg font-bold text-slate-800" aria-label="Email Vu Devi Services">vudeviservices@gmail.com</a>
                   </div>
                 </a>
 
@@ -73,10 +73,10 @@ function Contact()
                     <Phone size={24} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Direct Assistance</p>
+                    <p className="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Direct Assistance</p>
                     <a
                       href="tel:+9779817576110"
-                      className="text-md font-bold text-slate-800 hover:underline"
+                      className="text-xs md:text-md font-bold text-slate-800 hover:underline"
                     >
                       +977 9817576110
                     </a>
@@ -91,15 +91,13 @@ function Contact()
                   </div>
 
                   <address className="not-italic">
-                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">
+                    <p className="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">
                       Headquarters
                     </p>
-                    <p className="text-md font-bold text-slate-800 leading-snug">
+                    <p className="text-xs md:text-md font-bold text-slate-800 leading-snug">
                       Balkumari, Lalitpur, Nepal
                     </p>
                   </address>
-
-
 
                 </div>
               </div>

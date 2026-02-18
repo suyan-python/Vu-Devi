@@ -23,13 +23,13 @@ function AboutUs()
             viewport={{ once: true }}
           >
             {/* Institutional Badge - Centered on mobile */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#133a41] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-sm mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#133a41] text-white text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] rounded-sm mb-6">
               <Award size={12} />
               Established Excellence
             </div>
 
             {/* Main Headline - Using tight tracking for authority */}
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tighter text-slate-900 leading-[1.1]">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tighter text-slate-900 leading-[1.1]">
               The Architecture of <br />
               <span className="text-red-700 font-light ">Clinical Trust.</span>
             </h2>

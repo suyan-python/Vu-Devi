@@ -124,12 +124,12 @@ function DocInfo()
   }
 
   return (
-    <section className="w-full py-16  min-h-screen mt-20">
+    <section className="w-full py-16  min-h-screen mt-12 md:mt-20">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Navigation / Breadcrumbs */}
         <button
-          className="group flex items-center gap-2 mb-8 text-slate-500 hover:text-[#133a41] transition-colors font-semibold text-sm uppercase tracking-widest"
+          className="group flex items-center gap-2 mb-8 text-slate-500 hover:text-[#133a41] transition-colors font-semibold text-xs md:text-sm uppercase tracking-widest"
           onClick={() => navigate(-1)}
         >
           <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
@@ -156,12 +156,12 @@ function DocInfo()
             <div className="w-full md:w-2/3 p-8 lg:p-12">
               <div className="flex flex-col h-full">
                 <div className="mb-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#133a41]/5 text-[#133a41] rounded-sm text-[10px] font-bold uppercase tracking-widest mb-3">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#133a41]/5 text-[#133a41] rounded-sm text-[8px] md:text-[10px] font-bold uppercase tracking-widest mb-3">
                     <UserCheck size={12} />
                     Clinical Lead
                   </div>
-                  <h2 className="text-4xl font-bold text-slate-900">{doctor.name}</h2>
-                  <p className="text-xl text-red-700 font-medium mt-1">{doctor.designation}</p>
+                  <h2 className="text-xl md:text-4xl font-bold text-slate-900">{doctor.name}</h2>
+                  <p className="text-sm md:text-xl text-red-700 font-medium mt-1">{doctor.designation}</p>
                 </div>
 
                 {/* Metadata Grid */}
@@ -180,7 +180,7 @@ function DocInfo()
 
                 <div className="border-t border-slate-100 pt-6">
                   <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Professional Biography</h4>
-                  <p className="text-slate-700 leading-relaxed text-lg">
+                  <p className="text-slate-700 leading-relaxed text-xs md:text-lg">
                     {doctor.bio}
                   </p>
                 </div>
@@ -192,7 +192,7 @@ function DocInfo()
         {/* 2. TEAM MEMBERS SECTION (The Directory) */}
         <div className="mt-20">
           <div className="flex items-center gap-4 mb-10">
-            <h3 className="text-2xl font-bold text-slate-900">Direct Reports & Team</h3>
+            <h3 className="text-lg md:text-2xl font-bold text-slate-900">Direct Reports & Team</h3>
             <div className="h-px flex-1 bg-slate-200"></div>
             <div className="flex items-center gap-2 text-slate-400 font-bold text-xs uppercase tracking-widest">
               <Users size={16} />

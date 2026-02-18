@@ -55,7 +55,7 @@ function Navbar()
   ];
 
   const getActiveClass = ({ isActive }) =>
-    `relative text-sm font-medium transition-colors duration-300 ${isActive ? "text-[#133a41] font-bold" : "text-gray-600 hover:text-[#133a41]"
+    `relative text-sm  transition-colors duration-300 ${isActive ? "text-[#133a41] font-bold" : "text-gray-600 hover:text-[#133a41] font-medium"
     }`;
   return (
     <>
@@ -125,7 +125,7 @@ function Navbar()
                 key={idx}
                 to={link.to}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-2xl font-light text-[#133a41]"
+                className={getActiveClass}
               >
                 {link.label}
               </NavLink>

@@ -23,7 +23,7 @@ function Hero()
       </div>
 
       {/* 2. CENTRAL COMMAND UI */}
-      <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-20 md:pt-32 flex justify-center">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-24 md:pt-32 flex justify-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

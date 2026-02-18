@@ -91,11 +91,11 @@ const Job = () =>
                     <div className="max-w-7xl mx-auto">
                         <div className="flex flex-col gap-4">
                             <div className="text-center ">
-                                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#133a41] text-white text-[10px] font-bold uppercase tracking-widest rounded-sm mb-4">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#133a41] text-white text-[8px] md:text-[10px] font-bold uppercase tracking-widest rounded-sm mb-4">
                                     <Briefcase size={12} />
                                     Active Recruitment: Medical Operations
                                 </div>
-                                <h1 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
+                                <h1 className="text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
                                     Medical Jobs in Nepal <br />
                                     <span className="text-red-700 font-light">Clinical Documentation & Healthcare Careers</span>
                                 </h1>

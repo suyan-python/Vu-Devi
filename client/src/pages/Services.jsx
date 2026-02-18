@@ -80,10 +80,10 @@ const Services = () =>
 
         {/* Institutional Header */}
         <div className="flex flex-col items-center mb-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-800 text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-800 text-white text-[8px] md:text-[10px] font-black uppercase tracking-[0.3em] rounded-sm mb-6">
             Institutional Capabilities
           </div>
-          <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
+          <h2 className="text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
             Our Core <br />
             <span className="text-red-700  font-light"> Clinical Protocols</span>
           </h2>
