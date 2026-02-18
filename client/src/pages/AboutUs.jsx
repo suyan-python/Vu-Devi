@@ -14,7 +14,7 @@ function AboutUs()
     <section className="relative py-32 bg-[#f8fafc] overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-6">
 
-        <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between mb-12 lg:mb-14 gap-8">
+        <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between mb-8 lg:mb-14 gap-8">
           {/* Left/Main Column: Institutional Title */}
           <motion.div
             className="max-w-3xl text-center lg:text-left"
@@ -60,7 +60,7 @@ function AboutUs()
         >
           <div className="lg:col-span-4">
             <h3 className="text-xs font-black text-red-700 uppercase tracking-[0.3em] md:mb-4">Corporate Identity</h3>
-            <p className="text-lg md:text-2xl  text-slate-800 leading-snug">
+            <p className="text-[14px] md:text-2xl  text-slate-800 leading-snug">
               Bridging the gap between clinical care and administrative precision.
             </p>
           </div>

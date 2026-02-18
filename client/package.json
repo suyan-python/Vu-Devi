@@ -10,6 +10,10 @@
     "preview": "vite preview",
     "postbuild": "react-snap"
   },
+  "reactSnap": {
+    "source": "dist",
+    "destination": "dist"
+  },
   "dependencies": {
     "@canvasjs/react-charts": "^1.0.2",
     "@emotion/react": "^11.14.0",

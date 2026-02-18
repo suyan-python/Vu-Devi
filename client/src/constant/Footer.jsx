@@ -12,7 +12,7 @@ function Footer()
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0f2d33] text-white pt-20 pb-20 border-t-4 border-red-800">
+    <footer className="bg-[#0f2d33] text-white py-10 md:py-20 border-t-4 border-red-800">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
         {/* 1. TOP TIER: BRAND & COMPLIANCE */}
@@ -20,8 +20,8 @@ function Footer()
 
           {/* Column A: Identity */}
           <div className="lg:col-span-4">
-            <img src={logo} className="w-44 mb-8 brightness-0 invert" alt="Vu Devi Services" />
-            <p className="text-slate-400 text-sm leading-relaxed mb-8 max-w-sm">
+            <img src={logo} className="w-20 md:w-44 mb-8 brightness-0 invert" alt="Vu Devi Services" />
+            <p className="text-slate-400 text-xs md:text-sm leading-relaxed mb-8 max-w-sm">
               Vu Devi Services operates as a global node for medical administrative excellence.
               We bridge the gap between clinical complexity and operational precision.
             </p>
@@ -31,19 +31,19 @@ function Footer()
                 <div className="p-2 border border-slate-700 rounded-sm hover:border-red-500 transition-colors">
                   <ShieldCheck className="text-red-500" size={20} />
                 </div>
-                <span className="text-[8px] font-black uppercase tracking-widest mt-2 text-slate-500">HIPAA Compliant</span>
+                <span className="text-[6px] md:text-[8px] font-black uppercase tracking-widest mt-2 text-slate-500">HIPAA Compliant</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="p-2 border border-slate-700 rounded-sm hover:border-red-500 transition-colors">
                   <Activity className="text-red-500" size={20} />
                 </div>
-                <span className="text-[8px] font-black uppercase tracking-widest mt-2 text-slate-500">ISO 27001</span>
+                <span className="text-[6px] md:text-[8px] font-black uppercase tracking-widest mt-2 text-slate-500">ISO 27001</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="p-2 border border-slate-700 rounded-sm hover:border-red-500 transition-colors">
                   <Globe className="text-red-500" size={20} />
                 </div>
-                <span className="text-[8px] font-black uppercase tracking-widest mt-2 text-slate-500">Global Node</span>
+                <span className="text-[6px] md:text-[8px] font-black uppercase tracking-widest mt-2 text-slate-500">Global Node</span>
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@ function Footer()
 
           {/* Column B: Navigation Protocol */}
           <div className="lg:col-span-3">
-            <h4 className="text-[10px] font-black text-shadow-white uppercase tracking-[0.4em] mb-8">
+            <h4 className=" text-[8px] md:text-[10px] font-black text-shadow-white uppercase tracking-[0.4em] mb-8">
               Navigation Protocol
             </h4>
 
@@ -66,7 +66,7 @@ function Footer()
                 <li key={item.label}>
                   <Link
                     to={item.path}
-                    className="group flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-all"
+                    className="group flex items-center gap-2 text-xs md:text-sm text-slate-300 hover:text-white transition-all"
                   >
                     <ChevronRight
                       size={14}
@@ -82,21 +82,21 @@ function Footer()
 
           {/* Column C: Global Headquarters */}
           <div className="lg:col-span-5">
-            <h4 className="text-[10px] font-black text-shadow-white uppercase tracking-[0.4em] mb-8">Administrative Headquarters</h4>
+            <h4 className="text-[8px] md:text-[10px] font-black text-shadow-white uppercase tracking-[0.4em] mb-8">Administrative Headquarters</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <MapPin className="text-red-700 shrink-0" size={20} />
                   <div>
-                    <p className="text-[10px] font-black text-slate-500 uppercase mb-1">Location</p>
-                    <p className="text-sm text-slate-300">Balkumari-Gwarko, Lalitpur<br />Bagmati, Nepal</p>
+                    <p className="text-[8px] md:text-[10px] font-black text-slate-500 uppercase mb-1">Location</p>
+                    <p className="text-xs md:text-sm text-slate-300">Balkumari-Gwarko, Lalitpur<br />Bagmati, Nepal</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Mail className="text-red-700 shrink-0" size={20} />
                   <div>
-                    <p className="text-[10px] font-black text-slate-500 uppercase mb-1">Email</p>
-                    <a href="mailto:vudeviservices@gmail.com" className="text-sm text-slate-300 hover:text-white">vudeviservices@gmail.com</a>
+                    <p className="text-[8px] md:text-[10px] font-black text-slate-500 uppercase mb-1">Email</p>
+                    <a href="mailto:vudeviservices@gmail.com" className="text-xs md:text-sm text-slate-300 hover:text-white">vudeviservices@gmail.com</a>
                   </div>
                 </div>
               </div>
@@ -104,12 +104,12 @@ function Footer()
                 <div className="flex items-start gap-4">
                   <Phone className="text-red-700 shrink-0" size={20} />
                   <div>
-                    <p className="text-[10px] font-black text-slate-500 uppercase mb-1">Direct Line</p>
-                    <a href="tel:+9779817576110" className="text-sm text-slate-300 hover:text-white">+977 9817576110</a>
+                    <p className="text-[8px] md:text-[10px] font-black text-slate-500 uppercase mb-1">Direct Line</p>
+                    <a href="tel:+9779817576110" className="text-xs md:text-sm text-slate-300 hover:text-white">+977 9817576110</a>
                   </div>
                 </div>
                 <div className="pt-4">
-                  <p className="text-[10px] font-black text-slate-500 uppercase mb-3">Network Status</p>
+                  <p className="text-[8px] md:text-[10px] font-black text-slate-500 uppercase mb-3">Network Status</p>
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
                     <span className="text-[10px] text-emerald-500 font-bold uppercase">Systems Operational</span>
@@ -121,10 +121,10 @@ function Footer()
         </div>
 
         {/* 2. BOTTOM TIER: LEGAL & SOCIAL */}
-        <div className="pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="md:pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-12 md:gap-8">
 
           {/* Social Links with unified square design */}
-          <div className="flex gap-3">
+          <div className="flex gap-8 md:gap-3">
             {[
               { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=61574993381205" },
               { Icon: Linkedin, href: "https://www.linkedin.com/in/vu-devi-09676b339" },
