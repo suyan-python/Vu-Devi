@@ -63,7 +63,7 @@ function Contact()
                   <div>
                     <p className="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Official Inquiry</p>
 
-                    <a href="mailto:vudeviservices@gmail.com" className="text-xs md:text-lg font-bold text-slate-800" aria-label="Email Vu Devi Services">vudeviservices@gmail.com</a>
+                    <a href="mailto:vudeviservices@gmail.com" className="text-xs md:text-lg font-semibold text-slate-800" aria-label="Email Vu Devi Services">vudeviservices@gmail.com</a>
                   </div>
                 </a>
 
@@ -75,10 +75,17 @@ function Contact()
                   <div>
                     <p className="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Direct Assistance</p>
                     <a
+                      href="tel:+015924646"
+                      className="text-xs md:text-md font-bold text-slate-800 hover:underline"
+                    >
+                      015924646
+                    </a>
+                    <br />
+                    <a
                       href="tel:+9779817576110"
                       className="text-xs md:text-md font-bold text-slate-800 hover:underline"
                     >
-                      +977 9817576110
+                      9817576110
                     </a>
                     <p className="text-xs text-slate-500 mt-1 font-medium italic">Available during business hours (NPT)</p>
                   </div>
