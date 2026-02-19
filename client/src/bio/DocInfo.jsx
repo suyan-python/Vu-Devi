@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import ravi from "../assets/leads/ravi.png";
-import nikita2 from "../assets/leads/nikita2.png";
-import rajiya from "../assets/leads/rajiya.png";
-import bandana from "../assets/leads/bandana2.png";
+import ravi from "../assets/leads/ravi.webp";
+import nikita2 from "../assets/leads/nikita2.webp";
+import rajiya from "../assets/leads/rajiya.webp";
+import bandana from "../assets/leads/bandana2.webp";
 
 import { Mail, Calendar, UserCheck, ArrowLeft, Users, Briefcase } from "lucide-react";
 
@@ -74,7 +74,6 @@ const doctorData = {
     teamMembers: [
       "Arju Khadka",
       "Bandu Manandhar",
-      "Krija Shrestha",
       "Namita Sangroula",
       "Priyanka Chaudary",
       "Priyasha Mahara",
@@ -83,7 +82,6 @@ const doctorData = {
       "Shruti Gautam",
       "Sushmita Khadka",
       "Suyan Man Amatya",
-      "Swastika Neupane",
       "Nilima Mulmi",
       "Simran Thapa",
     ],

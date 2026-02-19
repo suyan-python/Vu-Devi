@@ -15,10 +15,6 @@ function Hero()
           alt="Vu Devi Services Staff"
           className="w-full h-full object-cover object-bottom"
         />
-        {/* Intelligent Medical Gradient: 
-            White at the top (Clinical Cleanliness) to 
-            Transparent at the bottom (Human Connection)
-        */}
         <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-transparent"></div>
       </div>
 

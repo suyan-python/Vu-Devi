@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { UserCheck, Clock, Users, ArrowRight, ShieldCheck, BadgeCheck } from "lucide-react";
 
-import ravi from "../assets/leads/ravi.png";
-import nikita from "../assets/leads/nikita2.png";
-import rajiya from "../assets/leads/rajiya.png";
-import bandana from "../assets/leads/bandana2.png";
+import ravi from "../assets/leads/ravi.webp";
+import nikita from "../assets/leads/nikita2.webp";
+import rajiya from "../assets/leads/rajiya.webp";
+import bandana from "../assets/leads/bandana2.webp";
 
 import aayushma from "../assets/person/all/Aayushma Pokhrel.png"
 import dipendra from "../assets/person/all/Dipendra Thapa.png"

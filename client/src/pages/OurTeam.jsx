@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ravi from "../assets/leads/ravi.png";
-import nikita from "../assets/leads/nikita2.png";
-import rajiya from "../assets/leads/rajiya.png";
-import bandana from "../assets/leads/bandana2.png";
+import ravi from "../assets/leads/ravi.webp";
+import nikita from "../assets/leads/nikita2.webp";
+import rajiya from "../assets/leads/rajiya.webp";
+import bandana from "../assets/leads/bandana2.webp";
 import { useNavigate } from "react-router-dom";
 import { Linkedin, Quote, GraduationCap, Award } from "lucide-react";
 

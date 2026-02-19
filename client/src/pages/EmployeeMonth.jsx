@@ -5,8 +5,6 @@ import rajendra from "../assets/month/rajendra.jpeg";
 import anamika from "../assets/month/anamika.jpeg";
 import shruti from "../assets/month/shruti.jpeg";
 
-
-
 const employees = [
     {
         name: "Dr. Rajendra Kumar Singh",
@@ -102,9 +100,6 @@ const EmployeeOfTheMonth = () =>
                         </div>
                     ))}
                 </div>
-
-
-
             </div>
         </section>
     );
