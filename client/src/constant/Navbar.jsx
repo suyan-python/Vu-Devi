@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { Activity, Menu, X } from "lucide-react"; // Using Lucide for institutional icons
 import Logo from "../assets/logo/logo.png";
 
 function Navbar()
@@ -55,60 +56,72 @@ function Navbar()
   ];
 
   const getActiveClass = ({ isActive }) =>
-    `relative text-sm  transition-colors duration-300 ${isActive ? "text-[#133a41] font-bold" : "text-gray-600 hover:text-[#133a41] font-medium"
+    `relative text-sm  transition-colors duration-300 ${isActive ? "text-[#133a41] font-bold" : "hover:text-[#133a41] font-medium"
     }`;
   return (
     <>
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-350 ease-[cubic-bezier(0.4,0,0.2,1)]
-  ${isScrolled
-            ? "bg-white/80 backdrop-blur-md shadow-md py-3"
-            : "bg-transparent py-5"
+        className={`fixed top-0 w-full z-[500] transition-all duration-500 ease-in-out
+        ${isScrolled
+            ? "py-3  backdrop-blur-xl shadow-[0_2px_20px_rgba(0,0,0,0.05)] border-b border-slate-100 max-w-5xl mx-auto left-0 right-0  md:top-2 rounded-lg bg-white"
+            : "py-8 bg-transparent"
           }
-  ${showBar ? "translate-y-0" : "-translate-y-full"}
-  md:translate-y-0
-  `}
+        ${showBar ? "translate-y-0" : "-translate-y-full"}
+      `}
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-12 flex justify-between items-center">
 
-          {/* Logo Section */}
-          <Link to="/" className="flex items-center">
-            <img src={Logo} alt="Vu Devi Services" className="h-12 w-auto object-contain" />
+          {/* 1. LOGO AREA: Institutional Anchor */}
+          <Link to="/" className="flex items-center gap-3 group">
+            <img
+              src={Logo}
+              alt="Vu Devi Services"
+              className={`transition-all duration-500 object-contain ${isScrolled ? "h-10" : "md:h-14 h-10"}`}
+            />
+            {/* Subtle Status Indicator (Matches your "Operational Pulse" vibe) */}
+            {!isScrolled && (
+              <div className="hidden lg:flex flex-col border-l border-slate-300 pl-4 py-1">
+                <span className="text-[8px] font-black text-[#133a41] uppercase tracking-[0.3em]">Healthcare excellence</span>
+                <span className="text-[8px] font-bold text-slate-400 uppercase tracking-[0.2em]">Authority</span>
+              </div>
+            )}
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* 2. DESKTOP LINKS: Structured Information Architecture */}
+          <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link, idx) =>
               link.isButton ? (
                 <NavLink key={idx} to={link.to}>
-                  <button className="bg-[#133a41] text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#0f2e34] shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
-                    {link.label}
+                  <button className="relative overflow-hidden group bg-[#133a41] text-white px-7 py-3 rounded-sm text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 hover:bg-red-700 shadow-xl shadow-[#133a41]/10 cursor-pointer">
+                    <span className="relative z-10">{link.label}</span>
+                    <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                   </button>
                 </NavLink>
               ) : (
                 <NavLink key={idx} to={link.to} className={getActiveClass} end>
                   {link.label}
-                  <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-[#133a41] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                  {/* Engineered Underline */}
+                  <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-red-700 transition-all duration-300 group-hover:w-full"></span>
                 </NavLink>
               )
             )}
           </div>
 
-          {/* Mobile Toggle */}
-          <div className="md:hidden">
+          {/* 3. MOBILE INTERFACE: Minimalist Toggle */}
+          <div className="md:hidden flex items-center gap-4">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-[#133a41] focus:outline-none"
-              aria-label="Toggle Menu"
+              className="p-2 text-[#133a41] hover:bg-slate-100 transition-colors rounded-sm"
             >
-              <div className="w-6 h-5 flex flex-col justify-between">
-                <span className={`h-0.5 w-full bg-current transform transition duration-300 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}></span>
-                <span className={`h-0.5 w-full bg-current transition duration-300 ${isMenuOpen ? "opacity-0" : ""}`}></span>
-                <span className={`h-0.5 w-full bg-current transform transition duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}></span>
-              </div>
+              {isMenuOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1.5} />}
             </button>
           </div>
         </div>
+
+        {/* 4. OPTIONAL: TOP STRIP (Only visible when not scrolled) */}
+        {!isScrolled && (
+          <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-red-700 via-[#133a41] to-red-700 opacity-50"></div>
+        )}
       </nav>
 
       {/* Mobile Menu Overlay */}
