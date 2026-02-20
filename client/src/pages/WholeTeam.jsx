@@ -33,7 +33,7 @@ function WholeTeam()
         "Accurate and compliant medical reports tailored to global standards.",
       image: nikita,
       link: "/team/nikita",
-      date: "December, 2020",
+      date: "2020",
     },
     {
       name: "Dr. Rajiya Shakya[PT]",
@@ -42,7 +42,7 @@ function WholeTeam()
         "Efficient data handling and analytics for healthcare institutions.",
       image: rajiya,
       link: "/team/rajiya",
-      date: "March, 2018",
+      date: "2018",
     },
     {
       name: "Dr. Bandana Manandhar[PT]",
@@ -51,7 +51,7 @@ function WholeTeam()
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: bandana,
       link: "/team/bandana",
-      date: "April, 2018",
+      date: "2018",
     },
     {
       name: "Ravi Sunder Shrestha",
@@ -60,7 +60,7 @@ function WholeTeam()
         "Accurate and compliant medical reports tailored to global standards.",
       image: ravi,
       link: "/team/ravi",
-      date: "February, 2014",
+      date: "2014",
     },
 
   ];
@@ -157,7 +157,7 @@ function WholeTeam()
   ];
 
   return (
-    <section className="w-full py-24  relative overflow-hidden">
+    <section className="w-full py-32  relative overflow-hidden">
       {/* Texture: Professional Medical Grid */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')]"></div>
 
@@ -209,7 +209,7 @@ function WholeTeam()
                   <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#133a41] transition-colors">
                     {member.name}
                   </h3>
-                  <p className="text-sm font-bold text-red-700 uppercase tracking-wider mb-3">
+                  <p className="text-sm font-medium text-red-700 uppercase tracking-wider mb-3">
                     {member.role}
                   </p>
                   <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3 italic">

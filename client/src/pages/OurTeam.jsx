@@ -47,7 +47,7 @@ function OurTeam()
   const navigate = useNavigate();
 
   return (
-    <section className=" md:py-24 relative overflow-hidden">
+    <section className="py-12 md:py-24 relative overflow-hidden bg-slate-900">
       {/* Texture Layer - Subtle corporate feel */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')]"></div>
 
@@ -55,18 +55,27 @@ function OurTeam()
 
         {/* Header: Institutional Authority */}
         <motion.div
-          className="max-w-3xl mb-24 border-l-4 border-[#133a41] pl-8"
+          /* Engineered vertical & horizontal spacing */
+          className="max-w-4xl mb-16 md:mb-20 lg:mb-24 border-l-4 border-[#133a41] pl-6 md:pl-10 lg:pl-12"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
-            Strategic <span className="text-[#133a41]">Leadership</span>
+          {/* Sub-label for Category Context (New addition for hierarchy) */}
+          <span className="block text-[10px] font-black text-slate-300 uppercase tracking-[0.4em] mb-4">
+            Institutional Core
+          </span>
+
+          <h2 className="text-3xl md:text-6xl font-semibold tracking-tighter text-slate-100 leading-[1.1] md:leading-tight">
+            Strategic <span className="text-red-700 font-light ">Leadership</span>
           </h2>
-          <p className="mt-4 text-xs md:text-lg text-slate-600 leading-relaxed">
-            Our vision is guided by a cohort of seasoned medical documentation experts
-            dedicated to bridging the gap between clinical precision and operational excellence.
-          </p>
+
+          <div className="mt-6 md:mt-8 max-w-2xl">
+            <p className="text-xs md:text-lg text-slate-300 leading-relaxed">
+              Our vision is guided by a cohort of seasoned medical documentation experts
+              dedicated to bridging the gap between <span className="text-white font-medium">clinical precision</span> and operational excellence.
+            </p>
+          </div>
         </motion.div>
 
         {/* Team Profiles */}
@@ -74,7 +83,7 @@ function OurTeam()
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
-              className={`flex flex-col md:flex-row items-center gap-16 ${index % 2 === 1 ? "md:flex-row-reverse" : ""
+              className={`flex flex-col md:flex-row items-center gap-16 border-b-4 border-white ${index % 2 === 1 ? "md:flex-row-reverse" : ""
                 }`}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -83,11 +92,11 @@ function OurTeam()
             >
               {/* Image Column - The "Portrait Frame" */}
               <div className="w-full md:w-5/12 relative">
-                <div className="relative z-10 rounded-sm overflow-hidden shadow-2xl">
+                <div className="relative z-10 rounded-t-md overflow-hidden shadow-2xl">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full aspect-[4/5] object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
+                    className="w-full aspect-[4/5] object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700 bg-slate-200"
                   />
                   {/* Subtle Name Overlay for Mobile */}
                   <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent md:hidden">
@@ -104,11 +113,11 @@ function OurTeam()
               {/* Text Column - The "Bio Dossier" */}
               <div className="w-full md:w-7/12 space-y-6">
                 <div className="hidden md:block">
-                  <h3 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-2">
+                  <h3 className="text-3xl lg:text-4xl font-bold text-slate-100 mb-2">
                     {member.name}
                   </h3>
                   <div className="flex items-center gap-3">
-                    <span className="px-3 py-1 bg-[#133a41]/5 text-[#133a41] text-xs font-bold uppercase tracking-widest rounded">
+                    <span className="px-1 py-1 bg-[#133a41]/5 text-slate-400 text-xs font-bold uppercase tracking-widest rounded">
                       {member.role}
                     </span>
                     <div className="h-px w-12 bg-slate-200"></div>
@@ -120,20 +129,20 @@ function OurTeam()
 
                 <div className="relative">
                   <Quote className="absolute -top-4 -left-4 text-[#133a41]/5" size={60} />
-                  <p className="italic text-slate-700 text-xs md:text-lg leading-relaxed relative z-10 pl-4 border-l-2 border-slate-100">
+                  <p className="italic text-slate-200 text-xs md:text-lg leading-relaxed relative z-10 pl-4 border-l-2 border-slate-100">
                     “{member.quote}”
                   </p>
                 </div>
 
                 {/* Professional Qualifications Summary */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                  <div className="flex items-center gap-3 text-sm text-slate-600 font-medium">
+                  <div className="flex items-center gap-3 text-sm text-slate-200 font-medium">
                     <div className="p-2 bg-white shadow-sm rounded-full text-red-700">
                       <GraduationCap size={16} />
                     </div>
                     Expertise in Medical Ethics
                   </div>
-                  <div className="flex items-center gap-3 text-sm text-slate-600 font-medium">
+                  <div className="flex items-center gap-3 text-sm text-slate-200 font-medium">
                     <div className="p-2 bg-white shadow-sm rounded-full text-red-700">
                       <Award size={16} />
                     </div>

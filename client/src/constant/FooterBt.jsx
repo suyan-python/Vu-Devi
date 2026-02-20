@@ -115,8 +115,8 @@ const FooterBT = () =>
               </div>
               <div className="flex flex-col">
                 <span className="text-[10px] text-slate-400 uppercase font-bold">Contact</span>
-                <a href="tel:+9779817576110" className="text-xs font-medium hover:text-teal-400 transition-colors">
-                  +977 9817576110
+                <a href="tel:+015924646" className="text-xs font-medium hover:text-teal-400 transition-colors">
+                  015924646
                 </a>
               </div>
             </div>

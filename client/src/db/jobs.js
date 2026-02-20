@@ -1,258 +1,250 @@
 export const JOB_DATA = [
-  {
-    id: "medical-documentation-specialist",
-    title: "Medical Report Writer / Physiotherapy Report Writer",
-    tag: "clinical",
-    openings: "20 Positions",
-    company: "Vu Devi Services Pvt. Ltd.",
-    location: "From Office",
-    salary: " Negotiable (based on experience)",
-    hiring: "Paid Training + Immediate Deployment",
-    schedule: "Full-time | Monday–Friday | Work from Office",
-    holidays: "Weekends & U.S. Public Holidays",
-
-    sections: [
-      {
-        type: "overview",
-        title: "Job Overview",
-        content: [
-          "Vu Devi Services Pvt. Ltd. is looking for dedicated and detail-oriented Medical Report Writer and Physiotherapy Report Writer to join our growing team. In this role, you will be responsible for reviewing patient records and accurately preparing medical reports in a structured format.",
-        ],
-      },
-      {
-        type: "responsibilities",
-        title: "Key Responsibilities",
-        content: [
-          "Review and analyze medical reports, medical records, and claims documentation.",
-          "Evaluate diagnoses, treatments, and work-relatedness based on medical evidence.",
-          "Ensure reports meet quality, compliance, and formatting standards.",
-          "Collaborate with internal and external teams to maintain accuracy and consistency",
-          "Demonstrate sound clinical reasoning and effective communication.",
-          "Handle feedback constructively and maintain professionalism.",
-          "Meet client expectations and adhere to project timelines.",
-        ],
-      },
-      {
-        type: "requirements",
-        title: "Job Requirements",
-        content: [
-          "Education: MBBS, Bachelors in Physiotherapy, Masters in Physiotherapy.",
-          "Technical Skills: Proficiency in Microsoft Office with excellent typing and formatting skills (minimum 40 WPM).",
-          "Language Skills: Exceptional written and spoken English.",
-          "Knowledge: Strong understanding of medical terminology, diagnostic processes, and healthcare documentation.",
-          "Commitment: Minimum 2 years service agreement required. (Applications without willingness to commit will not be considered.)",
-        ],
-      },
-      {
-        type: "training",
-        title: "Training & Development",
-        content: [
-          "1-month paid training",
-          "Continuous learning and performance-based growth opportunities",
-        ],
-      },
-
-      {
-        type: "what we offer",
-        title: "What We Offer",
-        content: [
-          "Competitive salary and benefits.",
-          "Paid training and structured on boarding",
-          "Career advancement opportunities in a global healthcare documentation firm",
-          "Supportive, team-oriented work culture",
-        ],
-      },
-    ],
-  },
-
-  {
-    id: "medical-documentation-lister",
-    title: "Medical Lister",
-    tag: "clinical",
-    openings: "10 Positions",
-    company: "Vu Devi Services Pvt. Ltd.",
-    location: "Remote",
-    salary: " Negotiable (based on experience)",
-    hiring: "Paid Training + Immediate Deployment",
-    schedule: "Contract Based",
-    holidays: "Weekends & U.S. Public Holidays",
-
-    sections: [
-      {
-        type: "overview",
-        title: "Job Overview",
-        content: [
-          "We are seeking a detail-oriented and motivated Medical Lister to join our team. The role involves organizing, updating, and managing client-provided medical data in standard formats while ensuring accuracy, compliance, and timely completion. ",
-        ],
-      },
-      {
-        type: "responsibilities",
-        title: "Key Responsibilities",
-        content: [
-          "Manage and organize medical data according to client and company standards.",
-          "Update and maintain medical files using client-provided information.",
-          "Categorize files based on medical record types and ensure proper formatting.",
-          "Follow established procedures while adapting to updated instructions.",
-          "Communicate and collaborate effectively within the team.",
-          "Demonstrate flexibility during training and potential shift changes.",
-          "Show initiative, efficiency, and leadership potential in daily tasks.",
-          "Handle feedback positively and maintain professionalism.",
-          "Work according to U.S.-based timelines, including holiday coverage.",
-          "Ensure reliable internet access and consistent communication via email.",
-          "Proficiency in Microsoft Office and strong English communication skills required.",
-        ],
-      },
-      {
-        type: "requirements",
-        title: "Job Requirements",
-        content: [
-          "Education: Bachelor's in Nursing PCL Nursing, Bachelor in Pharmacy, or related medical field.",
-          "Commitment: Minimum 2 years service agreement required. (Applications without willingness to commit will not be considered.)",
-          "Technical Skills: Microsoft Office proficiency; typing speed of 40+ WPM.",
-          "Language Skills: Excellent command of written and spoken English.",
-          "Knowledge: Strong medical knowledge and a clear understanding of medical terminology.",
-        ],
-      },
-      {
-        type: "training",
-        title: "Training & Development",
-        content: [
-          "Duration: 1 month (Paid training)",
-          "Continuous learning and performance-based growth opportunities",
-        ],
-      },
-      {
-        type: "what we offer",
-        title: "What We Offer",
-        content: [
-          "Competitive salary and benefits.",
-          "Paid training and structured on boarding",
-          "Career advancement opportunities in a global healthcare documentation firm",
-          "Supportive, team-oriented work culture",
-        ],
-      },
-    ],
-  },
-
-  {
-    id: "medical-documentation-downloader",
-    title: "Medical Document Downloader",
-    tag: "clinical",
-    openings: "10 Positions",
-    company: "Vu Devi Services Pvt. Ltd.",
-    location: "Remote",
-    salary: " Negotiable (based on experience)",
-    hiring: "Paid Training + Immediate Deployment",
-    schedule: "Contract Based",
-    holidays: "Weekends & U.S. Public Holidays",
-
-    sections: [
-      {
-        type: "overview",
-        title: "Job Overview",
-        content: [
-          "We are looking for 10 dedicated and detail-oriented Data Entry and Data Analysts to join our night-shift team. The role involves retrieving, reviewing, and entering client-provided medical data with a strong emphasis on accuracy, timeliness, and compliance with internal and client standards.",
-        ],
-      },
-      {
-        type: "responsibilities",
-        title: "Key Responsibilities",
-        content: [
-          "Client Communication: Maintain clear, concise, and professional communication (written and verbal) with U.S. clients regarding data queries and project updates.",
-          "Query Resolution: Proactively identify data discrepancies and draft professional emails to clients to resolve issues promptly.",
-          "Data Management: Retrieve, review, and organize medical data from client servers with 100% accuracy.",
-          "Compliance: Accurately enter data into designated systems, ensuring strict adherence to formatting and client standards.",
-          "Responsiveness: Respond effectively to client instructions and feedback in real-time during shift hours.",
-          "Collaboration: Coordinate with internal teams to ensure workflow efficiency and meet daily targets.",
-        ],
-      },
-      {
-        type: "requirements",
-        title: "Job Requirements",
-        content: [
-          "Education: Bachelor’s/Master’s degree in Pharmacy, Nursing, Business, Computer Science, or other related field.",
-          "Commitment: Minimum two-year service agreement required. (Applications without willingness to commit will not be considered.)",
-          "Technical Skills: Proficiency in Microsoft Office (Word, Excel). Typing speed of at least 40 words per minute.",
-          "Language Skills: Must possess superior written and verbal English skills.",
-          "Etiquette: Strong knowledge of professional email etiquette and business communication standards.",
-          "Knowledge: Basic understanding of medical terminology preferred.",
-          "Work Mode: On-site (remote option may be available after training period).",
-          "Flexibility: Willing and able to work night shifts without exception.",
-        ],
-      },
-      {
-        type: "training",
-        title: "Training & Development",
-        content: [
-          "Duration: 1 month (Paid training)",
-          "Continuous learning and performance-based growth opportunities",
-        ],
-      },
-      {
-        type: "what we offer",
-        title: "What We Offer",
-        content: [
-          "Competitive salary and benefits.",
-          "Paid training and structured on boarding",
-          "Career advancement opportunities in a global healthcare documentation firm",
-          "Supportive, team-oriented work culture",
-        ],
-      },
-    ],
-  },
-
-  {
-    id: "graphic-designer",
-    title: "Graphic Designer",
-    tag: "creative",
-    openings: "2 Positions",
-    company: "Vu Devi Services Pvt. Ltd.",
-    location: "Remote",
-    salary: " Negotiable (based on experience)",
-    hiring: "Paid Training + Immediate Deployment",
-    schedule: "Contract Based",
-    holidays: "Weekends & U.S. Public Holidays",
-
-    sections: [
-      {
-        type: "overview",
-        title: "Job Overview",
-        content: [
-          "Vu Devi Services is looking for a talented Graphic Designer to join our team. You will work directly with our clients to create custom graphics that help them stand out in the industry. ",
-        ],
-      },
-      {
-        type: "responsibilities",
-        title: "Key Responsibilities",
-        content: [
-          "𝐃𝐞𝐬𝐢𝐠𝐧 𝐂𝐫𝐞𝐚𝐭𝐢𝐨𝐧 𝐚𝐧𝐝 𝐀𝐝𝐚𝐩𝐭𝐚𝐭𝐢𝐨𝐧: Use Canva Pro to create, adapt, and optimize engaging visuals tailored to client branding guidelines, including social media posts, presentations, web banners, and marketing collateral.",
-          "𝐁𝐫𝐚𝐧𝐝 𝐂𝐨𝐧𝐬𝐢𝐬𝐭𝐞𝐧𝐜𝐲: Ensure all graphics maintain a high level of consistency with the client’s brand image, tone, and message, while also staying updated with their evolving visual and style guidelines.",
-          "𝐓𝐞𝐦𝐩𝐥𝐚𝐭𝐞 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐦𝐞𝐧𝐭: Design and maintain a library of custom templates within Canva Pro for various types of content to ensure efficiency and consistency across all client projects.",
-          "𝐂𝐨𝐥𝐥𝐚𝐛𝐨𝐫𝐚𝐭𝐢𝐨𝐧: Work closely with our client to understand campaign objectives and deliver graphics that resonate with the target audience, while also meeting the requirements of different marketing channels.",
-          "𝐅𝐞𝐞𝐝𝐛𝐚𝐜𝐤 𝐈𝐭𝐞𝐫𝐚𝐭𝐢𝐨𝐧: Receive and incorporate feedback from clients and the internal team to refine designs and ensure they align with campaign goals and client expectations.",
-        ],
-      },
-      {
-        type: "requirements",
-        title: "Skills",
-        content: [
-          "𝐏𝐫𝐨𝐟𝐢𝐜𝐢𝐞𝐧𝐜𝐲 𝐰𝐢𝐭𝐡 𝐂𝐚𝐧𝐯𝐚 𝐏𝐫𝐨: Experience in utilizing the advanced features of Canva Pro and familiarity with its tools, layouts, and premium assets.",
-          "𝐒𝐭𝐫𝐨𝐧𝐠 𝐕𝐢𝐬𝐮𝐚𝐥 𝐀𝐞𝐬𝐭𝐡𝐞𝐭𝐢𝐜: Demonstrated ability to produce designs that are on-brand, visually engaging, and suitable for your target audience.",
-          "𝐔𝐧𝐝𝐞𝐫𝐬𝐭𝐚𝐧𝐝𝐢𝐧𝐠 𝐨𝐟 𝐌𝐚𝐫𝐤𝐞𝐭𝐢𝐧𝐠 𝐏𝐫𝐢𝐧𝐜𝐢𝐩𝐥𝐞𝐬: Ability to create graphics that not only look good but also resonate with your clients' target markets and drive desired actions.",
-          "𝐕𝐞𝐫𝐬𝐚𝐭𝐢𝐥𝐢𝐭𝐲 𝐢𝐧 𝐃𝐞𝐬𝐢𝐠𝐧: Capability to create diverse types of graphics, ranging from social media posts, infographics, presentations, ads, and more.",
-          "𝐃𝐞𝐚𝐝𝐥𝐢𝐧𝐞-𝐃𝐫𝐢𝐯𝐞𝐧: Demonstrated experience in managing multiple projects and delivering quality designs on time.",
-          "𝐊𝐧𝐨𝐰𝐥𝐞𝐝𝐠𝐞 𝐨𝐟 𝐂𝐮𝐫𝐫𝐞𝐧𝐭 𝐃𝐞𝐬𝐢𝐠𝐧 𝐓𝐫𝐞𝐧𝐝𝐬: Staying updated with the latest graphic design and social media trends to produce fresh and modern content.",
-          "𝐄𝐟𝐟𝐞𝐜𝐭𝐢𝐯𝐞 𝐂𝐨𝐦𝐦𝐮𝐧𝐢𝐜𝐚𝐭𝐢𝐨𝐧: Ability to clearly articulate design choices and listen to feedback, ensuring the final designs align with client goals.",
-        ],
-      },
-      {
-        type: "qualifications",
-        title: "Qualifications",
-        content: [
-          "Bachelor's degree, preferably in Marketing, Advertising, or related field. ",
-          "1+ years of digital marketing experience. ",
-        ],
-      },
-    ],
-  },
+  // {
+  //   id: "medical-documentation-specialist",
+  //   title: "Medical Report Writer / Physiotherapy Report Writer",
+  //   tag: "clinical",
+  //   openings: "20 Positions",
+  //   company: "Vu Devi Services Pvt. Ltd.",
+  //   location: "From Office",
+  //   salary: " Negotiable (based on experience)",
+  //   hiring: "Paid Training + Immediate Deployment",
+  //   schedule: "Full-time | Monday–Friday | Work from Office",
+  //   holidays: "Weekends & U.S. Public Holidays",
+  //   sections: [
+  //     {
+  //       type: "overview",
+  //       title: "Job Overview",
+  //       content: [
+  //         "Vu Devi Services Pvt. Ltd. is looking for dedicated and detail-oriented Medical Report Writer and Physiotherapy Report Writer to join our growing team. In this role, you will be responsible for reviewing patient records and accurately preparing medical reports in a structured format.",
+  //       ],
+  //     },
+  //     {
+  //       type: "responsibilities",
+  //       title: "Key Responsibilities",
+  //       content: [
+  //         "Review and analyze medical reports, medical records, and claims documentation.",
+  //         "Evaluate diagnoses, treatments, and work-relatedness based on medical evidence.",
+  //         "Ensure reports meet quality, compliance, and formatting standards.",
+  //         "Collaborate with internal and external teams to maintain accuracy and consistency",
+  //         "Demonstrate sound clinical reasoning and effective communication.",
+  //         "Handle feedback constructively and maintain professionalism.",
+  //         "Meet client expectations and adhere to project timelines.",
+  //       ],
+  //     },
+  //     {
+  //       type: "requirements",
+  //       title: "Job Requirements",
+  //       content: [
+  //         "Education: MBBS, Bachelors in Physiotherapy, Masters in Physiotherapy.",
+  //         "Technical Skills: Proficiency in Microsoft Office with excellent typing and formatting skills (minimum 40 WPM).",
+  //         "Language Skills: Exceptional written and spoken English.",
+  //         "Knowledge: Strong understanding of medical terminology, diagnostic processes, and healthcare documentation.",
+  //         "Commitment: Minimum 2 years service agreement required. (Applications without willingness to commit will not be considered.)",
+  //       ],
+  //     },
+  //     {
+  //       type: "training",
+  //       title: "Training & Development",
+  //       content: [
+  //         "1-month paid training",
+  //         "Continuous learning and performance-based growth opportunities",
+  //       ],
+  //     },
+  //     {
+  //       type: "what we offer",
+  //       title: "What We Offer",
+  //       content: [
+  //         "Competitive salary and benefits.",
+  //         "Paid training and structured on boarding",
+  //         "Career advancement opportunities in a global healthcare documentation firm",
+  //         "Supportive, team-oriented work culture",
+  //       ],
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: "medical-documentation-lister",
+  //   title: "Medical Lister",
+  //   tag: "clinical",
+  //   openings: "10 Positions",
+  //   company: "Vu Devi Services Pvt. Ltd.",
+  //   location: "Remote",
+  //   salary: " Negotiable (based on experience)",
+  //   hiring: "Paid Training + Immediate Deployment",
+  //   schedule: "Contract Based",
+  //   holidays: "Weekends & U.S. Public Holidays",
+  //   sections: [
+  //     {
+  //       type: "overview",
+  //       title: "Job Overview",
+  //       content: [
+  //         "We are seeking a detail-oriented and motivated Medical Lister to join our team. The role involves organizing, updating, and managing client-provided medical data in standard formats while ensuring accuracy, compliance, and timely completion. ",
+  //       ],
+  //     },
+  //     {
+  //       type: "responsibilities",
+  //       title: "Key Responsibilities",
+  //       content: [
+  //         "Manage and organize medical data according to client and company standards.",
+  //         "Update and maintain medical files using client-provided information.",
+  //         "Categorize files based on medical record types and ensure proper formatting.",
+  //         "Follow established procedures while adapting to updated instructions.",
+  //         "Communicate and collaborate effectively within the team.",
+  //         "Demonstrate flexibility during training and potential shift changes.",
+  //         "Show initiative, efficiency, and leadership potential in daily tasks.",
+  //         "Handle feedback positively and maintain professionalism.",
+  //         "Work according to U.S.-based timelines, including holiday coverage.",
+  //         "Ensure reliable internet access and consistent communication via email.",
+  //         "Proficiency in Microsoft Office and strong English communication skills required.",
+  //       ],
+  //     },
+  //     {
+  //       type: "requirements",
+  //       title: "Job Requirements",
+  //       content: [
+  //         "Education: Bachelor's in Nursing PCL Nursing, Bachelor in Pharmacy, or related medical field.",
+  //         "Commitment: Minimum 2 years service agreement required. (Applications without willingness to commit will not be considered.)",
+  //         "Technical Skills: Microsoft Office proficiency; typing speed of 40+ WPM.",
+  //         "Language Skills: Excellent command of written and spoken English.",
+  //         "Knowledge: Strong medical knowledge and a clear understanding of medical terminology.",
+  //       ],
+  //     },
+  //     {
+  //       type: "training",
+  //       title: "Training & Development",
+  //       content: [
+  //         "Duration: 1 month (Paid training)",
+  //         "Continuous learning and performance-based growth opportunities",
+  //       ],
+  //     },
+  //     {
+  //       type: "what we offer",
+  //       title: "What We Offer",
+  //       content: [
+  //         "Competitive salary and benefits.",
+  //         "Paid training and structured on boarding",
+  //         "Career advancement opportunities in a global healthcare documentation firm",
+  //         "Supportive, team-oriented work culture",
+  //       ],
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: "medical-documentation-downloader",
+  //   title: "Medical Document Downloader",
+  //   tag: "clinical",
+  //   openings: "10 Positions",
+  //   company: "Vu Devi Services Pvt. Ltd.",
+  //   location: "Remote",
+  //   salary: " Negotiable (based on experience)",
+  //   hiring: "Paid Training + Immediate Deployment",
+  //   schedule: "Contract Based",
+  //   holidays: "Weekends & U.S. Public Holidays",
+  //   sections: [
+  //     {
+  //       type: "overview",
+  //       title: "Job Overview",
+  //       content: [
+  //         "We are looking for 10 dedicated and detail-oriented Data Entry and Data Analysts to join our night-shift team. The role involves retrieving, reviewing, and entering client-provided medical data with a strong emphasis on accuracy, timeliness, and compliance with internal and client standards.",
+  //       ],
+  //     },
+  //     {
+  //       type: "responsibilities",
+  //       title: "Key Responsibilities",
+  //       content: [
+  //         "Client Communication: Maintain clear, concise, and professional communication (written and verbal) with U.S. clients regarding data queries and project updates.",
+  //         "Query Resolution: Proactively identify data discrepancies and draft professional emails to clients to resolve issues promptly.",
+  //         "Data Management: Retrieve, review, and organize medical data from client servers with 100% accuracy.",
+  //         "Compliance: Accurately enter data into designated systems, ensuring strict adherence to formatting and client standards.",
+  //         "Responsiveness: Respond effectively to client instructions and feedback in real-time during shift hours.",
+  //         "Collaboration: Coordinate with internal teams to ensure workflow efficiency and meet daily targets.",
+  //       ],
+  //     },
+  //     {
+  //       type: "requirements",
+  //       title: "Job Requirements",
+  //       content: [
+  //         "Education: Bachelor’s/Master’s degree in Pharmacy, Nursing, Business, Computer Science, or other related field.",
+  //         "Commitment: Minimum two-year service agreement required. (Applications without willingness to commit will not be considered.)",
+  //         "Technical Skills: Proficiency in Microsoft Office (Word, Excel). Typing speed of at least 40 words per minute.",
+  //         "Language Skills: Must possess superior written and verbal English skills.",
+  //         "Etiquette: Strong knowledge of professional email etiquette and business communication standards.",
+  //         "Knowledge: Basic understanding of medical terminology preferred.",
+  //         "Work Mode: On-site (remote option may be available after training period).",
+  //         "Flexibility: Willing and able to work night shifts without exception.",
+  //       ],
+  //     },
+  //     {
+  //       type: "training",
+  //       title: "Training & Development",
+  //       content: [
+  //         "Duration: 1 month (Paid training)",
+  //         "Continuous learning and performance-based growth opportunities",
+  //       ],
+  //     },
+  //     {
+  //       type: "what we offer",
+  //       title: "What We Offer",
+  //       content: [
+  //         "Competitive salary and benefits.",
+  //         "Paid training and structured on boarding",
+  //         "Career advancement opportunities in a global healthcare documentation firm",
+  //         "Supportive, team-oriented work culture",
+  //       ],
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: "graphic-designer",
+  //   title: "Graphic Designer",
+  //   tag: "creative",
+  //   openings: "2 Positions",
+  //   company: "Vu Devi Services Pvt. Ltd.",
+  //   location: "Remote",
+  //   salary: " Negotiable (based on experience)",
+  //   hiring: "Paid Training + Immediate Deployment",
+  //   schedule: "Contract Based",
+  //   holidays: "Weekends & U.S. Public Holidays",
+  //   sections: [
+  //     {
+  //       type: "overview",
+  //       title: "Job Overview",
+  //       content: [
+  //         "Vu Devi Services is looking for a talented Graphic Designer to join our team. You will work directly with our clients to create custom graphics that help them stand out in the industry. ",
+  //       ],
+  //     },
+  //     {
+  //       type: "responsibilities",
+  //       title: "Key Responsibilities",
+  //       content: [
+  //         "𝐃𝐞𝐬𝐢𝐠𝐧 𝐂𝐫𝐞𝐚𝐭𝐢𝐨𝐧 𝐚𝐧𝐝 𝐀𝐝𝐚𝐩𝐭𝐚𝐭𝐢𝐨𝐧: Use Canva Pro to create, adapt, and optimize engaging visuals tailored to client branding guidelines, including social media posts, presentations, web banners, and marketing collateral.",
+  //         "𝐁𝐫𝐚𝐧𝐝 𝐂𝐨𝐧𝐬𝐢𝐬𝐭𝐞𝐧𝐜𝐲: Ensure all graphics maintain a high level of consistency with the client’s brand image, tone, and message, while also staying updated with their evolving visual and style guidelines.",
+  //         "𝐓𝐞𝐦𝐩𝐥𝐚𝐭𝐞 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐦𝐞𝐧𝐭: Design and maintain a library of custom templates within Canva Pro for various types of content to ensure efficiency and consistency across all client projects.",
+  //         "𝐂𝐨𝐥𝐥𝐚𝐛𝐨𝐫𝐚𝐭𝐢𝐨𝐧: Work closely with our client to understand campaign objectives and deliver graphics that resonate with the target audience, while also meeting the requirements of different marketing channels.",
+  //         "𝐅𝐞𝐞𝐝𝐛𝐚𝐜𝐤 𝐈𝐭𝐞𝐫𝐚𝐭𝐢𝐨𝐧: Receive and incorporate feedback from clients and the internal team to refine designs and ensure they align with campaign goals and client expectations.",
+  //       ],
+  //     },
+  //     {
+  //       type: "requirements",
+  //       title: "Skills",
+  //       content: [
+  //         "𝐏𝐫𝐨𝐟𝐢𝐜𝐢𝐞𝐧𝐜𝐲 𝐰𝐢𝐭𝐡 𝐂𝐚𝐧𝐯𝐚 𝐏𝐫𝐨: Experience in utilizing the advanced features of Canva Pro and familiarity with its tools, layouts, and premium assets.",
+  //         "𝐒𝐭𝐫𝐨𝐧𝐠 𝐕𝐢𝐬𝐮𝐚𝐥 𝐀𝐞𝐬𝐭𝐡𝐞𝐭𝐢𝐜: Demonstrated ability to produce designs that are on-brand, visually engaging, and suitable for your target audience.",
+  //         "𝐔𝐧𝐝𝐞𝐫𝐬𝐭𝐚𝐧𝐝𝐢𝐧𝐠 𝐨𝐟 𝐌𝐚𝐫𝐤𝐞𝐭𝐢𝐧𝐠 𝐏𝐫𝐢𝐧𝐜𝐢𝐩𝐥𝐞𝐬: Ability to create graphics that not only look good but also resonate with your clients' target markets and drive desired actions.",
+  //         "𝐕𝐞𝐫𝐬𝐚𝐭𝐢𝐥𝐢𝐭𝐲 𝐢𝐧 𝐃𝐞𝐬𝐢𝐠𝐧: Capability to create diverse types of graphics, ranging from social media posts, infographics, presentations, ads, and more.",
+  //         "𝐃𝐞𝐚𝐝𝐥𝐢𝐧𝐞-𝐃𝐫𝐢𝐯𝐞𝐧: Demonstrated experience in managing multiple projects and delivering quality designs on time.",
+  //         "𝐊𝐧𝐨𝐰𝐥𝐞𝐝𝐠𝐞 𝐨𝐟 𝐂𝐮𝐫𝐫𝐞𝐧𝐭 𝐃𝐞𝐬𝐢𝐠𝐧 𝐓𝐫𝐞𝐧𝐝𝐬: Staying updated with the latest graphic design and social media trends to produce fresh and modern content.",
+  //         "𝐄𝐟𝐟𝐞𝐜𝐭𝐢𝐯𝐞 𝐂𝐨𝐦𝐦𝐮𝐧𝐢𝐜𝐚𝐭𝐢𝐨𝐧: Ability to clearly articulate design choices and listen to feedback, ensuring the final designs align with client goals.",
+  //       ],
+  //     },
+  //     {
+  //       type: "qualifications",
+  //       title: "Qualifications",
+  //       content: [
+  //         "Bachelor's degree, preferably in Marketing, Advertising, or related field. ",
+  //         "1+ years of digital marketing experience. ",
+  //       ],
+  //     },
+  //   ],
+  // },
 ];

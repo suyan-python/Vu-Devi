@@ -86,10 +86,10 @@ export default function GeneralForm()
     };
 
     return (
-        <section className="w-full py-24 bg-[#f8fafc] border-t-2 border-black">
+        <section className="w-full py-8 md:py-24 bg-[#f8fafc] border-t-2 border-black" id="generalForm">
             <div className="max-w-5xl mx-auto px-6">
 
-                <div className="bg-white border border-slate-200 rounded-xl p-10 md:p-16 shadow-sm">
+                <div className="bg-white border border-slate-200 rounded-xl p-4 md:p-16 shadow-sm">
 
                     {/* HEADER */}
                     <div className="text-center mb-14">
@@ -104,8 +104,8 @@ export default function GeneralForm()
                             General Talent <span className="text-red-500">Inquiry</span>
                         </h2>
 
-                        <p className="text-slate-500 text-xs md:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
-                            Submit your credentials to our centralized recruitment system. Profiles are reviewed for healthcare documentation, medical data processing, and clinical support roles.
+                        <p className="text-slate-500 text-[10px] md:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
+                            Submit your credentials to our HR Management System. Profiles are reviewed for healthcare documentation, medical data processing, and clinical support roles.
                         </p>
                     </div>
 
@@ -166,7 +166,7 @@ export default function GeneralForm()
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="md:px-16 md:py-4 py-2 px-3 bg-red-700 text-white rounded-xl font-black uppercase tracking-[0.25em] text-xs hover:bg-red-800 transition-all active:scale-95 shadow-sm"
+                                className="md:px-16 md:py-4 py-2 px-3 bg-red-700 text-white rounded-xl font-medium uppercase tracking-[0.25em] text-xs hover:bg-red-800 transition-all active:scale-95 shadow-sm"
                             >
                                 {loading ? "Submitting..." : "Submit Credentials"}
                             </button>

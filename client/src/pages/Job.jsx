@@ -8,9 +8,7 @@ import { Helmet } from "react-helmet";
 const Job = () =>
 {
     return (
-
         <>
-
             <Helmet>
                 <title>
                     Medical Jobs in Nepal | Healthcare Documentation Careers | Vu Devi Services

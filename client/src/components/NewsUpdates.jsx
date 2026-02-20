@@ -39,7 +39,7 @@ function NewsUpdates()
   ];
 
   return (
-    <section ref={sectionRef} className="pb-12 md:py-16 bg-[#f8fafc] overflow-hidden">
+    <section ref={sectionRef} className="py-16  overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* 1. SECTION HEADER */}
@@ -49,7 +49,7 @@ function NewsUpdates()
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
           >
-            Strategic <span className="text-red-700 ">Bulletins.</span>
+            Strategic <span className="text-red-700 font-light">Bulletins.</span>
           </motion.h2>
           <div className="h-1 w-20 bg-[#133a41] mt-6"></div>
         </div>

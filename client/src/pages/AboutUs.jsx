@@ -8,6 +8,7 @@ import
   Target, Award, Scale, Microscope
 } from "lucide-react";
 import ValidationSlider from "./Slides";
+import GlobalReachTerminal from "./GlobalReach";
 
 function AboutUs()
 {
@@ -126,6 +127,8 @@ function AboutUs()
           <MeetFounder />
           <MeetManagement />
         </div>
+
+        <GlobalReachTerminal />
 
       </div>
     </section>
