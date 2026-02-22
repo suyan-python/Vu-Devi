@@ -105,7 +105,9 @@ function Footer()
                   <Phone className="text-red-700 shrink-0" size={20} />
                   <div>
                     <p className="text-[8px] md:text-[10px] font-black text-slate-500 uppercase mb-1">Direct Line</p>
-                    <a href="tel:+9779817576110" className="text-xs md:text-sm text-slate-300 hover:text-white">+977 9817576110</a>
+                    <a href="tel:015924646" className="text-xs md:text-sm text-slate-300 hover:text-white">015924646</a>
+                    <br />
+                    <a href="tel:+9779817576110" className="text-xs md:text-sm text-slate-300 hover:text-white">9817576110</a>
                   </div>
                 </div>
                 <div className="pt-4">

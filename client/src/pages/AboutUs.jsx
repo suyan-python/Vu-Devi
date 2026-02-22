@@ -13,7 +13,7 @@ import GlobalReachTerminal from "./GlobalReach";
 function AboutUs()
 {
   return (
-    <section className="relative py-32 bg-[#f8fafc] overflow-hidden">
+    <section className="relative py-32 md:py-44 bg-[#f8fafc] overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-6">
 
         <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between mb-8 lg:mb-14 gap-8">

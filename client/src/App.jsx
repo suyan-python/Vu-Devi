@@ -19,6 +19,7 @@ import BackgroundAnimation from "./components/BackgroundAnimation";
 import AdminDashboard from "../admin/AdminDashboard";
 import AdminLogin from "../admin/AdminLogin";
 import Job from "./pages/Job";
+import InsightsTerminal from "./pages/DeepInsights";
 
 
 function AppRoutes()
@@ -44,6 +45,7 @@ function AppRoutes()
         <Route path="/application" element={<Job />} />
         <Route path="/application/apply/:jobId" element={<JobApplicationForm />} />
 
+        <Route path="/deepinsights" element={<InsightsTerminal />} />
 
         <Route path="/team" element={<WholeTeam />} />
         <Route path="/team/:doctorId" element={<DocInfo />} />

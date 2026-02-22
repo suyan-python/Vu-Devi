@@ -27,6 +27,7 @@ export default function CustomerGrowthChart()
     { year: "2023", Team: 35 },
     { year: "2024", Team: 45 },
     { year: "2025", Team: 50 },
+    { year: "2026", Team: 70 },
   ];
 
   return (

@@ -157,15 +157,15 @@ function WholeTeam()
   ];
 
   return (
-    <section className="w-full py-32  relative overflow-hidden">
+    <section className="w-full py-32 md:py-44 relative overflow-hidden">
       {/* Texture: Professional Medical Grid */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')]"></div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
 
         {/* ===== SECTION 1: STRATEGIC TEAM LEADS ===== */}
-        <div className="mb-20">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div className="mb-14">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-4">
             <div>
               <div className="inline-flex items-center gap-2 text-red-700 font-bold uppercase tracking-[0.2em] text-xs mb-3">
                 <ShieldCheck size={16} />
@@ -227,7 +227,7 @@ function WholeTeam()
         </div>
 
         {/* ===== DIVIDER WITH ICON ===== */}
-        <div className="relative md:py-12 flex items-center justify-center">
+        <div className="relative py-6 md:py-12 flex items-center justify-center">
           <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-slate-200"></div></div>
           <div className="relative  px-6 text-slate-300"><Users size={32} strokeWidth={1} /></div>
         </div>
@@ -235,8 +235,8 @@ function WholeTeam()
         {/* ===== SECTION 2: THE CORE EXPERIENCED TEAM ===== */}
         <div>
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900">Expert <br /> <span className="text-[#133a41]">Clinical Associates</span></h2>
-            <p className="text-slate-500 text-sm mt-2">The backbone of our high-precision documentation services.</p>
+            <h2 className="text-3xl font-bold text-slate-900">Expert <br /> <span className="text-red-700 font-light">Clinical Associates</span></h2>
+            <p className="text-slate-500 text-xs md:text-sm mt-2">The backbone of our high-precision documentation services.</p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">

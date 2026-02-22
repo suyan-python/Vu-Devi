@@ -39,7 +39,7 @@ function NewsUpdates()
   ];
 
   return (
-    <section ref={sectionRef} className="py-16  overflow-hidden">
+    <section ref={sectionRef} className="py-16 md:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* 1. SECTION HEADER */}

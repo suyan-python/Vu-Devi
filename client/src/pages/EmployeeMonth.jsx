@@ -1,10 +1,6 @@
 import React from "react";
 import { Award, GraduationCap, Calendar, ChevronRight, Medal, Quote } from "lucide-react";
 
-import umesh from "../assets/month/umesh.jpeg";
-import priyanka from "../assets/month/priyanka.jpeg";
-import deepak from "../assets/month/deepak.jpeg";
-
 import umesh2 from "../assets/month/umesh2.jpeg";
 import priyanka2 from "../assets/month/priyanka2.jpeg";
 import deepak2 from "../assets/month/deepak2.jpeg";
