@@ -1,103 +1,116 @@
 import React from "react";
-import { Award, GraduationCap, Calendar, ChevronRight, Medal } from "lucide-react";
+import { Award, GraduationCap, Calendar, ChevronRight, Medal, Quote } from "lucide-react";
 
-import rajendra from "../assets/month/rajendra.jpeg";
-import anamika from "../assets/month/anamika.jpeg";
-import shruti from "../assets/month/shruti.jpeg";
+import umesh from "../assets/month/umesh.jpeg";
+import priyanka from "../assets/month/priyanka.jpeg";
+import deepak from "../assets/month/deepak.jpeg";
+
+import umesh2 from "../assets/month/umesh2.jpeg";
+import priyanka2 from "../assets/month/priyanka2.jpeg";
+import deepak2 from "../assets/month/deepak2.jpeg";
+
+import { motion } from "framer-motion";
+
 
 const employees = [
+    // {
+    //     name: "Dr. Rajendra Kumar Singh",
+    //     designation: "Medical Report Writer",
+    //     team: "Team: Nikita",
+    //     image: rajendra,
+    //     achievement: "Led the implementation of a new documentation protocol that improved report accuracy by 15% and reduced turnaround time by 20%."
+    // },
     {
-        name: "Dr. Rajendra Kumar Singh",
-        designation: "Medical Report Writer",
-        team: "Team: Nikita",
-        image: rajendra,
-    },
-    {
-        name: "Pt. Anamika Shahi",
+        name: "Pt. Umesh Kunwar",
         designation: "Pt. Report Writer",
         team: "Team: Rajiya",
-        image: anamika,
+        image: umesh2,
+        achievement: "Consistently delivered high-quality physical therapy reports, contributing to a 25% increase in patient satisfaction scores."
     },
     {
-        name: "Ms. Shruti Gautam",
+        name: "Ms. Priyanka Chaudhary",
         designation: "Medical Lister",
         team: "Team: Bandana",
-        image: shruti,
+        image: priyanka2,
+        achievement: "Played a key role in streamlining the medical listing process, resulting in a 30% reduction in errors and improved workflow efficiency."
+    },
+    {
+        name: "Mr. Deepak Maharjan",
+        designation: "Data Analyst",
+        team: "Team: Bandana",
+        image: deepak2,
+        achievement: "Developed a new data visualization dashboard that enhanced the team's ability to track key performance metrics, leading to a 20% improvement in decision-making speed."
     },
 ];
 
 const EmployeeOfTheMonth = () =>
 {
     return (
-        <section className="py-24 relative overflow-hidden">
-            {/* Texture: Subtle medical grid */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')]"></div>
+        <section className="py-12 md:py-24 bg-slate-50 relative overflow-hidden">
+            {/* Institutional Pattern Overlay */}
+            <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
-                {/* SECTION HEADER: The Month Focus */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 border-b border-slate-200 pb-10">
-                    <div className="max-w-2xl">
-                        <div className="inline-flex items-center gap-2 mb-4">
-                            <span className="h-[2px] w-12 bg-red-700"></span>
-                            <span className="header text-red-700 font-bold uppercase tracking-[0.3em] text-xs">Monthly Distinction</span>
-                        </div>
-                        <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-800 ">
-                            Honoring Our <br />
-                            <span className="text-red-700 font-light">December 2025</span> Employees of the Month
-                        </h2>
-                    </div>
+
+                {/* HEADER: Institutional Alignment */}
+                <div className="mb-20 border-l-4 border-red-700 pl-8">
+                    <p className="text-[8px] md:text-[10px] font-black text-[#133a41] uppercase tracking-[0.4em] mb-4">
+                        Personnel Excellence Appreciation
+                    </p>
+                    <h2 className="text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-none">
+                        The Best Employee of Month <span className="text-red-700 font-light"></span>
+                    </h2>
+                    <p className="mt-4 text-slate-500 text-xs md:text-lg max-w-xl uppercase tracking-widest font-medium">
+                        January 2026 / Performance Audit Monthly
+                    </p>
                 </div>
 
-                {/* EMPLOYEE OF THE MONTH GRID */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                {/* EMPLOYEE GRID */}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
                     {employees.map((emp, idx) => (
-                        <div
+                        <motion.div
                             key={idx}
-                            className="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-500 cursor-pointer"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: idx * 0.1 }}
+                            className="group relative aspect-[1/1.618] md:aspect-[1/1.4] lg:aspect-[1/1.3] overflow-hidden bg-[#133a41] rounded-lg"
                         >
-                            {/* Main Image Section */}
-                            <div className="relative w-full h-80 md:h-96 overflow-hidden">
+                            {/* 1. IMAGE LAYER with Normalization Filter */}
+                            <div className="absolute inset-0 w-full h-full">
                                 <img
                                     src={emp.image}
                                     alt={emp.name}
-                                    className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-700"
+                                    className="w-full h-full object-cover brightness-75 contrast-125 transition-all duration-700 group-hover:scale-[1.02] group-hover:grayscale-0 group-hover:brightness-100 "
                                 />
-                                {/* Gradient overlay for text readability */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#0F3B44]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
 
-                            {/* Content Section */}
-                            <div className="p-6 md:p-8 flex flex-col justify-between space-y-5">
-                                {/* Name & Designation */}
-                                <div>
-                                    <h3 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">{emp.name}</h3>
-                                    <div className="flex items-center gap-2 text-[#D9534F] mt-2">
-                                        <GraduationCap size={18} />
-                                        <span className="text-sm md:text-base font-medium uppercase tracking-wide">{emp.designation}</span>
+                            {/* 2. GRADIENT OVERLAY (The 30% Primary Color) */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0f2f34] via-[#133a41]/30 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-95" />
+
+                            {/* 3. ACCENT BORDER (The 10% Accent) */}
+                            <div className="absolute top-0 left-0 w-full h-1 bg-red-700 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
+
+                            {/* 4. CONTENT OVERLAY */}
+                            <div className="absolute inset-0 p-3 md:p-8 flex flex-col justify-end text-white ">
+                                <div className="mb-1 md:mb-4">
+                                    <h3 className="text-[8px] md:text-xl lg:text-2xl font-semibold tracking-tight uppercase">
+                                        {emp.name}
+                                    </h3>
+                                    <p className="text-[7px] md:text-sm font-bold tracking-wider text-red-500 uppercase">
+                                        {emp.designation}
+                                    </p>
+                                </div>
+
+                                {/* Bottom Status Bar */}
+                                <div className="pt-1 md:pt-5 border-t border-white/10 flex justify-between items-center md:items-baseline">
+                                    <div className="flex items-center md:items-baseline gap-2">
+                                        <Award size={14} className="text-red-500" />
+                                        <span className="text-[4px] md:text-[9px] font-bold uppercase tracking-widest text-white/50">Verified Excellence</span>
                                     </div>
-                                </div>
-
-                                {/* Achievement Section */}
-                                <div className="bg-[#F7FAFC] rounded-lg p-5 border-l-4 border-[#0F3B44] shadow-sm">
-                                    <p className="text-xs md:text-sm uppercase font-semibold text-slate-400 tracking-widest mb-2">
-                                        Service Excellence
-                                    </p>
-                                    <p className="text-sm md:text-base text-slate-700 italic leading-relaxed">
-                                        "{emp.achievement || 'Outstanding contribution to medical documentation accuracy and team leadership.'}"
-                                    </p>
-                                </div>
-
-                                {/* Footer / Certification */}
-                                <div className="flex justify-between items-center mt-2">
-                                    <span className="text-xs md:text-sm font-medium text-slate-400 uppercase tracking-tighter italic">
-                                        Certified by Vu Devi Services
-                                    </span>
-                                    <button className="w-10 h-10 rounded-full border-2 border-slate-200 flex items-center justify-center hover:bg-[#0F3B44] hover:text-white transition-colors">
-                                        <ChevronRight size={16} />
-                                    </button>
+                                    <h3 className="text-[4px] md:text-[8px] font-mono text-white/30 tracking-tighter">Vu Devi Services</h3>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
