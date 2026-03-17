@@ -1,40 +1,41 @@
 import React from "react";
 import { Award, GraduationCap, Calendar, ChevronRight, Medal, Quote } from "lucide-react";
 
-import umesh2 from "../assets/month/umesh2.jpeg";
-import priyanka2 from "../assets/month/priyanka2.jpeg";
-import deepak2 from "../assets/month/deepak2.jpeg";
+import abhishek from "../assets/month/abhishek.jpeg";
+import subekshya from "../assets/month/subekshya.jpeg";
+import nilima from "../assets/month/nilima.jpeg";
+import suman from "../assets/month/suman.jpeg";
 
 import { motion } from "framer-motion";
 
 
 const employees = [
-    // {
-    //     name: "Dr. Rajendra Kumar Singh",
-    //     designation: "Medical Report Writer",
-    //     team: "Team: Nikita",
-    //     image: rajendra,
-    //     achievement: "Led the implementation of a new documentation protocol that improved report accuracy by 15% and reduced turnaround time by 20%."
-    // },
     {
-        name: "Pt. Umesh Kunwar",
+        name: "Dr. Abhishek Chaurasiya",
+        designation: "Medical Report Writer",
+        team: "Team: Nikita",
+        image: abhishek,
+        achievement: "Led the implementation of a new documentation protocol that improved report accuracy by 15% and reduced turnaround time by 20%."
+    },
+    {
+        name: "Pt. Subekshya Satta",
         designation: "Pt. Report Writer",
         team: "Team: Rajiya",
-        image: umesh2,
+        image: subekshya,
         achievement: "Consistently delivered high-quality physical therapy reports, contributing to a 25% increase in patient satisfaction scores."
     },
     {
-        name: "Ms. Priyanka Chaudhary",
-        designation: "Medical Lister",
+        name: "Ms. Nilima Mulmi",
+        designation: "Data Analyst",
         team: "Team: Bandana",
-        image: priyanka2,
+        image: nilima,
         achievement: "Played a key role in streamlining the medical listing process, resulting in a 30% reduction in errors and improved workflow efficiency."
     },
     {
-        name: "Mr. Deepak Maharjan",
+        name: "Mr. Suman Dahal",
         designation: "Data Analyst",
-        team: "Team: Bandana",
-        image: deepak2,
+        team: "Team: Ravi",
+        image: suman,
         achievement: "Developed a new data visualization dashboard that enhanced the team's ability to track key performance metrics, leading to a 20% improvement in decision-making speed."
     },
 ];
@@ -57,12 +58,12 @@ const EmployeeOfTheMonth = () =>
                         The Best Employee of Month <span className="text-red-700 font-light"></span>
                     </h2>
                     <p className="mt-4 text-slate-500 text-xs md:text-lg max-w-xl uppercase tracking-widest font-medium">
-                        January 2026 / Performance Audit Monthly
+                        February 2026 / Performance Audit Monthly
                     </p>
                 </div>
 
                 {/* EMPLOYEE GRID */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                     {employees.map((emp, idx) => (
                         <motion.div
                             key={idx}
@@ -89,10 +90,10 @@ const EmployeeOfTheMonth = () =>
                             {/* 4. CONTENT OVERLAY */}
                             <div className="absolute inset-0 p-3 md:p-8 flex flex-col justify-end text-white ">
                                 <div className="mb-1 md:mb-4">
-                                    <h3 className="text-[8px] md:text-xl lg:text-2xl font-semibold tracking-tight uppercase">
+                                    <h3 className="text-[8px] md:text-[14px] font-semibold tracking-tight uppercase">
                                         {emp.name}
                                     </h3>
-                                    <p className="text-[7px] md:text-sm font-bold tracking-wider text-red-500 uppercase">
+                                    <p className="text-[7px] md:text-xs font-bold tracking-wider text-red-500 uppercase">
                                         {emp.designation}
                                     </p>
                                 </div>
