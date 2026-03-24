@@ -194,57 +194,58 @@ export const JOB_DATA = [
   //     },
   //   ],
   // },
-  // {
-  //   id: "graphic-designer",
-  //   title: "Graphic Designer",
-  //   tag: "creative",
-  //   openings: "2 Positions",
-  //   company: "Vu Devi Services Pvt. Ltd.",
-  //   location: "Remote",
-  //   salary: " Negotiable (based on experience)",
-  //   hiring: "Paid Training + Immediate Deployment",
-  //   schedule: "Contract Based",
-  //   holidays: "Weekends & U.S. Public Holidays",
-  //   sections: [
-  //     {
-  //       type: "overview",
-  //       title: "Job Overview",
-  //       content: [
-  //         "Vu Devi Services is looking for a talented Graphic Designer to join our team. You will work directly with our clients to create custom graphics that help them stand out in the industry. ",
-  //       ],
-  //     },
-  //     {
-  //       type: "responsibilities",
-  //       title: "Key Responsibilities",
-  //       content: [
-  //         "𝐃𝐞𝐬𝐢𝐠𝐧 𝐂𝐫𝐞𝐚𝐭𝐢𝐨𝐧 𝐚𝐧𝐝 𝐀𝐝𝐚𝐩𝐭𝐚𝐭𝐢𝐨𝐧: Use Canva Pro to create, adapt, and optimize engaging visuals tailored to client branding guidelines, including social media posts, presentations, web banners, and marketing collateral.",
-  //         "𝐁𝐫𝐚𝐧𝐝 𝐂𝐨𝐧𝐬𝐢𝐬𝐭𝐞𝐧𝐜𝐲: Ensure all graphics maintain a high level of consistency with the client’s brand image, tone, and message, while also staying updated with their evolving visual and style guidelines.",
-  //         "𝐓𝐞𝐦𝐩𝐥𝐚𝐭𝐞 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐦𝐞𝐧𝐭: Design and maintain a library of custom templates within Canva Pro for various types of content to ensure efficiency and consistency across all client projects.",
-  //         "𝐂𝐨𝐥𝐥𝐚𝐛𝐨𝐫𝐚𝐭𝐢𝐨𝐧: Work closely with our client to understand campaign objectives and deliver graphics that resonate with the target audience, while also meeting the requirements of different marketing channels.",
-  //         "𝐅𝐞𝐞𝐝𝐛𝐚𝐜𝐤 𝐈𝐭𝐞𝐫𝐚𝐭𝐢𝐨𝐧: Receive and incorporate feedback from clients and the internal team to refine designs and ensure they align with campaign goals and client expectations.",
-  //       ],
-  //     },
-  //     {
-  //       type: "requirements",
-  //       title: "Skills",
-  //       content: [
-  //         "𝐏𝐫𝐨𝐟𝐢𝐜𝐢𝐞𝐧𝐜𝐲 𝐰𝐢𝐭𝐡 𝐂𝐚𝐧𝐯𝐚 𝐏𝐫𝐨: Experience in utilizing the advanced features of Canva Pro and familiarity with its tools, layouts, and premium assets.",
-  //         "𝐒𝐭𝐫𝐨𝐧𝐠 𝐕𝐢𝐬𝐮𝐚𝐥 𝐀𝐞𝐬𝐭𝐡𝐞𝐭𝐢𝐜: Demonstrated ability to produce designs that are on-brand, visually engaging, and suitable for your target audience.",
-  //         "𝐔𝐧𝐝𝐞𝐫𝐬𝐭𝐚𝐧𝐝𝐢𝐧𝐠 𝐨𝐟 𝐌𝐚𝐫𝐤𝐞𝐭𝐢𝐧𝐠 𝐏𝐫𝐢𝐧𝐜𝐢𝐩𝐥𝐞𝐬: Ability to create graphics that not only look good but also resonate with your clients' target markets and drive desired actions.",
-  //         "𝐕𝐞𝐫𝐬𝐚𝐭𝐢𝐥𝐢𝐭𝐲 𝐢𝐧 𝐃𝐞𝐬𝐢𝐠𝐧: Capability to create diverse types of graphics, ranging from social media posts, infographics, presentations, ads, and more.",
-  //         "𝐃𝐞𝐚𝐝𝐥𝐢𝐧𝐞-𝐃𝐫𝐢𝐯𝐞𝐧: Demonstrated experience in managing multiple projects and delivering quality designs on time.",
-  //         "𝐊𝐧𝐨𝐰𝐥𝐞𝐝𝐠𝐞 𝐨𝐟 𝐂𝐮𝐫𝐫𝐞𝐧𝐭 𝐃𝐞𝐬𝐢𝐠𝐧 𝐓𝐫𝐞𝐧𝐝𝐬: Staying updated with the latest graphic design and social media trends to produce fresh and modern content.",
-  //         "𝐄𝐟𝐟𝐞𝐜𝐭𝐢𝐯𝐞 𝐂𝐨𝐦𝐦𝐮𝐧𝐢𝐜𝐚𝐭𝐢𝐨𝐧: Ability to clearly articulate design choices and listen to feedback, ensuring the final designs align with client goals.",
-  //       ],
-  //     },
-  //     {
-  //       type: "qualifications",
-  //       title: "Qualifications",
-  //       content: [
-  //         "Bachelor's degree, preferably in Marketing, Advertising, or related field. ",
-  //         "1+ years of digital marketing experience. ",
-  //       ],
-  //     },
-  //   ],
-  // },
+  {
+    id: "graphic-designer",
+    title: "Graphic Designer & Social Media Content Specialist",
+    tag: "creative",
+    openings: "1 Position",
+    company: "Vu Devi Services Pvt. Ltd.",
+    location: "From Office",
+    salary: " Negotiable (based on experience and skill)",
+    hiring: "Immediate Deployment",
+    schedule: "Contract Based",
+    holidays: "Saturday & U.S. Public Holidays",
+    sections: [
+      {
+        type: "overview",
+        title: "Job Overview",
+        content: [
+          "Vu Devi Services is looking for a talented Graphic Designer & Social Media Content Specialist to join our team. You will work directly with our clients to create custom graphics that help them stand out in the industry. ",
+        ],
+      },
+      {
+        type: "responsibilities",
+        title: "Key Responsibilities",
+        content: [
+          "𝐃𝐞𝐬𝐢𝐠𝐧 𝐂𝐫𝐞𝐚𝐭𝐢𝐨𝐧 𝐚𝐧𝐝 𝐀𝐝𝐚𝐩𝐭𝐚𝐭𝐢𝐨𝐧: Use Canva Pro to create, adapt, and optimize engaging visuals tailored to client branding guidelines, including social media posts, presentations, web banners, and marketing collateral.",
+          "𝐁𝐫𝐚𝐧𝐝 𝐂𝐨𝐧𝐬𝐢𝐬𝐭𝐞𝐧𝐜𝐲: Ensure all graphics maintain a high level of consistency with the client’s brand image, tone, and message, while also staying updated with their evolving visual and style guidelines.",
+          "𝐓𝐞𝐦𝐩𝐥𝐚𝐭𝐞 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐦𝐞𝐧𝐭: Design and maintain a library of custom templates within Canva Pro for various types of content to ensure efficiency and consistency across all client projects.",
+          "𝐂𝐨𝐥𝐥𝐚𝐛𝐨𝐫𝐚𝐭𝐢𝐨𝐧: Work closely with our client to understand campaign objectives and deliver graphics that resonate with the target audience, while also meeting the requirements of different marketing channels.",
+          "𝐅𝐞𝐞𝐝𝐛𝐚𝐜𝐤 𝐈𝐭𝐞𝐫𝐚𝐭𝐢𝐨𝐧: Receive and incorporate feedback from clients and the internal team to refine designs and ensure they align with campaign goals and client expectations.",
+        ],
+      },
+      {
+        type: "requirements",
+        title: "Skills",
+        content: [
+          "𝐏𝐫𝐨𝐟𝐢𝐜𝐢𝐞𝐧𝐜𝐲 𝐰𝐢𝐭𝐡 𝐂𝐚𝐧𝐯𝐚 𝐏𝐫𝐨: Experience in utilizing the advanced features of Canva Pro and familiarity with its tools, layouts, and premium assets.",
+          "𝐒𝐭𝐫𝐨𝐧𝐠 𝐕𝐢𝐬𝐮𝐚𝐥 𝐀𝐞𝐬𝐭𝐡𝐞𝐭𝐢𝐜: Demonstrated ability to produce designs that are on-brand, visually engaging, and suitable for your target audience.",
+          "𝐔𝐧𝐝𝐞𝐫𝐬𝐭𝐚𝐧𝐝𝐢𝐧𝐠 𝐨𝐟 𝐌𝐚𝐫𝐤𝐞𝐭𝐢𝐧𝐠 𝐏𝐫𝐢𝐧𝐜𝐢𝐩𝐥𝐞𝐬: Ability to create graphics that not only look good but also resonate with your clients' target markets and drive desired actions.",
+          "𝐕𝐞𝐫𝐬𝐚𝐭𝐢𝐥𝐢𝐭𝐲 𝐢𝐧 𝐃𝐞𝐬𝐢𝐠𝐧: Capability to create diverse types of graphics, ranging from social media posts, infographics, presentations, ads, and more.",
+          "𝐃𝐞𝐚𝐝𝐥𝐢𝐧𝐞-𝐃𝐫𝐢𝐯𝐞𝐧: Demonstrated experience in managing multiple projects and delivering quality designs on time.",
+          "𝐊𝐧𝐨𝐰𝐥𝐞𝐝𝐠𝐞 𝐨𝐟 𝐂𝐮𝐫𝐫𝐞𝐧𝐭 𝐃𝐞𝐬𝐢𝐠𝐧 𝐓𝐫𝐞𝐧𝐝𝐬: Staying updated with the latest graphic design and social media trends to produce fresh and modern content.",
+          "𝐄𝐟𝐟𝐞𝐜𝐭𝐢𝐯𝐞 𝐂𝐨𝐦𝐦𝐮𝐧𝐢𝐜𝐚𝐭𝐢𝐨𝐧: Ability to clearly articulate design choices and listen to feedback, ensuring the final designs align with client goals.",
+          "Basic video editing skills: Proactive and open to new challenges, with a willingness to learn and adapt to evolving client needs and design trends.",
+        ],
+      },
+      // {
+      //   type: "qualifications",
+      //   title: "Qualifications",
+      //   content: [
+      //     "Bachelor's degree, preferably in Marketing, Advertising, or related field. ",
+      //     "1+ years of digital marketing experience. ",
+      //   ],
+      // },
+    ],
+  },
 ];

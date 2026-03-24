@@ -398,7 +398,11 @@ export default function JobApplicationForm()
                 <div className="space-y-4 mb-10">
                   <p className="text-slate-500 text-sm leading-relaxed md:px-4">
                     Your credentials have been successfully uploaded to our <span className="text-[#133a41] font-bold">Database</span>. <br />
-                    Our recruitment team will review your profile and contact shortlisted candidates.
+
+
+                    <p className="italic text-xs text-slate-400">
+                      Our recruitment team will review your profile and contact shortlisted candidates.
+                    </p>
                   </p>
 
                   {/* Fake Transaction ID for Authenticity */}
@@ -410,14 +414,19 @@ export default function JobApplicationForm()
                   </div>
                 </div>
 
+
                 {/* 4. PROFESSIONAL ACTION */}
-                <button
-                  onClick={() => setShowSuccess(false)}
-                  className="group w-full py-4 bg-[#133a41] text-white font-black text-[11px] uppercase tracking-[0.2em] rounded-sm hover:bg-emerald-900 transition-all duration-500 flex items-center justify-center gap-3 shadow-xl shadow-[#133a41]/20"
-                >
-                  Return to Career Portal
-                  <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </button>
+
+                <Link to={'/application'}>
+
+                  <button
+                    onClick={() => setShowSuccess(false)}
+                    className="group w-full py-4 bg-[#133a41] text-white font-black text-[11px] uppercase tracking-[0.2em] rounded-sm hover:bg-emerald-900 transition-all duration-500 flex items-center justify-center gap-3 shadow-xl shadow-[#133a41]/20"
+                  >
+                    Return to Career Portal
+                    <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </Link>
               </div>
             </motion.div>
           </motion.div>
