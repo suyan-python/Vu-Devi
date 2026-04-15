@@ -118,7 +118,7 @@ export default function JobModal({ job, onClose })
                         <div className="p-8 bg-white border-t border-slate-100 flex flex-col md:flex-row gap-4 items-center justify-between">
                             <div className="flex items-center gap-4 text-slate-400 text-[8px] md:text-[10px] font-bold uppercase tracking-widest">
                                 <FileText size={16} />
-                                Digital Application Processing
+                                Digital Application Process
                             </div>
                             <button
                                 onClick={onClose}

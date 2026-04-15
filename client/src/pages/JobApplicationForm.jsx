@@ -146,7 +146,7 @@ export default function JobApplicationForm()
         <div className="text-center mb-8 md:mb-16">
           <h1 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
             Build Your Career in <br />
-            <span className="text-red-700 font-light">
+            <span className="text-red-700 font-light text-3xl md:text-5xl">
               {selectedJob.title}
             </span>
           </h1>
@@ -177,10 +177,10 @@ export default function JobApplicationForm()
                     <Keyboard size={20} />
                   </div>
                   <div>
-                    <p className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">
+                    <p className="text-[8px] md:text-[10px] font-black text-slate-600 uppercase tracking-[0.3em] mb-2">
                       Core Requirement
                     </p>
-                    <p className="text-[10px] md:text-sm font-semibold text-slate-700 leading-relaxed">
+                    <p className="text-[10px] md:text-sm font-medium text-slate-500 leading-relaxed">
                       Strong typing speed (40+ WPM), proficiency in MS Word, Excel, and digital documentation tools.
                     </p>
                   </div>
@@ -192,10 +192,10 @@ export default function JobApplicationForm()
                     <Coins size={20} />
                   </div>
                   <div>
-                    <p className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">
+                    <p className="text-[8px] md:text-[10px] font-black text-slate-600 uppercase tracking-[0.3em] mb-2">
                       Remuneration
                     </p>
-                    <p className="text-[10px] md:text-sm font-semibold text-slate-700 leading-relaxed">
+                    <p className="text-[10px] md:text-sm font-medium text-slate-500 leading-relaxed">
                       Compensation is competitive and negotiable based on qualifications, skills, and relevant experience.
                     </p>
                   </div>
@@ -207,10 +207,10 @@ export default function JobApplicationForm()
                     <Clock size={20} />
                   </div>
                   <div>
-                    <p className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">
+                    <p className="text-[8px] md:text-[10px] font-black text-slate-600 uppercase tracking-[0.3em] mb-2">
                       Engagement Period
                     </p>
-                    <p className="text-[10px] md:text-sm font-bold text-red-700 leading-relaxed">
+                    <p className="text-[10px] md:text-sm font-medium text-red-700 leading-relaxed">
                       Long-term role with a minimum commitment of 24 months
                     </p>
                   </div>
@@ -356,7 +356,7 @@ export default function JobApplicationForm()
       </div>
 
       <div className="py-12 md:py-20 text-center px-3">
-        <p className=" text-slate-600 text-xs md:text-lg italic">
+        <p className=" text-slate-500 text-xs md:text-base italic font-light">
           "Explore a long-term career opportunity in medical documentation, data entry, and healthcare services with an international medical operations team."
         </p>
       </div>
