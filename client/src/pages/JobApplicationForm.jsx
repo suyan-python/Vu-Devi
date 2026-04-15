@@ -180,9 +180,19 @@ export default function JobApplicationForm()
                     <p className="text-[8px] md:text-[10px] font-black text-slate-600 uppercase tracking-[0.3em] mb-2">
                       Core Requirement
                     </p>
-                    <p className="text-[10px] md:text-sm font-medium text-slate-500 leading-relaxed">
-                      Strong typing speed (40+ WPM), proficiency in MS Word, Excel, and digital documentation tools.
-                    </p>
+                    <ul className="space-y-1 list-disc ml-4">
+                      {(selectedJob.core?.length
+                        ? selectedJob.core
+                        : ["Proficiency in typing with a minimum speed of 50 WPM and strong attention to detail."]
+                      ).map((item, index) => (
+                        <li
+                          key={index}
+                          className="text-[10px] md:text-sm font-medium text-slate-500 leading-relaxed"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
 

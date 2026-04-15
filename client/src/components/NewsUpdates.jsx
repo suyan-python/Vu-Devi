@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, ChevronRight, BarChart3, Radio, ArrowUpRight } from "lucide-react";
 import Chart from "./Chart";
+import { Link } from "react-router-dom";
 
 function NewsUpdates()
 {
@@ -128,9 +129,12 @@ function NewsUpdates()
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <button className="flex items-center gap-2 px-8 py-3 bg-[#133a41] text-white text-[10px] font-black uppercase tracking-widest hover:bg-slate-900 transition-all rounded-sm shadow-lg">
-                  Deep Insights <ArrowUpRight size={14} />
-                </button>
+                <Link to="/deepinsights">
+                  <button className="flex items-center gap-2 px-8 py-3 bg-[#133a41] text-white text-[10px] font-black uppercase tracking-widest hover:bg-slate-900 transition-all rounded-sm shadow-lg">
+
+                    Deep Insights <ArrowUpRight size={14} />
+                  </button>
+                </Link>
               </div>
             </div>
 

@@ -33,7 +33,7 @@ function Hero()
               <span className="relative inline-flex rounded-full h-2 w-2 bg-red-800"></span>
             </span>
             <p className="text-slate-600 font-black tracking-[0.3em] uppercase text-[7px] md:text-[9px]">
-              Institutional Excellence • Since 2013
+              Medical Excellence • Since 2013
             </p>
           </div>
 
@@ -50,18 +50,18 @@ function Hero()
           </p>
 
           {/* Professional Action Buttons */}
-          <div className="flex flex-col md:flex-row md:gap-4 justify-center flex-wrap gap-3">
+          <div className="flex flex-col md:flex-row md:gap-4 justify-center flex-wrap gap-3 font-medium">
             <NavLink
               to="/about"
-              className="group flex items-center justify-center gap-3 px-5 md:px-10 py-2 md:py-4 bg-[#133a41] text-white font-black text-[8px] md:text-xs uppercase tracking-[0.2em] rounded-sm hover:bg-red-700 transition-all duration-500"
+              className="group flex items-center justify-center gap-3 px-5 md:px-10 py-2 md:py-4 bg-[#133a41] text-white  text-[8px] md:text-xs uppercase tracking-[0.2em] rounded-sm hover:bg-red-700 transition-all duration-500"
             >
-              Enterprise Profile
+              What We Are
               <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </NavLink>
 
             <NavLink
               to="/team"
-              className="flex items-center justify-center gap-3 px-5 md:px-10 py-2 md:py-4 bg-white text-[#133a41] border-2 border-slate-200 font-black text-[8px] md:text-xs uppercase tracking-[0.2em] rounded-sm hover:border-red-700 hover:text-red-700 transition-all duration-500"
+              className="flex items-center justify-center gap-3 px-5 md:px-10 py-2 md:py-4 bg-white text-[#133a41] border-2 border-slate-200  text-[8px] md:text-xs uppercase tracking-[0.2em] rounded-sm hover:border-red-700 hover:text-red-700 transition-all duration-500"
             >
               Medical Board
             </NavLink>

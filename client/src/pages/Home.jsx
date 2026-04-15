@@ -13,7 +13,7 @@ export default function Home()
     <div>
       <Hero />
       <EmployeeOfTheMonth />
-      <OurTeam />
+      {/* <OurTeam /> */}
       {/* <Services /> */}
       <WorkflowEngine />
       <NewsUpdates />

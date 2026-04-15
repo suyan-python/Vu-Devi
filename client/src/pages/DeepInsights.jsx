@@ -63,14 +63,14 @@ export default function InsightsTerminal()
                 />
             </div>
 
-            <main className="max-w-[1600px] mx-auto p-6 lg:p-12">
+            <main className="max-w-7xl mx-auto p-6 lg:p-12">
 
 
                 {/* 2. AI HERO HEADER */}
                 <header className="mb-16">
                     <div className="inline-flex items-center gap-2 mb-4 bg-[#133a41]/5 px-4 py-1.5 rounded-full border border-[#133a41]/10">
                         <Zap size={14} className="text-red-700" />
-                        <span className="text-[10px] font-black text-[#133a41] uppercase tracking-widest">Neural Insights Enabled</span>
+                        <span className="text-[10px] font-black text-[#133a41] uppercase tracking-widest">Insights</span>
                     </div>
                     <h1 className="text-3xl md:text-7xl font-semibold tracking-tight leading-[0.95]">
                         Autonomous Clinical
@@ -124,7 +124,7 @@ export default function InsightsTerminal()
                     </div>
 
                     {/* Card: Accuracy Audit (Small Highlight) */}
-                    <div className="lg:col-span-4 lg:row-span-1 bg-gradient-to-b from-red-900 via-red-800 to-red-700 text-white p-4 md:p-8 flex flex-col justify-between">
+                    <div className="lg:col-span-4 lg:row-span-1 bg-gradient-to-b from-red-900 via-red-800 to-red-900 text-white p-4 md:p-8 flex flex-col justify-between">
                         <div className="flex justify-between">
                             <ShieldCheck size={28} />
                             <span className="text-[10px] font-mono">SECURE_ISO</span>
@@ -153,14 +153,14 @@ export default function InsightsTerminal()
 
                         <div className="relative z-10 h-full flex flex-col">
                             <Cpu size={32} className="text-red-500 md:mb-8" />
-                            <h3 className="text-lg md:text-2xl font-bold mb-4 tracking-tight">Neural Core Processing</h3>
+                            <h3 className="text-lg md:text-2xl font-bold mb-4 tracking-tight">Core Processing</h3>
                             <p className="text-slate-400 text-xs md:text-sm leading-relaxed mb-10 flex-1">
                                 Real-time NLP structuring for medical transcription and diagnostic coding automation.
                             </p>
                             <div className="space-y-4">
                                 <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest">
                                     <span>Logic Flow</span>
-                                    <span>88% Optimized</span>
+                                    <span>Optimized</span>
                                 </div>
                                 <div className="h-1 w-full bg-white/10 overflow-hidden">
                                     <motion.div

@@ -206,6 +206,13 @@ export const JOB_DATA = [
     hiring: "Immediate Deployment",
     schedule: "Contract Based",
     holidays: "Saturday & U.S. Public Holidays",
+    core: [
+      "Experience managing and growing multiple social media accounts",
+      "Strong skills in graphic design and short-form video editing",
+      "Deep understanding of social media trends and algorithms",
+      "Excellent communication and audience engagement skills",
+      "Self-driven with strong time and brand management discipline",
+    ],
     sections: [
       {
         type: "overview",
