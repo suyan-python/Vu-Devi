@@ -63,7 +63,7 @@ function Navbar()
       <nav
         className={`fixed top-0 w-full z-[500] transition-all duration-500 ease-in-out
         ${isScrolled
-            ? "py-3  backdrop-blur-xl shadow-[0_2px_20px_rgba(0,0,0,0.05)] border-b border-slate-100 max-w-5xl mx-auto left-0 right-0  md:top-2 rounded-lg bg-white"
+            ? "py-3  shadow-[0_2px_20px_rgba(0,0,0,0.05)] border-b border-slate-100 max-w-5xl mx-auto left-0 right-0  md:top-2 rounded-lg bg-white"
             : "py-8 bg-transparent"
           }
         ${showBar ? "translate-y-0" : "-translate-y-full"}
