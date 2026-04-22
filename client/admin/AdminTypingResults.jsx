@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const API = import.meta.env.VITE_API_URL || "";
 
@@ -8,6 +8,9 @@ export default function AdminTypingResults()
 {
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    const navigate = useNavigate();
+    const token = localStorage.getItem("adminToken");
 
     useEffect(() =>
     {
@@ -28,6 +31,11 @@ export default function AdminTypingResults()
 
         fetchResults();
     }, []);
+
+    useEffect(() =>
+    {
+        if (!token) navigate("/admin/login");
+    }, [token]);
 
     const handleDelete = async (id) =>
     {
