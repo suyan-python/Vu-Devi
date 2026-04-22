@@ -11,7 +11,7 @@ const Job = () =>
         <>
             <Helmet>
                 <title>
-                    Medical Jobs in Nepal | Healthcare Documentation Careers | Vu Devi Services
+                    Jobs in Nepal | Medical Healthcare Documentation Careers | Vu Devi Services
                 </title>
 
                 <meta
