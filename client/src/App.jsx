@@ -20,6 +20,7 @@ import AdminDashboard from "../admin/AdminDashboard";
 import AdminLogin from "../admin/AdminLogin";
 import Job from "./pages/Job";
 import InsightsTerminal from "./pages/DeepInsights";
+import AdminTypingResults from "../admin/AdminTypingResults";
 
 
 function AppRoutes()
@@ -54,6 +55,7 @@ function AppRoutes()
         {/* ADMIN */}
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/typingresults" element={<AdminTypingResults />} />
       </Routes>
 
       {!isAdminRoute && (

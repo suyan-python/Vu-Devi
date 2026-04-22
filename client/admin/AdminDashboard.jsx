@@ -1,6 +1,6 @@
 // src/pages/AdminDashboard.jsx
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import
 {
     Search, LogOut, FileUser, ExternalLink,
@@ -167,14 +167,12 @@ export default function AdminDashboard()
 
                         <div>
                             <div className="flex items-center gap-2">
-                                <h1 className="text-sm font-black text-slate-900 uppercase tracking-tighter">
+                                <h1 className="text-sm font-black text-slate-900 uppercase tracking-widest">
                                     Vu Devi /<span className="text-slate-400"> Evolve Vue</span>
                                 </h1>
-                                <ChevronRight size={14} className="text-slate-300" />
-                                <span className="text-sm font-bold text-[#133a41] uppercase">Admin Portal</span>
                             </div>
                             <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-0.5">
-                                Secure Recruitment v2.1
+                                Admin Portal v2.2
                             </p>
                         </div>
                     </div>
@@ -247,6 +245,16 @@ export default function AdminDashboard()
                             <Calendar className="text-slate-200" size={40} />
                         </div>
                     </div>
+
+                    <Link className="active:bg-emerald-700 bg-emerald-600" to={'typingresults'}>
+                        <div className=" p-6 border-l-4 border-green-900 shadow-sm">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <p className="text-xs font-bold text-gray-50 uppercase tracking-widest">Get Typing Results</p>
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
                 </div>
 
                 {/* 3. APPLICATIONS GRID (The "Candidate Dossiers") */}
