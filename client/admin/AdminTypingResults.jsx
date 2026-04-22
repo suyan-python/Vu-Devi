@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const API = import.meta.env.VITE_API_URL || "";
 
@@ -28,15 +29,41 @@ export default function AdminTypingResults()
         fetchResults();
     }, []);
 
+    const handleDelete = async (id) =>
+    {
+        const confirmDelete = window.confirm("Delete this result?");
+        if (!confirmDelete) return;
+
+        try
+        {
+            await axios.delete(`${API}/api/results/${id}`);
+
+            // remove from UI instantly (no reload)
+            setResults((prev) => prev.filter((r) => r._id !== id));
+        } catch (err)
+        {
+            console.error("Delete failed", err);
+        }
+    };
+
     return (
         <div className="min-h-screen bg-white text-[#0b0e14] p-6 md:py-36 md:px-24">
 
             {/* HEADER */}
-            <div className="mb-10">
-                <h1 className="text-3xl font-bold">Typing Test Results</h1>
-                <p className="text-gray-500 text-sm mt-1">
-                    Candidate performance overview
-                </p>
+            <div className="flex justify-between items-baseline">
+
+                <div className="mb-10">
+                    <h1 className="text-3xl font-bold">Typing Test Results</h1>
+                    <p className="text-gray-500 text-sm mt-2">
+                        Candidate performance overview
+                    </p>
+                </div>
+                <div>
+                    <Link to="/admin" className="text-[#0b0e14] hover:text-[#0b0e14]/80 text-[16px] hover:underline">
+
+                        back to dashboard
+                    </Link>
+                </div>
             </div>
 
             {/* LOADING */}
@@ -56,6 +83,7 @@ export default function AdminTypingResults()
                                 <th className="p-4 text-left">Words</th>
                                 <th className="p-4 text-left">Errors</th>
                                 <th className="p-4 text-left">Status</th>
+                                <th className="p-4 text-left">Action</th>
                             </tr>
                         </thead>
 
@@ -98,6 +126,19 @@ export default function AdminTypingResults()
                                         >
                                             {r.passed ? "Passed" : "Failed"}
                                         </span>
+                                    </td>
+
+
+                                    <td className="p-4 ">
+                                        <button
+                                            onClick={() => handleDelete(r._id)}
+                                            className="text-red-400 text-xs font-bold uppercase tracking-widest 
+                       border border-red-500/20 px-4 py-2 rounded-lg 
+                       hover:bg-red-500/10 hover:border-red-500/40 
+                       transition-all cursor-pointer"
+                                        >
+                                            Delete
+                                        </button>
                                     </td>
                                 </tr>
                             ))}
