@@ -1,6 +1,6 @@
 import React from 'react'
 import { JOB_DATA } from "../db/jobs";
-import { ArrowUpRight, ArrowUpRightIcon, Globe } from 'lucide-react';
+import { ArrowRightIcon, ArrowUpRight, ArrowUpRightIcon, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const JobOpenings = () =>
@@ -116,7 +116,7 @@ const JobOpenings = () =>
                            hover:bg-red-700 transition-all duration-500 w-full md:w-auto rounded-md"
                                 >
                                     Apply
-                                    <ArrowUpRightIcon size={16} />
+                                    <ArrowRightIcon size={16} />
                                 </Link>
                             </div>
                         </div>

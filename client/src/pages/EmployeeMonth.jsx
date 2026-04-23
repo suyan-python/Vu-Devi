@@ -1,51 +1,50 @@
 import React from "react";
 import { Award, GraduationCap, Calendar, ChevronRight, Medal, Quote } from "lucide-react";
 
-import abhishek from "../assets/month/abhishek.jpeg";
-import subekshya from "../assets/month/subekshya.jpeg";
-import nilima from "../assets/month/nilima.jpeg";
-import suman from "../assets/month/suman.jpeg";
+import akriti from "../assets/month/akriti.jpeg";
+import aayushma from "../assets/month/aayushma.jpeg";
+import arju from "../assets/month/arju.jpeg";
 
 import { motion } from "framer-motion";
 
 
 const employees = [
     {
-        name: "Dr. Abhishek Chaurasiya",
+        name: "Dr. Akriti Shrestha",
         designation: "Medical Report Writer",
         team: "Team: Nikita",
-        image: abhishek,
+        image: akriti,
         achievement: "Led the implementation of a new documentation protocol that improved report accuracy by 15% and reduced turnaround time by 20%."
     },
     {
-        name: "Pt. Subekshya Satta",
+        name: "Pt. Aayushma Pokharel",
         designation: "Pt. Report Writer",
         team: "Team: Rajiya",
-        image: subekshya,
+        image: aayushma,
         achievement: "Consistently delivered high-quality physical therapy reports, contributing to a 25% increase in patient satisfaction scores."
     },
     {
-        name: "Ms. Nilima Mulmi",
-        designation: "Data Analyst",
+        name: "Ms. Arju Khadka",
+        designation: "Medical Report Lister",
         team: "Team: Bandana",
-        image: nilima,
+        image: arju,
         achievement: "Played a key role in streamlining the medical listing process, resulting in a 30% reduction in errors and improved workflow efficiency."
     },
-    {
-        name: "Mr. Suman Dahal",
-        designation: "Data Analyst",
-        team: "Team: Ravi",
-        image: suman,
-        achievement: "Developed a new data visualization dashboard that enhanced the team's ability to track key performance metrics, leading to a 20% improvement in decision-making speed."
-    },
+    // {
+    //     name: "Mr. Suman Dahal",
+    //     designation: "Data Analyst",
+    //     team: "Team: Ravi",
+    //     image: suman,
+    //     achievement: "Developed a new data visualization dashboard that enhanced the team's ability to track key performance metrics, leading to a 20% improvement in decision-making speed."
+    // },
 ];
 
 const EmployeeOfTheMonth = () =>
 {
     return (
-        <section className="py-12 md:py-24 bg-slate-50 relative overflow-hidden">
+        <section className="py-12 md:py-24 bg-slate-50 relative overflow-hidden border-b-2 border-slate-600">
             {/* Institutional Pattern Overlay */}
-            <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+            <div className="absolute inset-0 opacity-[0.07] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
 
@@ -58,7 +57,7 @@ const EmployeeOfTheMonth = () =>
                         The Best Employee of Month <span className="text-red-700 font-light"></span>
                     </h2>
                     <p className="mt-4 text-slate-500 text-xs md:text-lg max-w-xl uppercase tracking-widest font-medium">
-                        February 2026 / Performance Audit Monthly
+                        March 2026 / Performance Audit Monthly
                     </p>
                 </div>
 

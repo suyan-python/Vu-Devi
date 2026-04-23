@@ -195,17 +195,25 @@ export const JOB_DATA = [
   //   ],
   // },
 
+
   {
     id: "graphic-designer",
+    slug: "graphic-designer",
     title: "Digital Content Creator & Social Media Executive",
-    tag: "creative",
+    tag: "Creative",
     openings: "1 Position",
     company: "Vu Devi Services Pvt. Ltd.",
-    location: "From Office",
+    location: "From Office · Lalitpur, Nepal",
     salary: "Negotiable (based on experience and skill)",
     hiring: "Immediate Deployment",
     schedule: "Contract Based",
     holidays: "Saturday & U.S. Public Holidays",
+    datePosted: "2026-04-23",
+    validThrough: "2026-07-31T23:59",
+    employmentType: "FULL_TIME",
+    addressLocality: "Lalitpur",
+    addressCountry: "NP",
+
     core: [
       "Experience managing and growing multiple social media accounts",
       "Strong skills in graphic design and short-form video editing",
@@ -213,12 +221,13 @@ export const JOB_DATA = [
       "Excellent communication and audience engagement skills",
       "Self-driven with strong time and brand management discipline",
     ],
+
     sections: [
       {
         type: "overview",
         title: "Job Overview",
         content: [
-          "Vu Devi Services is looking for a talented Digital Content Creator & Social Media Executive to join our team. The selected candidate will be responsible for creating engaging digital content, managing multiple social media platforms, and driving audience engagement across the organization’s brands. This role requires creativity, consistency, and the ability to transform ideas into impactful visual and written content.",
+          "Vu Devi Services is looking for a talented Digital Content Creator & Social Media Executive to join our team. The selected candidate will be responsible for creating engaging digital content, managing multiple social media platforms, and driving audience engagement across the organization's brands. This role requires creativity, consistency, and the ability to transform ideas into impactful visual and written content.",
         ],
       },
       {
@@ -243,7 +252,7 @@ export const JOB_DATA = [
         content: [
           "Minimum 1+ year of experience in content creation, social media management, or digital marketing",
           "Strong understanding of platforms such as Facebook, Instagram, TikTok, and LinkedIn",
-          "Basic graphic design and video editing skills",
+          "Basic graphic design and video editing skills (Canva, Adobe, CapCut, or similar)",
           "Creative mindset with strong storytelling ability",
           "Good communication and interpersonal skills",
           "Ability to manage multiple brands and meet deadlines",
@@ -273,4 +282,5 @@ export const JOB_DATA = [
       },
     ],
   },
+
 ];

@@ -3,6 +3,7 @@ import GeneralForm from "./GeneralForm";
 import { Briefcase, Globe, ShieldCheck, Cpu } from "lucide-react";
 import JobOpenings from "./JobOpenings";
 import { Helmet } from "react-helmet";
+import { JOB_DATA } from "../db/jobs";
 
 
 const Job = () =>
@@ -11,75 +12,48 @@ const Job = () =>
         <>
             <Helmet>
                 <title>
-                    Jobs in Nepal | Medical Healthcare Documentation Careers | Vu Devi Services
+                    Jobs in Nepal | Digital Content & Social Media Careers | Vu Devi Services
                 </title>
 
                 <meta
                     name="description"
-                    content="Apply for medical jobs in Nepal at Vu Devi Services. We hire Clinical Documentation Specialists, Medical Scribes, and Healthcare Professionals. Explore job openings in Nepal with global career opportunities."
+                    content="Apply for jobs in Nepal at Vu Devi Services. We are currently hiring a Digital Content Creator & Social Media Executive. Explore open positions with creative freedom and growth opportunities."
                 />
 
                 <link rel="canonical" href="https://vudeviservices.com.np/application" />
 
                 {/* Open Graph */}
-                <meta property="og:title" content="Medical Jobs in Nepal | Vu Devi Services" />
-                <meta property="og:description" content="Explore healthcare documentation and medical job openings in Nepal." />
+                <meta property="og:title" content="Jobs in Nepal | Vu Devi Services" />
+                <meta property="og:description" content="Explore open job positions at Vu Devi Services Nepal. Currently hiring a Digital Content Creator & Social Media Executive." />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://vudeviservices.com.np/application" />
+                <meta property="og:image" content="https://vudeviservices.com.np/og-image.jpg" />
 
-
+                {/* Organization Schema */}
                 <script type="application/ld+json">
-                    {`
-                        {
-                            "@context": "https://schema.org",
-                            "@type": "Organization",
-                            "name": "Vu Devi Services Pvt. Ltd.",
-                            "url": "https://vudeviservices.com.np",
-                            "logo": "https://vudeviservices.com.np/logo.png",
-                            "sameAs": []
-                        }
-                    `}
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "name": "Vu Devi Services Pvt. Ltd.",
+                        "url": "https://vudeviservices.com.np",
+                        "logo": "https://vudeviservices.com.np/logo.png",
+                        "sameAs": []
+                    })}
                 </script>
 
+                {/* ItemList Schema — lists all open jobs for Google */}
                 <script type="application/ld+json">
-                    {
-                        JSON.stringify({
-                            "@context": "https://schema.org/",
-                            "@type": "JobPosting",
-                            title: "Medical Scribe – Clinical Documentation Specialist",
-                            description:
-                                "Vu Devi Services is hiring Medical Scribes in Nepal. Responsibilities include clinical documentation, medical record management, and HIPAA-compliant healthcare data processing.",
-                            identifier: {
-                                "@type": "PropertyValue",
-                                name: "Vu Devi Services Pvt. Ltd.",
-                                value: "VDS-MED-001"
-                            },
-                            datePosted: "2026-02-01",
-                            validThrough: "2026-05-01T23:59",
-                            employmentType: "FULL_TIME",
-                            hiringOrganization: {
-                                "@type": "Organization",
-                                name: "Vu Devi Services Pvt. Ltd.",
-                                sameAs: "https://vudeviservices.com.np",
-                                logo: "https://vudeviservices.com.np/logo.png"
-                            },
-                            jobLocation: {
-                                "@type": "Place",
-                                address: {
-                                    "@type": "PostalAddress",
-                                    addressLocality: "Lalitpur",
-                                    addressCountry: "NP"
-                                }
-                            },
-                            applicantLocationRequirements: {
-                                "@type": "Country",
-                                name: "Nepal"
-                            },
-                            directApply: true
-                        })
-                    }
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "ItemList",
+                        "name": "Job Openings at Vu Devi Services",
+                        "itemListElement": JOB_DATA.map((job, index) => ({
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "url": `https://vudeviservices.com.np/application/apply/${job.slug}`
+                        }))
+                    })}
                 </script>
-
             </Helmet>
 
 
