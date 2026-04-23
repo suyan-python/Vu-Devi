@@ -11,13 +11,16 @@ const Job = () =>
     return (
         <>
             <Helmet>
-                <title>
+                {/* <title>
                     Jobs in Nepal | Digital Content & Social Media Careers | Vu Devi Services
+                </title> */}
+                <title className="text-slate-800">
+                    Graphic Designer & Video Editor Jobs in Nepal | Vu Devi Services Careers
                 </title>
 
                 <meta
                     name="description"
-                    content="Apply for jobs in Nepal at Vu Devi Services. We are currently hiring a Digital Content Creator & Social Media Executive. Explore open positions with creative freedom and growth opportunities."
+                    content="Apply for graphic designer, video editor, and content writer jobs in Nepal. Join Vu Devi Services and work on real projects with growth opportunities and creative freedom."
                 />
 
                 <link rel="canonical" href="https://vudeviservices.com.np/application" />
@@ -65,15 +68,18 @@ const Job = () =>
                             <div className="text-center ">
                                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#133a41] text-white text-[8px] md:text-[10px] font-bold uppercase tracking-widest rounded-sm mb-4">
                                     <Briefcase size={12} />
-                                    Active Recruitment: Medical Operations
+                                    Active Hiring: Creative & Digital Roles
                                 </div>
                                 <h1 className="text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
-                                    Medical Jobs in Nepal <br />
-                                    <span className="text-red-700 font-light">Clinical Documentation & Healthcare Careers</span>
+                                    Creative Jobs in Nepal <br />
+                                    <span className="text-red-700 font-light">
+                                        Graphic Design, Video Editing & Content Creation
+                                    </span>
                                 </h1>
-                                <h2 className="mt-8 text-slate-500 mx-auto max-w-2xl text-xs md:text-lg leading-relaxed font-medium ">
-                                    Vu Devi Services is scaling its global documentation nodes. We are
-                                    identifying <span className="text-[#133a41]">high-fidelity professionals</span> to join our specialized clinical support teams.
+
+                                <h2 className="mt-8 text-slate-500 mx-auto max-w-2xl text-xs md:text-lg leading-relaxed font-medium">
+                                    Join Vu Devi Services as a <span className="text-[#133a41]">Digital Creator</span>.
+                                    Work on real projects, build your portfolio, and grow in a fast-moving creative environment.
                                 </h2>
                             </div>
 
@@ -82,7 +88,7 @@ const Job = () =>
                 </div>
 
                 {/* 2. TRUST INFRASTRUCTURE BAR */}
-                <div className="bg-white py-6 border-y border-slate-100 mb-12 md:mb-20">
+                {/* <div className="bg-white py-6 border-y border-slate-100 mb-12 md:mb-20">
                     <div className="max-w-7xl mx-auto px-6 flex flex-wrap gap-8 justify-between items-center">
                         {[
                             { Icon: ShieldCheck, text: "HIPAA Compliant Environment" },
@@ -94,6 +100,24 @@ const Job = () =>
                                 <span className="text-[8px] md:text-[10px] font-medium uppercase tracking-widest text-slate-400">{item.text}</span>
                             </div>
                         ))}
+
+                    </div>
+                </div> */}
+
+
+                <div className="bg-white py-6 border-y border-slate-100 mb-12 md:mb-20">
+                    <div className="max-w-7xl mx-auto px-6 flex flex-wrap gap-8 justify-between items-center">
+                        {[
+                            { Icon: Briefcase, text: "Portfolio-Driven Growth" },
+                            { Icon: Globe, text: "Work on Global Projects" },
+                            { Icon: Cpu, text: "Creative + AI Workflow" }
+                        ].map((item, i) => (
+                            <div key={i} className="flex items-center gap-3">
+                                <item.Icon className="text-red-700" size={16} />
+                                <span className="text-[8px] md:text-[10px] font-medium uppercase tracking-widest text-slate-400">{item.text}</span>
+                            </div>
+                        ))}
+
                     </div>
                 </div>
 
