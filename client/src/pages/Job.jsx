@@ -8,26 +8,37 @@ import { JOB_DATA } from "../db/jobs";
 
 const Job = () =>
 {
+
+    const scrollToJobs = () =>
+    {
+        const section = document.getElementById("jobs");
+        const offset = 80; // adjust based on navbar height
+        const top = section.getBoundingClientRect().top + window.scrollY - offset;
+
+        window.scrollTo({
+            top,
+            behavior: "smooth",
+        });
+    };
+
     return (
         <>
             <Helmet>
-                {/* <title>
-                    Jobs in Nepal | Digital Content & Social Media Careers | Vu Devi Services
-                </title> */}
-                <title className="text-slate-800">
-                    Graphic Designer & Video Editor Jobs in Nepal | Vu Devi Services Careers
-                </title>
+                <title>Job Openings Nepal | Medical & Graphic Design Careers | Vu Devi Services</title>
 
                 <meta
                     name="description"
-                    content="Apply for graphic designer, video editor, and content writer jobs in Nepal. Join Vu Devi Services and work on real projects with growth opportunities and creative freedom."
+                    content="Apply for Medical Report Reviewer & Graphic Designer jobs in Nepal. Full-time roles at Vu Devi Services with growth opportunities."
                 />
 
                 <link rel="canonical" href="https://vudeviservices.com.np/application" />
 
                 {/* Open Graph */}
-                <meta property="og:title" content="Jobs in Nepal | Vu Devi Services" />
-                <meta property="og:description" content="Explore open job positions at Vu Devi Services Nepal. Currently hiring a Digital Content Creator & Social Media Executive." />
+                <meta property="og:title" content="Job Openings Nepal | Vu Devi Services" />
+                <meta
+                    property="og:description"
+                    content="Hiring Medical Report Reviewers and Graphic Designers/Video Editors in Nepal. Apply now at Vu Devi Services."
+                />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://vudeviservices.com.np/application" />
                 <meta property="og:image" content="https://vudeviservices.com.np/og-image.jpg" />
@@ -40,53 +51,120 @@ const Job = () =>
                         "name": "Vu Devi Services Pvt. Ltd.",
                         "url": "https://vudeviservices.com.np",
                         "logo": "https://vudeviservices.com.np/logo.png",
-                        "sameAs": []
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Lalitpur",
+                            "addressCountry": "NP"
+                        },
+                        "jobPosting": [
+                            {
+                                "@type": "JobPosting",
+                                "title": "Medical Report Reviewer",
+                                "description": "Review medical reports and ensure accuracy for global healthcare providers.",
+                                "employmentType": "FULL_TIME",
+                                "jobLocation": {
+                                    "@type": "Place",
+                                    "address": {
+                                        "@type": "PostalAddress",
+                                        "addressLocality": "Lalitpur",
+                                        "addressCountry": "NP"
+                                    }
+                                }
+                            },
+                            {
+                                "@type": "JobPosting",
+                                "title": "Graphic Designer & Video Editor",
+                                "description": "Create graphics, videos, and content for digital marketing campaigns.",
+                                "employmentType": "FULL_TIME",
+                                "jobLocation": {
+                                    "@type": "Place",
+                                    "address": {
+                                        "@type": "PostalAddress",
+                                        "addressLocality": "Lalitpur",
+                                        "addressCountry": "NP"
+                                    }
+                                }
+                            }
+                        ]
                     })}
                 </script>
 
-                {/* ItemList Schema — lists all open jobs for Google */}
+                {/* ItemList Schema for job listings */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "ItemList",
-                        "name": "Job Openings at Vu Devi Services",
-                        "itemListElement": JOB_DATA.map((job, index) => ({
-                            "@type": "ListItem",
-                            "position": index + 1,
-                            "url": `https://vudeviservices.com.np/application/apply/${job.slug}`
-                        }))
+                        "name": "Job Openings at Vu Devi Services Nepal",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Medical Report Reviewer",
+                                "url": "https://vudeviservices.com.np/application#medical"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Graphic Designer & Video Editor",
+                                "url": "https://vudeviservices.com.np/application#graphic"
+                            }
+                        ]
                     })}
                 </script>
             </Helmet>
 
 
-            <section className="w-full min-h-screen pt-32">
+            <section className="w-full min-h-screen pt-16 md:pt-32">
                 {/* 1. RECRUITMENT HERO: Command Center Style */}
-                <div className="w-full px-6 md:px-12 mb-12 ">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="flex flex-col gap-4">
-                            <div className="text-center ">
-                                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#133a41] text-white text-[8px] md:text-[10px] font-bold uppercase tracking-widest rounded-sm mb-4">
-                                    <Briefcase size={12} />
-                                    Active Hiring: Creative & Digital Roles
-                                </div>
-                                <h1 className="text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
-                                    Creative Jobs in Nepal <br />
-                                    <span className="text-red-700 font-light">
-                                        Graphic Design, Video Editing & Content Creation
-                                    </span>
-                                </h1>
-
-                                <h2 className="mt-8 text-slate-500 mx-auto max-w-2xl text-xs md:text-lg leading-relaxed font-medium">
-                                    Join Vu Devi Services as a <span className="text-[#133a41]">Digital Creator</span>.
-                                    Work on real projects, build your portfolio, and grow in a fast-moving creative environment.
-                                </h2>
+                <div className="w-full px-6 md:px-12 ">
+                    <div className="max-w-7xl mx-auto py-14 md:py-20">
+                        <div className="text-center">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-800 to-slate-900 text-white text-[8px] md:text-sm font-bold uppercase tracking-wider rounded-lg mb-8 shadow-lg">
+                                <Briefcase size={16} />
+                                2 Active Openings | Apply Today
                             </div>
 
+                            {/* H1 - Keyword-optimized like top portals */}
+                            <h1 className="header text-2xl md:text-6xl font-bold tracking-tight text-slate-900 leading-tight mb-6">
+                                Graphic Design & Medical Jobs in Nepal
+                                <br />
+
+                                <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent font-light">
+                                    2 Positions Open Now
+                                </span>
+                            </h1>
+
+                            {/* H2 - Benefits + CTA like JobsNepal */}
+                            <div className="max-w-3xl mx-auto">
+                                <h2 className="text-sm md:text-2xl text-slate-700 font-medium mb-4 leading-tight">
+                                    Hiring: <span className="font-bold">Graphic Designer/Video Editor </span>
+                                    & <span className="text-[#133a41] font-bold">Medical Report Reviewer</span>
+                                </h2>
+                                <p className="text-xs md:text-lg text-slate-600 leading-relaxed mb-8">
+                                    Join us at Vu Devi Services in Lalitpur. Full-time roles with
+                                    <strong> competitive salary, portfolio growth, real client projects</strong>,
+                                    and career advancement.
+                                </p>
+
+                                {/* CTA Buttons - Conversion focus like KumariJob */}
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                                    <a
+                                        className="bg-gradient-to-r from-slate-900 to-slate-800 text-white md:px-8 px-4 py-2 md:py-4 rounded-xl font-bold text-xs md:text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200"
+                                        onClick={scrollToJobs}
+                                    >
+                                        Apply Graphic Design Jobs
+                                    </a>
+                                    <a
+                                        className="border-2 border-slate-200 bg-white text-slate-900 md:px-8 px-4 py-2 md:py-4 rounded-xl font-bold text-xs md:text-lg shadow-lg hover:shadow-xl hover:border-emerald-400 transition-all duration-200"
+                                        onClick={scrollToJobs}
+                                    >
+                                        Medical Report Jobs
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
                 {/* 2. TRUST INFRASTRUCTURE BAR */}
                 {/* <div className="bg-white py-6 border-y border-slate-100 mb-12 md:mb-20">
                     <div className="max-w-7xl mx-auto px-6 flex flex-wrap gap-8 justify-between items-center">
@@ -122,7 +200,10 @@ const Job = () =>
                 </div>
 
                 {/* 3. DEPLOYMENT OPPORTUNITIES: Structured Dossiers */}
-                <JobOpenings />
+                <div id="jobs">
+
+                    <JobOpenings />
+                </div>
 
                 <GeneralForm />
 

@@ -195,6 +195,118 @@ export const JOB_DATA = [
   //   ],
   // },
 
+  {
+    id: "medical-report-reviewer",
+    slug: "medical-report-reviewer",
+    title: "Medical Report Reviewer",
+    tag: "Clinical",
+    openings: "3 Positions",
+    company: "Evolve Vue Pvt. Ltd.",
+    location: "Work from Office · Balkumari, Lalitpur, Nepal",
+    salary: "Negotiable (based on experience and skill)",
+    hiring: "Immediate Deployment",
+    schedule: "Full-Time",
+    holidays: "Saturday & Sunday Off",
+    datePosted: "2026-04-24",
+    validThrough: "2026-07-31T23:59",
+    employmentType: "FULL_TIME",
+    addressLocality: "Lalitpur",
+    addressCountry: "NP",
+
+    // ✅ SHORT HIGHLIGHTS (matches graphic designer "core")
+    core: [
+      "Review and analyze medical records with high accuracy",
+      "Strong understanding of medical terminology and documentation",
+      "Ability to extract and structure clinical data efficiently",
+      "Excellent attention to detail and quality control mindset",
+      "Minimum typing speed of 40 WPM required",
+    ],
+
+    // ✅ FULL CONTENT SECTIONS (same pattern)
+    sections: [
+      {
+        type: "overview",
+        title: "Job Overview",
+        content: [
+          "Evolve Vue Pvt. Ltd. is hiring Medical Report Reviewers to join our medical documentation and quality review team. The role involves analyzing and reviewing medical records, identifying key findings, and ensuring documents meet quality and compliance standards.",
+        ],
+      },
+
+      {
+        type: "responsibilities",
+        title: "Key Responsibilities",
+        content: [
+          "Identify, review, and classify medical and legal documents accurately",
+          "Extract key findings and highlight important details",
+          "Flag missing, unclear, or inconsistent information",
+          "Enter and annotate data in structured templates",
+          "Ensure accuracy, completeness, and consistency of documents",
+          "Coordinate with QA teams and escalate issues when needed",
+          "Review clinical documents such as progress notes and reports",
+          "Extract diagnoses, procedures, medications, and lab data",
+          "Maintain high documentation standards and formatting",
+        ],
+      },
+
+      {
+        type: "requirements",
+        title: "Skills",
+        content: [
+          "Professional written and spoken English",
+          "Strong knowledge of Microsoft Word and Excel",
+          "Minimum typing speed of 40 WPM",
+          "Strong attention to detail and time management",
+          "Ability to work independently with minimal supervision",
+        ],
+      },
+
+      {
+        type: "qualifications",
+        title: "Academic Qualifications",
+        content: [
+          "Bachelor’s in Physiotherapy",
+          "Bachelor’s in Nursing",
+          "Bachelor’s in Pharmacy",
+          "Bachelor’s in Public Health",
+          "Or any related medical field",
+        ],
+      },
+
+      {
+        type: "additional",
+        title: "Additional Skills",
+        content: [
+          "Familiarity with medical terminology and abbreviations",
+          "Ability to interpret clinical context accurately",
+          "Experience with EHR systems or documentation tools",
+          "Strong focus on accuracy and consistency",
+        ],
+      },
+
+      {
+        type: "offer",
+        title: "What We Offer",
+        content: [
+          "Competitive salary package",
+          "Paid structured training (3 months)",
+          "Career growth opportunities in QA and leadership",
+          "Supportive and team-oriented environment",
+        ],
+      },
+
+      {
+        type: "work",
+        title: "Work Details",
+        content: [
+          "Work Type: Work from Office",
+          "Shift: 6:30 AM – 3:00 PM or 7:30 AM – 4:00 PM NST",
+          "Training: 3 Months (100% attendance mandatory)",
+          "Contract: Minimum 18-month commitment",
+          "Note: Nepali and US holidays are not observed",
+        ],
+      },
+    ],
+  },
 
   {
     id: "graphic-designer",
@@ -282,5 +394,4 @@ export const JOB_DATA = [
       },
     ],
   },
-
 ];

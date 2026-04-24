@@ -66,6 +66,7 @@ const JobOpenings = () =>
                             className="group relative flex flex-col md:flex-row md:items-center justify-between 
                        p-4 md:p-10 bg-white border border-slate-200 hover:border-[#133a41] 
                        transition-all duration-500 shadow-sm hover:shadow-2xl overflow-hidden"
+                            id={job.id}
                         >
                             <div className="absolute top-0 left-0 w-1.5 h-full bg-slate-100 group-hover:bg-red-700 transition-colors"></div>
 
