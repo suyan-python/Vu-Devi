@@ -10,95 +10,99 @@ function Hero()
   return (
 
     <>
+
       <Helmet>
-        {/* Primary SEO */}
-        <title>
-          Medical BPO & Medical Scribe Jobs in Nepal | Vu Devi Services
-        </title>
+        {/* Primary SEO - Concise and targeted */}
+        <title>Medical Scribe Jobs in Nepal | Vu Devi Services</title>
 
         <meta
           name="description"
-          content="Leading medical BPO in Nepal offering clinical documentation, medical scribing, and healthcare data services. Apply for medical scribe jobs and build a global healthcare career."
+          content="Join Vu Devi Services for medical scribe and BPO jobs in Nepal. Specializing in clinical documentation, HIPAA-compliant services, and healthcare data processing. Apply now for full-time roles in Lalitpur."
         />
 
         <meta
           name="keywords"
-          content="medical scribe jobs Nepal, medical BPO Nepal, clinical documentation Nepal, healthcare jobs Nepal, HIPAA documentation, medical transcription Nepal"
+          content="medical scribe jobs Nepal, medical BPO Nepal, clinical documentation jobs, healthcare BPO Nepal, medical transcription Nepal, HIPAA jobs Nepal"
         />
 
         <meta name="robots" content="index, follow" />
 
-        <link rel="canonical" href="https://vudeviservices.com.np" />
+        <link rel="canonical" href="https://vudeviservices.com.np/" />
 
-        {/* Open Graph (Facebook, LinkedIn) */}
-        <meta property="og:title" content="Medical Scribe Jobs & Medical BPO in Nepal" />
+        {/* Open Graph for social sharing */}
+        <meta property="og:title" content="Medical Scribe & BPO Jobs | Vu Devi Services Nepal" />
         <meta
           property="og:description"
-          content="Join Vu Devi Services – Nepal’s growing medical BPO. Explore careers in clinical documentation and healthcare services."
+          content="Leading medical BPO in Nepal hiring scribes for clinical documentation and healthcare services. Build your career with Vu Devi Services."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://vudeviservices.com.np" />
+        <meta property="og:url" content="https://vudeviservices.com.np/" />
         <meta property="og:image" content="https://vudeviservices.com.np/og-image.jpg" />
 
-        {/* Twitter SEO */}
+        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Medical Jobs in Nepal | Vu Devi Services" />
+        <meta name="twitter:title" content="Medical Scribe Jobs Nepal | Vu Devi Services" />
         <meta
           name="twitter:description"
-          content="Apply for medical scribe and clinical documentation jobs in Nepal."
+          content="Apply for medical scribe roles at Nepal's top medical BPO. Clinical documentation specialists needed."
         />
         <meta name="twitter:image" content="https://vudeviservices.com.np/og-image.jpg" />
 
-        {/* Organization Schema */}
+        {/* Organization Schema - Clean and factual */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            name: "Vu Devi Services Pvt. Ltd.",
-            url: "https://vudeviservices.com.np",
-            logo: "https://vudeviservices.com.np/logo.png",
-            sameAs: []
+            "name": "Vu Devi Services Pvt. Ltd.",
+            "url": "https://vudeviservices.com.np",
+            "logo": "https://vudeviservices.com.np/logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Lalitpur",
+              "addressCountry": "NP"
+            },
+            "description": "Medical BPO specializing in clinical documentation and healthcare services in Nepal."
           })}
         </script>
 
-        {/* Job Posting Schema */}
+        {/* Job Posting Schema - Simplified, Google-compliant */}
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org/",
+            "@context": "https://schema.org",
             "@type": "JobPosting",
-            title: "Medical Scribe – Clinical Documentation Specialist",
-            description:
-              "Vu Devi Services is hiring Medical Scribes in Nepal. Work on clinical documentation, medical records, and HIPAA-compliant healthcare data.",
-            identifier: {
+            "title": "Medical Scribe",
+            "description": "Vu Devi Services seeks Medical Scribes for clinical documentation and HIPAA-compliant healthcare data processing. Full-time roles in Lalitpur, Nepal. Night shifts to serve global clients.",
+            "identifier": {
               "@type": "PropertyValue",
-              name: "Vu Devi Services Pvt. Ltd.",
-              value: "VDS-MED-001"
+              "name": "Vu Devi Services Pvt. Ltd.",
+              "value": "VDS-MED-001"
             },
-            datePosted: "2026-02-01",
-            validThrough: "2026-05-01T23:59",
-            employmentType: "FULL_TIME",
-            hiringOrganization: {
+            "datePosted": "2026-04-01",
+            "validThrough": "2026-07-01T23:59:59+05:45",
+            "employmentType": "FULL_TIME",
+            "hiringOrganization": {
               "@type": "Organization",
-              name: "Vu Devi Services Pvt. Ltd.",
-              sameAs: "https://vudeviservices.com.np",
-              logo: "https://vudeviservices.com.np/logo.png"
+              "name": "Vu Devi Services Pvt. Ltd.",
+              "sameAs": "https://vudeviservices.com.np",
+              "logo": "https://vudeviservices.com.np/logo.png"
             },
-            jobLocation: {
+            "jobLocation": {
               "@type": "Place",
-              address: {
+              "address": {
                 "@type": "PostalAddress",
-                addressLocality: "Lalitpur",
-                addressCountry: "NP"
+                "addressLocality": "Lalitpur",
+                "addressCountry": "NP"
               }
             },
-            applicantLocationRequirements: {
+            "applicantLocationRequirements": {
               "@type": "Country",
-              name: "Nepal"
+              "name": "Nepal"
             },
-            directApply: true
+            "directApply": true
           })}
         </script>
       </Helmet>
+
       <section className="relative h-screen w-full flex items-start overflow-hidden ">
         {/* 1. ARCHITECTURAL BACKGROUND */}
         <div className="absolute inset-0 -z-20">
