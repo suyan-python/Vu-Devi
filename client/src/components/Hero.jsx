@@ -13,7 +13,7 @@ function Hero()
 
       <Helmet>
         {/* Primary SEO - Concise and targeted */}
-        <title>Medical Scribe Jobs in Nepal | Vu Devi Services</title>
+        <title>Vu Devi Services | Medical BPO & Healthcare Documentation Nepal</title>
 
         <meta
           name="description"
