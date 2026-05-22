@@ -36,6 +36,8 @@ export default function JobApplicationForm()
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const [redirecting, setRedirecting] = useState(false);
+
 
 
   const selectedJob = JOB_DATA.find((job) => job.id === jobId);
@@ -138,6 +140,25 @@ export default function JobApplicationForm()
     );
   };
 
+
+  const handleInterviewRedirect = () =>
+  {
+    setRedirecting(true);
+
+    // Get interview link directly from selected job data
+    const interviewLink = selectedJob?.jobLink;
+
+    if (interviewLink)
+    {
+      window.open(interviewLink, "_blank");
+    }
+
+    setTimeout(() =>
+    {
+      setRedirecting(false);
+    }, 1200);
+  };
+
   return (
     <>
       <Helmet>
@@ -178,7 +199,6 @@ export default function JobApplicationForm()
 
         <div className="max-w-6xl mx-auto px-6 relative z-10 " >
 
-          {/* 1. INSTITUTIONAL HEADER */}
           <div className="text-center mb-8 md:mb-16">
             <h1 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
               Build Your Career in <br />
@@ -188,13 +208,11 @@ export default function JobApplicationForm()
             </h1>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="flex flex-col-reverse md:grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-            {/* 2. JOB SPECIFICATIONS (LEFT SIDE) */}
             <div className="lg:col-span-5">
               <div className="bg-white rounded-sm shadow-sm border border-slate-100 overflow-hidden">
 
-                {/* HEADER */}
                 <div className="border-l-4 border-red-700 md:px-8 px-4 md:py-6 py-3 bg-slate-50/40">
                   <h3 className="text-[11px] font-black tracking-[0.35em] text-slate-400 uppercase mb-2">
                     Position
@@ -204,12 +222,10 @@ export default function JobApplicationForm()
                   </p>
                 </div>
 
-                {/* SPEC GRID */}
                 <div className="p-4 md:p-8  grid gap-8">
 
-                  {/* CORE REQUIREMENT */}
                   <div className="flex gap-5 items-start">
-                    <div className="p-3 bg-slate-50 border border-slate-200 text-[#133a41] rounded-sm">
+                    <div className="p-3 bg-slate-50 border border-slate-200 text-[#133a41] rounded-sm hidden md:block">
                       <Keyboard size={20} />
                     </div>
                     <div>
@@ -232,9 +248,8 @@ export default function JobApplicationForm()
                     </div>
                   </div>
 
-                  {/* REMUNERATION */}
                   <div className="flex gap-5 items-start">
-                    <div className="p-3 bg-slate-50 border border-slate-200 text-[#133a41] rounded-sm">
+                    <div className="p-3 bg-slate-50 border border-slate-200 text-[#133a41] rounded-sm hidden md:block">
                       <Coins size={20} />
                     </div>
                     <div>
@@ -247,9 +262,8 @@ export default function JobApplicationForm()
                     </div>
                   </div>
 
-                  {/* ENGAGEMENT */}
                   <div className="flex gap-5 items-start">
-                    <div className="p-3 bg-slate-50 border border-slate-200 text-[#133a41] rounded-sm">
+                    <div className="p-3 bg-slate-50 border border-slate-200 text-[#133a41] rounded-sm hidden md:block">
                       <Clock size={20} />
                     </div>
                     <div>
@@ -263,15 +277,12 @@ export default function JobApplicationForm()
                   </div>
 
                 </div>
-
-                {/* ASSESSMENT NOTE */}
                 <div className="px-8 py-5 border-t border-slate-100 bg-slate-50/40">
                   <p className="text-[10px] md:text-xs text-slate-500 leading-relaxed italic">
                     Shortlisted candidates will complete a structured assessment covering medical terminology, documentation accuracy, and attention to detail.
                   </p>
                 </div>
 
-                {/* ACTION ZONE */}
                 <div className="px-8 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 border-t border-slate-100 ">
 
                   <button onClick={() => setShowModal(true)} className="cursor-pointer underline text-xs font-bold  text-red-700 hover:text-red-600 transition ">
@@ -282,23 +293,9 @@ export default function JobApplicationForm()
                     job={showModal ? selectedJob : null}
                     onClose={() => setShowModal(false)}
                   />
-
-
-                  {/* <a
-                    href="https://typing.evolvevue.com.np/"
-                    target="_blank"
-                    className="text-xs font-bold tracking-widest  transition uppercase text-center"
-                  >
-                    Take Typing Test
-                    <ArrowRight size={12} className="inline-block ml-1" />
-                  </a> */}
-
                 </div>
               </div>
             </div>
-
-
-            {/* 3. APPLICATION PORTAL (RIGHT SIDE) */}
             <div className="lg:col-span-7">
               {errorMessage && (
                 <div className="mb-6 flex items-center gap-2 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-sm text-sm">
@@ -307,7 +304,9 @@ export default function JobApplicationForm()
                 </div>
               )}
 
-              <form className="bg-white p-4 md:p-8  border border-slate-100" onSubmit={handleSubmit}>
+
+
+              {/* <form className="bg-white p-4 md:p-8  border border-slate-100" onSubmit={handleSubmit}>
                 <h3 className="text-xl md:text-3xl font-semibold text-[#133a41] mb-8 border-b pb-4 tracking-tight"> {selectedJob.title} Job Application</h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -341,7 +340,6 @@ export default function JobApplicationForm()
                   </div>
                 </div>
 
-                {/* Enhanced File Upload Area */}
                 <div className="mb-6">
                   <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-2">Resume & Typing Result (PDF)</label>
                   <div className="relative group">
@@ -395,13 +393,100 @@ export default function JobApplicationForm()
                   {loading ? "SUBMITTING..." : "SUBMIT APPLICATION"}
                   <CheckCircle2 size={16} />
                 </button>
+              </form> */}
 
-              </form>
+
+              <div className="bg-white p-6 md:p-10 border border-slate-100 rounded-sm">
+                <div className="flex flex-col  md:items-center md:justify-between gap-8">
+
+                  <div className="max-w-2xl">
+                    <span className="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">
+                      Digital Recruitment Process
+                    </span>
+
+                    <h1 className="text-xl md:text-3xl font-semibold text-[#133a41] mb-8 border-b pb-4 tracking-tight"> {selectedJob.title}</h1>
+
+                    <h2 className="text-base md:text-2xl font-semibold text-[#133a41] mt-3 leading-tight tracking-tight">
+                      Take AI Interview Test Online & Submit Your Application
+                    </h2>
+
+                    <p className="text-xs md:text-base text-slate-500 mt-4 leading-relaxed">
+                      Complete a quick AI-powered interview assessment designed to evaluate
+                      your communication, skills, and suitability for the role of{" "}
+                      <span className="font-semibold text-[#133a41]">
+                        {selectedJob.title}
+                      </span>.
+                    </p>
+
+                    <div className="flex flex-wrap gap-3 mt-6">
+                      {[
+                        "Online Assessment",
+                        "Quick Process",
+                        "Professional Evaluation",
+                      ].map((item, index) => (
+                        <span
+                          key={index}
+                          className="px-4 py-2 text-[8px] md:text-[11px] font-semibold tracking-wider uppercase bg-slate-50 border border-slate-200 text-slate-500 rounded-sm"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex-shrink-0">
+                    <button
+                      onClick={handleInterviewRedirect}
+                      disabled={redirecting}
+                      className={`group min-w-[260px] bg-[#133a41] text-white md:px-8 px-5 py-2 md:py-5 rounded-sm shadow-lg flex items-center justify-center gap-4 transition-all duration-300
+        ${redirecting
+                          ? "opacity-80 cursor-not-allowed"
+                          : "hover:bg-[#1b4d56] cursor-pointer"
+                        }`}
+                    >
+
+                      {redirecting ? (
+                        <>
+                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+
+                          <div className="flex flex-col items-start">
+                            <span className="text-[10px] tracking-[0.25em] uppercase text-slate-300 font-bold">
+                              Redirecting
+                            </span>
+
+                            <span className="text-xs md:text-base font-semibold tracking-wide">
+                              Opening Interview...
+                            </span>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="flex flex-col items-start">
+                            <span className="text-[8px] md:text-[10px] tracking-[0.25em] uppercase text-slate-300 font-bold">
+                              Start Process
+                            </span>
+
+                            <span className="text-xs md:text-base font-semibold tracking-wide">
+                              Take AI Interview Test
+                            </span>
+                          </div>
+
+                          <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:translate-x-1 transition-all">
+                            <CheckCircle2 size={18} />
+                          </div>
+                        </>
+                      )}
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
 
-        <div className="py-12 md:py-20 text-center px-3">
+        <div className="py-12 md:py-20 text-center px-8 md:px-3">
           <p className=" text-slate-500 text-xs md:text-base italic font-light">
             "Explore a long-term career opportunity in medical documentation, data entry, and healthcare services with an international medical operations team."
           </p>

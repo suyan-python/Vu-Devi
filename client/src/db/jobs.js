@@ -212,6 +212,7 @@ export const JOB_DATA = [
     employmentType: "FULL_TIME",
     addressLocality: "Lalitpur",
     addressCountry: "NP",
+    jobLink: "https://your-link.com/frontend-interview",
 
     // ✅ SHORT HIGHLIGHTS (matches graphic designer "core")
     core: [
