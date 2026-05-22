@@ -202,7 +202,7 @@ export const JOB_DATA = [
     tag: "Clinical",
     openings: "3 Positions",
     company: "Evolve Vue Pvt. Ltd.",
-    location: "Work from Office · Balkumari, Lalitpur, Nepal",
+    location: "Work from Office",
     salary: "Negotiable (based on experience and skill)",
     hiring: "Immediate Deployment",
     schedule: "Full-Time",
@@ -214,7 +214,6 @@ export const JOB_DATA = [
     addressCountry: "NP",
     jobLink: "https://your-link.com/frontend-interview",
 
-    // ✅ SHORT HIGHLIGHTS (matches graphic designer "core")
     core: [
       "Review and analyze medical records with high accuracy",
       "Strong understanding of medical terminology and documentation",
@@ -223,7 +222,6 @@ export const JOB_DATA = [
       "Minimum typing speed of 40 WPM required",
     ],
 
-    // ✅ FULL CONTENT SECTIONS (same pattern)
     sections: [
       {
         type: "overview",

@@ -9,7 +9,8 @@ import
   SectionIcon,
   ChevronRight,
   Activity,
-  ShieldCheck
+  ShieldCheck,
+  ArrowUpRight
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import GeneralForm from "./GeneralForm";
@@ -304,7 +305,17 @@ export default function JobApplicationForm()
                 </div>
               )}
 
-
+              <div className="mb-12">
+                <h2 className="text-base md:text-3xl font-semibold text-slate-900 ">Applying for <span className="text-red-700 font-light">{selectedJob.title} </span> </h2>
+                <div className="flex gap-4 mt-3">
+                  <span className="px-3 py-1 rounded-full bg-[#133a41] border border-white/10 text-[8px] md:text-[10px] uppercase tracking-widest text-gray-100">
+                    {selectedJob.tag}
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-[#133a41] border border-white/10 text-[8px] md:text-[10px] uppercase tracking-widest text-gray-100">
+                    {selectedJob.location}
+                  </span>
+                </div>
+              </div>
 
               {/* <form className="bg-white p-4 md:p-8  border border-slate-100" onSubmit={handleSubmit}>
                 <h3 className="text-xl md:text-3xl font-semibold text-[#133a41] mb-8 border-b pb-4 tracking-tight"> {selectedJob.title} Job Application</h3>
@@ -395,91 +406,81 @@ export default function JobApplicationForm()
                 </button>
               </form> */}
 
+              <div className="space-y-8">
+                {/* Main Container */}
+                <div className="relative p-6 md:p-8 rounded-xl border border-purple-500/40 bg-slate-950 overflow-hidden shadow-[0_0_40px_rgba(168,85,247,0.25)]">
 
-              <div className="bg-white p-6 md:p-10 border border-slate-100 rounded-sm">
-                <div className="flex flex-col  md:items-center md:justify-between gap-8">
+                  {/* HIGH VISIBILITY GLOWS: Layered using standard blur and opacity */}
+                  {/* Top Right Glow */}
+                  <div className="absolute -top-12 -right-12 w-48 h-48 bg-purple-600 rounded-full blur-[50px] opacity-40 animate-pulse"></div>
+                  {/* Bottom Left Glow */}
+                  <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-indigo-600 rounded-full blur-[50px] opacity-30 animate-pulse"></div>
 
-                  <div className="max-w-2xl">
-                    <span className="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">
-                      Digital Recruitment Process
-                    </span>
+                  {/* Extra Inner Glow Layer */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 via-transparent to-purple-500/10 pointer-events-none"></div>
 
-                    <h1 className="text-xl md:text-3xl font-semibold text-[#133a41] mb-8 border-b pb-4 tracking-tight"> {selectedJob.title}</h1>
+                  <div className="relative z-10">
+                    {/* Top Badge with Active Ping */}
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/20 border border-purple-400/30 text-[10px] uppercase tracking-[0.25em] text-purple-300 font-bold mb-4 shadow-[0_0_15px_rgba(168,85,247,0.3)]">
+                      <span className="w-2 h-2 rounded-full bg-purple-400 animate-ping"></span>
+                      AI Interview Assessment
+                    </div>
 
-                    <h2 className="text-base md:text-2xl font-semibold text-[#133a41] mt-3 leading-tight tracking-tight">
-                      Take AI Interview Test Online & Submit Your Application
-                    </h2>
+                    <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mt-1">
+                      Start Your AI Interview Test
+                    </h3>
 
-                    <p className="text-xs md:text-base text-slate-500 mt-4 leading-relaxed">
-                      Complete a quick AI-powered interview assessment designed to evaluate
-                      your communication, skills, and suitability for the role of{" "}
-                      <span className="font-semibold text-[#133a41]">
+                    <p className="text-sm text-slate-300 mt-3 leading-relaxed">
+                      This assessment is designed to evaluate your communication, clarity, and
+                      role-specific understanding for <span className="text-purple-300 font-semibold drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]">
                         {selectedJob.title}
                       </span>.
+                      The process is automated, structured, and takes only a few minutes.
                     </p>
 
+                    {/* Modern High-Tech Badges */}
                     <div className="flex flex-wrap gap-3 mt-6">
                       {[
-                        "Online Assessment",
-                        "Quick Process",
-                        "Professional Evaluation",
-                      ].map((item, index) => (
+                        "AI Evaluated",
+                        "Role Based Questions",
+                        "Instant Processing"
+                      ].map((item, i) => (
                         <span
-                          key={index}
-                          className="px-4 py-2 text-[8px] md:text-[11px] font-semibold tracking-wider uppercase bg-slate-50 border border-slate-200 text-slate-500 rounded-sm"
+                          key={i}
+                          className="text-[10px] uppercase tracking-widest px-4 py-2 rounded-md bg-slate-900/80 border border-slate-800 text-slate-300 hover:border-purple-500/50 transition-colors duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.3)]"
                         >
                           {item}
                         </span>
                       ))}
                     </div>
                   </div>
-
-                  <div className="flex-shrink-0">
-                    <button
-                      onClick={handleInterviewRedirect}
-                      disabled={redirecting}
-                      className={`group min-w-[260px] bg-[#133a41] text-white md:px-8 px-5 py-2 md:py-5 rounded-sm shadow-lg flex items-center justify-center gap-4 transition-all duration-300
-        ${redirecting
-                          ? "opacity-80 cursor-not-allowed"
-                          : "hover:bg-[#1b4d56] cursor-pointer"
-                        }`}
-                    >
-
-                      {redirecting ? (
-                        <>
-                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-
-                          <div className="flex flex-col items-start">
-                            <span className="text-[10px] tracking-[0.25em] uppercase text-slate-300 font-bold">
-                              Redirecting
-                            </span>
-
-                            <span className="text-xs md:text-base font-semibold tracking-wide">
-                              Opening Interview...
-                            </span>
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          <div className="flex flex-col items-start">
-                            <span className="text-[8px] md:text-[10px] tracking-[0.25em] uppercase text-slate-300 font-bold">
-                              Start Process
-                            </span>
-
-                            <span className="text-xs md:text-base font-semibold tracking-wide">
-                              Take AI Interview Test
-                            </span>
-                          </div>
-
-                          <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:translate-x-1 transition-all">
-                            <CheckCircle2 size={18} />
-                          </div>
-                        </>
-                      )}
-                    </button>
-                  </div>
-
                 </div>
+
+                {/* Futuristic Action Button */}
+                <button
+                  type="button"
+                  onClick={handleInterviewRedirect}
+                  disabled={redirecting}
+                  className={`w-full py-5 rounded-xl text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer
+      ${redirecting
+                      ? "bg-slate-800 text-slate-500 border border-slate-700 cursor-not-allowed"
+                      : "bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-500 hover:to-indigo-500 shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:shadow-[0_0_35px_rgba(168,85,247,0.7)] hover:-translate-y-[1px] active:translate-y-[1px]"
+                    }`}
+                >
+                  {redirecting ? (
+                    <>
+                      <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+                      Launching System...
+                    </>
+                  ) : (
+                    "Initiate Interview"
+                  )}
+                  < ArrowUpRight />
+                </button>
+
+                <p className="text-[10px] md:text-[14px] text-slate-900 text-center tracking-wide italic">
+                  Note: Ensure a stable connection and camera/mic access before starting.
+                </p>
               </div>
 
             </div>
