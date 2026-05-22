@@ -24,7 +24,7 @@ const Job = () =>
     return (
         <>
             <Helmet>
-                <title>Job Openings Nepal | Medical & Graphic Design Careers | Vu Devi Services</title>
+                <title>Job Openings Nepal |  | Vu Devi Services</title>
 
                 <meta
                     name="description"
@@ -121,27 +121,26 @@ const Job = () =>
                         <div className="text-center">
                             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-800 to-slate-900 text-white text-[8px] md:text-sm font-bold uppercase tracking-wider rounded-lg mb-8 shadow-lg">
                                 <Briefcase size={16} />
-                                2 Active Openings | Apply Today
+                                1 Active Openings | Apply Today
                             </div>
 
                             {/* H1 - Keyword-optimized like top portals */}
                             <h1 className="header text-2xl md:text-6xl font-bold tracking-tight text-slate-900 leading-tight mb-6">
-                                Graphic Design & Medical Jobs in Nepal
+                                Sales & Growth Jobs in Nepal
                                 <br />
 
                                 <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent font-light">
-                                    2 Positions Open Now
+                                    1 Position Open Now
                                 </span>
                             </h1>
 
                             {/* H2 - Benefits + CTA like JobsNepal */}
                             <div className="max-w-3xl mx-auto">
                                 <h2 className="text-sm md:text-2xl text-slate-700 font-medium mb-4 leading-tight">
-                                    Hiring: <span className="font-bold">Graphic Designer/Video Editor </span>
-                                    & <span className="text-[#133a41] font-bold">Medical Report Reviewer</span>
+                                    Hiring: <span className="font-bold">Country Lead, Nepal</span>
                                 </h2>
                                 <p className="text-xs md:text-lg text-slate-600 leading-relaxed mb-8">
-                                    Join us at Vu Devi Services in Lalitpur. Full-time roles with
+                                    Join us at Peatch AI in Kathmandu. Full-time roles with
                                     <strong> competitive salary, portfolio growth, real client projects</strong>,
                                     and career advancement.
                                 </p>
@@ -152,14 +151,14 @@ const Job = () =>
                                         className="bg-gradient-to-r from-slate-900 to-slate-800 text-white md:px-8 px-4 py-2 md:py-4 rounded-xl font-bold text-xs md:text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200"
                                         onClick={scrollToJobs}
                                     >
-                                        Apply Graphic Design Jobs
+                                        Apply Country Lead, Nepal
                                     </a>
-                                    <a
+                                    {/* <a
                                         className="border-2 border-slate-200 bg-white text-slate-900 md:px-8 px-4 py-2 md:py-4 rounded-xl font-bold text-xs md:text-lg shadow-lg hover:shadow-xl hover:border-emerald-400 transition-all duration-200"
                                         onClick={scrollToJobs}
                                     >
                                         Medical Report Jobs
-                                    </a>
+                                    </a> */}
                                 </div>
                             </div>
                         </div>

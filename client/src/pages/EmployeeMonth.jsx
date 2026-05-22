@@ -2,8 +2,8 @@ import React from "react";
 import { Award, GraduationCap, Calendar, ChevronRight, Medal, Quote } from "lucide-react";
 import { ShieldCheck, User } from "lucide-react";
 
-import akriti from "../assets/month/akriti.jpeg";
-import aayushma from "../assets/month/aayushma.jpeg";
+import subhanshi from "../assets/month/subhanshi.jpeg";
+import anjila from "../assets/month/anjila.png";
 import arju from "../assets/month/arju.jpeg";
 
 import { motion } from "framer-motion";
@@ -11,26 +11,26 @@ import { motion } from "framer-motion";
 
 const employees = [
     {
-        name: "Dr. Akriti Shrestha",
+        name: "Dr. Subhanshi Sharma",
         designation: "Medical Report Writer",
         team: "Team: Nikita",
-        image: akriti,
+        image: subhanshi,
         achievement: "Recognized for consistently delivering clear, well-structured medical reports while maintaining high standards of clinical accuracy and documentation quality."
     },
     {
-        name: "Pt. Aayushma Pokharel",
+        name: "Pt. Anjila Ghimire",
         designation: "PT Report Writer",
         team: "Team: Rajiya",
-        image: aayushma,
+        image: anjila,
         achievement: "Demonstrates strong consistency in producing detailed and patient-focused physical therapy reports with accurate clinical interpretation."
     },
-    {
-        name: "Ms. Arju Khadka",
-        designation: "Medical Lister",
-        team: "Team: Bandana",
-        image: arju,
-        achievement: "Maintains high precision in organizing and structuring medical data, contributing to smoother workflows and reliable documentation processes."
-    },
+    // {
+    //     name: "Ms. Arju Khadka",
+    //     designation: "Medical Lister",
+    //     team: "Team: Bandana",
+    //     image: arju,
+    //     achievement: "Maintains high precision in organizing and structuring medical data, contributing to smoother workflows and reliable documentation processes."
+    // },
     // {
     //     name: "Mr. Suman Dahal",
     //     designation: "Data Analyst",
