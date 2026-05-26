@@ -24,7 +24,7 @@ const Job = () =>
     return (
         <>
             <Helmet>
-                <title>Job Openings Nepal |  | Vu Devi Services</title>
+                <title>Job Openings Nepal | Vu Devi Services</title>
 
                 <meta
                     name="description"

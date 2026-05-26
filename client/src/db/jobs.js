@@ -397,7 +397,7 @@ export const JOB_DATA = [
   {
     id: "country-lead-nepal-peatch-ai",
     slug: "country-lead-nepal-peatch-ai",
-    title: "Country Lead, Nepal",
+    title: "Country Lead, Nepal [Peatch AI]",
     tag: "Sales & Growth",
     openings: "1 Position",
     company: "Peatch AI",

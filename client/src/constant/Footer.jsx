@@ -129,7 +129,7 @@ function Footer()
           <div className="flex gap-8 md:gap-3">
             {[
               { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=61574993381205" },
-              { Icon: Linkedin, href: "https://www.linkedin.com/in/vu-devi-09676b339" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/company/vu-devi-services" },
               { Icon: Instagram, href: "https://www.instagram.com/vudeviservices" }
             ].map(({ Icon, href }, i) => (
               <a
