@@ -7,6 +7,7 @@ import ravi from "../assets/leads/ravi.webp";
 import nikita from "../assets/leads/nikita2.webp";
 import rajiya from "../assets/leads/rajiya.webp";
 import bandana from "../assets/leads/bandana2.webp";
+import dilasha from "../assets/leads/dilasha.jpeg";
 
 import aayushma from "../assets/person/all/Aayushma Pokhrel.png"
 import dipendra from "../assets/person/all/Dipendra Thapa.png"
@@ -62,7 +63,15 @@ function WholeTeam()
       link: "/team/ravi",
       date: "2014",
     },
-
+    {
+      name: "Ms. Dilasha Shakya",
+      role: "Head of Operations",
+      description:
+        "Leading operational excellence and seamless healthcare workflow management.",
+      image: dilasha,
+      link: "/team/dilasha",
+      date: "2016",
+    },
   ];
 
   const coreTeams = [
@@ -73,14 +82,6 @@ function WholeTeam()
         "Accurate and compliant medical reports tailored to global standards.",
       image: aayushma,
       date: "April, 2023",
-    },
-    {
-      name: "Dipendra Thapa",
-      role: "Medical Report File Downloader",
-      description:
-        "End-to-end backend support ensuring seamless healthcare operations.",
-      image: dipendra,
-      date: "March, 2019",
     },
     {
       name: "Karna Bahadur Bam",
@@ -107,28 +108,12 @@ function WholeTeam()
       date: "July, 2022",
     },
     {
-      name: "Rahul Lama",
-      role: "Finance Department",
-      description:
-        "End-to-end backend support ensuring seamless healthcare operations.",
-      image: rahul,
-      date: "June, 2021",
-    },
-    {
       name: "Rojin Shakya",
       role: "Medical Report File Downloader",
       description:
         "End-to-end backend support ensuring seamless healthcare operations.",
       image: rojin,
       date: "June, 2022",
-    },
-    {
-      name: "Sammyek Ratna Bajracharya",
-      role: "Medical Report File Downloader",
-      description:
-        "End-to-end backend support ensuring seamless healthcare operations.",
-      image: sammyek,
-      date: "May, 2021",
     },
     {
       name: "Sarita Ale",

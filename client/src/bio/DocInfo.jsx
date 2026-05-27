@@ -5,6 +5,7 @@ import ravi from "../assets/leads/ravi.webp";
 import nikita2 from "../assets/leads/nikita2.webp";
 import rajiya from "../assets/leads/rajiya.webp";
 import bandana from "../assets/leads/bandana2.webp";
+import dilasha from "../assets/leads/dilasha.jpeg";
 
 import { Mail, Calendar, UserCheck, ArrowLeft, Users, Briefcase } from "lucide-react";
 
@@ -19,24 +20,25 @@ const doctorData = {
     teamMembers: [
       "Dr. Abhishek Chaurasiya",
       "Dr. Akriti Shrestha",
-      "Dr. Anup Subedi",
       "Dr. Apekshya Subedi",
       "Dr. Apurva Bhandari",
-      "Dr. Birendra Yadav",
       "Dr. Khush-Boo Gurung",
-      "Dr. Manoj Kumar Shrestha",
       "Dr. Prakash Acharya",
       "Dr. Rajendra Kumar Singh",
       "Dr. Shikha Pradhan",
       "Dr. Shristi Manandhar",
-      "Dr. Sujan Gautam",
       "Dr. Dipesh Ghimire",
       "Dr. Chitij Karki",
       "Dr. Suvechhya Sigdel",
       "Dr. Sangita K.C.",
       "Dr. Rushmi Maharjan",
       "Dr. Niguma Rayamajhi",
-      "Dr. Shushil Sah",
+      "Dr. Surakshya Amatya",
+      "Dr. Subhanshi Sharma",
+      "Dr. Narendra Kumar Yadav",
+      "Dr. Sujil Manandhar",
+      "Dr. Anushree Karki",
+
     ],
     role: "Medical Report Writer",
   },
@@ -53,7 +55,6 @@ const doctorData = {
       "Anish Phuyal",
       "Anjila Ghimire",
       "Diggaj Shrestha",
-      "Raghuveer Bohara",
       "Sajana Poudel",
       "Sarita Ale",
       "Sheema Koirala",
@@ -61,6 +62,7 @@ const doctorData = {
       "Tripti Halwai",
       "Umesh Kunwar",
       "Subekshya Satta",
+      "Genish Shakya",
     ],
     role: "Medical Report Writer",
   },
@@ -84,6 +86,8 @@ const doctorData = {
       "Suyan Man Amatya",
       "Nilima Mulmi",
       "Simran Thapa",
+      "Bivek Shrestha",
+      "Ajay Subedi",
     ],
     role: "Medical Report Lister",
   },
@@ -95,16 +99,27 @@ const doctorData = {
     bio: "Ravi is responsible for backend operations, ensuring seamless healthcare support systems. He has played a key role in integrating new technologies into medical report listing systems.",
     mail: "ravi@reportprep.com",
     teamMembers: [
-      "Dipendra Thapa",
       "Karna Bahadur Bam",
       "Rojin Shakya",
-      "Sammyek Ratna Bajracharya",
-      "Rajjak Miyan",
       "Deepak Maharjan",
-      "Mahesh Shahi",
-      "Suman Dahal ",
+      "Suman Dahal",
+      "Rameshwor Karki",
     ],
     role: "Medical Report Downloader",
+  },
+  dilasha: {
+    name: "Dilasha Thapa",
+    designation: "Head of Operations",
+    joiningDate: "2016",
+    image: dilasha,
+    bio: "Dilasha leads operational management at ReportPrep, ensuring smooth coordination across healthcare support systems and internal workflows. With years of experience in process management and healthcare operations, she plays a vital role in improving efficiency, streamlining report handling, and supporting the integration of modern technologies into the platform. Her leadership helps maintain reliable, organized, and patient-focused services across the organization.",
+    mail: "dilasha@reportprep.com",
+    teamMembers: [
+      "Mr. Bibek Odd",
+      "Mr. Lokesh Bhatta",
+      "Ms. Luna Bharati",
+    ],
+    role: "",
   },
 };
 
