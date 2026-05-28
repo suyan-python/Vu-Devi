@@ -60,7 +60,7 @@ const EmployeeOfTheMonth = () =>
                             </p>
                         </div>
                         <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-slate-900 leading-none">
-                            Employee of the Month -  <span className="text-red-700 font-light italic">March, 2026</span>
+                            Employee of the Month -  <span className="text-red-700 font-light italic">April, 2026</span>
                         </h2>
                         <p className="mt-4 text-slate-500 text-xs md:text-sm uppercase tracking-[0.25em] font-bold">
                             Based on Performance Audit
