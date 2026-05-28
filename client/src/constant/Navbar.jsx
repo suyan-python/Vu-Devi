@@ -50,6 +50,7 @@ function Navbar()
     { to: "/", label: "Home" },
     { to: "/about", label: "Vudevi" },
     { to: "/team", label: "Our Team" },
+    { to: "/events", label: "Our Events" },
     { to: "/services", label: "Services" },
     { to: "/contact", label: "Contact" },
     { to: "/application", label: "Career", isButton: true },

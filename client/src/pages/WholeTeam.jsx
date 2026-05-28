@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { UserCheck, Clock, Users, ArrowRight, ShieldCheck, BadgeCheck } from "lucide-react";
+import { UserCheck, Clock, Users, ArrowRight, ShieldCheck, BadgeCheck, Camera, CalendarDays } from "lucide-react";
 
 import ravi from "../assets/leads/ravi.webp";
 import nikita from "../assets/leads/nikita2.webp";
@@ -20,6 +20,7 @@ import sammyek from "../assets/person/all/sammyek ratna .png"
 import sarita from "../assets/person/all/SARITA ALE.png"
 import shristi from "../assets/person/all/Shristi Manandhar.png"
 import tripti from "../assets/person/all/Tripti Rajkarnikar.png"
+
 
 
 function WholeTeam()
@@ -73,6 +74,7 @@ function WholeTeam()
       date: "2016",
     },
   ];
+
 
   const coreTeams = [
     {
@@ -260,6 +262,7 @@ function WholeTeam()
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );

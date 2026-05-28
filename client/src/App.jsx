@@ -21,6 +21,7 @@ import AdminLogin from "../admin/AdminLogin";
 import Job from "./pages/Job";
 import InsightsTerminal from "./pages/DeepInsights";
 import AdminTypingResults from "../admin/AdminTypingResults";
+import Events from "./pages/Events";
 
 
 function AppRoutes()
@@ -41,6 +42,7 @@ function AppRoutes()
         <Route path="/about" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/events" element={<Events />} />
 
         {/* <Route path="/application" element={<JobApplicationForm />} /> */}
         <Route path="/application" element={<Job />} />
