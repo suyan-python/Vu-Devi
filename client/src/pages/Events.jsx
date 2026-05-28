@@ -13,7 +13,7 @@ const Events = () =>
 
     const eventGallery = [
         {
-            image: event3,
+            image: event1,
             title: "Annual Team Retreat",
             description: "Celebrating milestones and strengthening collaboration beyond the workplace.",
             tag: "Retreat",
