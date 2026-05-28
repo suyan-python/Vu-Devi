@@ -38,7 +38,7 @@ function WholeTeam()
     },
     {
       name: "Dr. Rajiya Shakya[PT]",
-      role: "Data Analytics & Healthcare Operations",
+      role: "Medical Report Writer Physiotherapist Team Lead",
       description:
         "Efficient data handling and analytics for healthcare institutions.",
       image: rajiya,
@@ -56,7 +56,7 @@ function WholeTeam()
     },
     {
       name: "Ravi Sunder Shrestha",
-      role: "Medical Report Downloader",
+      role: "Data Analyst Team Lead",
       description:
         "Accurate and compliant medical reports tailored to global standards.",
       image: ravi,
