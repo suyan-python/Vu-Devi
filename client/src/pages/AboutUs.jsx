@@ -125,7 +125,7 @@ function AboutUs()
         {/* Founder & Management Mount Points */}
         <div className="md:mt-24 space-y-24">
           <MeetFounder />
-          <MeetManagement />
+          {/* <MeetManagement /> */}
         </div>
 
         <GlobalReachTerminal />

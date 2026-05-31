@@ -115,6 +115,8 @@ const doctorData = {
     bio: "Dilasha leads operational management at ReportPrep, ensuring smooth coordination across healthcare support systems and internal workflows. With years of experience in process management and healthcare operations, she plays a vital role in improving efficiency, streamlining report handling, and supporting the integration of modern technologies into the platform. Her leadership helps maintain reliable, organized, and patient-focused services across the organization.",
     mail: "dilasha@reportprep.com",
     teamMembers: [
+      "Mr. Nishan Khadka",
+      "Ms. Pratishtha Pokharel",
       "Mr. Bibek Odd",
       "Mr. Lokesh Bhatta",
       "Ms. Luna Bharati",

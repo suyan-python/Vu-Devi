@@ -96,23 +96,53 @@ const Services = () =>
           </div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-200 border border-slate-200 shadow-2xl overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {serviceProtocols.map((service, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-10 group hover:bg-slate-50 transition-all duration-300 relative"
+                className="
+relative
+bg-white
+p-8 md:p-10
+group
+overflow-hidden
+border
+border-slate-100
+hover:border-slate-200
+hover:-translate-y-2
+transition-all
+duration-500
+shadow-sm
+hover:shadow-2xl
+"
                 initial={{ opacity: 0.3 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
               >
                 {/* ID Badge */}
-                <div className="absolute top-6 right-6 text-[10px] font-black text-slate-300 group-hover:text-red-700 transition-colors">
-                  {service.id}
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#133a41] to-red-700 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <span className="text-4xl font-black text-slate-100 group-hover:text-red-50 transition-colors">
+                    {service.id}
+                  </span>
                 </div>
 
                 {/* Icon & Label */}
-                <div className="text-[#133a41] mb-8 group-hover:scale-110 transition-transform duration-500 origin-left">
+                <div className="
+w-16
+h-16
+rounded-2xl
+bg-[#133a41]/5
+flex
+items-center
+justify-center
+text-[#133a41]
+mb-8
+group-hover:bg-[#133a41]
+group-hover:text-white
+transition-all
+duration-500
+">
                   {service.icon}
                 </div>
 
@@ -120,7 +150,15 @@ const Services = () =>
                   {service.tag}
                 </p>
 
-                <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-[#133a41] transition-colors">
+                <h3 className="
+text-xl
+font-semibold
+tracking-tight
+text-slate-900
+mb-4
+group-hover:text-[#133a41]
+transition-colors
+">
                   {service.title}
                 </h3>
 

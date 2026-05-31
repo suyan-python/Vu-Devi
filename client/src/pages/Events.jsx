@@ -14,7 +14,7 @@ const Events = () =>
     const eventGallery = [
         {
             image: event1,
-            title: "Annual Team Retreat",
+            title: "Official Retreat",
             description: "Celebrating milestones and strengthening collaboration beyond the workplace.",
             tag: "Retreat",
             date: "May 2026",
@@ -22,23 +22,23 @@ const Events = () =>
         },
         {
             image: event2,
-            title: "Leadership Meetup",
+            title: "Social Events and Engagements",
             description: "Strategic discussions and future planning with department leads.",
-            tag: "Management",
+            tag: "Culture",
             date: "April 2026",
             size: "tall",
         },
         {
             image: event3,
-            title: "Office Celebration",
+            title: "Monthly Meetups",
             description: "Recognizing achievements and team dedication together.",
-            tag: "Culture",
+            tag: "Management",
             date: "March 2026",
             size: "wide",
         },
         {
             image: event4,
-            title: "Training Session",
+            title: "Training & Development",
             description: "Continuous learning and development across departments.",
             tag: "Workshop",
             date: "February 2026",
@@ -141,7 +141,7 @@ const Events = () =>
                             {/* TEXT BLOCK */}
                             <div className="max-w-xl">
                                 <h3 className="
-                                text-white font-bold tracking-tight
+                                text-white font-medium tracking-tight
                                 text-xl md:text-2xl lg:text-[1.75rem]
                                 leading-tight
                                 transform translate-y-2 group-hover:translate-y-0

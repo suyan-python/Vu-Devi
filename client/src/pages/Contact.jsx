@@ -15,7 +15,7 @@ function Contact()
             "@type": "LocalBusiness",
             "name": "Vu Devi Services Pvt. Ltd.",
             "url": "https://vudeviservices.com.np",
-            "email": "vudeviservices@gmail.com",
+            "email": "info@vudeviservices.com.np",
             "telephone": "+9779817576110",
             "address": {
               "@type": "PostalAddress",
@@ -56,14 +56,14 @@ function Contact()
               {/* Structured Contact Cards */}
               <div className="grid grid-cols-1 gap-6">
                 {/* Card 1: Email */}
-                <a href="mailto:vudeviservices@gmail.com" className="group flex items-start gap-5 p-6 bg-white border border-slate-100 shadow-sm hover:border-red-700 transition-all duration-300">
+                <a href="mailto:info@vudeviservices.com.np" className="group flex items-start gap-5 p-6 bg-white border border-slate-100 shadow-sm hover:border-red-700 transition-all duration-300">
                   <div className="p-3 bg-slate-50 text-red-700 group-hover:bg-red-700 group-hover:text-white transition-colors">
                     <Mail size={24} />
                   </div>
                   <div>
                     <p className="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Official Inquiry</p>
 
-                    <a href="mailto:vudeviservices@gmail.com" className="text-xs md:text-lg font-semibold text-slate-800" aria-label="Email Vu Devi Services">vudeviservices@gmail.com</a>
+                    <a href="mailto:info@vudeviservices.com.np" className="text-xs md:text-lg font-semibold text-slate-800" aria-label="Email Vu Devi Services">info@vudeviservices.com.np</a>
                   </div>
                 </a>
 

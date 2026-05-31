@@ -60,6 +60,7 @@ function Footer()
                 { label: "Home", path: "/" },
                 { label: "Services", path: "/services" },
                 { label: "About", path: "/about" },
+                { label: "Events", path: "/events" },
                 { label: "Contact", path: "/contact" },
                 { label: "Careers", path: "/application" },
               ].map((item) => (
@@ -96,7 +97,7 @@ function Footer()
                   <Mail className="text-red-700 shrink-0" size={20} />
                   <div>
                     <p className="text-[8px] md:text-[10px] font-black text-slate-500 uppercase mb-1">Email</p>
-                    <a href="mailto:vudeviservices@gmail.com" className="text-xs md:text-sm text-slate-300 hover:text-white">vudeviservices@gmail.com</a>
+                    <a href="mailto:info@vudeviservices.com.np" className="text-xs md:text-sm text-slate-300 hover:text-white">info@vudeviservices.com.np</a>
                   </div>
                 </div>
               </div>

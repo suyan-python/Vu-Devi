@@ -24,7 +24,7 @@ const MeetFounder = () =>
                         {/* Geometric Decorative Frame */}
                         <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-red-700"></div>
 
-                        <div className="relative z-10 overflow-hidden rounded-sm shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 group">
+                        <div className="relative z-10 overflow-hidden rounded-sm shadow-2xl  transition-all duration-700 group">
                             <img
                                 src={Binayak}
                                 alt="Binayak Malla - Founder of Vu Devi Services"

@@ -128,8 +128,8 @@ const FooterBT = () =>
               </div>
               <div className="flex flex-col">
                 <span className="text-[10px] text-slate-400 uppercase font-bold">Email</span>
-                <a href="mailto:vudeviservices@gmail.com" className="text-xs font-medium hover:text-teal-400 transition-colors">
-                  vudeviservices@gmail.com
+                <a href="mailto:info@vudeviservices.com.np" className="text-xs font-medium hover:text-teal-400 transition-colors">
+                  info@vudeviservices.com.np
                 </a>
               </div>
             </div>

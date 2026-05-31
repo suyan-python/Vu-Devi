@@ -15,7 +15,7 @@ const LIVE_LOGS = [
 export default function GlobalReachTerminal()
 {
     return (
-        <section className="bg-slate-50 border-t border-slate-200 pt-18 md:py-24 overflow-hidden">
+        <section className="bg-slate-50 border-t border-slate-200 pt-18 md:pt-44 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
