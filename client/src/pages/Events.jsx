@@ -6,45 +6,11 @@ import event3 from "../assets/outings/47.jpeg";
 import event4 from "../assets/outings/4.jpeg";
 import { ArrowRight, CalendarDays, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { eventGallery } from "../db/events";
 
 
 const Events = () =>
 {
-
-    const eventGallery = [
-        {
-            image: event1,
-            title: "Official Retreat",
-            description: "Celebrating milestones and strengthening collaboration beyond the workplace.",
-            tag: "Retreat",
-            date: "May 2026",
-            size: "large",
-        },
-        {
-            image: event2,
-            title: "Social Events and Engagements",
-            description: "Strategic discussions and future planning with department leads.",
-            tag: "Culture",
-            date: "April 2026",
-            size: "tall",
-        },
-        {
-            image: event3,
-            title: "Monthly Meetups",
-            description: "Recognizing achievements and team dedication together.",
-            tag: "Management",
-            date: "March 2026",
-            size: "wide",
-        },
-        {
-            image: event4,
-            title: "Training & Development",
-            description: "Continuous learning and development across departments.",
-            tag: "Workshop",
-            date: "February 2026",
-            size: "normal",
-        },
-    ];
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -71,7 +37,36 @@ const Events = () =>
         <div className="container mx-auto px-4 py-32 md:py-44 max-w-7xl">
 
 
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16"> <div> <div className="inline-flex items-center gap-2 text-red-700 font-bold uppercase tracking-[0.2em] text-xs mb-3"> <Camera size={16} /> Company Moments </div> <h2 className="text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-none"> Events & <span className="text-[#133a41] font-light">Team Culture</span> </h2> </div> <p className="text-slate-500 max-w-lg text-sm md:text-right italic leading-relaxed"> Beyond operations and documentation, we value collaboration, growth, and the people behind every successful outcome. </p> </div>
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-20 border-b border-slate-200 pb-12">
+
+                {/* LEFT: Institutional Anchor */}
+                <div className="flex-1">
+                    <div className="inline-flex items-center gap-3 text-red-700 font-black uppercase tracking-[0.3em] text-[10px] mb-6">
+                        <div className="w-8 h-[2px] bg-red-700"></div>
+                        Company Moments
+                    </div>
+                    <h2 className="text-4xl md:text-7xl font-bold tracking-tighter text-slate-900 leading-[0.9]">
+                        Events & <br />
+                        <span className="text-[#133a41] font-light italic">Team Culture</span>
+                    </h2>
+                </div>
+
+                {/* RIGHT: Contextual Description */}
+                <div className="flex-1 lg:text-right">
+                    <p className="text-slate-500 max-w-lg lg:ml-auto text-sm md:text-base leading-relaxed tracking-wide font-light">
+                        Beyond the rigor of clinical documentation, we prioritize the human element.
+                        These moments reflect our commitment to a culture of collaboration,
+                        continuous growth, and shared institutional success.
+                    </p>
+
+                    {/* Minimalist Decorative Element */}
+                    <div className="mt-8 flex gap-1 lg:justify-end">
+                        <div className="w-1 h-1 rounded-full bg-slate-300"></div>
+                        <div className="w-1 h-1 rounded-full bg-slate-300"></div>
+                        <div className="w-4 h-1 rounded-full bg-red-700"></div>
+                    </div>
+                </div>
+            </div>
 
 
 
@@ -80,128 +75,66 @@ const Events = () =>
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, margin: "-100px" }}
-                className="grid grid-cols-1 md:grid-cols-12 auto-rows-[280px] md:auto-rows-[280px] gap-5 md:gap-6"
+                className="grid grid-cols-1 md:grid-cols-12 auto-rows-[300px] gap-6"
             >
                 {eventGallery.map((item, index) => (
                     <motion.div
                         key={index}
                         variants={itemVariants}
-                        whileHover={{ y: -6, scale: 1.01 }}
                         className={`
-                        group relative overflow-hidden rounded-2xl
-                        border border-slate-200/60 bg-slate-900
-                        shadow-[0_8px_30px_rgb(0,0,0,0.04)]
-                        hover:shadow-[0_25px_50px_rgba(19,58,65,0.18)]
-                        transition-shadow duration-500
-                        
-                        ${item.size === "large"
-                                ? "md:col-span-7 md:row-span-2"
-                                : item.size === "wide"
-                                    ? "md:col-span-7"
-                                    : item.size === "tall"
-                                        ? "md:col-span-5 md:row-span-2"
-                                        : "md:col-span-5"
-                            }
-                    `}
+                group relative overflow-hidden rounded-[4px]
+                border border-white/10 bg-[#0c2e34]
+                shadow-[0_20px_50px_-12px_rgba(0,0,0,0.3)]
+                transition-all duration-700 ease-in-out
+                ${item.size === "large" ? "md:col-span-7 md:row-span-2" :
+                                item.size === "wide" ? "md:col-span-7" :
+                                    item.size === "tall" ? "md:col-span-5 md:row-span-2" : "md:col-span-5"}
+            `}
                     >
-                        {/* IMAGE - Starts slightly desaturated/darker and pops on hover */}
+                        {/* 1. IMAGE: Professional Normalization */}
                         <img
                             src={item.image}
                             alt={item.title}
-                            className="
-                            absolute inset-0 w-full h-full object-cover
-                            filter brightness-[0.85] contrast-[1.05] saturate-[0.85]
-                            group-hover:brightness-100 group-hover:saturate-100 group-hover:scale-105
-                            transition-all duration-[1000ms] ease-out
-                        "
+                            className="absolute inset-0 w-full h-full object-cover brightness-[0.8] transition-transform duration-[2000ms] ease-out group-hover:scale-[1.03]"
                         />
 
-                        {/* DYNAMIC GRADIENT OVERLAY */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent mix-blend-multiply opacity-90 group-hover:opacity-95 transition-opacity duration-500" />
-                        <div className="absolute inset-0 bg-gradient-to-tr from-[#133a41]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                        {/* 2. GRADIENT ARCHITECTURE (The "Institutional" Feel) */}
+                        {/* Soft ambient gradient from the bottom, stronger on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#092226] via-[#092226]/20 to-transparent opacity-90 transition-opacity duration-700" />
+                        <div className="absolute inset-0 bg-[#133a41]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-                        {/* TOP DECORATIVE ACCENT LINE */}
-                        <div className="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-[#133a41] to-[#22636f] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-
-                        {/* TAG */}
-                        <div className="absolute top-5 left-5 z-10">
-                            <span className="
-                            bg-white/90 backdrop-blur-md
-                            px-3.5 py-1.5 rounded-full
-                            text-[10px] font-bold uppercase
-                            tracking-[0.2em] text-[#133a41]
-                            shadow-md inline-block
-                        ">
+                        {/* 3. TOP TAG: Minimalist Labeling */}
+                        <div className="absolute top-8 left-8 z-20">
+                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/70 border-b border-white/20 pb-1">
                                 {item.tag}
                             </span>
                         </div>
 
-                        {/* CONTENT LAYER */}
-                        <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 z-10 pointer-events-none">
-                            {/* TEXT BLOCK */}
-                            <div className="max-w-xl">
-                                <h3 className="
-                                text-white font-medium tracking-tight
-                                text-xl md:text-2xl lg:text-[1.75rem]
-                                leading-tight
-                                transform translate-y-2 group-hover:translate-y-0
-                                transition-transform duration-500 ease-out
-                            ">
-                                    {item.title}
-                                </h3>
+                        {/* 4. CONTENT LAYER: Precision Typography */}
+                        <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end z-10 pointer-events-none">
+                            <h3 className="text-2xl md:text-3xl font-medium text-white tracking-tighter leading-snug transform translate-y-4 transition-transform duration-500 group-hover:translate-y-0">
+                                {item.title}
+                            </h3>
 
-                                <p className="
-                                mt-2.5 text-white/80
-                                text-sm leading-relaxed
-                                max-w-lg
-                                opacity-0 max-h-0 pointer-events-none
-                                group-hover:opacity-100 group-hover:max-h-[100px]
-                                transform translate-y-4 group-hover:translate-y-0
-                                transition-all duration-500 ease-out delay-75
-                            ">
-                                    {item.description}
-                                </p>
-                            </div>
+                            <p className="mt-4 text-white/60 text-sm leading-relaxed max-w-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                {item.description}
+                            </p>
 
-                            {/* FOOTER ACTION AREA */}
-                            <div className="
-                            mt-4 pt-4
-                            border-t border-white/10
-                            flex items-center justify-between
-                            pointer-events-auto
-                        ">
-                                {/* DATE */}
-                                <div className="flex items-center gap-2 text-white/70">
-                                    <CalendarDays size={14} className="text-white/50" />
-                                    <span className="text-[11px] uppercase tracking-[0.2em] font-semibold">
+                            {/* 5. FOOTER AREA: Institutional Meta-Data */}
+                            <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between pointer-events-auto">
+                                <div className="flex items-center gap-3 text-white/40">
+                                    <CalendarDays size={14} />
+                                    <span className="text-[10px] uppercase tracking-[0.2em] font-medium">
                                         {item.date}
                                     </span>
                                 </div>
 
-
-                                {/* DEDICATED REDIRECT BUTTON */}
                                 <Link
-                                    href={`/events/${item.id || index}`}
-                                    aria-label={`View details for ${item.title}`}
-                                    className="
-                                    w-10 h-10 rounded-full
-                                    border border-white/20
-                                    flex items-center justify-center
-                                    bg-white/5 backdrop-blur-sm
-                                    hover:bg-white hover:scale-110
-                                    transition-all duration-300 ease-out
-                                    group/btn
-                                "
+                                    to={`/events/${item.id}`}
+                                    className="group/btn flex items-center gap-3 px-6 py-3 bg-white text-[#133a41] rounded-full text-[10px] font-black uppercase tracking-[0.2em] hover:bg-red-700 hover:text-white transition-all duration-500"
                                 >
-                                    <ArrowRight
-                                        size={18}
-                                        className="
-                                        text-white
-                                        group-hover/btn:text-[#133a41]
-                                        transform group-hover/btn:translate-x-0.5
-                                        transition-all duration-300
-                                    "
-                                    />
+                                    View Gallery
+                                    <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                                 </Link>
                             </div>
                         </div>
