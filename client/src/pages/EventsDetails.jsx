@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { eventGallery } from "../db/events";
 
@@ -157,18 +157,27 @@ export default function EventDetails()
                                             initial={{ opacity: 0, scale: 0.92 }}
                                             whileInView={{ opacity: 1, scale: 1 }}
                                             transition={{ duration: 0.9, ease: "easeOut" }}
-                                            className="md:col-span-2 md:row-span-2 bg-gradient-to-br from-[#133a41] to-[#0e2c31] p-10 flex flex-col justify-center items-center text-center relative overflow-hidden rounded-sm"
+                                            className="md:col-span-2 md:row-span-2 p-10 flex flex-col justify-center items-center text-center relative overflow-hidden rounded-sm"
                                         >
-                                            {/* soft moving glow */}
+                                            {/* 1. BACKGROUND IMAGE LAYER */}
+                                            <div
+                                                className="absolute inset-0 bg-cover bg-center"
+                                                style={{ backgroundImage: `url(${image})` }}
+                                            />
+
+                                            {/* 2. GRADIENT OVERLAY (Provides the branding color & text readability) */}
+                                            <div className="absolute inset-0 bg-gradient-to-br from-[#133a41]/45 to-[#0e2c31]/80" />
+
+                                            {/* 3. SUBTLE PULSE GLOW */}
                                             <motion.div
-                                                className="absolute inset-0 bg-red-500/50"
-                                                animate={{ opacity: [0.2, 0.4, 0.2] }}
+                                                className="absolute inset-0 bg-red-500/20"
+                                                animate={{ opacity: [0.1, 0.2, 0.1] }}
                                                 transition={{ duration: 5, repeat: Infinity }}
                                             />
 
-                                            {/* floating accent */}
+                                            {/* 4. CONTENT (Floating Accent) */}
                                             <motion.div
-                                                animate={{ y: [0, -12, 0] }}
+                                                animate={{ y: [0, -10, 0] }}
                                                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                                                 className="relative z-10"
                                             >
@@ -188,9 +197,6 @@ export default function EventDetails()
                                                     Documented • Archived • Preserved
                                                 </p>
                                             </motion.div>
-
-                                            {/* subtle diagonal highlight */}
-                                            <div className="absolute inset-0 bg-gradient-to-tr from-red-900/20 via-transparent to-transparent pointer-events-none" />
                                         </motion.div>
                                     )}
 
@@ -250,43 +256,48 @@ export default function EventDetails()
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="max-w- "
                     >
-                        <div className="bg-gradient-to-br from-[#133a41] to-[#0f2f35]  p-12 md:p-20 relative overflow-hidden text-center shadow-2xl">
+                        <div className="bg-gradient-to-br from-[#133a41] to-[#0f2f35] p-12 md:p-20 relative overflow-hidden text-center shadow-2xl">
 
                             {/* Texture */}
-                            <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+                            <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
 
-                            {/* Floating accent line */}
+                            {/* Accent line */}
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-[2px] bg-red-500"></div>
 
-                            {/* Small intro text */}
+                            {/* Small intro */}
                             <p className="text-xs tracking-[0.4em] uppercase text-[#7fb8c1] mb-4 relative z-10">
-                                Institutional Journey Continues
+                                Careers & Opportunities
                             </p>
 
+                            {/* Main heading */}
                             <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight mb-6 relative z-10">
-                                Ready for the Next Chapter?
+                                Build the Future With Us
                             </h2>
 
+                            {/* Description */}
                             <p className="text-[#a0c5cb] text-base md:text-lg mb-6 max-w-2xl mx-auto relative z-10 leading-relaxed">
-                                Every event is a milestone — a reflection of growth, collaboration, and shared vision.
-                                What you’ve seen is only a glimpse of what’s ahead.
+                                We are looking for passionate individuals who want to create, innovate, and grow with us.
+                                Join our team and be part of meaningful work that shapes real impact.
                             </p>
 
                             {/* Highlight line */}
                             <p className="text-red-400 text-xs uppercase tracking-[0.3em] mb-10 relative z-10">
-                                Build • Connect • Evolve • Repeat
+                                Design • Build • Grow • Lead
                             </p>
 
-                            <button className="px-10 py-4 bg-red-700 text-white rounded-full font-bold uppercase tracking-[0.2em] text-[11px] hover:bg-white hover:text-[#133a41] transition-all duration-500 shadow-xl shadow-red-900/20 relative z-10">
-                                Explore Full Archive
-                            </button>
+                            {/* CTA BUTTON */}
+                            <Link to="/application">
+                                <button className="px-10 py-4 bg-red-800 text-white rounded-[4px] font-bold uppercase tracking-[0.2em] text-[11px] hover:bg-white hover:text-[#133a41] transition-all duration-500 shadow-xl shadow-red-900/20 relative z-10 cursor-pointer">
+                                    Apply Now
+                                </button>
+                            </Link>
 
                             {/* Sub text */}
                             <p className="mt-6 text-[11px] text-[#7fb8c1] relative z-10">
-                                Updated in real-time • Internal event database synced
+                                Applications reviewed continuously • Response within shortlisted candidates
                             </p>
+
                         </div>
                     </motion.div>
 

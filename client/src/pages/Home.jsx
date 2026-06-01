@@ -6,6 +6,7 @@ import Services from "./Services";
 import EmployeeOfTheMonth from "./EmployeeMonth";
 import MeetManagement from "./MeetManagement";
 import WorkflowEngine from "./WorkFlow";
+import EventsPreview from "./EventsPreview";
 
 export default function Home()
 {
@@ -16,6 +17,7 @@ export default function Home()
       {/* <OurTeam /> */}
       {/* <Services /> */}
       <WorkflowEngine />
+      <EventsPreview />
       <NewsUpdates />
     </div>
   );
