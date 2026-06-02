@@ -1,94 +1,153 @@
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { eventGallery } from "../db/events";
 
 export default function EventsPreview()
 {
-    // show only first 3–4 events
-    const previewEvents = eventGallery.slice(0, 3);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    useEffect(() =>
+    {
+        const interval = setInterval(() =>
+        {
+            setActiveIndex(prev => (prev + 1) % eventGallery.length);
+        }, 7000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    const activeEvent = eventGallery[activeIndex];
 
     return (
-        <section className="py-28 bg-gradient-to-b from-white via-[#f8fafc] to-slate-500/10 relative overflow-hidden">
+        <section className="relative h-[85vh] min-h-[700px] overflow-hidden">
 
-            {/* Soft background glow */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#133a41]/5 blur-3xl rounded-full"></div>
-            </div>
+            {/* Background Slider */}
+            <AnimatePresence mode="wait">
+                <motion.img
+                    key={activeIndex}
+                    src={activeEvent.image}
+                    alt={activeEvent.title}
+                    initial={{ opacity: 0, scale: 1.12 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                        duration: 2.8,
+                        ease: "easeOut"
+                    }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                />
+            </AnimatePresence>
 
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#05171b]/70 via-[#05171b]/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/10" />
 
-                {/* HEADER */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center max-w-2xl mx-auto mb-14"
-                >
-                    <p className="text-xs uppercase tracking-[0.4em] text-slate-500 mb-3">
-                        Moments • Culture • Milestones
-                    </p>
+            {/* Content */}
+            <div className="relative z-20 h-full flex items-center">
 
-                    <h2 className="text-4xl md:text-6xl font-semibold text-slate-900 tracking-tighter">
-                        Our Events
-                    </h2>
+                <div className="max-w-7xl mx-auto px-6 w-full">
 
-                    <p className="mt-4 text-slate-600 text-sm md:text-base leading-relaxed">
-                        A glimpse into our journey — retreats, collaborations, and defining
-                        moments that shape our culture and vision.
-                    </p>
-                </motion.div>
+                    <AnimatePresence mode="wait">
 
-                {/* EVENT GRID */}
-                <div className="grid md:grid-cols-3 gap-6 mb-12">
-                    {previewEvents.map((event, i) => (
                         <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.1, duration: 0.6 }}
-                            className="group relative overflow-hidden rounded-sm"
+                            key={activeIndex}
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -30 }}
+                            transition={{
+                                duration: 1.2,
+                                ease: "easeOut",
+                                delay: 0.6 // ⬅ IMPORTANT: gives image time to settle
+                            }}
+                            className="max-w-3xl"
                         >
-                            <img
-                                src={event.image}
-                                alt={event.title}
-                                className="w-full h-72 object-cover group-hover:scale-110 transition duration-700 brightness-[0.9] group-hover:brightness-100"
-                            />
 
-                            {/* overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                            {/* Label */}
+                            <div className="mb-6 flex items-center gap-4">
 
-                            {/* text */}
-                            <div className="absolute bottom-5 left-5 text-white">
-                                <p className="text-[10px] uppercase tracking-[0.3em] text-white/70">
-                                    {event.tag}
-                                </p>
-                                <h3 className="text-lg font-light">{event.title}</h3>
+                                <div className="w-12 h-[2px] bg-red-500" />
+
+                                <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-red-400">
+                                    Events & Culture
+                                </span>
+
                             </div>
+
+                            {/* Heading */}
+                            <h2 className="text-3xl md:text-7xl font-semibold tracking-tighter text-white leading-none">
+                                {activeEvent.headline}
+                            </h2>
+
+                            {/* Dynamic Event */}
+                            <div className="mt-10 border-l border-white/20 pl-6">
+
+                                <p className="text-[11px] uppercase tracking-[0.3em] text-white/50 mb-3">
+                                    Featured Event
+                                </p>
+
+                                <h3 className="text-2xl md:text-3xl text-white font-light mb-4">
+                                    {activeEvent.title}
+                                </h3>
+
+                                <p className="text-white/70 max-w-xl leading-relaxed text-xs md:text-base">
+                                    {activeEvent.description}
+                                </p>
+
+                            </div>
+
+                            {/* CTA */}
+                            <div className="mt-10 flex flex-wrap gap-4">
+
+                                <Link to="/events">
+                                    <button className="px-10 py-4 bg-[#133a41] hover:bg-[#0b2023] text-white rounded-[4px] uppercase tracking-[0.25em] text-[11px] font-bold transition-all cursor-pointer">
+                                        Explore Events
+                                    </button>
+                                </Link>
+
+                            </div>
+
                         </motion.div>
-                    ))}
+
+                    </AnimatePresence>
+
                 </div>
 
-                {/* CTA SECTION */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center"
-                >
-                    <p className="text-sm text-slate-600 mb-6">
-                        Explore the full archive of experiences and institutional milestones.
-                    </p>
+            </div>
 
-                    <Link to="/events">
-                        <button className="px-10 py-4 bg-[#133a41] text-white rounded-[4px] text-[11px] uppercase tracking-[0.25em] font-bold hover:bg-[#0f2f35] transition shadow-lg cursor-pointer">
-                            View All Events
-                        </button>
-                    </Link>
+            {/* Indicators */}
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-3">
 
-                </motion.div>
+                {eventGallery.map((_, index) => (
+                    <button
+                        key={index}
+                        onClick={() => setActiveIndex(index)}
+                        className={`h-[3px] transition-all duration-500 ${activeIndex === index
+                            ? "w-16 bg-white"
+                            : "w-8 bg-white/30"
+                            }`}
+                    />
+                ))}
 
             </div>
+
+            {/* Side Meta */}
+            <div className="absolute bottom-10 right-10 hidden lg:block z-30">
+
+                <div className="text-right">
+
+                    <p className="text-[10px] uppercase tracking-[0.3em] text-white/40">
+                        Event Archive
+                    </p>
+
+                    <p className="text-white/80 text-sm mt-2">
+                        {String(activeIndex + 1).padStart(2, "0")} /{" "}
+                        {String(eventGallery.length).padStart(2, "0")}
+                    </p>
+
+                </div>
+
+            </div>
+
         </section>
     );
 }

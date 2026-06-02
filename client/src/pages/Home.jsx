@@ -16,8 +16,8 @@ export default function Home()
       <EmployeeOfTheMonth />
       {/* <OurTeam /> */}
       {/* <Services /> */}
-      <WorkflowEngine />
       <EventsPreview />
+      <WorkflowEngine />
       <NewsUpdates />
     </div>
   );

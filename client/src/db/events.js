@@ -89,6 +89,7 @@ export const eventGallery = [
     id: "official-retreat",
     image: event1,
     title: "Official Retreat",
+    headline: "Where Teams Reconnect Beyond the Workplace",
     description:
       "Celebrating milestones and strengthening collaboration beyond the workplace.",
     tag: "Retreat",
@@ -100,6 +101,7 @@ export const eventGallery = [
     id: "social-events",
     image: event2,
     title: "Social Events and Engagements",
+    headline: "Celebrating Culture, Connection, and Community",
     description:
       "Strategic discussions and future planning with department leads.",
     tag: "Culture",
@@ -162,6 +164,7 @@ export const eventGallery = [
     image: event3,
     title: "Monthly Meetups",
     description: "Recognizing achievements and team dedication together.",
+    headline: "Shared Achievement",
     tag: "Management",
     date: "March 2026",
     size: "wide",
@@ -172,6 +175,7 @@ export const eventGallery = [
     image: event4,
     title: "Training & Development",
     description: "Continuous learning and development across departments.",
+    headline: "Investing in Growth, Knowledge, and Excellence",
     tag: "Workshop",
     date: "February 2026",
     size: "normal",
