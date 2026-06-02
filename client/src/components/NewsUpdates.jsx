@@ -40,72 +40,135 @@ function NewsUpdates()
   ];
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-32 overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="py-16 md:py-32 overflow-hidden bg-gradient-to-b from-white via-[#f6f8f9] to-[#eef3f5]"
+    >
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* 1. SECTION HEADER */}
-        <div className="flex flex-col items-center mb-12 md:mb-24">
-          <motion.h2
-            className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 text-center uppercase "
-            initial={{ opacity: 0, y: 20 }}
+        {/* SECTION HEADER */}
+        <div className="flex flex-col items-center mb-16 md:mb-24">
+
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
           >
-            Strategic <span className="text-red-700 font-light">Bulletins.</span>
-          </motion.h2>
-          <div className="h-1 w-20 bg-[#133a41] mt-6"></div>
+            <p className="text-[10px] uppercase tracking-[0.4em] text-slate-500 mb-4">
+              Intelligence • Updates • Reports
+            </p>
+
+            <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 uppercase">
+              Strategic <span className="text-red-700 font-light italic">Bulletins</span>
+            </h2>
+
+            <div className="mt-6 flex items-center justify-center gap-3">
+              <span className="w-10 h-[1px] bg-[#133a41]" />
+              <span className="w-2 h-2 bg-red-700 rounded-full" />
+              <span className="w-10 h-[1px] bg-[#133a41]" />
+            </div>
+          </motion.div>
+
         </div>
 
-        {/* 2. NEWS GRID - "Official Dossier" Style */}
+        {/* NEWS GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-32">
+
           {newsData.map((news, idx) => (
             <motion.div
               key={idx}
-              className={`relative p-8 bg-white border border-slate-200 transition-all duration-500 cursor-pointer group ${expanded === idx ? "ring-2 ring-red-700 shadow-2xl" : "hover:border-red-700"
-                }`}
               onClick={() => toggleExpand(idx)}
+              className={`
+        relative group cursor-pointer overflow-hidden
+        bg-gradient-to-b from-white to-slate-50
+        border border-slate-200
+        transition-all duration-500
+        ${expanded === idx
+                  ? "ring-1 ring-red-700 shadow-[0_25px_60px_-25px_rgba(0,0,0,0.35)]"
+                  : "hover:border-slate-400 hover:shadow-lg"}
+      `}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
-              {/* Card Header Info */}
-              <div className="flex justify-between items-start mb-6">
-                <div className="flex items-center gap-2 text-[10px] font-bold text-red-700 uppercase tracking-widest">
-                  <Calendar size={12} />
-                  {news.date}
+
+              {/* subtle accent glow */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700 bg-gradient-to-br from-red-700/5 via-transparent to-[#133a41]/5" />
+
+              {/* CARD CONTENT */}
+              <div className="relative p-8">
+
+                {/* META HEADER */}
+                <div className="flex justify-between items-center mb-6">
+
+                  <div className="flex items-center gap-2 text-[10px] font-bold text-red-700 uppercase tracking-widest">
+                    <Calendar size={12} />
+                    {news.date}
+                  </div>
+
+                  <span className="px-2 py-1 bg-slate-100 text-[9px] font-semibold text-slate-500 uppercase tracking-wider rounded-sm">
+                    {news.tag}
+                  </span>
+
                 </div>
-                <span className="px-2 py-0.5 bg-slate-100 text-[9px] font-bold text-slate-500 uppercase rounded-sm">
-                  {news.tag}
-                </span>
-              </div>
 
-              <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-red-700 transition-colors leading-tight">
-                {news.title}
-              </h3>
+                {/* TITLE */}
+                <h3 className="text-xl md:text-2xl font-semibold text-slate-900 mb-4 leading-snug group-hover:text-red-700 transition-colors duration-300">
+                  {news.title}
+                </h3>
 
-              <p className="text-sm text-slate-500 leading-relaxed">
-                {news.summary}
-              </p>
+                {/* SUMMARY */}
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {news.summary}
+                </p>
 
-              <AnimatePresence>
-                {expanded === idx && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    className="overflow-hidden"
-                  >
-                    <p className="mt-6 pt-6 border-t border-slate-100 text-sm text-slate-600 italic leading-relaxed">
-                      {news.details}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                {/* EXPANDABLE CONTENT */}
+                <AnimatePresence>
+                  {expanded === idx && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="mt-6 pt-6 border-t border-slate-200">
+                        <p className="text-sm text-slate-600 leading-relaxed italic">
+                          {news.details}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
-              <div className="mt-8 flex items-center justify-between">
-                <span className="text-[10px] font-semibold uppercase text-slate-400 group-hover:text-slate-900">
-                  {expanded === idx ? "Close File" : "Open Dossier"}
-                </span>
-                <ChevronRight className={`transition-transform duration-300 ${expanded === idx ? "rotate-90 text-red-700" : "text-slate-300 group-hover:translate-x-1"}`} size={18} />
+                {/* FOOTER ACTION */}
+                <div className="mt-8 flex items-center justify-between">
+
+                  <span className={`
+            text-[10px] font-semibold uppercase tracking-[0.25em]
+            transition-colors duration-300
+            ${expanded === idx ? "text-red-700" : "text-slate-400 group-hover:text-slate-700"}
+          `}>
+                    {expanded === idx ? "Close File" : "Open Dossier"}
+                  </span>
+
+                  <ChevronRight
+                    size={18}
+                    className={`
+              transition-all duration-300
+              ${expanded === idx
+                        ? "rotate-90 text-red-700"
+                        : "text-slate-300 group-hover:translate-x-1 group-hover:text-slate-700"}
+            `}
+                  />
+
+                </div>
+
               </div>
             </motion.div>
           ))}
+
         </div>
 
         {/* 3. INSIGHTS SECTION - "Scale Analytics" */}

@@ -45,7 +45,7 @@ const EmployeeOfTheMonth = () =>
     return (
         <section className="py-16 md:py-24 bg-slate-50 relative overflow-hidden border-b border-slate-200">
             {/* Structural Backdrop */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+            <div className="absolute inset-0 opacity-[0.1] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
             <div className="absolute top-0 right-0 w-1/3 h-full bg-[#133a41]/5 -skew-x-12 translate-x-1/2"></div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -59,7 +59,7 @@ const EmployeeOfTheMonth = () =>
                                 Personnel Excellence Appreciation
                             </p>
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-slate-900 leading-none">
+                        <h2 className="text-4xl md:text-6xl font-medium tracking-tighter text-slate-900 leading-none">
                             Employee of the Month -  <span className="text-red-700 font-light italic">April, 2026</span>
                         </h2>
                         <p className="mt-4 text-slate-500 text-xs md:text-sm uppercase tracking-[0.25em] font-bold">
@@ -91,7 +91,7 @@ const EmployeeOfTheMonth = () =>
                                 <img
                                     src={emp.image}
                                     alt={emp.name}
-                                    className="w-full h-full object-cover  contrast-125 brightness-75  transition-all duration-700 group-hover:scale-105  group-hover:mix-blend-normal group-hover:brightness-100"
+                                    className="w-full h-full object-cover  contrast-125 brightness-95 transition-all duration-700 group-hover:scale-105  group-hover:mix-blend-normal group-hover:brightness-100"
                                 />
                             </div>
 
@@ -149,6 +149,7 @@ const EmployeeOfTheMonth = () =>
                         </motion.div>
                     ))}
                 </div>
+
             </div>
         </section>
     );
