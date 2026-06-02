@@ -28,7 +28,7 @@ export default function EventsPreview()
                         Moments • Culture • Milestones
                     </p>
 
-                    <h2 className="ext-4xl md:text-6xl font-semibold text-slate-900 tracking-tighter">
+                    <h2 className="text-4xl md:text-6xl font-semibold text-slate-900 tracking-tighter">
                         Our Events
                     </h2>
 
