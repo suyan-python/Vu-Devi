@@ -2,6 +2,7 @@ import event1 from "../assets/outings/1.jpeg";
 import event2 from "../assets/outings/84.jpeg";
 import event3 from "../assets/outings/55.jpeg";
 import event4 from "../assets/outings/71.jpeg";
+import event5 from "../assets/outings/119.jpeg";
 
 import e1 from "../assets/outings/2.jpeg";
 import e2 from "../assets/outings/3.jpeg";
@@ -84,6 +85,32 @@ import e30 from "../assets/outings/74.jpeg";
 import e31 from "../assets/outings/72.jpeg";
 import e32 from "../assets/outings/73.jpeg";
 
+import e79 from "../assets/outings/127.jpeg";
+import e80 from "../assets/outings/120.jpeg";
+import e81 from "../assets/outings/121.jpeg";
+import e82 from "../assets/outings/122.jpeg";
+import e83 from "../assets/outings/123.jpeg";
+import e84 from "../assets/outings/124.jpeg";
+import e85 from "../assets/outings/125.jpeg";
+import e86 from "../assets/outings/126.jpeg";
+import e87 from "../assets/outings/127.jpeg";
+import e88 from "../assets/outings/128.jpeg";
+import e89 from "../assets/outings/129.jpeg";
+import e90 from "../assets/outings/130.jpeg";
+import e91 from "../assets/outings/131.jpeg";
+import e92 from "../assets/outings/132.jpeg";
+import e93 from "../assets/outings/133.jpeg";
+import e94 from "../assets/outings/134.jpeg";
+import e95 from "../assets/outings/135.jpeg";
+import e96 from "../assets/outings/136.jpeg";
+import e97 from "../assets/outings/137.jpeg";
+import e98 from "../assets/outings/138.jpeg";
+import e99 from "../assets/outings/139.jpeg";
+import e100 from "../assets/outings/140.jpeg";
+import e101 from "../assets/outings/141.jpeg";
+import e102 from "../assets/outings/142.jpeg";
+import e103 from "../assets/outings/143.jpeg";
+
 export const eventGallery = [
   {
     id: "official-retreat",
@@ -92,8 +119,8 @@ export const eventGallery = [
     headline: "Where Teams Reconnect Beyond the Workplace",
     description:
       "Celebrating milestones and strengthening collaboration beyond the workplace.",
-    tag: "Retreat",
-    date: "May 2026",
+    tag: "Offsites",
+    date: "August 2025",
     size: "large",
     images: [e1, e2, e3, e4, e5, e6, e7, e9, e10],
   },
@@ -105,7 +132,7 @@ export const eventGallery = [
     description:
       "Strategic discussions and future planning with department leads.",
     tag: "Culture",
-    date: "April 2026",
+    date: "January 2026",
     size: "tall",
     images: [
       e34,
@@ -165,8 +192,8 @@ export const eventGallery = [
     title: "Monthly Meetups",
     description: "Recognizing achievements and team dedication together.",
     headline: "Shared Achievement",
-    tag: "Management",
-    date: "March 2026",
+    tag: "Milestones",
+    date: "2025-2026",
     size: "wide",
     images: [e17, e19, e20, e21, e22, e26, e24, e25, e28, e29, e30],
   },
@@ -176,9 +203,46 @@ export const eventGallery = [
     title: "Training & Development",
     description: "Continuous learning and development across departments.",
     headline: "Investing in Growth, Knowledge, and Excellence",
-    tag: "Workshop",
-    date: "February 2026",
+    tag: "Training",
+    date: "April 2025",
     size: "normal",
     images: [e31, e32],
+  },
+  {
+    id: "outdoor-meetings",
+    image: event5,
+    title: "Outdoor Meetings",
+    description: "Connecting with colleagues in a relaxed, natural setting.",
+    headline: "Building Relationships Beyond the Office",
+    tag: "Culture",
+    date: "June 2026",
+    size: "normal",
+    images: [
+      e79,
+      e80,
+      e81,
+      e82,
+      e83,
+      e84,
+      e85,
+      e86,
+      e87,
+      e88,
+      e89,
+      e90,
+      e91,
+      e92,
+      e93,
+      e94,
+      e95,
+      e96,
+      e97,
+      e98,
+      e99,
+      e100,
+      e101,
+      e102,
+      e103,
+    ],
   },
 ];

@@ -1,9 +1,5 @@
 import React from 'react'
 import { motion } from "framer-motion";
-import event1 from "../assets/outings/1.jpeg";
-import event2 from "../assets/outings/46.jpeg";
-import event3 from "../assets/outings/47.jpeg";
-import event4 from "../assets/outings/4.jpeg";
 import { ArrowRight, CalendarDays, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { eventGallery } from "../db/events";
@@ -156,8 +152,6 @@ const Events = () =>
                     </motion.div>
                 ))}
             </motion.div>
-
-
 
         </div>
     )
