@@ -131,17 +131,12 @@ export default function EventDetails()
 
                 {/* 3. MASONRY GALLERY: The "Fun" Luxury Grid */}
 
-
-
-
-
-
                 {/* BOTTOM SECTION: The Climax */}
                 <div className="py-24 bg-gradient-to-b from-white via-[#f8fbfc] to-white relative">
 
                     {/* Soft Glow Accent */}
                     <div className="absolute inset-0 pointer-events-none">
-                        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#133a41]/40 blur-3xl rounded-full"></div>
+                        <div className="hidden md:absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#133a41]/40 blur-3xl rounded-full"></div>
                     </div>
 
                     {/* CTA CARD */}
