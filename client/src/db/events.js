@@ -1,4 +1,4 @@
-import event1 from "../assets/outings/136.jpeg";
+import event1 from "../assets/outings/18.jpeg";
 import event2 from "../assets/outings/84.jpeg";
 import event3 from "../assets/outings/55.jpeg";
 import event4 from "../assets/outings/71.jpeg";
@@ -42,11 +42,8 @@ import e51 from "../assets/outings/91.jpeg";
 import e52 from "../assets/outings/92.jpeg";
 import e53 from "../assets/outings/93.jpeg";
 import e54 from "../assets/outings/94.jpeg";
-import e55 from "../assets/outings/95.jpeg";
 import e56 from "../assets/outings/96.jpeg";
-import e57 from "../assets/outings/97.jpeg";
 import e58 from "../assets/outings/98.jpeg";
-import e59 from "../assets/outings/99.jpeg";
 import e60 from "../assets/outings/100.jpeg";
 import e61 from "../assets/outings/101.jpeg";
 import e62 from "../assets/outings/102.jpeg";
@@ -160,11 +157,11 @@ export const eventGallery = [
       e52,
       e53,
       e54,
-      e55,
+
       e56,
-      e57,
+
       e58,
-      e59,
+
       e60,
       e61,
       e62,
