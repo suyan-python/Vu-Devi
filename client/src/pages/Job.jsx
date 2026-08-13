@@ -11,7 +11,7 @@ const Job = () =>
 
     const scrollToJobs = () =>
     {
-        const section = document.getElementById("jobs");
+        const section = document.getElementById("generalForm");
         const offset = 80; // adjust based on navbar height
         const top = section.getBoundingClientRect().top + window.scrollY - offset;
 
@@ -117,14 +117,14 @@ const Job = () =>
             <section className="w-full min-h-screen pt-16 md:pt-32">
                 {/* 1. RECRUITMENT HERO: Command Center Style */}
                 <div className="w-full px-6 md:px-12 ">
-                    <div className="max-w-7xl mx-auto py-14 md:py-20">
+                    {/* <div className="max-w-7xl mx-auto py-14 md:py-20">
                         <div className="text-center">
                             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-800 to-slate-900 text-white text-[8px] md:text-sm font-bold uppercase tracking-wider rounded-lg mb-8 shadow-lg">
                                 <Briefcase size={16} />
                                 1 Active Openings | Apply Today
                             </div>
 
-                            {/* H1 - Keyword-optimized like top portals */}
+
                             <h1 className="header text-2xl md:text-6xl font-bold tracking-tight text-slate-900 leading-tight mb-6">
                                 Sales & Growth Jobs in Nepal
                                 <br />
@@ -134,7 +134,7 @@ const Job = () =>
                                 </span>
                             </h1>
 
-                            {/* H2 - Benefits + CTA like JobsNepal */}
+
                             <div className="max-w-3xl mx-auto">
                                 <h2 className="text-sm md:text-2xl text-slate-700 font-medium mb-4 leading-tight">
                                     Hiring: <span className="font-bold">Country Lead, Nepal</span>
@@ -145,7 +145,7 @@ const Job = () =>
                                     and career advancement.
                                 </p>
 
-                                {/* CTA Buttons - Conversion focus like KumariJob */}
+
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                                     <a
                                         className="bg-gradient-to-r from-slate-900 to-slate-800 text-white md:px-8 px-4 py-2 md:py-4 rounded-xl font-bold text-xs md:text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200"
@@ -153,12 +153,61 @@ const Job = () =>
                                     >
                                         Apply Country Lead, Nepal
                                     </a>
-                                    {/* <a
+                                    <a
                                         className="border-2 border-slate-200 bg-white text-slate-900 md:px-8 px-4 py-2 md:py-4 rounded-xl font-bold text-xs md:text-lg shadow-lg hover:shadow-xl hover:border-emerald-400 transition-all duration-200"
                                         onClick={scrollToJobs}
                                     >
                                         Medical Report Jobs
-                                    </a> */}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> */}
+
+                    <div className="max-w-7xl mx-auto py-14 md:py-20">
+                        <div className="text-center">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-800 to-slate-900 text-white text-[8px] md:text-sm font-bold uppercase tracking-wider rounded-lg mb-8 shadow-lg">
+                                <Briefcase size={16} />
+                                No Current Openings
+                            </div>
+
+                            {/* H1 - SEO focused */}
+                            <h1 className="header text-2xl md:text-6xl font-bold tracking-tight text-slate-900 leading-tight mb-6">
+                                Careers at Vu Devi Services
+                                <br />
+
+                                <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent font-light">
+                                    Future Opportunities in Nepal
+                                </span>
+                            </h1>
+
+                            <div className="max-w-3xl mx-auto">
+                                <h2 className="text-sm md:text-2xl text-slate-700 font-medium mb-4 leading-tight">
+                                    We're not hiring right now, but we'd love to hear from you.
+                                </h2>
+
+                                <p className="text-xs md:text-lg text-slate-600 leading-relaxed mb-8">
+                                    Vu Devi Services is always looking to connect with talented and ambitious
+                                    professionals in Nepal. While we don't have any open positions at
+                                    the moment, you can share your profile with us and we'll keep you
+                                    in mind for future opportunities.
+                                </p>
+
+                                {/* CTA */}
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                                    <a
+                                        href="mailto:info@vudeviservices.com.np"
+                                        className="bg-gradient-to-r from-slate-900 to-slate-800 text-white md:px-8 px-4 py-2 md:py-4 rounded-xl font-medium text-xs md:text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200"
+                                    >
+                                        Share Your Profile
+                                    </a>
+
+                                    <a
+                                        onClick={scrollToJobs}
+                                        className="border-2 border-slate-200 bg-white text-slate-900 md:px-8 px-4 py-2 md:py-4 rounded-xl font-medium text-xs md:text-lg shadow-lg hover:shadow-xl hover:border-emerald-400 transition-all duration-200 cursor-pointer"
+                                    >
+                                        Send us your CV
+                                    </a>
                                 </div>
                             </div>
                         </div>

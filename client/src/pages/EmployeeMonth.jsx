@@ -153,9 +153,8 @@ const EmployeeOfTheMonth = () =>
             </div>
 
 
-            <div className="max-w-7xl mx-auto px-6 relative z-10 my-24">
+            {/* <div className="max-w-7xl mx-auto px-6 relative z-10 my-24">
 
-                {/* 1. HEADER: Institutional Authority */}
                 <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
                     <div className="border-l-4 border-red-700 pl-8">
                         <div className="flex items-center gap-2 mb-4">
@@ -180,7 +179,6 @@ const EmployeeOfTheMonth = () =>
                     </div>
                 </div>
 
-                {/* 2. EMPLOYEE GRID: Balanced 3-Column Layout */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
                     {employees.map((emp, idx) => (
                         <motion.div
@@ -191,7 +189,7 @@ const EmployeeOfTheMonth = () =>
                             transition={{ delay: idx * 0.15, duration: 0.6 }}
                             className="group relative h-[500px] lg:h-[600px] overflow-hidden bg-[#133a41] rounded-sm shadow-2xl"
                         >
-                            {/* IMAGE NORMALIZATION: Fixes clashing backgrounds */}
+
                             <div className="absolute inset-0 w-full h-full bg-[#133a41]">
                                 <img
                                     src={emp.image}
@@ -200,16 +198,16 @@ const EmployeeOfTheMonth = () =>
                                 />
                             </div>
 
-                            {/* OVERLAY GRADIENTS (60-30-10 Rule) */}
+
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0f2f34] via-[#133a41]/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
 
-                            {/* TOP ACCENT LINE */}
+
                             <div className="absolute top-0 left-0 w-full h-1 bg-red-700 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
 
-                            {/* CONTENT ARCHITECTURE */}
+
                             <div className="absolute inset-0 p-8 flex flex-col">
 
-                                {/* Top Corner: Meta Data */}
+
                                 <div className="flex justify-between items-start opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-[-10px] group-hover:translate-y-0">
                                     <div className="p-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-sm">
                                         <ShieldCheck size={16} className="text-red-500" />
@@ -217,7 +215,7 @@ const EmployeeOfTheMonth = () =>
                                     <span className="text-[9px] font-mono text-white/40 tracking-tighter">REF_0{idx + 1}</span>
                                 </div>
 
-                                {/* Bottom Section: Info & Achievement */}
+
                                 <div className="mt-auto">
                                     <div className="mb-6">
                                         <h3 className="text-2xl lg:text-3xl font-bold text-white tracking-tighter leading-none mb-2">
@@ -231,7 +229,7 @@ const EmployeeOfTheMonth = () =>
                                         </div>
                                     </div>
 
-                                    {/* ACHIEVEMENT REVEAL: Hidden until hover */}
+
                                     <div className="h-0 group-hover:h-32 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 overflow-hidden">
                                         <div className="pt-4 border-t border-white/10">
                                             <Quote className="text-red-700 mb-2" size={16} />
@@ -241,7 +239,7 @@ const EmployeeOfTheMonth = () =>
                                         </div>
                                     </div>
 
-                                    {/* STATIC STATUS BAR */}
+
                                     <div className="mt-6 pt-6 border-t border-white/5 flex justify-between items-center">
                                         <div className="flex items-center gap-2">
                                             <Award size={14} className="text-red-500" />
@@ -255,7 +253,7 @@ const EmployeeOfTheMonth = () =>
                     ))}
                 </div>
 
-            </div>
+            </div> */}
 
 
         </section>
