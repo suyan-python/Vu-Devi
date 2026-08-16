@@ -6,10 +6,14 @@ import akriti from "../assets/month/akriti.jpeg";
 import subekshya from "../assets/month/subekshya.jpeg";
 import shruti from "../assets/month/shruti.jpeg";
 
+import sajana from "../assets/month/sajana.jpeg";
+import bivek from "../assets/month/bivek.jpeg";
+import asmita from "../assets/month/asmita.jpeg";
+
 import { motion } from "framer-motion";
 
 
-const employees = [
+const employees1 = [
     {
         name: "Dr. Akriti Shrestha",
         designation: "Medical Report Writer",
@@ -38,6 +42,37 @@ const employees = [
     //     image: suman,
     //     achievement: "Developed a new data visualization dashboard that enhanced the team's ability to track key performance metrics, leading to a 20% improvement in decision-making speed."
     // },
+];
+
+const employees2 = [
+    // {
+    //     name: "Dr. Akriti Shrestha",
+    //     designation: "Medical Report Writer",
+    //     team: "Team: Nikita",
+    //     image: akriti,
+    //     achievement: "Recognized for consistently delivering clear, well-structured medical reports while maintaining high standards of clinical accuracy and documentation quality."
+    // },
+    {
+        name: "Pt. Sajana Poudel",
+        designation: "PT Report Writer",
+        team: "Team: Rajiya",
+        image: sajana,
+        achievement: "Demonstrates strong consistency in producing detailed and patient-focused physical therapy reports with accurate clinical interpretation."
+    },
+    {
+        name: "Mr. Bivek Shrestha",
+        designation: "Medical Lister",
+        team: "Team: Bandana",
+        image: bivek,
+        achievement: "Maintains high precision in organizing and structuring medical data, contributing to smoother workflows and reliable documentation processes."
+    },
+    {
+        name: "Ms. Asmita Iteni",
+        designation: "Data Analyst",
+        team: "Team: Ravi",
+        image: asmita,
+        achievement: "Developed a new data visualization dashboard that enhanced the team's ability to track key performance metrics, leading to a 20% improvement in decision-making speed."
+    },
 ];
 
 const EmployeeOfTheMonth = () =>
@@ -77,7 +112,7 @@ const EmployeeOfTheMonth = () =>
 
                 {/* 2. EMPLOYEE GRID: Balanced 3-Column Layout */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-                    {employees.map((emp, idx) => (
+                    {employees1.map((emp, idx) => (
                         <motion.div
                             key={idx}
                             initial={{ opacity: 0, y: 30 }}
@@ -153,7 +188,7 @@ const EmployeeOfTheMonth = () =>
             </div>
 
 
-            {/* <div className="max-w-7xl mx-auto px-6 relative z-10 my-24">
+            <div className="max-w-7xl mx-auto px-6 relative z-10 my-24">
 
                 <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
                     <div className="border-l-4 border-red-700 pl-8">
@@ -180,7 +215,7 @@ const EmployeeOfTheMonth = () =>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-                    {employees.map((emp, idx) => (
+                    {employees2.map((emp, idx) => (
                         <motion.div
                             key={idx}
                             initial={{ opacity: 0, y: 30 }}
@@ -252,8 +287,8 @@ const EmployeeOfTheMonth = () =>
                         </motion.div>
                     ))}
                 </div>
-
-            </div> */}
+                1
+            </div>
 
 
         </section>
