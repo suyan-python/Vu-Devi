@@ -86,15 +86,23 @@ const EmployeeOfTheMonth = () =>
             <div className="max-w-7xl mx-auto px-6 relative z-10">
 
                 {/* 1. HEADER: Institutional Authority */}
-                <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
+                <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8">
                     <div className="border-l-4 border-red-700 pl-8">
                         <div className="flex items-center gap-2 mb-4">
-                            <span className="w-8 h-[1px] bg-[#133a41]"></span>
-                            <p className="text-[10px] font-black text-[#133a41] uppercase tracking-[0.4em]">
+                            <span className="hidden md:block w-8 h-[1px] bg-[#133a41]"></span>
+                            <p className=" text-[8px] md:text-[10px] font-black text-[#133a41] uppercase tracking-[0.4em]">
                                 Personnel Excellence Appreciation
                             </p>
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-medium tracking-tighter text-slate-900 leading-none">
+                        <h2 className=" text-3xl
+                    sm:text-5xl
+                    md:text-6xl
+                    lg:text-7xl
+                    xl:text-[5.5rem]
+                    font-semibold
+                    tracking-tighter
+                    leading-[0.98]
+                    text-slate-900">
                             Employee of the Month -  <span className="text-red-700 font-light italic">July, 2026</span>
                         </h2>
                         <p className="mt-4 text-slate-500 text-xs md:text-sm uppercase tracking-[0.25em] font-bold">
@@ -287,7 +295,6 @@ const EmployeeOfTheMonth = () =>
                         </motion.div>
                     ))}
                 </div>
-                1
             </div>
 
 

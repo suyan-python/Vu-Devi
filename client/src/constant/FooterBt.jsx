@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Home, Briefcase, Stethoscope, PhoneCall, Info } from "lucide-react";
+import { Home, Briefcase, Stethoscope, PhoneCall, Info, Icon, CalendarDays } from "lucide-react";
 import { Mail, Phone, MapPin } from "lucide-react"; // Optional: Use icons for a professional touch
 
 const FooterBT = () =>
@@ -37,9 +37,10 @@ const FooterBT = () =>
 
   const navItems = [
     { label: "Home", to: "/", icon: <Home size={20} /> },
-    { label: "Services", to: "/services", icon: <Stethoscope size={20} /> },
-    { label: "Jobs", to: "/application", icon: <Briefcase size={20} /> },
     { label: "About", to: "/about", icon: <Info size={20} /> },
+    { label: "Events", to: "/events", icon: <CalendarDays size={20} /> },
+    { label: "Jobs", to: "/application", icon: <Briefcase size={20} /> },
+    { label: "Services", to: "/services", icon: <Stethoscope size={20} /> },
     { label: "Contact", to: "/contact", icon: <PhoneCall size={20} /> },
   ];
 

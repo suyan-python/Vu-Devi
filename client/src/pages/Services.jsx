@@ -80,12 +80,12 @@ const Services = () =>
     <>
 
 
-      <section className="pt-32 ">
+      <section className=" pt-24 md:pt-32 ">
         <div className="max-w-7xl mx-auto px-6">
 
           {/* Institutional Header */}
           <div className="flex flex-col items-center mb-8 text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#133a41] text-white text-[8px] md:text-[10px] font-black uppercase tracking-[0.3em] rounded-sm mb-6">
+            <div className="inline-flex items-center gap-2  text-[#133a41] text-[8px] md:text-[10px] font-black uppercase tracking-[0.3em] rounded-sm mb-6">
               Institutional Capabilities
             </div>
             <h2 className="text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">

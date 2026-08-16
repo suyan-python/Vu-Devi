@@ -40,7 +40,7 @@ function Contact()
               viewport={{ once: true }}
             >
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-700 text-white text-[8px] md:text-[10px] font-bold uppercase tracking-widest rounded-sm mb-6">
+                <div className="inline-flex items-center gap-2  text-[#133a41] text-[8px] md:text-[10px] font-bold uppercase tracking-widest rounded-sm mb-6">
                   <Globe size={12} />
                   Global Operations
                 </div>

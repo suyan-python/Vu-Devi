@@ -48,7 +48,7 @@ function Navbar()
 
   const navLinks = [
     { to: "/", label: "Home" },
-    { to: "/about", label: "Vudevi" },
+    { to: "/about", label: "Who We Are" },
     { to: "/team", label: "Our Team" },
     { to: "/events", label: "Our Events" },
     { to: "/services", label: "Services" },
@@ -57,7 +57,7 @@ function Navbar()
   ];
 
   const getActiveClass = ({ isActive }) =>
-    `relative text-sm  transition-colors duration-300 ${isActive ? "text-[#133a41] font-bold" : "hover:text-[#133a41] font-medium"
+    `relative text-sm  transition-colors duration-300 ${isActive ? "text-red-700 font-extrabold" : "hover:text-[#133a41] font-medium"
     }`;
   return (
     <>

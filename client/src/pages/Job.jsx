@@ -186,7 +186,7 @@ const Job = () =>
                                     We're not hiring right now, but we'd love to hear from you.
                                 </h2>
 
-                                <p className="text-xs md:text-lg text-slate-600 leading-relaxed mb-8">
+                                <p className="text-[10px] md:text-lg text-slate-600 leading-relaxed mb-8">
                                     Vu Devi Services is always looking to connect with talented and ambitious
                                     professionals in Nepal. While we don't have any open positions at
                                     the moment, you can share your profile with us and we'll keep you
