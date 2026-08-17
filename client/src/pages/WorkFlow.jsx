@@ -64,7 +64,7 @@ export default function WorkflowEngine()
                             <button
                                 key={step.id}
                                 onClick={() => setActiveStep(index)}
-                                className={`w-full flex items-center gap-6 p-6 transition-all duration-300 border-l-4 text-left
+                                className={`w-full flex items-center gap-6 p-6 transition-all duration-300 border-l-4 text-left cursor-pointer
                   ${activeStep === index
                                         ? "bg-slate-50 border-red-700"
                                         : "bg-transparent border-slate-100 hover:border-slate-300"}`}

@@ -27,7 +27,6 @@ const companies = [
         url: "https://evolvevue.com.np",
         accent: "#d4a72c", // golden
 
-
     },
     {
         id: "03",
@@ -55,7 +54,7 @@ const companies = [
         shortName: "INAYA",
         description: "Coffee & Hospitality",
         logo: inaya,
-        url: "https://jewelhimalayanproducts.com/inaya",
+        url: "https://jewelhimalayanproducts.com/inaya-cafe",
         accent: "#eab308", // yellow
 
     },
