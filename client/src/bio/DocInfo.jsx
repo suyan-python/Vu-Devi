@@ -181,12 +181,12 @@ function DocInfo()
 
                 {/* Metadata Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                  <div className="flex items-center gap-3 text-slate-600">
+                  {/* <div className="flex items-center gap-3 text-slate-600">
                     <Mail size={18} className="text-slate-400" />
                     <a href={`mailto:${doctor.mail}`} className="hover:text-[#133a41] underline decoration-slate-200 underline-offset-4">
                       {doctor.mail}
                     </a>
-                  </div>
+                  </div> */}
                   <div className="flex items-center gap-3 text-slate-600">
                     <Calendar size={18} className="text-slate-400" />
                     <span>Tenure: {doctor.joiningDate}</span>
