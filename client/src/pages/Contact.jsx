@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock, Globe, ArrowRight } from "lucide-react";
+import { Facebook, Instagram, Linkedin, ArrowUpRight } from "lucide-react";
 import { Helmet } from "react-helmet";
 
 
@@ -33,78 +34,152 @@ function Contact()
           <div className="flex flex-col lg:flex-row gap-16 items-start">
 
             {/* LEFT: Institutional Contact Details */}
-            <motion.div
-              className="w-full lg:w-5/12 space-y-10"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <div>
-                <div className="inline-flex items-center gap-2  text-[#133a41] text-[8px] md:text-[10px] font-bold uppercase tracking-widest rounded-sm mb-6">
+            <motion.div className="w-full lg:w-5/12" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              {/* HEADER */}
+              <div className="mb-10">
+                <div className="flex items-center gap-2 text-[#133a41] text-[8px] md:text-[10px] font-bold uppercase tracking-[0.25em] mb-5">
                   <Globe size={12} />
                   Global Operations
                 </div>
-                <h1 className="text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
-                  Connect with our <br />
-                  <span className="text-[#133a41] font-light">Service Center</span>
+
+                <h1 className="text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-[1.05]">
+                  Connect with our
+                  <span className="block text-[#133a41] font-light mt-1">
+                    Service Center.
+                  </span>
                 </h1>
-                <p className="mt-6 text-slate-600 text-xs md:text-lg leading-relaxed border-l-2 border-slate-200 pl-6">
-                  Vu Devi Services Pvt. Ltd. provides 24/7 support coordination for international medical documentation projects.
+
+                <p className="mt-6 text-xs md:text-lg text-slate-500 leading-relaxed max-w-xl">
+                  Vu Devi Services Pvt. Ltd. provides dedicated support coordination for international medical documentation projects.
                 </p>
               </div>
 
-              {/* Structured Contact Cards */}
-              <div className="grid grid-cols-1 gap-6">
-                {/* Card 1: Email */}
-                <a href="mailto:info@vudeviservices.com.np" className="group flex items-start gap-5 p-6 bg-white border border-slate-100 shadow-sm hover:border-red-700 transition-all duration-300">
-                  <div className="p-3 bg-slate-50 text-red-700 group-hover:bg-red-700 group-hover:text-white transition-colors">
-                    <Mail size={24} />
-                  </div>
-                  <div>
-                    <p className="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Official Inquiry</p>
 
-                    <a href="mailto:info@vudeviservices.com.np" className="text-xs md:text-lg font-semibold text-slate-800" aria-label="Email Vu Devi Services">info@vudeviservices.com.np</a>
+              {/* CONTACT INFORMATION */}
+              <div className="border-t border-slate-200">
+
+                {/* EMAIL */}
+                <a href="mailto:info@vudeviservices.com.np" className="group flex items-center justify-between gap-5 py-5 md:py-6 border-b border-slate-200 hover:px-2 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 flex items-center justify-center bg-slate-50 text-red-700 group-hover:bg-red-700 group-hover:text-white transition-all duration-300">
+                      <Mail size={18} />
+                    </div>
+
+                    <div>
+                      <p className="text-[8px] md:text-[9px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-1">
+                        Official Inquiry
+                      </p>
+                      <p className="text-xs md:text-base font-semibold text-slate-800 group-hover:text-red-700 transition-colors">
+                        info@vudeviservices.com.np
+                      </p>
+                    </div>
                   </div>
+
+                  <ArrowUpRight size={16} className="text-slate-300 group-hover:text-red-700 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
 
-                {/* Card 2: Phone */}
-                <div className="group flex items-start gap-5 p-6 bg-white border border-slate-100 shadow-sm hover:border-[#133a41] transition-all duration-300">
-                  <div className="p-3 bg-slate-50 text-[#133a41] group-hover:bg-[#133a41] group-hover:text-white transition-colors">
-                    <Phone size={24} />
-                  </div>
-                  <div>
-                    <p className="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Direct Assistance</p>
-                    <a
-                      href="tel:+015924646"
-                      className="text-xs md:text-md font-bold text-slate-800 hover:underline"
-                    >
-                      015924646
-                    </a>
-                    <br />
-                    <a
-                      href="tel:+9779817576110"
-                      className="text-xs md:text-md font-bold text-slate-800 hover:underline"
-                    >
-                      9817576110
-                    </a>
-                    <p className="text-xs text-slate-500 mt-1 font-medium italic">Available during business hours (NPT)</p>
+
+                {/* PHONE */}
+                <div className="group flex items-center justify-between gap-5 py-5 md:py-6 border-b border-slate-200">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 flex items-center justify-center bg-slate-50 text-[#133a41] group-hover:bg-[#133a41] group-hover:text-white transition-all duration-300">
+                      <Phone size={18} />
+                    </div>
+
+                    <div>
+                      <p className="text-[8px] md:text-[9px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-1">
+                        Direct Assistance
+                      </p>
+
+                      <div className="flex flex-wrap gap-x-3 gap-y-1">
+                        <a href="tel:015924646" className="text-xs md:text-base font-semibold text-slate-800 hover:text-[#133a41] transition-colors">
+                          015924646
+                        </a>
+
+                        <span className="text-slate-300">/</span>
+
+                        <a href="tel:+9779817576110" className="text-xs md:text-base font-semibold text-slate-800 hover:text-[#133a41] transition-colors">
+                          9817576110
+                        </a>
+                      </div>
+
+                      <p className="text-[9px] text-slate-400 mt-1">
+                        Available during business hours (NPT)
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Card 3: Address */}
-                <div className="flex items-start gap-5 p-6 bg-white/50 backdrop-blur-sm border border-slate-100 shadow-sm">
-                  <div className="p-3 bg-slate-50 text-slate-400">
-                    <MapPin size={24} />
+
+                {/* ADDRESS */}
+                <div className="flex items-center gap-4 py-5 md:py-6">
+                  <div className="w-10 h-10 flex items-center justify-center bg-slate-50 text-slate-400">
+                    <MapPin size={18} />
                   </div>
 
                   <address className="not-italic">
-                    <p className="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">
+                    <p className="text-[8px] md:text-[9px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-1">
                       Headquarters
                     </p>
-                    <p className="text-xs md:text-md font-bold text-slate-800 leading-snug">
+
+                    <p className="text-xs md:text-base font-semibold text-slate-800">
                       Balkumari, Lalitpur, Nepal
                     </p>
                   </address>
+                </div>
+
+              </div>
+
+
+              {/* SOCIAL NETWORK */}
+              <div className="mt-8 pt-7 border-t border-slate-200">
+
+                <div className="flex items-center justify-between mb-4">
+                  <p className="text-[9px] font-black text-slate-400 uppercase tracking-[0.25em]">
+                    Connect With Us
+                  </p>
+
+                  <span className="w-8 h-px bg-red-700" />
+                </div>
+
+                <div className="grid grid-cols-3 gap-2 md:gap-3">
+
+                  {/* FACEBOOK */}
+                  <a href="https://www.facebook.com/profile.php?id=61574993381205" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between p-3 md:p-4 border border-slate-200 bg-white hover:border-[#1877F2] hover:bg-slate-50 transition-all duration-300">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <Facebook size={17} className="text-slate-400 group-hover:text-[#1877F2] transition-colors" />
+                      <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-wider text-slate-600 group-hover:text-slate-900">
+                        Facebook
+                      </span>
+                    </div>
+
+                    <ArrowUpRight size={12} className="hidden md:block text-slate-300 group-hover:text-[#1877F2]" />
+                  </a>
+
+
+                  {/* LINKEDIN */}
+                  <a href="https://www.linkedin.com/company/vu-devi-services" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between p-3 md:p-4 border border-slate-200 bg-white hover:border-[#0A66C2] hover:bg-slate-50 transition-all duration-300">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <Linkedin size={17} className="text-slate-400 group-hover:text-[#0A66C2] transition-colors" />
+                      <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-wider text-slate-600 group-hover:text-slate-900">
+                        LinkedIn
+                      </span>
+                    </div>
+
+                    <ArrowUpRight size={12} className="hidden md:block text-slate-300 group-hover:text-[#0A66C2]" />
+                  </a>
+
+                  {/* INSTAGRAM */}
+                  <a href="https://www.instagram.com/vudeviservices" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between p-3 md:p-4 border border-slate-200 bg-white hover:border-pink-500 hover:bg-slate-50 transition-all duration-300">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <Instagram size={17} className="text-slate-400 group-hover:text-pink-500 transition-colors" />
+                      <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-wider text-slate-600 group-hover:text-slate-900">
+                        Instagram
+                      </span>
+                    </div>
+
+                    <ArrowUpRight size={12} className="hidden md:block text-slate-300 group-hover:text-pink-500" />
+                  </a>
 
                 </div>
               </div>
@@ -124,7 +199,7 @@ function Contact()
                     <Clock className="text-red-700" size={18} />
                     <div>
                       <p className="text-[10px] font-black uppercase text-slate-400">Current Status</p>
-                      <p className="text-xs font-bold text-slate-800 tracking-tight">Accepting Global Requests</p>
+                      <p className="text-xs font-bold text-slate-800 tracking-tight">Open to Work</p>
                     </div>
                   </div>
                 </div>
