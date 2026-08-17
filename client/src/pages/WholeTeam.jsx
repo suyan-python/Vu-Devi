@@ -10,16 +10,13 @@ import bandana from "../assets/leads/bandana2.webp";
 import dilasha from "../assets/leads/dilasha.jpeg";
 
 import aayushma from "../assets/person/all/Aayushma Pokhrel.png"
-import dipendra from "../assets/person/all/Dipendra Thapa.png"
 import karna from "../assets/person/all/Karna Bahadur Bam.png"
-import namita from "../assets/person/all/Namita Sangroula.png"
+import namita from "../assets/person/all/Namita Sangroula.webp"
 import priyasha from "../assets/person/all/Priyasha Mahara.png"
-import rahul from "../assets/person/all/Rahul Lama.png"
 import rojin from "../assets/person/all/Rojin Shakya.png"
-import sammyek from "../assets/person/all/sammyek ratna .png"
 import sarita from "../assets/person/all/SARITA ALE.png"
 import shristi from "../assets/person/all/Shristi Manandhar.png"
-import tripti from "../assets/person/all/Tripti Rajkarnikar.png"
+import tripti from "../assets/person/all/Tripti Rajkarnikar.webp"
 
 
 
@@ -152,7 +149,7 @@ function WholeTeam()
 
         {/* ===== SECTION 1: STRATEGIC TEAM LEADS ===== */}
         <div className="mb-14">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-20 gap-4">
             <div>
               <div className="inline-flex items-center gap-2 text-red-700 font-bold uppercase tracking-[0.2em] text-xs mb-3">
                 <ShieldCheck size={16} />
@@ -162,7 +159,7 @@ function WholeTeam()
                 Strategic <span className="text-[#133a41] font-light">Team Leads</span>
               </h2>
             </div>
-            <p className="text-slate-500 max-w-md text-sm md:text-right italic">
+            <p className="text-slate-500 max-w-md text-xs md:text-sm md:text-right italic">
               Our leads ensure clinical accuracy and maintain international standards across all documentation workflows.
             </p>
           </div>
@@ -185,7 +182,7 @@ function WholeTeam()
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
                   />
                   {/* Tenure Badge */}
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm flex items-center gap-1.5">
+                  <div className="absolute top-4 right-4 bg-white/90  px-3 py-1 rounded-sm shadow-sm flex items-center gap-1.5">
                     <Clock size={12} className="text-red-700" />
                     <span className="text-[10px] font-bold text-slate-700 uppercase">Since {member.date}</span>
                   </div>
@@ -193,13 +190,13 @@ function WholeTeam()
 
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#133a41] transition-colors">
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#133a41] transition-colors">
                     {member.name}
                   </h3>
-                  <p className="text-sm font-medium text-red-700 uppercase tracking-wider mb-3">
+                  <p className="text-xs font-medium text-red-700 uppercase tracking-wider mb-3">
                     {member.role}
                   </p>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3 italic">
+                  <p className="text-slate-600 text-[10px] leading-relaxed mb-6 line-clamp-3 italic">
                     "{member.description}"
                   </p>
 

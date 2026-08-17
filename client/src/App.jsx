@@ -23,6 +23,7 @@ import InsightsTerminal from "./pages/DeepInsights";
 import AdminTypingResults from "../admin/AdminTypingResults";
 import Events from "./pages/Events";
 import EventDetails from "./pages/EventsDetails";
+import ScrollToHashElement from "./components/ScrollToHashElement";
 
 
 function AppRoutes()
@@ -37,6 +38,7 @@ function AppRoutes()
   return (
     <>
       {!isAdminRoute && <Navbar />}
+      <ScrollToHashElement />
 
       <Routes>
         <Route path="/" element={<Home />} />

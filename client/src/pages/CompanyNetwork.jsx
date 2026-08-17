@@ -50,8 +50,8 @@ const companies = [
     },
     {
         id: "05",
-        name: "Inaya",
-        shortName: "INAYA",
+        name: "Inaya Cafe",
+        shortName: "INAYA CAFE",
         description: "Coffee & Hospitality",
         logo: inaya,
         url: "https://jewelhimalayanproducts.com/inaya-cafe",
@@ -80,7 +80,11 @@ const CompanyNetwork = ({ currentCompany = "Vu Devi Services" }) =>
 
                     {/* Heading */}
                     <h2 className="header text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tighter text-slate-900 leading-[1.05]">
-                        Our Group of Companies
+                        Our Group of{" "}
+                        <span className="text-red-700 font-light">
+
+                            Companies
+                        </span>
                     </h2>
 
                     {/* Minimal Divider */}
@@ -141,23 +145,9 @@ const CompanyNetwork = ({ currentCompany = "Vu Devi Services" }) =>
 
                                     {/* Logo */}
                                     <div
-                                        className={`
-            absolute
-            top-0
-            left-0
-            right-0
-            h-[65%]
-            flex
-            items-start
-            justify-center
-            pt-8
-            md:pt-10
-            transition-all
-            duration-500
-
-            ${isCurrent
-                                                ? "opacity-0"
-                                                : "opacity-60 group-hover:opacity-90"
+                                        className={`absolute top-0 left-0 right-0 h-[65%] flex items-start justify-center pt-8 md:pt-10 transition-all duration-500 ${isCurrent
+                                            ? "opacity-90"
+                                            : "opacity-80 group-hover:opacity-100"
                                             }
         `}
                                     >

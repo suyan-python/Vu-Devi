@@ -58,7 +58,7 @@ function AboutUs()
                   Who We Are
                 </h3>
 
-                <p className="text-sm md:text-xl text-slate-700 leading-snug">
+                <p className="text-sm md:text-3xl text-slate-700 leading-snug font-light">
                   Bridging clinical expertise with
                   <span className="text-slate-900 font-semibold">
                     {" "}technology, precision, and operational support.

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Stethoscope, Users, Activity, ShieldAlert, ChevronRight } from "lucide-react";
+import { Stethoscope, Users, Activity, ShieldAlert, ChevronRight, ArrowUpRight } from "lucide-react";
 
 import
 {
@@ -96,83 +96,59 @@ const Services = () =>
           </div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {serviceProtocols.map((service, index) => (
-              <motion.div
-                key={index}
-                className="
-relative
-bg-white
-p-8 md:p-10
-group
-overflow-hidden
-border
-border-slate-100
-hover:border-slate-200
-hover:-translate-y-2
-transition-all
-duration-500
-shadow-sm
-hover:shadow-2xl
-"
-                initial={{ opacity: 0.3 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-              >
-                {/* ID Badge */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#133a41] to-red-700 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  <span className="text-4xl font-black text-slate-100 group-hover:text-red-50 transition-colors">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-px bg-slate-200 border border-slate-200">
+            {serviceProtocols.map((service, index) =>
+            {
+              const isFeatured = index === 0;
+
+              return (
+                <motion.div
+                  key={index}
+                  className={`group relative overflow-hidden p-7 md:p-9 lg:p-10 min-h-[300px] lg:min-h-[340px] transition-all duration-500 ${isFeatured ? "lg:col-span-6 bg-[#133a41] text-white" : "lg:col-span-3 bg-white text-slate-900 hover:bg-slate-50"}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.06 }}
+                >
+                  {/* Large Background Number */}
+                  <span className={`absolute -right-3 -top-8 text-[130px] md:text-[160px] font-black leading-none tracking-tighter select-none transition-all duration-700 ${isFeatured ? "text-white/[0.035] group-hover:text-white/[0.07]" : "text-slate-900/[0.025] group-hover:text-red-700/[0.06]"}`}>
                     {service.id}
                   </span>
-                </div>
 
-                {/* Icon & Label */}
-                <div className="
-w-16
-h-16
-rounded-2xl
-bg-[#133a41]/5
-flex
-items-center
-justify-center
-text-[#133a41]
-mb-8
-group-hover:bg-[#133a41]
-group-hover:text-white
-transition-all
-duration-500
-">
-                  {service.icon}
-                </div>
+                  {/* Top */}
+                  <div className="relative z-10 flex items-start justify-between">
+                    <span className={`text-[9px] md:text-[10px] font-black tracking-[0.25em] ${isFeatured ? "text-white/40" : "text-slate-300"}`}>
+                      {service.id}
+                    </span>
 
-                <p className="text-[10px] font-black text-red-700 uppercase tracking-widest mb-3">
-                  {service.tag}
-                </p>
+                    <div className={`w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-500 ${isFeatured ? "border-white/20 text-white group-hover:bg-red-700 group-hover:border-red-700" : "border-slate-200 text-slate-400 group-hover:bg-[#133a41] group-hover:border-[#133a41] group-hover:text-white"}`}>
+                      <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </div>
+                  </div>
 
-                <h3 className="
-text-xl
-font-semibold
-tracking-tight
-text-slate-900
-mb-4
-group-hover:text-[#133a41]
-transition-colors
-">
-                  {service.title}
-                </h3>
+                  {/* Main Content */}
+                  <div className="relative z-10 mt-16 md:mt-20">
+                    <div className={`flex items-center gap-2 mb-4 ${isFeatured ? "text-red-300" : "text-red-700"}`}>
+                      <span className="w-5 h-px bg-current" />
+                      <p className="text-[9px] font-black uppercase tracking-[0.22em]">
+                        {service.tag}
+                      </p>
+                    </div>
 
-                <p className="text-sm text-slate-500 leading-relaxed mb-6">
-                  {service.description}
-                </p>
+                    <h3 className={`text-xl md:text-2xl lg:text-[26px] font-semibold tracking-tight leading-tight mb-4 ${isFeatured ? "text-white" : "text-slate-900 group-hover:text-[#133a41]"} transition-colors duration-300`}>
+                      {service.title}
+                    </h3>
 
-                {/* Footer Trust Signal */}
-                <div className="pt-6 border-t border-slate-50 flex items-center justify-between">
-                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Verified Compliance</span>
-                  <div className="h-1 w-8 bg-slate-100 group-hover:w-16 group-hover:bg-red-700 transition-all duration-500"></div>
-                </div>
-              </motion.div>
-            ))}
+                    <p className={`text-xs md:text-sm leading-[1.7] max-w-xl ${isFeatured ? "text-white/60" : "text-slate-500"}`}>
+                      {service.description}
+                    </p>
+                  </div>
+
+                  {/* Bottom Accent */}
+                  <div className={`absolute bottom-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-700 ${isFeatured ? "bg-red-700" : "bg-red-700"}`} />
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Professional Footer Disclaimer */}

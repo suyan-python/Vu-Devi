@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const SLIDES = [
     {
         id: 1,
-        title: <>Why Global Providers Trust <br /><span className="text-red-700 underline decoration-1 underline-offset-8">Vu Devi Services</span></>,
+        title: <>Why Global Providers Trust <br /><span className="text-red-700 font-light underline decoration-1 underline-offset-8">Vu Devi Services</span></>,
         desc: "We don't just process data; we safeguard medical records and ensure business continuity for clinics worldwide.",
         stats: [
             { val: "10+ Years", label: "Industry Expertise" },
@@ -17,7 +17,7 @@ const SLIDES = [
     },
     {
         id: 2,
-        title: <>Advanced <span className="text-red-700">Security Infrastructure</span> & <br /> Data Sovereignty</>,
+        title: <>Advanced <span className="text-red-700 font-light">Security Infrastructure</span> & <br /> Data Sovereignty</>,
         desc: "Our systems utilize military-grade encryption and multi-layered redundancy to guarantee the absolute privacy of patient health information.",
         stats: [
             { val: "AES-256", label: "Encryption Level" },
@@ -28,7 +28,7 @@ const SLIDES = [
     },
     {
         id: 3,
-        title: <>Standardized <span className="text-red-700">Clinical Workflow</span> & <br /> Integration</>,
+        title: <>Standardized <span className="text-red-700 font-light">Clinical Workflow</span> & <br /> Integration</>,
         desc: "Seamlessly integrating with major EHR systems to optimize documentation speed while maintaining rigorous clinical standards.",
         stats: [
             { val: "HL7/FHIR", label: "Interoperability" },
