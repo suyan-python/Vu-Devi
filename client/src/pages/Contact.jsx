@@ -143,6 +143,18 @@ function Contact()
                 </div>
 
                 <div className="grid grid-cols-3 gap-2 md:gap-3">
+                  {/* LINKEDIN */}
+                  <a href="https://www.linkedin.com/company/vu-devi-services" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between p-3 md:p-4 border border-slate-200 bg-white hover:border-[#0A66C2] hover:bg-slate-50 transition-all duration-300">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <Linkedin size={17} className="text-slate-400 group-hover:text-[#0A66C2] transition-colors" />
+                      <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-wider text-slate-600 group-hover:text-slate-900">
+                        LinkedIn
+                      </span>
+                    </div>
+
+                    <ArrowUpRight size={12} className="hidden md:block text-slate-300 group-hover:text-[#0A66C2]" />
+                  </a>
+
 
                   {/* FACEBOOK */}
                   <a href="https://www.facebook.com/profile.php?id=61574993381205" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between p-3 md:p-4 border border-slate-200 bg-white hover:border-[#1877F2] hover:bg-slate-50 transition-all duration-300">
@@ -156,18 +168,6 @@ function Contact()
                     <ArrowUpRight size={12} className="hidden md:block text-slate-300 group-hover:text-[#1877F2]" />
                   </a>
 
-
-                  {/* LINKEDIN */}
-                  <a href="https://www.linkedin.com/company/vu-devi-services" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between p-3 md:p-4 border border-slate-200 bg-white hover:border-[#0A66C2] hover:bg-slate-50 transition-all duration-300">
-                    <div className="flex items-center gap-2 md:gap-3">
-                      <Linkedin size={17} className="text-slate-400 group-hover:text-[#0A66C2] transition-colors" />
-                      <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-wider text-slate-600 group-hover:text-slate-900">
-                        LinkedIn
-                      </span>
-                    </div>
-
-                    <ArrowUpRight size={12} className="hidden md:block text-slate-300 group-hover:text-[#0A66C2]" />
-                  </a>
 
                   {/* INSTAGRAM */}
                   <a href="https://www.instagram.com/vudeviservices" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between p-3 md:p-4 border border-slate-200 bg-white hover:border-pink-500 hover:bg-slate-50 transition-all duration-300">
