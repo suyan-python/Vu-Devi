@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  Award,
-  GraduationCap,
-  Calendar,
-  ChevronRight,
-  Medal,
-  Quote,
-} from "lucide-react";
-import { ShieldCheck, User } from "lucide-react";
+import { Award, Quote } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 
 import akriti from "../assets/month/akriti.jpeg";
 import subekshya from "../assets/month/subekshya.jpeg";
@@ -15,7 +8,6 @@ import shruti from "../assets/month/shruti.jpeg";
 
 import sajana from "../assets/month/sajana.jpeg";
 import bivek from "../assets/month/bivek.jpeg";
-import asmita from "../assets/month/asmita.jpeg";
 
 import { motion } from "framer-motion";
 
@@ -114,17 +106,6 @@ const EmployeeOfTheMonth = () => {
               Based on Performance Audit
             </p>
           </div>
-
-          <div className="hidden lg:block text-right">
-            <p className="text-[9px] font-mono text-slate-400 uppercase tracking-widest">
-              Auth_Code: Verified under Vu Devi Services
-            </p>
-            <div className="flex justify-end gap-1 mt-2">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="w-1 h-1 bg-red-700"></div>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* 2. EMPLOYEE GRID: Balanced 3-Column Layout */}
@@ -183,22 +164,9 @@ const EmployeeOfTheMonth = () => {
                   <div className="h-0 group-hover:h-32 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 overflow-hidden">
                     <div className="pt-4 border-t border-white/10">
                       <Quote className="text-red-700 mb-2" size={16} />
-                      <p className="text-xs lg:text-sm text-slate-300 leading-relaxed italic">
+                      <p className="text-xs lg:text-sm text-slate-100 leading-relaxed italic">
                         {emp.achievement}
                       </p>
-                    </div>
-                  </div>
-
-                  {/* STATIC STATUS BAR */}
-                  <div className="mt-6 pt-6 border-t border-white/5 flex justify-between items-center">
-                    <div className="flex items-center gap-2">
-                      <Award size={14} className="text-red-500" />
-                      <span className="text-[9px] font-bold uppercase tracking-widest text-white/50">
-                        Verified Excellence
-                      </span>
-                    </div>
-                    <div className="text-[9px] font-black uppercase tracking-[0.2em] text-white/20">
-                      VDS_2026
                     </div>
                   </div>
                 </div>
@@ -212,29 +180,28 @@ const EmployeeOfTheMonth = () => {
         <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="border-l-4 border-red-700 pl-8">
             <div className="flex items-center gap-2 mb-4">
-              <span className="w-8 h-[1px] bg-[#133a41]"></span>
-              <p className="text-[10px] font-black text-[#133a41] uppercase tracking-[0.4em]">
+              <span className="hidden md:block w-8 h-[1px] bg-[#133a41]"></span>
+              <p className=" text-[8px] md:text-[10px] font-black text-[#133a41] uppercase tracking-[0.4em]">
                 Personnel Excellence Appreciation
               </p>
             </div>
-            <h2 className="text-4xl md:text-6xl font-medium tracking-tighter text-slate-900 leading-none">
+            <h2
+              className=" text-3xl
+                    sm:text-5xl
+                    md:text-6xl
+                    lg:text-7xl
+                    xl:text-[5.5rem]
+                    font-semibold
+                    tracking-tighter
+                    leading-[0.98]
+                    text-slate-900"
+            >
               Employee of the Month -{" "}
-              <span className="text-red-700 font-light italic">June, 2026</span>
+              <span className="text-red-700 font-light italic">July, 2026</span>
             </h2>
             <p className="mt-4 text-slate-500 text-xs md:text-sm uppercase tracking-[0.25em] font-bold">
               Based on Performance Audit
             </p>
-          </div>
-
-          <div className="hidden lg:block text-right">
-            <p className="text-[9px] font-mono text-slate-400 uppercase tracking-widest">
-              Auth_Code: Verified under Vu Devi Services
-            </p>
-            <div className="flex justify-end gap-1 mt-2">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="w-1 h-1 bg-red-700"></div>
-              ))}
-            </div>
           </div>
         </div>
 
@@ -286,21 +253,9 @@ const EmployeeOfTheMonth = () => {
                   <div className="h-0 group-hover:h-32 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 overflow-hidden">
                     <div className="pt-4 border-t border-white/10">
                       <Quote className="text-red-700 mb-2" size={16} />
-                      <p className="text-xs lg:text-sm text-slate-300 leading-relaxed italic">
+                      <p className="text-xs lg:text-sm text-slate-100 leading-relaxed italic">
                         {emp.achievement}
                       </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 pt-6 border-t border-white/5 flex justify-between items-center">
-                    <div className="flex items-center gap-2">
-                      <Award size={14} className="text-red-500" />
-                      <span className="text-[9px] font-bold uppercase tracking-widest text-white/50">
-                        Verified Excellence
-                      </span>
-                    </div>
-                    <div className="text-[9px] font-black uppercase tracking-[0.2em] text-white/20">
-                      VDS_2026
                     </div>
                   </div>
                 </div>

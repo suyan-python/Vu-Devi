@@ -32,14 +32,6 @@ const jobApplicationSchema = new mongoose.Schema({
 
 const JobApplication = mongoose.model("JobApplication", jobApplicationSchema);
 
-// Multer Storage Config (File Uploads)
-// const storage = multer.diskStorage({
-//   destination: "uploads/",
-//   filename: (req, file, cb) => {
-//     cb(null, `${Date.now()}-${file.originalname}`);
-//   },
-// });
-
 const storage = multer.diskStorage({
   destination: "uploads/",
   filename: (req, file, cb) => {
