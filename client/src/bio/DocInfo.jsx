@@ -8,10 +8,17 @@ import rajiya from "../assets/leads/rajiya.webp";
 import bandana from "../assets/leads/bandana2.webp";
 import dilasha from "../assets/leads/dilasha.jpeg";
 
-import rajendra from "../assets/leads/rajendra.jpg";
+import rajendra from "../assets/leads/rajendra.jpeg";
 import anish from "../assets/leads/anish.JPG";
 
-import { Mail, Calendar, UserCheck, ArrowLeft, Users, Briefcase } from "lucide-react";
+import {
+  Mail,
+  Calendar,
+  UserCheck,
+  ArrowLeft,
+  Users,
+  Briefcase,
+} from "lucide-react";
 
 const doctorData = {
   nikita: {
@@ -26,8 +33,8 @@ const doctorData = {
         designation: "Medical Report Writer",
         image: rajendra,
         bio: "Dr. Rajendra Kumar Singh is a skilled medical report writer with a focus on accuracy and clarity. He has been instrumental in developing comprehensive reports for various medical cases.",
-        joiningDate: "April, 2024"
-      }
+        joiningDate: "April, 2024",
+      },
     ],
     teamMembers: [
       "Dr. Abhishek Chaurasiya",
@@ -47,7 +54,6 @@ const doctorData = {
       "Dr. Narendra Kumar Yadav",
       "Dr. Sujil Manandhar",
       "Dr. Anushree Karki",
-
     ],
     role: "Medical Report Writer",
   },
@@ -63,8 +69,8 @@ const doctorData = {
         designation: "Medical Report Writer",
         image: anish,
         bio: "PT. Anish Phuyal is a dedicated medical report writer with a keen eye for detail. He has contributed to the development of accurate and comprehensive medical documentation.",
-        joiningDate: "April, 2024"
-      }
+        joiningDate: "April, 2024",
+      },
     ],
     teamMembers: [
       "PT. Aayushma Pokharel",
@@ -136,14 +142,12 @@ const doctorData = {
   },
 };
 
-function DocInfo()
-{
+function DocInfo() {
   const { doctorId } = useParams();
   const navigate = useNavigate();
   const doctor = doctorData[doctorId];
 
-  if (!doctor)
-  {
+  if (!doctor) {
     return (
       <div className="text-center text-red-500 text-2xl">Doctor Not Found</div>
     );
@@ -152,76 +156,162 @@ function DocInfo()
   return (
     <section className="w-full py-16  min-h-screen mt-12 md:mt-20">
       <div className="max-w-6xl mx-auto px-6">
-
         {/* Navigation / Breadcrumbs */}
         <button
           className="group flex items-center gap-2 mb-8 text-slate-500 hover:text-[#133a41] transition-colors font-semibold text-xs md:text-sm uppercase tracking-widest"
           onClick={() => navigate(-1)}
         >
-          <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+          <ArrowLeft
+            size={16}
+            className="group-hover:-translate-x-1 transition-transform"
+          />
           Back to Leadership Team
         </button>
 
-        {/* 1. THE LEADERSHIP CARD (The Doctor/Team Lead) */}
+        {/* TEAM LEAD — FEATURED PROFILE */}
         <motion.div
-          className="bg-white rounded-sm border-t-4 border-[#133a41] shadow-[0_15px_50px_-15px_rgba(19,58,65,0.1)] overflow-hidden"
-          initial={{ opacity: 0, y: 20 }}
+          className="group relative overflow-hidden bg-white border border-slate-200 shadow-[0_20px_60px_-25px_rgba(19,58,65,0.18)]"
+          initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
         >
-          <div className="flex flex-col md:flex-row">
-            {/* Image Column */}
-            <div className="w-full md:w-1/3 bg-slate-100">
+          <div className="grid grid-cols-1 md:grid-cols-12 min-h-[520px]">
+            {/* IMAGE */}
+            <div className="relative md:col-span-5 lg:col-span-4 bg-slate-100 min-h-[420px] md:min-h-full overflow-hidden">
               <img
                 src={doctor.image}
                 alt={doctor.name}
-                className="w-full h-full object-cover aspect-[4/5] md:aspect-auto"
+                className="absolute inset-0 w-full h-full object-cover object-top grayscale-[8%] group-hover:grayscale-0 group-hover:scale-[1.025] transition-all duration-700"
               />
-            </div>
 
-            {/* Details Column */}
-            <div className="w-full md:w-2/3 p-8 lg:p-12">
-              <div className="flex flex-col h-full">
-                <div className="mb-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#133a41]/5 text-[#133a41] rounded-sm text-[8px] md:text-[10px] font-bold uppercase tracking-widest mb-3">
-                    <UserCheck size={12} />
-                    Clinical Lead
-                  </div>
-                  <h2 className="text-xl md:text-4xl font-bold text-slate-900">{doctor.name}</h2>
-                  <p className="text-sm md:text-xl text-red-700 font-medium mt-1">{doctor.designation}</p>
-                </div>
+              {/* Image gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#133a41]/45 via-transparent to-transparent" />
 
-                <div className="flex items-center gap-2 my-4 text-slate-400">
-                  <Calendar size={14} />
-                  <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.15em]">
-                    Tenure: <span className="text-slate-600">{doctor.joiningDate}</span>
+              {/* Profile marker */}
+              <div className="absolute bottom-6 left-6">
+                <div className="flex items-center gap-2">
+                  <span className="w-6 h-px bg-white/70" />
+                  <span className="text-[8px] font-black uppercase tracking-[0.25em] text-white">
+                    Leadership Profile
                   </span>
                 </div>
+              </div>
 
-                <div className="border-t border-slate-100 pt-6">
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Professional Biography</h4>
-                  <p className="text-slate-700 leading-relaxed text-xs md:text-lg">
+              {/* Decorative number */}
+              <span className="absolute top-5 left-6 text-[9px] font-black tracking-[0.3em] text-white/50">
+                01
+              </span>
+            </div>
+
+            {/* PROFILE INFORMATION */}
+            <div className="relative md:col-span-7 lg:col-span-8 p-7 md:p-10 lg:p-14 flex flex-col justify-center">
+              {/* Decorative background element */}
+              <div className="absolute right-0 top-0 text-[180px] md:text-[240px] font-black leading-none text-slate-900/[0.018] select-none pointer-events-none">
+                Lead
+              </div>
+
+              <div className="relative z-10">
+                {/* ROLE */}
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="flex items-center justify-center w-8 h-8 bg-[#133a41]/5 text-[#133a41]">
+                    <UserCheck size={15} />
+                  </span>
+
+                  <div>
+                    <p className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.25em] text-red-700">
+                      Clinical Leadership
+                    </p>
+
+                    <p className="text-[7px] md:text-[8px] font-bold uppercase tracking-[0.18em] text-slate-400 mt-0.5">
+                      Team Lead
+                    </p>
+                  </div>
+                </div>
+
+                {/* NAME */}
+                <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold tracking-tighter text-slate-900 leading-[1.05] max-w-2xl">
+                  {doctor.name}
+                </h2>
+
+                {/* DESIGNATION */}
+                <p className="mt-3 text-sm md:text-lg lg:text-xl font-medium text-[#133a41]">
+                  {doctor.designation}
+                </p>
+
+                {/* METADATA */}
+                <div className="flex flex-wrap items-center gap-x-7 gap-y-3 mt-7 pb-7 border-b border-slate-200">
+                  <div className="flex items-center gap-2 text-slate-400">
+                    <Calendar size={14} />
+
+                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.15em]">
+                      Tenure:
+                      <span className="text-slate-600 ml-1">
+                        {doctor.joiningDate}
+                      </span>
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-slate-400">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+
+                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.15em] text-slate-600">
+                      Active Leadership
+                    </span>
+                  </div>
+                </div>
+
+                {/* BIO */}
+                <div className="mt-7 max-w-3xl">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.25em] text-slate-400">
+                      Professional Biography
+                    </span>
+
+                    <span className="h-px w-8 bg-slate-200" />
+                  </div>
+
+                  <p className="text-xs md:text-base lg:text-lg text-slate-600 leading-[1.8]">
                     {doctor.bio}
                   </p>
+                </div>
+
+                {/* FOOTER */}
+                <div className="flex items-center justify-between mt-8 pt-6 border-t border-slate-100">
+                  <p className="text-[7px] md:text-[8px] font-black uppercase tracking-[0.2em] text-slate-400">
+                    Vu Devi Services
+                  </p>
+
+                  <div className="flex items-center gap-2">
+                    <span className="w-8 h-px bg-red-700" />
+                    <span className="text-[7px] md:text-[8px] font-bold uppercase tracking-[0.2em] text-[#133a41]">
+                      Clinical Leadership
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Bottom accent */}
+          <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#133a41] via-red-700 to-[#133a41]" />
         </motion.div>
 
         {/* TEAM LEAD ASSISTANTS */}
         {doctor.leadAssistants?.length > 0 && (
           <motion.section
-            className="mt-16 md:mt-20"
+            className="mt-20 md:mt-28"
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             {/* Section Header */}
-            <div className="flex items-end justify-between gap-6 mb-8 md:mb-10 border-b border-slate-200 pb-5">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-8 md:mb-10 pb-5 border-b border-slate-200">
               <div>
-                <div className="flex items-center gap-2 text-red-700 text-[8px] md:text-[10px] font-black uppercase tracking-[0.25em] mb-3">
-                  <span className="w-5 h-px bg-red-700" />
-                  Clinical Leadership
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="w-7 h-px bg-red-700" />
+                  <span className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.25em] text-red-700">
+                    Clinical Leadership
+                  </span>
                 </div>
 
                 <h3 className="text-2xl md:text-4xl font-semibold tracking-tighter text-slate-900">
@@ -229,102 +319,126 @@ function DocInfo()
                 </h3>
               </div>
 
-              <span className="hidden sm:block text-[8px] md:text-[9px] font-bold text-slate-400 uppercase tracking-[0.2em]">
-                Leadership Support
-              </span>
+              <p className="max-w-xs text-[9px] md:text-xs text-slate-400 leading-relaxed md:text-right">
+                Supporting clinical leadership through coordinated expertise and
+                operational continuity.
+              </p>
             </div>
 
-
-            {/* Assistants */}
-            <div className="space-y-6 md:space-y-8">
+            {/* ASSISTANTS */}
+            <div className="space-y-8 md:space-y-10">
               {doctor.leadAssistants.map((assistant, index) => (
                 <motion.div
                   key={index}
-                  className="group relative grid grid-cols-1 md:grid-cols-12 bg-white border border-slate-200 overflow-hidden transition-all duration-500 hover:border-slate-300 hover:shadow-[0_15px_45px_-20px_rgba(19,58,65,0.18)]"
+                  className="group relative grid grid-cols-1 md:grid-cols-12 min-h-[420px] md:min-h-[440px] bg-white border border-slate-200 overflow-hidden transition-all duration-500 hover:border-slate-300 hover:shadow-[0_20px_60px_-25px_rgba(19,58,65,0.18)]"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.08 }}
                 >
+                  {/* INFORMATION */}
+                  <div className="md:col-span-7 lg:col-span-8 order-2 md:order-1 p-7 md:p-10 lg:p-14 flex flex-col justify-center relative">
+                    {/* Background Number */}
+                    <span className="absolute right-5 top-0 text-[150px] md:text-[150px] font-black leading-none tracking-tighter text-slate-900/[0.018] select-none pointer-events-none">
+                      Assistant
+                    </span>
 
-                  {/* DESCRIPTION / INFORMATION */}
-                  <div className="md:col-span-7 p-7 md:p-9 lg:p-12 flex flex-col justify-center order-2 md:order-1">
+                    <div className="relative z-10">
+                      {/* ROLE */}
+                      <div className="flex items-center gap-3 mb-6">
+                        <span className="w-8 h-8 flex items-center justify-center bg-[#133a41]/5 text-[#133a41]">
+                          <UserCheck size={14} />
+                        </span>
 
-                    {/* Assistant Identifier */}
-                    <div className="flex items-center gap-3 mb-6">
-                      <span className="h-px w-8 bg-red-700" />
+                        <div>
+                          <p className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.25em] text-red-700">
+                            Team Lead Assistant
+                          </p>
 
-                      <span className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.2em] text-red-700">
-                        Team Lead Assistant
-                      </span>
-                    </div>
+                          <p className="text-[7px] md:text-[8px] font-bold uppercase tracking-[0.18em] text-slate-400 mt-0.5">
+                            Clinical Leadership Support
+                          </p>
+                        </div>
+                      </div>
 
+                      {/* NAME */}
+                      <h4 className="text-2xl md:text-4xl lg:text-5xl font-semibold tracking-tighter text-slate-900 leading-[1.05] max-w-xl">
+                        {assistant.name}
+                      </h4>
 
-                    {/* Name */}
-                    <h4 className="text-2xl md:text-4xl font-semibold tracking-tighter text-slate-900 leading-tight">
-                      {assistant.name}
-                    </h4>
-
-
-                    {/* Designation */}
-                    <p className="mt-2 text-sm md:text-lg font-medium text-[#133a41]">
-                      {assistant.designation}
-                    </p>
-
-                    {/* Tenure */}
-                    <div className="flex items-center gap-2 mt-4 text-slate-400">
-                      <Calendar size={14} />
-                      <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.15em]">
-                        Tenure: <span className="text-slate-600">{assistant.joiningDate}</span>
-                      </span>
-                    </div>
-
-                    {/* Divider */}
-                    <div className="w-10 h-[2px] bg-slate-200 my-6" />
-
-
-                    {/* Divider */}
-                    <div className="w-10 h-[2px] bg-slate-200 my-6" />
-
-
-                    {/* Biography */}
-                    <div className="max-w-2xl">
-                      <p className="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-3">
-                        Professional Profile
+                      {/* DESIGNATION */}
+                      <p className="mt-3 text-sm md:text-lg font-medium text-[#133a41]">
+                        {assistant.designation}
                       </p>
 
-                      <p className="text-xs md:text-base text-slate-600 leading-[1.8]">
-                        {assistant.bio}
-                      </p>
+                      {/* TENURE */}
+                      <div className="flex items-center gap-2 mt-6 pb-6 border-b border-slate-200">
+                        <Calendar size={14} className="text-slate-400" />
+
+                        <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400">
+                          Tenure:
+                          <span className="text-slate-600 ml-1">
+                            {assistant.joiningDate}
+                          </span>
+                        </span>
+                      </div>
+
+                      {/* BIO */}
+                      <div className="mt-6 max-w-2xl">
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.22em] text-slate-400">
+                            Professional Profile
+                          </span>
+
+                          <span className="w-7 h-px bg-slate-200" />
+                        </div>
+
+                        <p className="text-xs md:text-base text-slate-600 leading-[1.8]">
+                          {assistant.bio}
+                        </p>
+                      </div>
+
+                      {/* FOOTER */}
+                      <div className="flex items-center gap-3 mt-7">
+                        <span className="text-[7px] md:text-[8px] font-black uppercase tracking-[0.2em] text-slate-300">
+                          Vu Devi Services
+                        </span>
+
+                        <span className="w-5 h-px bg-red-700" />
+
+                        <span className="text-[7px] md:text-[8px] font-bold uppercase tracking-[0.2em] text-[#133a41]">
+                          Leadership Support
+                        </span>
+                      </div>
                     </div>
                   </div>
 
-
                   {/* IMAGE */}
-                  <div className="md:col-span-5 order-1 md:order-2 relative bg-slate-100 min-h-[280px] md:min-h-[380px] lg:min-h-[430px] overflow-hidden">
-
+                  <div className="md:col-span-5 lg:col-span-4 order-1 md:order-2 relative min-h-[320px] md:min-h-full bg-slate-100 overflow-hidden">
                     <img
                       src={assistant.image}
                       alt={assistant.name}
-                      className="absolute inset-0 w-full h-full object-cover object-top grayscale-[15%] group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700"
+                      className="absolute inset-0 w-full h-full object-cover object-top grayscale-[8%] group-hover:grayscale-0 group-hover:scale-[1.025] transition-all duration-700"
                     />
 
-                    {/* Image Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#133a41]/10" />
+                    {/* Image Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#133a41]/35 via-transparent to-transparent" />
+
+                    {/* Profile Number */}
+                    <span className="absolute top-5 right-5 text-[9px] font-black tracking-[0.3em] text-white/60">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
 
                     {/* Role Marker */}
-                    <div className="absolute bottom-5 right-5 bg-white/95 backdrop-blur-sm px-4 py-2 border border-white/50">
+                    <div className="absolute bottom-5 right-5 bg-white/95 backdrop-blur-sm px-4 py-2 border border-white/60">
                       <p className="text-[7px] md:text-[8px] font-black uppercase tracking-[0.2em] text-[#133a41]">
                         Clinical Support
                       </p>
                     </div>
-
                   </div>
 
-
-                  {/* Bottom Accent */}
-                  <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-red-700 group-hover:w-full transition-all duration-700" />
-
+                  {/* BOTTOM ACCENT */}
+                  <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-[#133a41] to-red-700 group-hover:w-full transition-all duration-700" />
                 </motion.div>
               ))}
             </div>
@@ -334,7 +448,9 @@ function DocInfo()
         {/* 2. TEAM MEMBERS SECTION (The Directory) */}
         <div className="mt-20">
           <div className="flex items-center gap-4 mb-10">
-            <h3 className="text-lg md:text-2xl font-bold text-slate-900">Direct Reports & Team</h3>
+            <h3 className="text-lg md:text-2xl font-bold text-slate-900">
+              Direct Reports & Team
+            </h3>
             <div className="h-px flex-1 bg-slate-200"></div>
             <div className="flex items-center gap-2 text-slate-400 font-bold text-xs uppercase tracking-widest">
               <Users size={16} />

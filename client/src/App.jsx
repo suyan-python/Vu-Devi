@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Navbar from "./constant/Navbar";
@@ -7,7 +12,7 @@ import JobApplicationForm from "./pages/JobApplicationForm";
 import ScrollToTop from "./ScrollToTop";
 
 import "./animation.css";
-import "./index.css"
+import "./index.css";
 import Contact from "./pages/Contact";
 import FooterBT from "./constant/FooterBt";
 import Services from "./pages/Services";
@@ -24,21 +29,20 @@ import AdminTypingResults from "../admin/AdminTypingResults";
 import Events from "./pages/Events";
 import EventDetails from "./pages/EventsDetails";
 import ScrollToHashElement from "./components/ScrollToHashElement";
+import SmoothScroll from "./components/SmoothScroll";
 
-
-function AppRoutes()
-{
+function AppRoutes() {
   const location = useLocation();
 
   // Hide navbar & footer on admin routes
   const isAdminRoute =
-    location.pathname === "/admin" ||
-    location.pathname === "/admin/login";
+    location.pathname === "/admin" || location.pathname === "/admin/login";
 
   return (
     <>
       {!isAdminRoute && <Navbar />}
       <ScrollToHashElement />
+      <SmoothScroll />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -50,7 +54,10 @@ function AppRoutes()
 
         {/* <Route path="/application" element={<JobApplicationForm />} /> */}
         <Route path="/application" element={<Job />} />
-        <Route path="/application/apply/:jobId" element={<JobApplicationForm />} />
+        <Route
+          path="/application/apply/:jobId"
+          element={<JobApplicationForm />}
+        />
 
         <Route path="/deepinsights" element={<InsightsTerminal />} />
 
@@ -74,8 +81,7 @@ function AppRoutes()
   );
 }
 
-export default function App()
-{
+export default function App() {
   return (
     <Router>
       <ScrollToTop />
