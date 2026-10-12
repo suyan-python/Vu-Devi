@@ -221,22 +221,6 @@ const Job = () => {
             </div>
           </div>
         </div>
-        {/* 2. TRUST INFRASTRUCTURE BAR */}
-        {/* <div className="bg-white py-6 border-y border-slate-100 mb-12 md:mb-20">
-                    <div className="max-w-7xl mx-auto px-6 flex flex-wrap gap-8 justify-between items-center">
-                        {[
-                            { Icon: ShieldCheck, text: "HIPAA Compliant Environment" },
-                            { Icon: Globe, text: "International Career Tracks" },
-                            { Icon: Cpu, text: "AI-Enhanced Documentation" }
-                        ].map((item, i) => (
-                            <div key={i} className="flex items-center gap-3">
-                                <item.Icon className="text-red-700" size={16} />
-                                <span className="text-[8px] md:text-[10px] font-medium uppercase tracking-widest text-slate-400">{item.text}</span>
-                            </div>
-                        ))}
-
-                    </div>
-                </div> */}
 
         <div className="bg-white py-6 border-y border-slate-100 mb-12 md:mb-20">
           <div className="max-w-7xl mx-auto px-6 flex flex-wrap gap-8 justify-between items-center">
