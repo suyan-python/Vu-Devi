@@ -82,12 +82,6 @@ const EmployeeOfTheMonth = () => {
         {/* 1. HEADER: Institutional Authority */}
         <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8">
           <div className="border-l-4 border-red-700 pl-8">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="hidden md:block w-8 h-[1px] bg-[#133a41]"></span>
-              <p className=" text-[8px] md:text-[10px] font-black text-[#133a41] uppercase tracking-[0.4em]">
-                Personnel Excellence Appreciation
-              </p>
-            </div>
             <h2
               className=" text-3xl
                     sm:text-5xl
@@ -179,12 +173,6 @@ const EmployeeOfTheMonth = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10 my-24">
         <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="border-l-4 border-red-700 pl-8">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="hidden md:block w-8 h-[1px] bg-[#133a41]"></span>
-              <p className=" text-[8px] md:text-[10px] font-black text-[#133a41] uppercase tracking-[0.4em]">
-                Personnel Excellence Appreciation
-              </p>
-            </div>
             <h2
               className=" text-3xl
                     sm:text-5xl
