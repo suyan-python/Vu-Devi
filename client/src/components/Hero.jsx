@@ -187,6 +187,7 @@ function Hero() {
               >
                 <p
                   className="
+                  
                     text-[8px]
                     md:text-[10px]
                     font-black
@@ -202,12 +203,13 @@ function Hero() {
               {/* HEADLINE */}
               <h1
                 className="
+                header
                     text-3xl
                     sm:text-5xl
                     md:text-6xl
                     lg:text-7xl
                     xl:text-[5.5rem]
-                    font-semibold
+                    font-medium
                     tracking-tighter
                     leading-[0.98]
                     text-slate-900
