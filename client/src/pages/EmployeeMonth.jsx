@@ -6,6 +6,7 @@ import akriti from "../assets/month/akriti.jpeg";
 import subekshya from "../assets/month/subekshya.jpeg";
 import shruti from "../assets/month/shruti.jpeg";
 
+import rushmi from "../assets/month/rushmi.jpeg";
 import sarita from "../assets/month/sarita.jpeg";
 import sakshi from "../assets/month/sakshi.jpeg";
 
@@ -16,16 +17,16 @@ import bandana from "../assets/month/bandana.jpeg";
 import { motion } from "framer-motion";
 
 const employees1 = [
-  // {
-  //   name: "Dr. Rushmi",
-  //   designation: "Medical Report Writer",
-  //   team: "Team: Nikita",
-  //   image: akriti,
-  //   achievement:
-  //     "Recognized for consistently delivering clear, well-structured medical reports while maintaining high standards of clinical accuracy and documentation quality.",
-  // },
   {
-    name: "Pt. Sarita Ale",
+    name: "Dr. Rushmi Maharjan",
+    designation: "Medical Report Writer",
+    team: "Team: Nikita",
+    image: rushmi,
+    achievement:
+      "Recognized for consistently delivering clear, well-structured medical reports while maintaining high standards of clinical accuracy and documentation quality.",
+  },
+  {
+    name: "PT. Sarita Ale",
     designation: "PT Report Writer",
     team: "Team: Rajiya",
     image: sarita,
@@ -127,7 +128,7 @@ const EmployeeCard = ({ emp, idx, month = "September", year = "2026" }) => (
 
     {/* Employee Information */}
     <div className="relative z-10 mt-auto px-5 pb-6 sm:px-7 sm:pb-7">
-      <h3 className="text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl">
+      <h3 className="header text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl">
         {emp.name}
       </h3>
 
@@ -160,7 +161,7 @@ const EmployeeMonthSection = ({ month, year, employees, className = "" }) => (
     {/* Month Header */}
     <div className="mb-12 md:mb-16">
       <div className="border-l-4 border-red-700 pl-5 md:pl-8">
-        <h2 className="header text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-semibold tracking-tighter leading-[0.98] text-slate-900">
+        <h2 className="header text-3xl  md:text-5xl  xl:text-[3.5rem] font-semibold tracking-tighter leading-[0.98] text-slate-900">
           Employee of the Month -{" "}
           <span className="text-red-700 font-light ">
             {month}, {year}

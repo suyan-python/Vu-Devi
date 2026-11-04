@@ -1,104 +1,123 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Stethoscope, Users, Activity, ShieldAlert, ChevronRight, ArrowUpRight } from "lucide-react";
-
-import
-{
-  FileText, ListOrdered, Keyboard, Database,
-  BarChart4, ShieldCheck, Microscope, UserCheck,
+import {
+  Stethoscope,
+  Users,
+  Activity,
+  ShieldAlert,
+  ChevronRight,
+  ArrowUpRight,
 } from "lucide-react";
 
-const Services = () =>
-{
+import {
+  FileText,
+  ListOrdered,
+  Keyboard,
+  Database,
+  BarChart4,
+  ShieldCheck,
+  Microscope,
+  UserCheck,
+} from "lucide-react";
+
+const Services = () => {
   const serviceProtocols = [
     {
       id: "VDS-01",
       title: "Medical Dossier Construction",
-      description: "Comprehensive medical reports synthesized for insurance, legal, and clinical accuracy.",
+      description:
+        "Comprehensive medical reports synthesized for insurance, legal, and clinical accuracy.",
       icon: <FileText size={32} />,
-      tag: "Certified Accuracy"
+      tag: "Certified Accuracy",
     },
     {
       id: "VDS-02",
       title: "Clinical Inventory Listing",
-      description: "Systematic categorization of medical procedures following global ICD-10/11 standards.",
+      description:
+        "Systematic categorization of medical procedures following global ICD-10/11 standards.",
       icon: <ListOrdered size={32} />,
-      tag: "Global Standards"
+      tag: "Global Standards",
     },
     {
       id: "VDS-03",
       title: "High-Fidelity Data Entry",
-      description: "Secure digitization of patient histories and clinical records with 99.9% precision.",
+      description:
+        "Secure digitization of patient histories and clinical records with 99.9% precision.",
       icon: <Keyboard size={32} />,
-      tag: "Precision Focused"
+      tag: "Precision Focused",
     },
     {
       id: "VDS-04",
       title: "Structured Documentation",
-      description: "Formalizing diagnosis and treatment plans into audit-ready electronic formats.",
+      description:
+        "Formalizing diagnosis and treatment plans into audit-ready electronic formats.",
       icon: <Microscope size={32} />,
-      tag: "Audit Ready"
+      tag: "Audit Ready",
     },
     {
       id: "VDS-05",
       title: "Data Intelligence Processing",
-      description: "Cleaning and managing complex healthcare datasets to drive institutional efficiency.",
+      description:
+        "Cleaning and managing complex healthcare datasets to drive institutional efficiency.",
       icon: <Database size={32} />,
-      tag: "Secure Management"
+      tag: "Secure Management",
     },
     {
       id: "VDS-06",
       title: "Healthcare Bio-Analytics",
-      description: "Transforming raw medical data into actionable clinical insights and visualizations.",
+      description:
+        "Transforming raw medical data into actionable clinical insights and visualizations.",
       icon: <BarChart4 size={32} />,
-      tag: "Predictive Insight"
+      tag: "Predictive Insight",
     },
     {
       id: "VDS-07",
       title: "Regulatory Compliance Audit",
-      description: "Ensuring every operational layer meets HIPAA, GDPR, and local medical mandates.",
+      description:
+        "Ensuring every operational layer meets HIPAA, GDPR, and local medical mandates.",
       icon: <ShieldCheck size={32} />,
-      tag: "Zero-Risk Policy"
+      tag: "Zero-Risk Policy",
     },
     {
       id: "VDS-08",
       title: "Privacy Architecture",
-      description: "Advanced encryption and privacy protocols to safeguard sensitive patient identity.",
+      description:
+        "Advanced encryption and privacy protocols to safeguard sensitive patient identity.",
       icon: <Activity size={32} />,
-      tag: "End-to-End Encryption"
+      tag: "End-to-End Encryption",
     },
     {
       id: "VDS-09",
       title: "Practitioner Support",
-      description: "Operational assistance designed to reduce the administrative load on medical professionals.",
+      description:
+        "Operational assistance designed to reduce the administrative load on medical professionals.",
       icon: <UserCheck size={32} />,
-      tag: "Provider-Centric"
+      tag: "Provider-Centric",
     },
   ];
 
   return (
     <>
-
-
       <section className=" pt-24 md:pt-32 ">
         <div className="max-w-7xl mx-auto px-6">
-
           {/* Institutional Header */}
           <div className="flex flex-col items-center mb-8 text-center">
             <div className="inline-flex items-center gap-2  text-[#133a41] text-[8px] md:text-[10px] font-black uppercase tracking-[0.3em] rounded-sm mb-6">
               Institutional Capabilities
             </div>
-            <h2 className="text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
+            <h2 className="header text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
               Our Core <br />
-              <span className="text-red-700  font-light"> Clinical Protocols</span>
+              <span className="text-red-700  font-light">
+                {" "}
+                Clinical Protocols
+              </span>
             </h2>
             <div className="w-24 h-1 bg-slate-200 mt-3"></div>
           </div>
 
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-px bg-slate-200 border border-slate-200">
-            {serviceProtocols.map((service, index) =>
-            {
+            {serviceProtocols.map((service, index) => {
               const isFeatured = index === 0;
 
               return (
@@ -111,41 +130,58 @@ const Services = () =>
                   transition={{ delay: index * 0.06 }}
                 >
                   {/* Large Background Number */}
-                  <span className={`absolute -right-3 -top-8 text-[130px] md:text-[160px] font-black leading-none tracking-tighter select-none transition-all duration-700 ${isFeatured ? "text-white/[0.035] group-hover:text-white/[0.07]" : "text-slate-900/[0.025] group-hover:text-red-700/[0.06]"}`}>
+                  <span
+                    className={`absolute -right-3 -top-8 text-[130px] md:text-[160px] font-black leading-none tracking-tighter select-none transition-all duration-700 ${isFeatured ? "text-white/[0.035] group-hover:text-white/[0.07]" : "text-slate-900/[0.025] group-hover:text-red-700/[0.06]"}`}
+                  >
                     {service.id}
                   </span>
 
                   {/* Top */}
                   <div className="relative z-10 flex items-start justify-between">
-                    <span className={`text-[9px] md:text-[10px] font-black tracking-[0.25em] ${isFeatured ? "text-white/40" : "text-slate-300"}`}>
+                    <span
+                      className={`text-[9px] md:text-[10px] font-black tracking-[0.25em] ${isFeatured ? "text-white/40" : "text-slate-300"}`}
+                    >
                       {service.id}
                     </span>
 
-                    <div className={`w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-500 ${isFeatured ? "border-white/20 text-white group-hover:bg-red-700 group-hover:border-red-700" : "border-slate-200 text-slate-400 group-hover:bg-[#133a41] group-hover:border-[#133a41] group-hover:text-white"}`}>
-                      <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <div
+                      className={`w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-500 ${isFeatured ? "border-white/20 text-white group-hover:bg-red-700 group-hover:border-red-700" : "border-slate-200 text-slate-400 group-hover:bg-[#133a41] group-hover:border-[#133a41] group-hover:text-white"}`}
+                    >
+                      <ArrowUpRight
+                        size={15}
+                        className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      />
                     </div>
                   </div>
 
                   {/* Main Content */}
                   <div className="relative z-10 mt-16 md:mt-20">
-                    <div className={`flex items-center gap-2 mb-4 ${isFeatured ? "text-red-300" : "text-red-700"}`}>
+                    <div
+                      className={`flex items-center gap-2 mb-4 ${isFeatured ? "text-red-300" : "text-red-700"}`}
+                    >
                       <span className="w-5 h-px bg-current" />
                       <p className="text-[9px] font-black uppercase tracking-[0.22em]">
                         {service.tag}
                       </p>
                     </div>
 
-                    <h3 className={`text-xl md:text-2xl lg:text-[26px] font-semibold tracking-tight leading-tight mb-4 ${isFeatured ? "text-white" : "text-slate-900 group-hover:text-[#133a41]"} transition-colors duration-300`}>
+                    <h3
+                      className={`text-xl md:text-2xl lg:text-[26px] font-semibold tracking-tight leading-tight mb-4 ${isFeatured ? "text-white" : "text-slate-900 group-hover:text-[#133a41]"} transition-colors duration-300`}
+                    >
                       {service.title}
                     </h3>
 
-                    <p className={`text-xs md:text-sm leading-[1.7] max-w-xl ${isFeatured ? "text-white/60" : "text-slate-500"}`}>
+                    <p
+                      className={`text-xs md:text-sm leading-[1.7] max-w-xl ${isFeatured ? "text-white/60" : "text-slate-500"}`}
+                    >
                       {service.description}
                     </p>
                   </div>
 
                   {/* Bottom Accent */}
-                  <div className={`absolute bottom-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-700 ${isFeatured ? "bg-red-700" : "bg-red-700"}`} />
+                  <div
+                    className={`absolute bottom-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-700 ${isFeatured ? "bg-red-700" : "bg-red-700"}`}
+                  />
                 </motion.div>
               );
             })}
@@ -154,21 +190,24 @@ const Services = () =>
           {/* Professional Footer Disclaimer */}
           <div className="mt-16 text-center">
             <p className="text-xs text-slate-400 font-medium italic">
-              *All service protocols are executed under strict HIPAA and ISO 27001 data security frameworks.
+              *All service protocols are executed under strict HIPAA and ISO
+              27001 data security frameworks.
             </p>
           </div>
         </div>
       </section>
 
-
-
       <section className="bg-slate-50 py-16 md:py-32 relative overflow-hidden">
         {/* Engineering Detail: Background Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{ backgroundImage: `radial-gradient(#133a41 1px, transparent 1px)`, size: '30px 30px' }}></div>
+        <div
+          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          style={{
+            backgroundImage: `radial-gradient(#133a41 1px, transparent 1px)`,
+            size: "30px 30px",
+          }}
+        ></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-
           {/* 1. SECTION HEADER: Institutional Authority */}
           <div className="text-center mb-24">
             <div className="inline-flex items-center gap-3 mb-6">
@@ -179,50 +218,41 @@ const Services = () =>
               <div className="w-12 h-[1px] bg-[#133a41]"></div>
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 tracking-tight leading-tight">
+            <h2 className="header text-3xl md:text-5xl font-semibold text-slate-900 tracking-tight leading-tight">
               Advanced Medical Services <br />
               <span className="text-red-700 font-light">
                 Built on Clinical Precision & Patient-Centered Care
               </span>
             </h2>
-
-            <p className="max-w-3xl mx-auto mt-8 text-slate-600 text-xs md:text-base leading-relaxed border-x border-slate-200 px-8">
-              Our institution delivers evidence-based healthcare services through
-              standardized clinical protocols, multidisciplinary collaboration,
-              and internationally recognized quality assurance systems. We are
-              committed to improving patient outcomes through innovation,
-              diagnostic accuracy, and ethical medical practice.
-            </p>
           </div>
 
           {/* 2. VALUE GRID: The Service Nodes */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-slate-200 shadow-2xl">
-
             {[
               {
                 title: "Evidence-Based Treatment",
                 desc: "All medical services are guided by peer-reviewed research, international healthcare standards, and continuously updated clinical guidelines to ensure optimal patient safety and treatment effectiveness.",
                 icon: <Stethoscope size={24} />,
-                index: "01"
+                index: "01",
               },
               {
                 title: "Multidisciplinary Medical Team",
                 desc: "Our healthcare professionals include MBBS physicians, physiotherapists, pharmacists, and allied health specialists working collaboratively to deliver comprehensive patient care.",
                 icon: <Users size={24} />,
-                index: "02"
+                index: "02",
               },
               {
                 title: "Diagnostic & Preventive Care",
                 desc: "We emphasize early diagnosis, preventive healthcare screening, chronic disease management, and rehabilitation services to support long-term patient wellness and recovery.",
                 icon: <Activity size={24} />,
-                index: "03"
+                index: "03",
               },
               {
                 title: "Quality & Data Security Standards",
                 desc: "Our operational systems comply with international medical compliance frameworks, data protection standards, and strict quality control processes to ensure transparency and patient trust.",
                 icon: <ShieldAlert size={24} />,
-                index: "04"
-              }
+                index: "04",
+              },
             ].map((card, i) => (
               <div
                 key={i}
@@ -246,7 +276,9 @@ const Services = () =>
                 </p>
 
                 <div className="mt-auto pt-8 flex items-center gap-2 text-[#133a41] opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-[9px] font-black uppercase tracking-widest">System Verified</span>
+                  <span className="text-[9px] font-black uppercase tracking-widest">
+                    System Verified
+                  </span>
                   <ChevronRight size={12} />
                 </div>
               </div>
@@ -261,32 +293,34 @@ const Services = () =>
             <div className="relative z-10 flex flex-col lg:flex-row gap-12 items-center">
               <div className="lg:w-1/3">
                 <h3 className="text-2xl font-semibold leading-tight">
-                  Comprehensive Healthcare Services Designed for <span className="text-red-400">Clinical Excellence</span>
+                  Comprehensive Healthcare Services Designed for{" "}
+                  <span className="text-red-400">Clinical Excellence</span>
                 </h3>
               </div>
 
               <div className="lg:w-2/3 lg:pl-12 lg:border-l border-white/10">
                 <p className="text-slate-300 text-xs md:text-base leading-relaxed italic">
-                  "From outpatient consultations and specialized physiotherapy programs
-                  to pharmaceutical care management and advanced clinical monitoring,
-                  our services are structured to deliver high-quality, patient-focused
-                  healthcare solutions. We integrate modern medical technology,
-                  structured treatment pathways, and outcome-driven performance
-                  metrics to ensure sustainable healthcare delivery."
+                  "From outpatient consultations and specialized physiotherapy
+                  programs to pharmaceutical care management and advanced
+                  clinical monitoring, our services are structured to deliver
+                  high-quality, patient-focused healthcare solutions. We
+                  integrate modern medical technology, structured treatment
+                  pathways, and outcome-driven performance metrics to ensure
+                  sustainable healthcare delivery."
                 </p>
                 <div className="mt-6 flex items-center gap-4">
                   <div className="h-[1px] w-8 bg-red-500"></div>
-                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/50">Quality Assurance Division</span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/50">
+                    Quality Assurance Division
+                  </span>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </section>
-
     </>
   );
-}
+};
 
 export default Services;

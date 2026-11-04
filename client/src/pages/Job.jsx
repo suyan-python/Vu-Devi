@@ -173,49 +173,44 @@ const Job = () => {
                         </div>
                     </div> */}
 
-          <div className="max-w-7xl mx-auto py-14 md:py-20">
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-800 to-slate-900 text-white text-[8px] md:text-sm font-bold uppercase tracking-wider rounded-lg mb-8 shadow-lg">
-                <Briefcase size={16} />
-                No Current Openings
+          <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8">
+            <div className="mx-auto max-w-4xl text-center">
+              {/* Status Badge */}
+              <div className="mb-6 inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-slate-700 shadow-sm sm:mb-8 sm:px-4 sm:text-xs md:text-sm">
+                <Briefcase size={15} className="shrink-0" />
+                <span>No Current Openings</span>
               </div>
 
-              {/* H1 - SEO focused */}
-              <h1 className="header text-2xl md:text-6xl font-bold tracking-tight text-slate-900 leading-tight mb-6">
+              {/* Main Heading */}
+              <h1 className="header mb-5 text-3xl font-semibold leading-[1.2] tracking-tight text-slate-900 sm:text-4xl md:mb-6 md:text-5xl lg:text-6xl">
                 Careers at Vu Devi Services
-                <br />
-                <span className="bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent font-light">
+                <span className="mt-2 block bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent font-light">
                   Future Opportunities in Nepal
                 </span>
               </h1>
 
-              <div className="max-w-3xl mx-auto">
-                <h2 className="text-sm md:text-2xl text-slate-700 font-medium mb-4 leading-tight">
+              {/* Supporting Content */}
+              <div className="mx-auto max-w-2xl">
+                <h2 className="text-base font-medium leading-relaxed text-slate-600 sm:text-lg md:text-xl">
                   We're not hiring right now, but we'd love to hear from you.
                 </h2>
 
-                <p className="text-[10px] md:text-lg text-slate-600 leading-relaxed mb-8">
-                  Vu Devi Services is always looking to connect with talented
-                  and ambitious professionals in Nepal. While we don't have any
-                  open positions at the moment, you can share your profile with
-                  us and we'll keep you in mind for future opportunities.
-                </p>
-
-                {/* CTA */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                {/* CTA Buttons */}
+                <div className="mt-7 flex flex-col items-stretch justify-center gap-3 sm:mt-9 sm:flex-row sm:items-center sm:gap-4">
                   <a
                     href="mailto:info@vudeviservices.com.np"
-                    className="bg-gradient-to-r from-slate-900 to-slate-800 text-white md:px-8 px-4 py-2 md:py-4 rounded-xl font-medium text-xs md:text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200"
+                    className="inline-flex min-h-12 items-center justify-center rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 sm:min-h-14 sm:px-8 sm:text-base"
                   >
-                    Share Your Profile
+                    Mail Us
                   </a>
 
-                  <a
+                  <button
+                    type="button"
                     onClick={scrollToJobs}
-                    className="border-2 border-slate-200 bg-white text-slate-900 md:px-8 px-4 py-2 md:py-4 rounded-xl font-medium text-xs md:text-lg shadow-lg hover:shadow-xl hover:border-emerald-400 transition-all duration-200 cursor-pointer"
+                    className="inline-flex min-h-12 items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition-all duration-200 hover:-translate-y-0.5 hover:border-red-300 hover:bg-red-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 sm:min-h-14 sm:px-8 sm:text-base"
                   >
-                    Send us your CV
-                  </a>
+                    Send Us Your CV
+                  </button>
                 </div>
               </div>
             </div>
@@ -254,7 +249,6 @@ const Job = () => {
               <div className="space-y-8">
                 {/* Section Label */}
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-[2px] bg-red-700"></div>
                   <h4 className="text-xs font-semibold text-[#133a41] uppercase tracking-[0.4em]">
                     Clinical Recruitment Standards
                   </h4>
@@ -286,7 +280,7 @@ const Job = () => {
                   .
                 </p>
 
-                <p className="text-slate-500 text-xs md:text-lg leading-relaxed max-w-xl">
+                <p className="text-slate-600 text-xs md:text-lg leading-relaxed max-w-xl">
                   Every candidate undergoes credential verification, domain
                   testing, compliance review, and documentation accuracy
                   assessment before onboarding. We prioritize long-term

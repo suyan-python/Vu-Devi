@@ -1,7 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { UserCheck, Clock, Users, ArrowRight, ShieldCheck, BadgeCheck, Camera, CalendarDays } from "lucide-react";
+import {
+  UserCheck,
+  Clock,
+  Users,
+  ArrowRight,
+  ShieldCheck,
+  BadgeCheck,
+  Camera,
+  CalendarDays,
+} from "lucide-react";
 
 import ravi from "../assets/leads/ravi.webp";
 import nikita from "../assets/leads/nikita2.webp";
@@ -9,19 +18,16 @@ import rajiya from "../assets/leads/rajiya.webp";
 import bandana from "../assets/leads/bandana2.webp";
 import dilasha from "../assets/leads/dilasha.jpeg";
 
-import aayushma from "../assets/person/all/Aayushma Pokhrel.png"
-import karna from "../assets/person/all/Karna Bahadur Bam.png"
-import namita from "../assets/person/all/Namita Sangroula.webp"
-import priyasha from "../assets/person/all/Priyasha Mahara.png"
-import rojin from "../assets/person/all/Rojin Shakya.png"
-import sarita from "../assets/person/all/SARITA ALE.png"
-import shristi from "../assets/person/all/Shristi Manandhar.png"
-import tripti from "../assets/person/all/Tripti Rajkarnikar.webp"
+import aayushma from "../assets/person/all/Aayushma Pokhrel.png";
+import karna from "../assets/person/all/Karna Bahadur Bam.png";
+import namita from "../assets/person/all/Namita Sangroula.webp";
+import priyasha from "../assets/person/all/Priyasha Mahara.png";
+import rojin from "../assets/person/all/Rojin Shakya.png";
+import sarita from "../assets/person/all/SARITA ALE.png";
+import shristi from "../assets/person/all/Shristi Manandhar.png";
+import tripti from "../assets/person/all/Tripti Rajkarnikar.webp";
 
-
-
-function WholeTeam()
-{
+function WholeTeam() {
   const navigate = useNavigate();
 
   const teamLeads = [
@@ -71,7 +77,6 @@ function WholeTeam()
       date: "2016",
     },
   ];
-
 
   const coreTeams = [
     {
@@ -146,7 +151,6 @@ function WholeTeam()
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')]"></div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-
         {/* ===== SECTION 1: STRATEGIC TEAM LEADS ===== */}
         <div className="mb-14">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-20 gap-4">
@@ -155,13 +159,11 @@ function WholeTeam()
                 <ShieldCheck size={16} />
                 Management Layer
               </div>
-              <h2 className="text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 ">
-                Strategic <span className="text-[#133a41] font-light">Team Leads</span>
+              <h2 className="header text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 ">
+                Strategic{" "}
+                <span className="text-[#133a41] font-light">Team Leads</span>
               </h2>
             </div>
-            <p className="text-slate-500 max-w-md text-xs md:text-sm md:text-right italic">
-              Our leads ensure clinical accuracy and maintain international standards across all documentation workflows.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -184,7 +186,9 @@ function WholeTeam()
                   {/* Tenure Badge */}
                   <div className="absolute top-4 right-4 bg-white/90  px-3 py-1 rounded-sm shadow-sm flex items-center gap-1.5">
                     <Clock size={12} className="text-red-700" />
-                    <span className="text-[10px] font-bold text-slate-700 uppercase">Since {member.date}</span>
+                    <span className="text-[10px] font-bold text-slate-700 uppercase">
+                      Since {member.date}
+                    </span>
                   </div>
                 </div>
 
@@ -201,8 +205,13 @@ function WholeTeam()
                   </p>
 
                   <div className="mt-auto pt-4 border-t border-slate-50 flex items-center justify-between group-hover:border-[#133a41]/20 transition-colors">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-[#133a41]">View Dept.</span>
-                    <ArrowRight size={16} className="text-slate-300 group-hover:text-[#133a41] group-hover:translate-x-1 transition-all" />
+                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-[#133a41]">
+                      View Dept.
+                    </span>
+                    <ArrowRight
+                      size={16}
+                      className="text-slate-300 group-hover:text-[#133a41] group-hover:translate-x-1 transition-all"
+                    />
                   </div>
                 </div>
               </motion.div>
@@ -212,15 +221,26 @@ function WholeTeam()
 
         {/* ===== DIVIDER WITH ICON ===== */}
         <div className="relative py-6 md:py-12 flex items-center justify-center">
-          <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-slate-200"></div></div>
-          <div className="relative  px-6 text-slate-300"><Users size={32} strokeWidth={1} /></div>
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-slate-200"></div>
+          </div>
+          <div className="relative  px-6 text-slate-300">
+            <Users size={32} strokeWidth={1} />
+          </div>
         </div>
 
         {/* ===== SECTION 2: THE CORE EXPERIENCED TEAM ===== */}
         <div>
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900">Expert <br /> <span className="text-red-700 font-light">Clinical Associates</span></h2>
-            <p className="text-slate-500 text-xs md:text-sm mt-2">The backbone of our high-precision documentation services.</p>
+            <h2 className="header text-3xl font-bold text-slate-900">
+              Expert <br />{" "}
+              <span className="text-red-700 font-light">
+                Clinical Associates
+              </span>
+            </h2>
+            <p className="text-slate-500 text-xs md:text-sm mt-2">
+              The backbone of our high-precision documentation services.
+            </p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
@@ -259,7 +279,6 @@ function WholeTeam()
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
