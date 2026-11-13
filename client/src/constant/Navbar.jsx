@@ -4,26 +4,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Activity, Menu, X } from "lucide-react"; // Using Lucide for institutional icons
 import Logo from "../assets/logo/logo.png";
 
-function Navbar()
-{
+function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showBar, setShowBar] = useState(true);
 
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() =>
-  {
-    const handleScroll = () =>
-    {
+  useEffect(() => {
+    const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY && currentScrollY > 80)
-      {
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
         // scrolling down
         setShowBar(false);
-      } else
-      {
+      } else {
         // scrolling up
         setShowBar(true);
       }
@@ -33,14 +28,12 @@ function Navbar()
 
     window.addEventListener("scroll", handleScroll);
 
-    return () =>
-    {
+    return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
 
-  useEffect(() =>
-  {
+  useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -57,21 +50,24 @@ function Navbar()
   ];
 
   const getActiveClass = ({ isActive }) =>
-    `relative text-sm  transition-colors duration-300 ${isActive ? "text-red-700 font-extrabold" : "hover:text-[#133a41] font-medium"
+    `relative text-sm  transition-colors duration-300 ${
+      isActive
+        ? "text-red-700 font-extrabold"
+        : "hover:text-[#133a41] font-medium"
     }`;
   return (
     <>
       <nav
         className={`fixed top-0 w-full z-[500] transition-all duration-500 ease-in-out
-        ${isScrolled
+        ${
+          isScrolled
             ? "py-3  shadow-[0_2px_20px_rgba(0,0,0,0.05)] border-b border-slate-100 max-w-5xl mx-auto left-0 right-0  md:top-2 rounded-lg bg-white"
             : "py-8 bg-transparent"
-          }
+        }
         ${showBar ? "translate-y-0" : "-translate-y-full"}
       `}
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-12 flex justify-between items-center">
-
           {/* 1. LOGO AREA: Institutional Anchor */}
           <Link to="/" className="flex items-center gap-3 group">
             <img
@@ -82,8 +78,12 @@ function Navbar()
             {/* Subtle Status Indicator (Matches your "Operational Pulse" vibe) */}
             {!isScrolled && (
               <div className="hidden lg:flex flex-col border-l border-slate-300 pl-4 py-1">
-                <span className="text-[8px] font-black text-[#133a41] uppercase tracking-[0.3em]">Healthcare excellence</span>
-                <span className="text-[8px] font-bold text-slate-400 uppercase tracking-[0.2em]">Authority</span>
+                <span className="text-[8px] font-black text-[#133a41] uppercase tracking-[0.3em]">
+                  Healthcare excellence
+                </span>
+                <span className="text-[8px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+                  Authority
+                </span>
               </div>
             )}
           </Link>
@@ -104,7 +104,7 @@ function Navbar()
                   {/* Engineered Underline */}
                   <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-red-700 transition-all duration-300 group-hover:w-full"></span>
                 </NavLink>
-              )
+              ),
             )}
           </div>
 
@@ -114,7 +114,11 @@ function Navbar()
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 text-[#133a41] hover:bg-slate-100 transition-colors rounded-sm"
             >
-              {isMenuOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1.5} />}
+              {isMenuOpen ? (
+                <X size={24} strokeWidth={1.5} />
+              ) : (
+                <Menu size={24} strokeWidth={1.5} />
+              )}
             </button>
           </div>
         </div>
