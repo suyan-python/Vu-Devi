@@ -31,11 +31,11 @@ function AboutUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-[8px] md:text-[14px] font-medium text-red-700 tracking-wide mb-5">
+            <p className="text-[8px] md:text-[14px] font-medium text-red-700 tracking-wide mb-5 italic">
               Talking About Vu Devi Services
             </p>
 
-            <h2 className="header text-3xl md:text-5xl lg:text-6xl font-medium tracking-tighter text-slate-900 leading-[1.08] ">
+            <h2 className="header text-3xl md:text-5xl lg:text-6xl font-medium tracking-tighter text-[themeColor] leading-[1.08] ">
               Building Trust Through{" "}
               <span className="text-red-700 font-light">
                 Clinical Precision.
@@ -57,9 +57,9 @@ function AboutUs() {
                   Who We Are
                 </h3>
 
-                <p className="text-sm md:text-2xl text-slate-700 leading-snug font-light">
+                <p className="text-sm md:text-2xl text-[themeColor] leading-snug font-light">
                   Bridging clinical expertise with
-                  <span className="text-slate-900 font-semibold">
+                  <span className="text-[themeColor] font-semibold">
                     {" "}
                     technology, precision, and operational support.
                   </span>
@@ -71,7 +71,7 @@ function AboutUs() {
             <div className="lg:col-span-8">
               <div className="relative bg-white border border-slate-200 p-7 md:p-10 lg:p-12 overflow-hidden">
                 {/* Decorative Element */}
-                <div className="absolute -right-6 -top-6 text-slate-900 opacity-[0.025]">
+                <div className="absolute -right-6 -top-6 text-[themeColor] opacity-[0.025]">
                   <Microscope size={150} strokeWidth={1} />
                 </div>
 
@@ -107,7 +107,7 @@ function AboutUs() {
           {/* Vision */}
           <div className="bg-white p-12 hover:bg-slate-50 transition-colors">
             <Target className="text-red-700 mb-6" size={40} />
-            <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-4 uppercase tracking-tighter">
+            <h3 className="text-lg md:text-2xl font-bold text-[themeColor] mb-4 uppercase tracking-tighter">
               Strategic Vision
             </h3>
             <p className="text-slate-600 leading-relaxed text-[10px] md:text-[14px]">
@@ -120,7 +120,7 @@ function AboutUs() {
           {/* Mission */}
           <div className="bg-white p-12 hover:bg-slate-50 transition-colors">
             <ShieldCheck className="text-[#133a41] mb-6" size={40} />
-            <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-4 uppercase tracking-tighter">
+            <h3 className="text-lg md:text-2xl font-bold text-[themeColor] mb-4 uppercase tracking-tighter">
               Institutional Mission
             </h3>
             <p className="text-slate-600 leading-relaxed text-[10px] md:text-[14px]">
@@ -174,7 +174,7 @@ function AboutUs() {
                 <div className="text-red-700 mb-4 group-hover:scale-110 transition-transform">
                   {value.icon}
                 </div>
-                <h4 className="font-bold text-slate-900 mb-2 uppercase tracking-tighter text-sm">
+                <h4 className="font-bold text-[themeColor] mb-2 uppercase tracking-tighter text-sm">
                   {value.label}
                 </h4>
                 <p className="text-xs text-slate-500 leading-relaxed">
