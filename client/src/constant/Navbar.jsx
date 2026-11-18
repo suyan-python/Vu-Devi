@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Activity, Menu, X } from "lucide-react"; // Using Lucide for institutional icons
-import Logo from "../assets/logo/logo.png";
+// import Logo from "../assets/logo/logo.png";
+import Logo from "/logo2.png";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

@@ -128,16 +128,16 @@ const Job = () => {
         <div className="w-full px-6 md:px-12 ">
           <div className="max-w-7xl mx-auto py-14 md:py-20">
             <div className="text-center">
-              <h1 className="header text-2xl md:text-6xl font-bold tracking-tight text-slate-900 leading-tight mb-6">
+              <h1 className="header text-2xl md:text-6xl font-bold tracking-tight text-[themeColor] leading-tight mb-6">
                 Sales & Growth Jobs in Nepal
                 <br />
-                <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent font-bold">
+                <span className="bg-gradient-to-r from-red-700 to-orange-500 bg-clip-text text-transparent font-bold">
                   1 Position Open Now
                 </span>
               </h1>
 
               <div className="max-w-3xl mx-auto">
-                <h2 className="text-sm md:text-2xl text-slate-700 font-medium mb-4 leading-tight">
+                <h2 className="text-sm md:text-2xl text-[themeColor] font-medium mb-4 leading-tight">
                   Hiring: <span className="font-bold">Country Lead, Nepal</span>
                 </h2>
                 <p className="text-xs md:text-lg text-slate-600 leading-relaxed mb-8">
@@ -151,7 +151,7 @@ const Job = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <a
-                    className="border-2 border-slate-200 bg-white text-slate-900 md:px-8 px-4 py-2 md:py-4 rounded-xl font-bold text-xs md:text-lg shadow-lg hover:shadow-xl hover:border-emerald-400 transition-all duration-200"
+                    className="border-2 border-slate-200 bg-white text-[themeColor] md:px-8 px-4 py-2 md:py-4 rounded-xl font-bold text-xs md:text-lg shadow-lg hover:shadow-xl hover:border-emerald-400 transition-all duration-200 cursor-pointer"
                     onClick={scrollToJobs}
                   >
                     Apply
@@ -237,7 +237,7 @@ const Job = () => {
               <div className="space-y-7">
                 {/* Eyebrow */}
                 <div className="flex items-center gap-3">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#133a41] sm:text-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-themeColor sm:text-xs">
                     Careers & Recruitment
                   </span>
                 </div>
@@ -246,7 +246,7 @@ const Job = () => {
                 <div>
                   <h2
                     id="career-information-heading"
-                    className="text-3xl font-semibold leading-[1.2] tracking-tight text-slate-900 sm:text-4xl md:text-5xl"
+                    className="text-3xl font-semibold leading-[1.2] tracking-tight text-[themeColor] sm:text-4xl md:text-5xl"
                   >
                     Build Your Career in
                     <span className="block mt-2 font-light text-red-700">
@@ -297,7 +297,7 @@ const Job = () => {
                     <span className="text-lg font-bold">01</span>
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900">
+                  <h3 className="text-base font-bold text-[themeColor]">
                     Medical Documentation
                   </h3>
 
@@ -313,7 +313,7 @@ const Job = () => {
                     <span className="text-lg font-bold">02</span>
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900">
+                  <h3 className="text-base font-bold text-[themeColor]">
                     Clinical Knowledge
                   </h3>
 
@@ -329,7 +329,7 @@ const Job = () => {
                     <span className="text-lg font-bold">03</span>
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900">
+                  <h3 className="text-base font-bold text-[themeColor]">
                     Quality & Accuracy
                   </h3>
 
@@ -345,7 +345,7 @@ const Job = () => {
                     <span className="text-lg font-bold">04</span>
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900">
+                  <h3 className="text-base font-bold text-[themeColor]">
                     Professional Growth
                   </h3>
 
@@ -364,7 +364,7 @@ const Job = () => {
                   Our Recruitment Approach
                 </span>
 
-                <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+                <h3 className="mt-3 text-2xl font-semibold tracking-tight text-[themeColor] sm:text-3xl">
                   A Structured Approach to Recruitment
                 </h3>
 
@@ -412,7 +412,7 @@ const Job = () => {
                       {step.number}
                     </span>
 
-                    <h4 className="mt-4 text-base font-bold text-slate-900">
+                    <h4 className="mt-4 text-base font-bold text-[themeColor]">
                       {step.title}
                     </h4>
 
@@ -439,7 +439,7 @@ const Job = () => {
 
               <a
                 href="mailto:info@vudeviservices.com.np"
-                className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-lg bg-white px-6 py-3 text-sm font-bold text-[#133a41] transition-colors duration-200 hover:bg-red-50"
+                className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-lg bg-white px-6 py-3 text-sm font-bold text-[themeColor] transition-colors duration-200 hover:bg-red-50"
               >
                 Mail Our Team Directly
               </a>

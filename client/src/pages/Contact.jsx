@@ -38,15 +38,10 @@ function Contact() {
             >
               {/* HEADER */}
               <div className="mb-10">
-                <div className="flex items-center gap-2 text-[#133a41] text-[8px] md:text-[10px] font-bold uppercase tracking-[0.25em] mb-5">
-                  <Globe size={12} />
-                  Global Operations
-                </div>
-
-                <h1 className="header text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-[1.05]">
+                <h1 className="header text-3xl md:text-6xl font-semibold tracking-tighter text-[themeColor] leading-[1.05]">
                   Connect with our
-                  <span className="block text-[#133a41] font-light mt-1">
-                    Service Center.
+                  <span className="block text-red-700 font-light mt-1">
+                    Head Office.
                   </span>
                 </h1>
 
@@ -201,12 +196,12 @@ function Contact() {
                     href="https://www.instagram.com/vudeviservices"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-between p-3 md:p-4 border border-slate-200 bg-white hover:border-pink-500 hover:bg-slate-50 transition-all duration-300"
+                    className="group flex items-center justify-between p-3 md:p-4 border border-slate-200 bg-white hover:border-red-500 hover:bg-slate-50 transition-all duration-300"
                   >
                     <div className="flex items-center gap-2 md:gap-3">
                       <Instagram
                         size={17}
-                        className="text-slate-400 group-hover:text-pink-500 transition-colors"
+                        className="text-slate-400 group-hover:text-red-500 transition-colors"
                       />
                       <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-wider text-slate-600 group-hover:text-slate-900">
                         Instagram
@@ -215,7 +210,7 @@ function Contact() {
 
                     <ArrowUpRight
                       size={12}
-                      className="hidden md:block text-slate-300 group-hover:text-pink-500"
+                      className="hidden md:block text-slate-300 group-hover:text-red-500"
                     />
                   </a>
                 </div>
