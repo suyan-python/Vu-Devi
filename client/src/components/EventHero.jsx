@@ -115,7 +115,7 @@ function EventHero() {
 
               <p
                 className="
-                        text-[#133a41]
+                        text-themeColor
                         font-black
                         tracking-[0.3em]
                         uppercase
@@ -135,7 +135,7 @@ function EventHero() {
                     md:text-6xl
                     lg:text-7xl
                     font-semibold
-                    text-slate-800
+                    text-[themeColor]
                     leading-tight
                     md:leading-[1.05]
                     tracking-tighter
@@ -158,15 +158,16 @@ function EventHero() {
             {/* DESCRIPTION */}
             <p
               className="
-                    text-xs
-                    md:text-lg
-                    text-slate-700
-                    leading-relaxed
-                    max-w-2xl
-                    mx-auto
-                    mb-8
-                    md:mb-10
-                "
+    text-xs
+    md:text-lg
+    text-slate-100
+    [text-shadow:0_2px_4px_rgba(0,0,0,0.75)]
+    leading-relaxed
+    max-w-2xl
+    mx-auto
+    mb-8
+    md:mb-10
+  "
             >
               From team gatherings to meaningful milestones, explore the people,
               moments, and experiences that shape life at Vu Devi Services.

@@ -33,12 +33,12 @@ const Events = () => {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-20 border-b border-slate-200 ">
           {/* LEFT: Institutional Anchor */}
           <div className="flex-1">
-            <div className="inline-flex items-center gap-3 text-red-700 font-black uppercase tracking-[0.3em] text-[10px] mb-6">
+            <div className="inline-flex items-center gap-3 text-red-700  uppercase tracking-[0.3em] text-[10px] mb-6">
               Company Moments
             </div>
-            <h2 className="text-4xl md:text-7xl font-bold tracking-tighter text-slate-900 leading-[0.9]">
-              Events & <br />
-              <span className="text-[#133a41] font-light italic">
+            <h2 className="text-4xl md:text-7xl font-medium tracking-tighter text-[themeColor] leading-[0.9]">
+              Events &
+              <span className="text-red-700 font-light italic">
                 Team Culture
               </span>
             </h2>
@@ -46,10 +46,9 @@ const Events = () => {
 
           {/* RIGHT: Contextual Description */}
           <div className="flex-1 lg:text-right">
-            <p className="text-slate-500 max-w-lg lg:ml-auto text-xs md:text-base leading-relaxed tracking-wide font-light">
-              Beyond the rigor of clinical documentation, we prioritize the
-              human element. These moments reflect our commitment to a culture
-              of collaboration, continuous growth, and shared institutional
+            <p className="text-slate-700 max-w-lg lg:ml-auto text-xs md:text-base leading-relaxed tracking-wide ">
+              These moments reflect our commitment to a culture of
+              collaboration, continuous growth, and shared institutional
               success.
             </p>
 

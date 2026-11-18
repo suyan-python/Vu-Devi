@@ -105,7 +105,7 @@ const Services = () => {
             <div className="inline-flex items-center gap-2  text-[#133a41] text-[8px] md:text-[10px] font-black uppercase tracking-[0.3em] rounded-sm mb-6">
               Institutional Capabilities
             </div>
-            <h2 className="header text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
+            <h2 className="header text-3xl md:text-6xl font-semibold tracking-tighter text-[themeColor] leading-tight">
               Our Core <br />
               <span className="text-red-700  font-light">
                 {" "}
@@ -123,7 +123,7 @@ const Services = () => {
               return (
                 <motion.div
                   key={index}
-                  className={`group relative overflow-hidden p-7 md:p-9 lg:p-10 min-h-[300px] lg:min-h-[340px] transition-all duration-500 ${isFeatured ? "lg:col-span-6 bg-[#133a41] text-white" : "lg:col-span-3 bg-white text-slate-900 hover:bg-slate-50"}`}
+                  className={`group relative overflow-hidden p-7 md:p-9 lg:p-10 min-h-[300px] lg:min-h-[340px] transition-all duration-500 ${isFeatured ? "lg:col-span-6 bg-[#133a41] text-white" : "lg:col-span-3 bg-white text-[themeColor] hover:bg-slate-50"}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -189,7 +189,7 @@ const Services = () => {
 
           {/* Professional Footer Disclaimer */}
           <div className="mt-16 text-center">
-            <p className="text-xs text-slate-400 font-medium italic">
+            <p className="text-xs text-slate-500 font-medium italic">
               *All service protocols are executed under strict HIPAA and ISO
               27001 data security frameworks.
             </p>
@@ -211,14 +211,12 @@ const Services = () => {
           {/* 1. SECTION HEADER: Institutional Authority */}
           <div className="text-center mb-24">
             <div className="inline-flex items-center gap-3 mb-6">
-              <div className="w-12 h-[1px] bg-[#133a41]"></div>
               <p className="text-[10px] font-black text-[#133a41] uppercase tracking-[0.4em]">
                 Healthcare Excellence Protocol
               </p>
-              <div className="w-12 h-[1px] bg-[#133a41]"></div>
             </div>
 
-            <h2 className="header text-3xl md:text-5xl font-semibold text-slate-900 tracking-tight leading-tight">
+            <h2 className="header text-3xl md:text-5xl font-semibold text-[themeColor] tracking-tight leading-tight">
               Advanced Medical Services <br />
               <span className="text-red-700 font-light">
                 Built on Clinical Precision & Patient-Centered Care
@@ -267,7 +265,7 @@ const Services = () => {
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 mb-4 h-14 flex items-center">
+                <h3 className="text-lg font-bold text-[themeColor] mb-4 h-14 flex items-center">
                   {card.title}
                 </h3>
 

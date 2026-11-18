@@ -159,9 +159,9 @@ function WholeTeam() {
                 <ShieldCheck size={16} />
                 Management Layer
               </div>
-              <h2 className="header text-3xl md:text-6xl font-semibold tracking-tighter text-slate-900 ">
+              <h2 className="header text-3xl md:text-6xl font-semibold tracking-tighter text-[themeColor] ">
                 Strategic{" "}
-                <span className="text-[#133a41] font-light">Team Leads</span>
+                <span className="text-red-700 font-light">Team Leads</span>
               </h2>
             </div>
           </div>
@@ -194,7 +194,7 @@ function WholeTeam() {
 
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#133a41] transition-colors">
+                  <h3 className="text-lg font-bold text-[themeColor] group-hover:text-[#133a41] transition-colors">
                     {member.name}
                   </h3>
                   <p className="text-xs font-medium text-red-700 uppercase tracking-wider mb-3">
@@ -232,7 +232,7 @@ function WholeTeam() {
         {/* ===== SECTION 2: THE CORE EXPERIENCED TEAM ===== */}
         <div>
           <div className="text-center mb-12">
-            <h2 className="header text-3xl font-bold text-slate-900">
+            <h2 className="header text-3xl font-bold text-[themeColor]">
               Expert <br />{" "}
               <span className="text-red-700 font-light">
                 Clinical Associates
@@ -262,7 +262,7 @@ function WholeTeam() {
                 </div>
 
                 <div className="space-y-1">
-                  <h3 className="text-sm font-bold text-slate-900 truncate group-hover:text-[#133a41]">
+                  <h3 className="text-sm font-bold text-[themeColor] truncate group-hover:text-[#133a41]">
                     {member.name}
                   </h3>
                   <div className="flex items-center gap-1.5">
