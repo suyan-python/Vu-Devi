@@ -212,7 +212,7 @@ function Hero() {
                     font-medium
                     tracking-tighter
                     leading-[0.98]
-                    text-slate-900
+                    text-[#133a41]
 text-center
 md:text-start
                 "
@@ -384,7 +384,7 @@ md:text-start
                                 font-black
                                 uppercase
                                 tracking-[0.3em]
-                                text-slate-400
+                                text-[#133a41]/55
                                 mb-3
                             "
                     >
@@ -412,13 +412,6 @@ md:text-start
                                 mt-4
                             "
                     />
-
-                    <div className="absolute bottom-32 left-6 md:hidden flex items-center gap-3 opacity-60">
-                      <span className="w-8 h-px bg-[#133a41]/30" />
-                      <span className="text-[7px] font-black uppercase tracking-[0.3em] text-slate-400">
-                        Clinical Support
-                      </span>
-                    </div>
                   </div>
                 </div>
 
@@ -512,7 +505,7 @@ md:text-start
                         font-black
                         uppercase
                         tracking-[0.15em]
-                        text-slate-500
+                        text-[#133a41]
                     "
                 >
                   {item}

@@ -1,10 +1,4 @@
 import React from "react";
-import { Award, Quote } from "lucide-react";
-import { ShieldCheck } from "lucide-react";
-
-import akriti from "../assets/month/akriti.jpeg";
-import subekshya from "../assets/month/subekshya.jpeg";
-import shruti from "../assets/month/shruti.jpeg";
 
 import rushmi from "../assets/month/rushmi.jpeg";
 import sarita from "../assets/month/sarita.jpeg";
@@ -161,13 +155,13 @@ const EmployeeMonthSection = ({ month, year, employees, className = "" }) => (
     {/* Month Header */}
     <div className="mb-12 md:mb-16">
       <div className="border-l-4 border-red-700 pl-5 md:pl-8">
-        <h2 className="header text-3xl  md:text-5xl  xl:text-[3.5rem] font-semibold tracking-tighter leading-[0.98] text-slate-900">
+        <h2 className="header text-3xl  md:text-5xl  xl:text-[3.5rem] font-semibold tracking-tighter leading-[0.98] text-themeColor">
           Employee of the Month -{" "}
           <span className="text-red-700 font-light ">
             {month}, {year}
           </span>
         </h2>
-        <p className="mt-4 text-slate-500 text-xs md:text-sm uppercase tracking-[0.25em] font-bold">
+        <p className="mt-4 text-[#133a41]/55 text-xs md:text-sm uppercase tracking-[0.25em] font-bold">
           Based on Performance Audit
         </p>
       </div>

@@ -7,7 +7,7 @@ import { JOB_DATA } from "../db/jobs";
 
 const Job = () => {
   const scrollToJobs = () => {
-    const section = document.getElementById("generalForm");
+    const section = document.getElementById("jobs");
     const offset = 80; // adjust based on navbar height
     const top = section.getBoundingClientRect().top + window.scrollY - offset;
 
@@ -126,62 +126,48 @@ const Job = () => {
       <section className="w-full min-h-screen pt-16 md:pt-32">
         {/* 1. RECRUITMENT HERO: Command Center Style */}
         <div className="w-full px-6 md:px-12 ">
-          {/* <div className="max-w-7xl mx-auto py-14 md:py-20">
-                        <div className="text-center">
-                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-800 to-slate-900 text-white text-[8px] md:text-sm font-bold uppercase tracking-wider rounded-lg mb-8 shadow-lg">
-                                <Briefcase size={16} />
-                                1 Active Openings | Apply Today
-                            </div>
+          <div className="max-w-7xl mx-auto py-14 md:py-20">
+            <div className="text-center">
+              <h1 className="header text-2xl md:text-6xl font-bold tracking-tight text-slate-900 leading-tight mb-6">
+                Sales & Growth Jobs in Nepal
+                <br />
+                <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent font-bold">
+                  1 Position Open Now
+                </span>
+              </h1>
 
+              <div className="max-w-3xl mx-auto">
+                <h2 className="text-sm md:text-2xl text-slate-700 font-medium mb-4 leading-tight">
+                  Hiring: <span className="font-bold">Country Lead, Nepal</span>
+                </h2>
+                <p className="text-xs md:text-lg text-slate-600 leading-relaxed mb-8">
+                  Join us at Peatch AI in Kathmandu. Full-time roles with
+                  <strong>
+                    {" "}
+                    competitive salary, portfolio growth, real client projects
+                  </strong>
+                  , and career advancement.
+                </p>
 
-                            <h1 className="header text-2xl md:text-6xl font-bold tracking-tight text-slate-900 leading-tight mb-6">
-                                Sales & Growth Jobs in Nepal
-                                <br />
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <a
+                    className="border-2 border-slate-200 bg-white text-slate-900 md:px-8 px-4 py-2 md:py-4 rounded-xl font-bold text-xs md:text-lg shadow-lg hover:shadow-xl hover:border-emerald-400 transition-all duration-200"
+                    onClick={scrollToJobs}
+                  >
+                    Apply
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-                                <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent font-light">
-                                    1 Position Open Now
-                                </span>
-                            </h1>
-
-
-                            <div className="max-w-3xl mx-auto">
-                                <h2 className="text-sm md:text-2xl text-slate-700 font-medium mb-4 leading-tight">
-                                    Hiring: <span className="font-bold">Country Lead, Nepal</span>
-                                </h2>
-                                <p className="text-xs md:text-lg text-slate-600 leading-relaxed mb-8">
-                                    Join us at Peatch AI in Kathmandu. Full-time roles with
-                                    <strong> competitive salary, portfolio growth, real client projects</strong>,
-                                    and career advancement.
-                                </p>
-
-
-                                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                                    <a
-                                        className="bg-gradient-to-r from-slate-900 to-slate-800 text-white md:px-8 px-4 py-2 md:py-4 rounded-xl font-bold text-xs md:text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200"
-                                        onClick={scrollToJobs}
-                                    >
-                                        Apply Country Lead, Nepal
-                                    </a>
-                                    <a
-                                        className="border-2 border-slate-200 bg-white text-slate-900 md:px-8 px-4 py-2 md:py-4 rounded-xl font-bold text-xs md:text-lg shadow-lg hover:shadow-xl hover:border-emerald-400 transition-all duration-200"
-                                        onClick={scrollToJobs}
-                                    >
-                                        Medical Report Jobs
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
-
-          <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8">
+          {/* <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8">
             <div className="mx-auto max-w-4xl text-center">
-              {/* Status Badge */}
               <div className="mb-6 inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-slate-700 shadow-sm sm:mb-8 sm:px-4 sm:text-xs md:text-sm">
                 <Briefcase size={15} className="shrink-0" />
                 <span>No Current Openings</span>
               </div>
 
-              {/* Main Heading */}
               <h1 className="header mb-5 text-3xl font-semibold leading-[1.2] tracking-tight text-slate-900 sm:text-4xl md:mb-6 md:text-5xl lg:text-6xl">
                 Careers at Vu Devi Services
                 <span className="mt-2 block bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent font-light">
@@ -189,13 +175,11 @@ const Job = () => {
                 </span>
               </h1>
 
-              {/* Supporting Content */}
               <div className="mx-auto max-w-2xl">
                 <h2 className="text-base font-medium leading-relaxed text-slate-600 sm:text-lg md:text-xl">
                   We're not hiring right now, but we'd love to hear from you.
                 </h2>
 
-                {/* CTA Buttons */}
                 <div className="mt-7 flex flex-col items-stretch justify-center gap-3 sm:mt-9 sm:flex-row sm:items-center sm:gap-4">
                   <a
                     href="mailto:info@vudeviservices.com.np"
@@ -214,7 +198,12 @@ const Job = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+        </div>
+
+        {/* 3. DEPLOYMENT OPPORTUNITIES: Structured Dossiers */}
+        <div id="jobs">
+          <JobOpenings />
         </div>
 
         <div className="bg-white py-6 border-y border-slate-100 mb-12 md:mb-20">
@@ -234,112 +223,229 @@ const Job = () => {
           </div>
         </div>
 
-        {/* 3. DEPLOYMENT OPPORTUNITIES: Structured Dossiers */}
-        <div id="jobs">
-          <JobOpenings />
-        </div>
-
         <GeneralForm />
 
-        {/* 4. INSTITUTIONAL RECRUITMENT FOOTER */}
-        <footer className="w-full px-6 py-18 md:py-28 bg-white border-t border-slate-200">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-18 md:gap-24 items-start">
-              {/* LEFT CONTENT BLOCK */}
-              <div className="space-y-8">
-                {/* Section Label */}
-                <div className="flex items-center gap-4">
-                  <h4 className="text-xs font-semibold text-[#133a41] uppercase tracking-[0.4em]">
-                    Clinical Recruitment Standards
-                  </h4>
+        {/* CAREER INFORMATION & RECRUITMENT SECTION */}
+        <section
+          className="relative w-full overflow-hidden border-t border-slate-200 bg-slate-50/70 px-4 py-16 sm:px-6 md:py-24 lg:px-8"
+          aria-labelledby="career-information-heading"
+        >
+          <div className="mx-auto max-w-7xl">
+            {/* SECTION INTRODUCTION */}
+            <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-20">
+              {/* LEFT CONTENT */}
+              <div className="space-y-7">
+                {/* Eyebrow */}
+                <div className="flex items-center gap-3">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#133a41] sm:text-xs">
+                    Careers & Recruitment
+                  </span>
                 </div>
 
-                {/* Main Heading (SEO Optimized) */}
-                <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 leading-tight tracking-tight">
-                  Institutional Hiring for
-                  <span className="text-red-700 font-light">
-                    {" "}
-                    Medical Documentation Professionals
-                  </span>
-                </h2>
+                {/* Heading */}
+                <div>
+                  <h2
+                    id="career-information-heading"
+                    className="text-3xl font-semibold leading-[1.2] tracking-tight text-slate-900 sm:text-4xl md:text-5xl"
+                  >
+                    Build Your Career in
+                    <span className="block mt-2 font-light text-red-700">
+                      Healthcare Documentation
+                    </span>
+                  </h2>
 
-                {/* SEO Content */}
-                <p className="text-slate-600 text-xs md:text-lg leading-relaxed max-w-xl">
-                  Our recruitment process is built for healthcare accuracy. We
-                  hire and validate
-                  <strong className="text-slate-900">
-                    {" "}
-                    Clinical Documentation Specialists, Medical Scribes, and
-                    Healthcare Documentation Experts{" "}
-                  </strong>
-                  through structured evaluation protocols aligned with
-                  <strong className="text-slate-900">
-                    {" "}
-                    HIPAA compliance and global medical data standards
-                  </strong>
-                  .
-                </p>
+                  <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
+                    Explore career opportunities at{" "}
+                    <strong className="font-semibold text-slate-900">
+                      Vu Devi Services
+                    </strong>
+                    , where technology, medical knowledge, and accurate
+                    healthcare documentation come together. We welcome
+                    individuals interested in building professional careers in
+                    medical documentation and healthcare support services.
+                  </p>
+                </div>
 
-                <p className="text-slate-600 text-xs md:text-lg leading-relaxed max-w-xl">
-                  Every candidate undergoes credential verification, domain
-                  testing, compliance review, and documentation accuracy
-                  assessment before onboarding. We prioritize long-term
-                  healthcare documentation careers backed by secure digital
-                  infrastructure.
+                {/* Recruitment Roles */}
+                <div className="border-l-2 border-red-700 py-1 pl-5">
+                  <h3 className="text-sm font-bold text-slate-900 sm:text-base">
+                    Professional Roles We Look For
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-7 text-slate-600">
+                    Our recruitment interests include Medical Scribes, Clinical
+                    Documentation Specialists, Medical Documentation Associates,
+                    and other healthcare documentation professionals.
+                  </p>
+                </div>
+
+                {/* Additional SEO Content */}
+                <p className="max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
+                  Whether you have experience in healthcare documentation,
+                  medical terminology, clinical workflows, or are looking to
+                  develop relevant professional skills, we encourage you to
+                  submit your application for consideration in future
+                  opportunities in Nepal.
                 </p>
               </div>
 
-              {/* RIGHT AUTHORITY GRID */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {/* RIGHT: RECRUITMENT HIGHLIGHTS */}
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {/* Card 1 */}
-                <div className="relative p-8 bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                  <div className="absolute top-0 left-0 w-full h-1 bg-[#133a41] rounded-t-xl"></div>
-                  <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-5">
-                    Infrastructure Security
-                  </p>
-                  <p className="text-sm font-bold text-slate-900 leading-snug">
-                    100% HIPAA Compliant Data Handling & Encrypted Clinical
-                    Systems
+                <div className="group rounded-xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#133a41]/30 hover:shadow-lg sm:p-7">
+                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-[#133a41]/10 text-[#133a41]">
+                    <span className="text-lg font-bold">01</span>
+                  </div>
+
+                  <h3 className="text-base font-bold text-slate-900">
+                    Medical Documentation
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-6 text-slate-500">
+                    Opportunities involving medical records, clinical notes,
+                    medical terminology, and healthcare documentation workflows.
                   </p>
                 </div>
 
                 {/* Card 2 */}
-                <div className="relative p-8 bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                  <div className="absolute top-0 left-0 w-full h-1 bg-red-700 rounded-t-xl"></div>
-                  <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-5">
-                    Recruitment Audit
-                  </p>
-                  <p className="text-sm font-bold text-slate-900 leading-snug">
-                    ISO 27001-Aligned Screening & Compliance Verification
+                <div className="group rounded-xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-lg sm:p-7">
+                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 text-red-700">
+                    <span className="text-lg font-bold">02</span>
+                  </div>
+
+                  <h3 className="text-base font-bold text-slate-900">
+                    Clinical Knowledge
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-6 text-slate-500">
+                    Medical terminology, clinical understanding, attention to
+                    detail, and the ability to work with healthcare information.
                   </p>
                 </div>
 
                 {/* Card 3 */}
-                <div className="relative p-8 bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                  <div className="absolute top-0 left-0 w-full h-1 bg-[#0F3B44] rounded-t-xl"></div>
-                  <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-5">
-                    Clinical Accuracy
-                  </p>
-                  <p className="text-sm font-bold text-slate-900 leading-snug">
-                    Structured Documentation Validation & Domain Testing
+                <div className="group rounded-xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#133a41]/30 hover:shadow-lg sm:p-7">
+                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-[#133a41]/10 text-[#133a41]">
+                    <span className="text-lg font-bold">03</span>
+                  </div>
+
+                  <h3 className="text-base font-bold text-slate-900">
+                    Quality & Accuracy
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-6 text-slate-500">
+                    Emphasis on documentation accuracy, professional standards,
+                    confidentiality, and consistent work quality.
                   </p>
                 </div>
 
                 {/* Card 4 */}
-                <div className="relative p-8 bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                  <div className="absolute top-0 left-0 w-full h-1 bg-slate-900 rounded-t-xl"></div>
-                  <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-5">
-                    Global Readiness
-                  </p>
-                  <p className="text-sm font-bold text-slate-900 leading-snug">
-                    Remote Workforce Structured for International Healthcare
-                    Clients
+                <div className="group rounded-xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-lg sm:p-7">
+                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 text-red-700">
+                    <span className="text-lg font-bold">04</span>
+                  </div>
+
+                  <h3 className="text-base font-bold text-slate-900">
+                    Professional Growth
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-6 text-slate-500">
+                    Opportunities to develop technical, communication,
+                    documentation, and professional workplace skills.
                   </p>
                 </div>
               </div>
             </div>
+
+            {/* RECRUITMENT PROCESS */}
+            <div className="mt-16 border-t border-slate-200 pt-12 md:mt-24 md:pt-16">
+              <div className="mb-10 max-w-2xl">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-red-700 sm:text-xs">
+                  Our Recruitment Approach
+                </span>
+
+                <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+                  A Structured Approach to Recruitment
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-slate-500 sm:text-base">
+                  We aim to evaluate applicants through a structured selection
+                  process that considers relevant knowledge, practical skills,
+                  communication, and suitability for the role.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4">
+                {[
+                  {
+                    number: "01",
+                    title: "Application Review",
+                    description:
+                      "Reviewing submitted CVs, qualifications, experience, and relevant background.",
+                  },
+                  {
+                    number: "02",
+                    title: "Initial Assessment",
+                    description:
+                      "Evaluating relevant knowledge, communication skills, and role requirements.",
+                  },
+                  {
+                    number: "03",
+                    title: "Skills Evaluation",
+                    description:
+                      "Assessing practical abilities, documentation accuracy, and attention to detail where applicable.",
+                  },
+                  {
+                    number: "04",
+                    title: "Final Selection",
+                    description:
+                      "Completing the selection process and discussing suitable candidates for onboarding.",
+                  },
+                ].map((step, index) => (
+                  <div
+                    key={step.number}
+                    className={`relative border-slate-200 py-6 sm:px-6 lg:px-7
+              ${index !== 3 ? "border-b sm:border-b-0 lg:border-r" : ""}
+              ${index === 0 || index === 2 ? "sm:border-r lg:border-r" : ""}`}
+                  >
+                    <span className="text-3xl font-light text-red-700/60">
+                      {step.number}
+                    </span>
+
+                    <h4 className="mt-4 text-base font-bold text-slate-900">
+                      {step.title}
+                    </h4>
+
+                    <p className="mt-2 text-sm leading-6 text-slate-500">
+                      {step.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CLOSING STATEMENT */}
+            <div className="mt-12 flex flex-col gap-5 rounded-xl bg-[#133a41] px-6 py-8 sm:px-9 md:flex-row md:items-center md:justify-between md:py-9">
+              <div className="max-w-2xl">
+                <h3 className="text-lg font-semibold text-white sm:text-xl">
+                  Your Next Career Opportunity Could Start Here.
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-white/70">
+                  Stay connected with Vu Devi Services and explore future
+                  opportunities in medical and healthcare documentation.
+                </p>
+              </div>
+
+              <a
+                href="mailto:info@vudeviservices.com.np"
+                className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-lg bg-white px-6 py-3 text-sm font-bold text-[#133a41] transition-colors duration-200 hover:bg-red-50"
+              >
+                Mail Our Team Directly
+              </a>
+            </div>
           </div>
-        </footer>
+        </section>
       </section>
     </>
   );

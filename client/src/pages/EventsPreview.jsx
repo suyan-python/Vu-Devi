@@ -56,7 +56,7 @@ export default function EventsPreview() {
             >
               {/* Label */}
               <div className="mb-6 flex items-center gap-4">
-                <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-white bg-red-500 px-3 rounded-2xl">
+                <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-white ">
                   Events & Culture
                 </span>
               </div>
