@@ -116,18 +116,56 @@ const Services = () => {
           </div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-px bg-slate-200 border border-slate-200">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-px bg-slate-200 border border-slate-200"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.12,
+                  delayChildren: 0.08,
+                },
+              },
+            }}
+          >
+            {" "}
             {serviceProtocols.map((service, index) => {
               const isFeatured = index === 0;
 
               return (
                 <motion.div
                   key={index}
-                  className={`group relative overflow-hidden p-7 md:p-9 lg:p-10 min-h-[300px] lg:min-h-[340px] transition-all duration-500 ${isFeatured ? "lg:col-span-6 bg-[#133a41] text-white" : "lg:col-span-3 bg-white text-[themeColor] hover:bg-slate-50"}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.06 }}
+                  variants={{
+                    hidden: {
+                      opacity: 0,
+                      y: 28,
+                      filter: "blur(5px)",
+                    },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      filter: "blur(0px)",
+                      transition: {
+                        duration: 0.85,
+                        ease: [0.22, 1, 0.36, 1],
+                      },
+                    },
+                  }}
+                  whileHover={{
+                    y: -4,
+                    transition: {
+                      duration: 0.35,
+                      ease: [0.22, 1, 0.36, 1],
+                    },
+                  }}
+                  className={`group relative overflow-hidden p-7 md:p-9 lg:p-10 min-h-[300px] lg:min-h-[340px] transition-colors duration-500 ${
+                    isFeatured
+                      ? "lg:col-span-6 bg-[#133a41] text-white"
+                      : "lg:col-span-3 bg-white text-[#133a41] hover:bg-slate-50"
+                  }`}
                 >
                   {/* Large Background Number */}
                   <span
@@ -185,7 +223,7 @@ const Services = () => {
                 </motion.div>
               );
             })}
-          </div>
+          </motion.div>
 
           {/* Professional Footer Disclaimer */}
           <div className="mt-16 text-center">
@@ -225,7 +263,7 @@ const Services = () => {
           </div>
 
           {/* 2. VALUE GRID: The Service Nodes */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-slate-200 shadow-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-slate-200 shadow-xl">
             {[
               {
                 title: "Evidence-Based Treatment",

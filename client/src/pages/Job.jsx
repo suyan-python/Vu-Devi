@@ -1,6 +1,6 @@
 import React from "react";
 import GeneralForm from "./GeneralForm";
-import { Briefcase, Globe, ShieldCheck, Cpu } from "lucide-react";
+import { Briefcase, Globe, ShieldCheck, Cpu, ArrowUpRight } from "lucide-react";
 import JobOpenings from "./JobOpenings";
 import { Helmet } from "react-helmet";
 import { JOB_DATA } from "../db/jobs";
@@ -17,189 +17,294 @@ const Job = () => {
     });
   };
 
+  const activeJobs = JOB_DATA.filter((job) => job.status === "OPEN");
+
+  const totalOpenings = activeJobs.length;
+
+  const hasOpenings = totalOpenings > 0;
+
+  const featuredCompany =
+    activeJobs[0]?.company || "Vu Devi Services Pvt. Ltd.";
+
+  const siteUrl = "https://vudeviservices.com.np";
+  const applicationUrl = `${siteUrl}/application`;
+  const companyName = "Vu Devi Services Pvt. Ltd.";
+
+  const jobTitles = activeJobs.map((job) => job.title);
+
+  const pageTitle = activeJobs.length
+    ? `${jobTitles.slice(0, 2).join(" & ")} Jobs in Nepal | Vu Devi Services`
+    : "Careers in Nepal | Vu Devi Services";
+
+  const pageDescription = activeJobs.length
+    ? `Explore ${activeJobs.length} current job ${
+        activeJobs.length === 1 ? "opening" : "openings"
+      } at Vu Devi Services in Nepal. Apply for ${jobTitles.join(
+        ", ",
+      )} positions and grow your career with our team.`
+    : "Explore career opportunities at Vu Devi Services Pvt. Ltd. in Nepal. Connect with our team and discover future opportunities in healthcare documentation and medical data management.";
+
+  // Convert job sections into readable descriptions for search engines.
+  const getJobDescription = (job) => {
+    const overview = job.sections?.find(
+      (section) => section.type === "overview",
+    );
+
+    const responsibilities = job.sections?.find(
+      (section) => section.type === "responsibilities",
+    );
+
+    return [
+      ...(overview?.content || []),
+      ...(responsibilities?.content || []),
+    ].join(" ");
+  };
+
+  // Generate individual JobPosting structured data.
+  const jobPostingSchemas = activeJobs.map((job) => ({
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    title: job.title,
+    description: getJobDescription(job),
+    identifier: {
+      "@type": "PropertyValue",
+      name: companyName,
+      value: job.id,
+    },
+    ...(job.datePosted && {
+      datePosted: job.datePosted,
+    }),
+    ...(job.validThrough && {
+      validThrough: job.validThrough,
+    }),
+    employmentType: job.employmentType || "FULL_TIME",
+    hiringOrganization: {
+      "@type": "Organization",
+      name: companyName,
+      sameAs: siteUrl,
+      logo: `${siteUrl}/logo.png`,
+    },
+    jobLocation: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: job.addressLocality || "Lalitpur",
+        addressCountry: job.addressCountry || "NP",
+      },
+    },
+    directApply: true,
+  }));
+
+  // Dynamic job listing schema.
+  const jobListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Current Job Openings at Vu Devi Services",
+    description: pageDescription,
+    numberOfItems: activeJobs.length,
+    itemListElement: activeJobs.map((job, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: job.title,
+      url: `${applicationUrl}#${job.slug}`,
+    })),
+  };
+
   return (
     <>
       <Helmet>
-        <title>Job Openings Nepal | Vu Devi Services</title>
+        {/* Primary SEO */}
+        <title>{pageTitle}</title>
 
-        <meta
-          name="description"
-          content="Apply for Medical Report Reviewer & Graphic Designer jobs in Nepal. Full-time roles at Vu Devi Services with growth opportunities."
-        />
+        <meta name="description" content={pageDescription} />
 
-        <link
-          rel="canonical"
-          href="https://vudeviservices.com.np/application"
-        />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+
+        <link rel="canonical" href={applicationUrl} />
 
         {/* Open Graph */}
-        <meta
-          property="og:title"
-          content="Job Openings Nepal | Vu Devi Services"
-        />
-        <meta
-          property="og:description"
-          content="Hiring Medical Report Reviewers and Graphic Designers/Video Editors in Nepal. Apply now at Vu Devi Services."
-        />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://vudeviservices.com.np/application"
-        />
-        <meta
-          property="og:image"
-          content="https://vudeviservices.com.np/og-image.jpg"
-        />
+        <meta property="og:site_name" content="Vu Devi Services" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:url" content={applicationUrl} />
+        <meta property="og:image" content={`${siteUrl}/og-image.jpg`} />
+        <meta property="og:image:alt" content="Careers at Vu Devi Services" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={`${siteUrl}/og-image.jpg`} />
 
         {/* Organization Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            name: "Vu Devi Services Pvt. Ltd.",
-            url: "https://vudeviservices.com.np",
-            logo: "https://vudeviservices.com.np/logo.png",
+            name: companyName,
+            url: siteUrl,
+            logo: `${siteUrl}/logo.png`,
             address: {
               "@type": "PostalAddress",
               addressLocality: "Lalitpur",
               addressCountry: "NP",
             },
-            jobPosting: [
-              {
-                "@type": "JobPosting",
-                title: "Medical Report Reviewer",
-                description:
-                  "Review medical reports and ensure accuracy for global healthcare providers.",
-                employmentType: "FULL_TIME",
-                jobLocation: {
-                  "@type": "Place",
-                  address: {
-                    "@type": "PostalAddress",
-                    addressLocality: "Lalitpur",
-                    addressCountry: "NP",
-                  },
-                },
-              },
-              {
-                "@type": "JobPosting",
-                title: "Graphic Designer & Video Editor",
-                description:
-                  "Create graphics, videos, and content for digital marketing campaigns.",
-                employmentType: "FULL_TIME",
-                jobLocation: {
-                  "@type": "Place",
-                  address: {
-                    "@type": "PostalAddress",
-                    addressLocality: "Lalitpur",
-                    addressCountry: "NP",
-                  },
-                },
-              },
-            ],
           })}
         </script>
 
-        {/* ItemList Schema for job listings */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            name: "Job Openings at Vu Devi Services Nepal",
-            itemListElement: [
-              {
-                "@type": "ListItem",
-                position: 1,
-                name: "Medical Report Reviewer",
-                url: "https://vudeviservices.com.np/application#medical",
-              },
-              {
-                "@type": "ListItem",
-                position: 2,
-                name: "Graphic Designer & Video Editor",
-                url: "https://vudeviservices.com.np/application#graphic",
-              },
-            ],
-          })}
-        </script>
+        {/* Dynamic JobPosting Schemas */}
+        {jobPostingSchemas.map((schema) => (
+          <script key={schema.identifier.value} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        ))}
+
+        {/* Dynamic Job Listing Schema */}
+        {activeJobs.length > 0 && (
+          <script type="application/ld+json">
+            {JSON.stringify(jobListSchema)}
+          </script>
+        )}
       </Helmet>
 
-      <section className="w-full min-h-screen pt-16 md:pt-32">
-        {/* 1. RECRUITMENT HERO: Command Center Style */}
-        <div className="w-full px-6 md:px-12 ">
-          <div className="max-w-7xl mx-auto py-14 md:py-20">
-            <div className="text-center">
-              <h1 className="header text-2xl md:text-6xl font-bold tracking-tight text-[themeColor] leading-tight mb-6">
-                Sales & Growth Jobs in Nepal
+      <section className="w-full min-h-screen pt-12 md:pt-20">
+        {/* RECRUITMENT HERO */}
+        <section className="relative w-full overflow-hidden bg-white px-6 md:px-12">
+          <div className="relative mx-auto max-w-7xl py-16 md:py-24">
+            {/* Subtle Background Detail */}
+            <div className="pointer-events-none absolute right-0 top-10 h-64 w-64 rounded-full bg-red-700/[0.035] blur-3xl" />
+            <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-[#133a41]/[0.04] blur-3xl" />
+
+            <div className="relative z-10 mx-auto max-w-4xl text-center">
+              {/* Eyebrow */}
+              <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2">
+                <span
+                  className={`h-2 w-2 rounded-full ${
+                    hasOpenings ? "bg-emerald-500" : "bg-slate-400"
+                  }`}
+                />
+                <span className="text-[9px] font-bold uppercase tracking-[0.22em] text-[#133a41] md:text-[11px]">
+                  {hasOpenings
+                    ? "Career Opportunities · Nepal"
+                    : "Careers · Vu Devi Services"}
+                </span>
+              </div>
+
+              {/* Main Heading */}
+              <h1 className="header mb-6 text-3xl font-bold leading-tight tracking-tight text-[#133a41] md:text-6xl">
+                Build Your Career
                 <br />
-                <span className="bg-gradient-to-r from-red-700 to-orange-500 bg-clip-text text-transparent font-bold">
-                  1 Position Open Now
+                <span className="bg-gradient-to-r from-red-700 to-orange-500 bg-clip-text text-transparent">
+                  With Vu Devi Services
                 </span>
               </h1>
 
-              <div className="max-w-3xl mx-auto">
-                <h2 className="text-sm md:text-2xl text-[themeColor] font-medium mb-4 leading-tight">
-                  Hiring: <span className="font-bold">Country Lead, Nepal</span>
-                </h2>
-                <p className="text-xs md:text-lg text-slate-600 leading-relaxed mb-8">
-                  Join us at Peatch AI in Kathmandu. Full-time roles with
-                  <strong>
-                    {" "}
-                    competitive salary, portfolio growth, real client projects
-                  </strong>
-                  , and career advancement.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <a
-                    className="border-2 border-slate-200 bg-white text-[themeColor] md:px-8 px-4 py-2 md:py-4 rounded-xl font-bold text-xs md:text-lg shadow-lg hover:shadow-xl hover:border-emerald-400 transition-all duration-200 cursor-pointer"
-                    onClick={scrollToJobs}
-                  >
-                    Apply
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8">
-            <div className="mx-auto max-w-4xl text-center">
-              <div className="mb-6 inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-slate-700 shadow-sm sm:mb-8 sm:px-4 sm:text-xs md:text-sm">
-                <Briefcase size={15} className="shrink-0" />
-                <span>No Current Openings</span>
-              </div>
-
-              <h1 className="header mb-5 text-3xl font-semibold leading-[1.2] tracking-tight text-slate-900 sm:text-4xl md:mb-6 md:text-5xl lg:text-6xl">
-                Careers at Vu Devi Services
-                <span className="mt-2 block bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent font-light">
-                  Future Opportunities in Nepal
+              {/* Dynamic Opening Count */}
+              <div className="mb-6">
+                <span className="inline-flex items-center rounded-lg bg-[#133a41]/[0.06] px-4 py-2 text-xs font-bold text-themeColor md:text-sm">
+                  {hasOpenings
+                    ? `${totalOpenings} ${totalOpenings === 1 ? "Position" : "Positions"} Currently Open`
+                    : "No Current Openings"}
                 </span>
-              </h1>
+              </div>
 
-              <div className="mx-auto max-w-2xl">
-                <h2 className="text-base font-medium leading-relaxed text-slate-600 sm:text-lg md:text-xl">
-                  We're not hiring right now, but we'd love to hear from you.
-                </h2>
+              {/* Dynamic Description */}
+              <div className="mx-auto max-w-3xl">
+                {hasOpenings ? (
+                  <>
+                    <h2 className="mb-4 text-base font-semibold leading-relaxed text-[#133a41] md:text-2xl">
+                      Your Next Opportunity Starts Here.
+                    </h2>
 
-                <div className="mt-7 flex flex-col items-stretch justify-center gap-3 sm:mt-9 sm:flex-row sm:items-center sm:gap-4">
+                    <p className="mb-7 text-xs leading-relaxed text-slate-600 md:text-lg">
+                      Explore career opportunities at{" "}
+                      <strong className="font-semibold text-[#133a41]">
+                        {featuredCompany}
+                      </strong>
+                      . Join a professional team working in healthcare
+                      documentation, medical data management, and
+                      technology-driven services.
+                    </p>
+
+                    {/* Dynamic Job Titles */}
+                    <div className="mb-9 flex flex-wrap justify-center gap-2">
+                      {activeJobs.slice(0, 3).map((job) => (
+                        <span
+                          key={job.id}
+                          className="rounded-full border border-slate-200 bg-white px-4 py-2 text-[10px] font-semibold text-slate-600 shadow-sm md:text-xs"
+                        >
+                          {job.title}
+                        </span>
+                      ))}
+
+                      {activeJobs.length > 3 && (
+                        <span className="rounded-full border border-slate-200 bg-white px-4 py-2 text-[10px] font-semibold text-slate-500 md:text-xs">
+                          +{activeJobs.length - 3} More
+                        </span>
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <h2 className="mb-4 text-base font-semibold leading-relaxed text-[#133a41] md:text-2xl">
+                      We're Always Interested in Great Talent.
+                    </h2>
+
+                    <p className="mb-8 text-xs leading-relaxed text-slate-600 md:text-lg">
+                      There are currently no open positions, but we're always
+                      interested in connecting with talented and motivated
+                      professionals. Check back for future opportunities or get
+                      in touch with our team.
+                    </p>
+                  </>
+                )}
+
+                {/* CTA */}
+                <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+                  {hasOpenings ? (
+                    <button
+                      type="button"
+                      onClick={scrollToJobs}
+                      className="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#133a41] px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-[#133a41]/15 transition-all duration-300 hover:-translate-y-1 hover:bg-[#1b4b53] hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#133a41] focus-visible:ring-offset-2 sm:w-auto"
+                    >
+                      Explore Open Positions
+                      <ArrowUpRight size={17} className="ml-2" />
+                    </button>
+                  ) : (
+                    <a
+                      href="mailto:info@vudeviservices.com.np"
+                      className="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#133a41] px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-[#133a41]/15 transition-all duration-300 hover:-translate-y-1 hover:bg-[#1b4b53] hover:shadow-xl sm:w-auto"
+                    >
+                      Contact Our Team
+                      <ArrowUpRight size={17} className="ml-2" />
+                    </a>
+                  )}
+
                   <a
                     href="mailto:info@vudeviservices.com.np"
-                    className="inline-flex min-h-12 items-center justify-center rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 sm:min-h-14 sm:px-8 sm:text-base"
+                    className="inline-flex min-h-12 w-full items-center justify-center rounded-xl border border-slate-200 bg-white px-8 py-3 text-sm font-semibold text-[#133a41] transition-all duration-300 hover:-translate-y-1 hover:border-[#133a41] hover:bg-slate-50 sm:w-auto"
                   >
-                    Mail Us
+                    Send Your CV
                   </a>
-
-                  <button
-                    type="button"
-                    onClick={scrollToJobs}
-                    className="inline-flex min-h-12 items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition-all duration-200 hover:-translate-y-0.5 hover:border-red-300 hover:bg-red-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 sm:min-h-14 sm:px-8 sm:text-base"
-                  >
-                    Send Us Your CV
-                  </button>
                 </div>
               </div>
+
+              {/* Bottom Information */}
+              {hasOpenings && (
+                <div className="mt-14 border-t border-slate-200 pt-7">
+                  <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[9px] font-bold uppercase tracking-[0.16em] text-slate-400 md:text-[10px]">
+                    <span>Professional Growth</span>
+                    <span className="hidden h-1 w-1 rounded-full bg-red-700 sm:block" />
+                    <span>Collaborative Environment</span>
+                    <span className="hidden h-1 w-1 rounded-full bg-red-700 sm:block" />
+                    <span>Career Opportunities in Nepal</span>
+                  </div>
+                </div>
+              )}
             </div>
-          </div> */}
-        </div>
+          </div>
+        </section>
 
         {/* 3. DEPLOYMENT OPPORTUNITIES: Structured Dossiers */}
         <div id="jobs">

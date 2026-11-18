@@ -10,14 +10,12 @@ import { Link } from "react-router-dom";
 
 const JobOpenings = () => {
   return (
-    <div className="max-w-7xl mx-auto px-6 mb-8 md:mb-24">
+    <div className="max-w-7xl mx-auto px-6 mb-8 md:mb-24 mt-20">
       <div className="flex items-end justify-between mb-12 border-b-2 border-slate-900 pb-4">
-        <h2 className="text-xl md:text-3xl font-medium uppercase text-slate-900">
-          Open <span className="text-red-700">Positions</span>
+        <h2 className="text-xl md:text-3xl font-medium uppercase text-themeColor">
+          Open <span className="text-red-700">JOBs: </span>
+          {JOB_DATA.length}
         </h2>
-        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">
-          Total: {JOB_DATA.length}
-        </span>
       </div>
 
       {/* ✅ IF NO JOBS AVAILABLE */}

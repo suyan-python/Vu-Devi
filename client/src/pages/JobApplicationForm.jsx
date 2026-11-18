@@ -1,27 +1,23 @@
 import { useState } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
-import
-{
-  FileText, CheckCircle2, AlertCircle, FileUp,
-  Keyboard, Briefcase, GraduationCap, Coins, Clock,
-  ArrowRight,
-  Section,
-  SectionIcon,
+import {
+  CheckCircle2,
+  AlertCircle,
+  FileUp,
+  Keyboard,
+  Coins,
+  Clock,
   ChevronRight,
   Activity,
   ShieldCheck,
-  ArrowUpRight
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import GeneralForm from "./GeneralForm";
 import { JOB_DATA } from "../db/jobs";
 import JobModal from "./JobModal";
-import Job from "./Job";
 import JobOpenings from "./JobOpenings";
 import { Helmet } from "react-helmet";
 
-export default function JobApplicationForm()
-{
+export default function JobApplicationForm() {
   const { jobId } = useParams();
 
   const [formData, setFormData] = useState({
@@ -39,39 +35,31 @@ export default function JobApplicationForm()
 
   const [redirecting, setRedirecting] = useState(false);
 
-
-
   const selectedJob = JOB_DATA.find((job) => job.id === jobId);
 
-  if (!selectedJob)
-  {
+  if (!selectedJob) {
     return <Navigate to="/application" replace />;
   }
   const API_URL = import.meta.env.VITE_API_URL;
 
-  const handleSubmit = async (e) =>
-  {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setErrorMessage("");
 
-    if (!formData.resume)
-    {
+    if (!formData.resume) {
       setErrorMessage("❌ Please upload your resume (PDF).");
       setLoading(false);
       return;
     }
 
-
-    try
-    {
+    try {
       const emailCheckResponse = await fetch(
-        `${API_URL}/api/applications/check-email?email=${formData.email}`
+        `${API_URL}/api/applications/check-email?email=${formData.email}`,
       );
       const emailCheckData = await emailCheckResponse.json();
 
-      if (emailCheckData.exists)
-      {
+      if (emailCheckData.exists) {
         setErrorMessage("⚠️ You have already applied.");
         setLoading(false);
         return;
@@ -88,8 +76,6 @@ export default function JobApplicationForm()
       formDataToSend.append("jobLocation", selectedJob.location);
       formDataToSend.append("sourceWebsite", window.location.hostname);
 
-
-
       const response = await fetch(`${API_URL}/api/applications/apply`, {
         method: "POST",
         body: formDataToSend,
@@ -97,27 +83,22 @@ export default function JobApplicationForm()
 
       const data = await response.json();
 
-      if (response.ok)
-      {
+      if (response.ok) {
         setShowSuccess(true);
         setFormData({ name: "", email: "", resume: null, coverLetter: "" });
         setResumeName("");
-      } else
-      {
+      } else {
         setErrorMessage(data.error || "Submission failed.");
       }
-    } catch (error)
-    {
+    } catch (error) {
       console.error("Error submitting application:", error);
       setErrorMessage("❌ Submission failed. Try again later.");
-    } finally
-    {
+    } finally {
       setLoading(false);
     }
   };
 
-  const Section = ({ title, items, color, grid }) =>
-  {
+  const Section = ({ title, items, color, grid }) => {
     if (!items || items.length === 0) return null; // prevents crash
 
     return (
@@ -127,8 +108,9 @@ export default function JobApplicationForm()
         </h3>
 
         <ul
-          className={`${grid ? "grid grid-cols-1 sm:grid-cols-2 gap-2" : "space-y-2"
-            } text-sm text-slate-700`}
+          className={`${
+            grid ? "grid grid-cols-1 sm:grid-cols-2 gap-2" : "space-y-2"
+          } text-sm text-slate-700`}
         >
           {items.map((item, idx) => (
             <li key={idx} className="flex gap-2">
@@ -141,21 +123,17 @@ export default function JobApplicationForm()
     );
   };
 
-
-  const handleInterviewRedirect = () =>
-  {
+  const handleInterviewRedirect = () => {
     setRedirecting(true);
 
     // Get interview link directly from selected job data
     const interviewLink = selectedJob?.jobLink;
 
-    if (interviewLink)
-    {
+    if (interviewLink) {
       window.open(interviewLink, "_blank");
     }
 
-    setTimeout(() =>
-    {
+    setTimeout(() => {
       setRedirecting(false);
     }, 1200);
   };
@@ -164,56 +142,57 @@ export default function JobApplicationForm()
     <>
       <Helmet>
         <title>{selectedJob.title} Job in Nepal | Vu Devi Services</title>
-        <meta name="description" content={`Apply for ${selectedJob.title} at Vu Devi Services Nepal. ${selectedJob.sections[0]?.content[0]}`} />
-        <link rel="canonical" href={`https://vudeviservices.com.np/application/apply/${selectedJob.slug}`} />
+        <meta
+          name="description"
+          content={`Apply for ${selectedJob.title} at Vu Devi Services Nepal. ${selectedJob.sections[0]?.content[0]}`}
+        />
+        <link
+          rel="canonical"
+          href={`https://vudeviservices.com.np/application/apply/${selectedJob.slug}`}
+        />
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org/",
             "@type": "JobPosting",
-            "title": selectedJob.title,
-            "description": selectedJob.sections.find(s => s.type === "overview")?.content[0],
-            "datePosted": selectedJob.datePosted,
-            "validThrough": selectedJob.validThrough,
-            "employmentType": "FULL_TIME",
-            "hiringOrganization": {
+            title: selectedJob.title,
+            description: selectedJob.sections.find((s) => s.type === "overview")
+              ?.content[0],
+            datePosted: selectedJob.datePosted,
+            validThrough: selectedJob.validThrough,
+            employmentType: "FULL_TIME",
+            hiringOrganization: {
               "@type": "Organization",
-              "name": "Vu Devi Services Pvt. Ltd.",
-              "sameAs": "https://vudeviservices.com.np"
+              name: "Vu Devi Services Pvt. Ltd.",
+              sameAs: "https://vudeviservices.com.np",
             },
-            "jobLocation": {
+            jobLocation: {
               "@type": "Place",
-              "address": {
+              address: {
                 "@type": "PostalAddress",
-                "addressLocality": "Lalitpur",
-                "addressCountry": "NP"
-              }
+                addressLocality: "Lalitpur",
+                addressCountry: "NP",
+              },
             },
-            "directApply": true
+            directApply: true,
           })}
         </script>
       </Helmet>
 
-
-
       <section className="min-h-screen py-32 bg-[#f8fafc] relative overflow-hidden">
-
-        <div className="max-w-6xl mx-auto px-6 relative z-10 " >
-
+        <div className="max-w-6xl mx-auto px-6 relative z-10 ">
           <div className="text-center mb-8 md:mb-16">
-            <h1 className="text-4xl md:text-6xl font-semibold tracking-tighter text-slate-900 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-semibold tracking-tighter text-themeColor leading-tight">
               Build Your Career in <br />
-              <span className="text-red-700 font-light text-3xl md:text-5xl">
+              <span className="text-red-700 font-light ">
                 {selectedJob.title}
               </span>
             </h1>
           </div>
 
           <div className="flex flex-col-reverse md:grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-
             <div className="lg:col-span-5">
               <div className="bg-white rounded-sm shadow-sm border border-slate-100 overflow-hidden">
-
                 <div className="border-l-4 border-red-700 md:px-8 px-4 md:py-6 py-3 bg-slate-50/40">
                   <h3 className="text-[11px] font-black tracking-[0.35em] text-slate-400 uppercase mb-2">
                     Position
@@ -224,7 +203,6 @@ export default function JobApplicationForm()
                 </div>
 
                 <div className="p-4 md:p-8  grid gap-8">
-
                   <div className="flex gap-5 items-start">
                     <div className="p-3 bg-slate-50 border border-slate-200 text-[#133a41] rounded-sm hidden md:block">
                       <Keyboard size={20} />
@@ -236,7 +214,9 @@ export default function JobApplicationForm()
                       <ul className="space-y-1 list-disc ml-4">
                         {(selectedJob.core?.length
                           ? selectedJob.core
-                          : ["Proficiency in typing with a minimum speed of 50 WPM and strong attention to detail."]
+                          : [
+                              "Proficiency in typing with a minimum speed of 50 WPM and strong attention to detail.",
+                            ]
                         ).map((item, index) => (
                           <li
                             key={index}
@@ -258,7 +238,8 @@ export default function JobApplicationForm()
                         Remuneration
                       </p>
                       <p className="text-[10px] md:text-sm font-medium text-slate-500 leading-relaxed">
-                        Compensation is competitive and negotiable based on qualifications, skills, and relevant experience.
+                        Compensation is competitive and negotiable based on
+                        qualifications, skills, and relevant experience.
                       </p>
                     </div>
                   </div>
@@ -276,27 +257,26 @@ export default function JobApplicationForm()
                       </p>
                     </div>
                   </div>
-
                 </div>
                 <div className="px-8 py-5 border-t border-slate-100 bg-slate-50/40">
                   <p className="text-[10px] md:text-xs text-slate-500 leading-relaxed italic">
-                    Shortlisted candidates will complete a structured assessment covering medical terminology, documentation accuracy, and attention to detail.
+                    Shortlisted candidates will complete a structured assessment
+                    covering medical terminology, documentation accuracy, and
+                    attention to detail.
                   </p>
                 </div>
 
                 <div className="px-8 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 border-t border-slate-100 ">
-
-                  <button onClick={() => setShowModal(true)} className="cursor-pointer underline text-xs font-bold  text-red-700 hover:text-red-600 transition ">
+                  <button
+                    onClick={() => setShowModal(true)}
+                    className="cursor-pointer underline text-xs font-bold  text-red-700 hover:text-red-600 transition "
+                  >
                     View Full Job Description
                   </button>
-
-                  <JobModal
-                    job={showModal ? selectedJob : null}
-                    onClose={() => setShowModal(false)}
-                  />
                 </div>
               </div>
             </div>
+
             <div className="lg:col-span-7">
               {errorMessage && (
                 <div className="mb-6 flex items-center gap-2 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-sm text-sm">
@@ -305,62 +285,67 @@ export default function JobApplicationForm()
                 </div>
               )}
 
-              <div className="mb-12">
-                <h2 className="text-base md:text-3xl font-semibold text-slate-900 ">Applying for <span className="text-red-700 font-light">{selectedJob.title} </span> </h2>
-                <div className="flex gap-4 mt-3">
-                  <span className="px-3 py-1 rounded-full bg-[#133a41] border border-white/10 text-[8px] md:text-[10px] uppercase tracking-widest text-gray-100">
-                    {selectedJob.tag}
+              <form
+                className="bg-white p-4 md:p-8  border border-slate-100"
+                onSubmit={handleSubmit}
+              >
+                <h3 className="text-xl md:text-3xl font-semibold text-themeColor mb-8 border-b pb-4 tracking-tight">
+                  Apply for{" "}
+                  <span className="text-red-700 font-light ">
+                    {selectedJob.title}
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-[#133a41] border border-white/10 text-[8px] md:text-[10px] uppercase tracking-widest text-gray-100">
-                    {selectedJob.location}
-                  </span>
-                </div>
-              </div>
-
-              {/* <form className="bg-white p-4 md:p-8  border border-slate-100" onSubmit={handleSubmit}>
-                <h3 className="text-xl md:text-3xl font-semibold text-[#133a41] mb-8 border-b pb-4 tracking-tight"> {selectedJob.title} Job Application</h3>
+                </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Full Name</label>
+                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                      Full Name
+                    </label>
                     <input
                       type="text"
                       required
                       value={formData.name}
                       onChange={(e) =>
-                        setFormData((prev) => ({ ...prev, name: e.target.value }))
+                        setFormData((prev) => ({
+                          ...prev,
+                          name: e.target.value,
+                        }))
                       }
                       placeholder="e.g. Sameer Thapa"
                       className="w-full p-3 bg-slate-50 border border-slate-200 focus:border-[#133a41] outline-none transition-all rounded-sm text-sm"
                     />
-
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Email Address</label>
+                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                      Email Address
+                    </label>
                     <input
                       type="email"
                       required
                       value={formData.email}
                       onChange={(e) =>
-                        setFormData((prev) => ({ ...prev, email: e.target.value }))
+                        setFormData((prev) => ({
+                          ...prev,
+                          email: e.target.value,
+                        }))
                       }
                       placeholder="example@medical.com"
                       className="w-full p-3 bg-slate-50 border border-slate-200 focus:border-[#133a41] outline-none transition-all rounded-sm text-sm"
                     />
-
                   </div>
                 </div>
 
                 <div className="mb-6">
-                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-2">Resume & Typing Result (PDF)</label>
+                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-2">
+                    Resume & Typing Result (PDF)
+                  </label>
                   <div className="relative group">
                     <input
                       type="file"
                       id="resume"
                       accept=".pdf"
                       className="hidden"
-                      onChange={(e) =>
-                      {
+                      onChange={(e) => {
                         const file = e.target.files?.[0];
                         if (!file) return;
                         setFormData((prev) => ({ ...prev, resume: file }));
@@ -372,55 +357,95 @@ export default function JobApplicationForm()
                       htmlFor="resume"
                       className="flex flex-col items-center justify-center border-2 border-dashed border-slate-200 p-8 rounded-sm bg-slate-50 group-hover:bg-white group-hover:border-[#133a41] transition-all cursor-pointer"
                     >
-                      <FileUp className="text-slate-300 group-hover:text-[#133a41] mb-2" size={32} />
+                      <FileUp
+                        className="text-slate-300 group-hover:text-[#133a41] mb-2"
+                        size={32}
+                      />
                       <span className="text-sm font-bold text-slate-500">
-                        {resumeName ? resumeName : "Click to Upload CV + Typing Test"}
+                        {resumeName
+                          ? resumeName
+                          : "Click to Upload CV + Typing Test"}
                       </span>
-                      <span className="text-[10px] text-slate-400 mt-1">Maximum file size: 5MB</span>
+                      <span className="text-[10px] text-slate-400 mt-1">
+                        Maximum file size: 5MB
+                      </span>
                     </label>
                   </div>
                 </div>
 
                 <div className="mb-8">
-                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-2">Cover Letter / Statement of Purpose</label>
+                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-2">
+                    Cover Letter / Statement of Purpose
+                  </label>
                   <textarea
                     rows="4"
                     value={formData.coverLetter}
                     onChange={(e) =>
-                      setFormData((prev) => ({ ...prev, coverLetter: e.target.value }))
+                      setFormData((prev) => ({
+                        ...prev,
+                        coverLetter: e.target.value,
+                      }))
                     }
                     placeholder={`Briefly describe your experience and interest in ${selectedJob.title}.`}
                     className="w-full p-4 bg-slate-50 border border-slate-200 focus:border-[#133a41] outline-none transition-all rounded-sm text-sm resize-none placeholder-gray-400"
                   />
-
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className={`w-full bg-[#133a41] text-white font-bold py-4 rounded-sm shadow-lg transition-all flex items-center justify-center gap-3 tracking-widest text-xs cursor-pointer
-    ${loading ? "opacity-60 cursor-not-allowed" : "hover:bg-[#1b4d56]"}`}
+                  className={`w-full bg-[#133a41] text-white font-bold py-4 rounded-sm shadow-lg transition-all flex items-center justify-center gap-3 tracking-widest text-xs
+    ${
+      loading
+        ? "opacity-80 cursor-not-allowed"
+        : "hover:bg-[#1b4d56] cursor-pointer"
+    }`}
                 >
-                  {loading ? "SUBMITTING..." : "SUBMIT APPLICATION"}
-                  <CheckCircle2 size={16} />
+                  <AnimatePresence mode="wait" initial={false}>
+                    {loading ? (
+                      <motion.span
+                        key="loading"
+                        initial={{ opacity: 0, y: 5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -5 }}
+                        transition={{ duration: 0.2 }}
+                        className="flex items-center justify-center gap-3"
+                      >
+                        <motion.span
+                          className="h-4 w-4 rounded-full border-2 border-white/30 border-t-white"
+                          animate={{ rotate: 360 }}
+                          transition={{
+                            duration: 0.8,
+                            repeat: Infinity,
+                            ease: "linear",
+                          }}
+                        />
+                        SUBMITTING...
+                      </motion.span>
+                    ) : (
+                      <motion.span
+                        key="submit"
+                        initial={{ opacity: 0, y: 5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -5 }}
+                        transition={{ duration: 0.2 }}
+                        className="flex items-center justify-center gap-3"
+                      >
+                        SUBMIT APPLICATION
+                        <CheckCircle2 size={16} />
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
                 </button>
-              </form> */}
+              </form>
 
-              <div className="space-y-8">
-                {/* Main Container */}
+              {/* <div className="space-y-8">
                 <div className="relative p-6 md:p-8 rounded-xl border border-purple-500/40 bg-slate-950 overflow-hidden shadow-[0_0_40px_rgba(168,85,247,0.25)]">
-
-                  {/* HIGH VISIBILITY GLOWS: Layered using standard blur and opacity */}
-                  {/* Top Right Glow */}
                   <div className="absolute -top-12 -right-12 w-48 h-48 bg-purple-600 rounded-full blur-[50px] opacity-40 animate-pulse"></div>
-                  {/* Bottom Left Glow */}
                   <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-indigo-600 rounded-full blur-[50px] opacity-30 animate-pulse"></div>
-
-                  {/* Extra Inner Glow Layer */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 via-transparent to-purple-500/10 pointer-events-none"></div>
 
                   <div className="relative z-10">
-                    {/* Top Badge with Active Ping */}
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/20 border border-purple-400/30 text-[10px] uppercase tracking-[0.25em] text-purple-300 font-bold mb-4 shadow-[0_0_15px_rgba(168,85,247,0.3)]">
                       <span className="w-2 h-2 rounded-full bg-purple-400 animate-ping"></span>
                       AI Interview Assessment
@@ -431,19 +456,21 @@ export default function JobApplicationForm()
                     </h3>
 
                     <p className="text-sm text-slate-300 mt-3 leading-relaxed">
-                      This assessment is designed to evaluate your communication, clarity, and
-                      role-specific understanding for <span className="text-purple-300 font-semibold drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]">
+                      This assessment is designed to evaluate your
+                      communication, clarity, and role-specific understanding
+                      for{" "}
+                      <span className="text-purple-300 font-semibold drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]">
                         {selectedJob.title}
-                      </span>.
-                      The process is automated, structured, and takes only a few minutes.
+                      </span>
+                      . The process is automated, structured, and takes only a
+                      few minutes.
                     </p>
 
-                    {/* Modern High-Tech Badges */}
                     <div className="flex flex-wrap gap-3 mt-6">
                       {[
                         "AI Evaluated",
                         "Role Based Questions",
-                        "Instant Processing"
+                        "Instant Processing",
                       ].map((item, i) => (
                         <span
                           key={i}
@@ -455,17 +482,16 @@ export default function JobApplicationForm()
                     </div>
                   </div>
                 </div>
-
-                {/* Futuristic Action Button */}
                 <button
                   type="button"
                   onClick={handleInterviewRedirect}
                   disabled={redirecting}
                   className={`w-full py-5 rounded-xl text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer
-      ${redirecting
-                      ? "bg-slate-800 text-slate-500 border border-slate-700 cursor-not-allowed"
-                      : "bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-500 hover:to-indigo-500 shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:shadow-[0_0_35px_rgba(168,85,247,0.7)] hover:-translate-y-[1px] active:translate-y-[1px]"
-                    }`}
+      ${
+        redirecting
+          ? "bg-slate-800 text-slate-500 border border-slate-700 cursor-not-allowed"
+          : "bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-500 hover:to-indigo-500 shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:shadow-[0_0_35px_rgba(168,85,247,0.7)] hover:-translate-y-[1px] active:translate-y-[1px]"
+      }`}
                 >
                   {redirecting ? (
                     <>
@@ -475,22 +501,16 @@ export default function JobApplicationForm()
                   ) : (
                     "Initiate Interview"
                   )}
-                  < ArrowUpRight />
+                  <ArrowUpRight />
                 </button>
 
                 <p className="text-[10px] md:text-[14px] text-slate-900 text-center tracking-wide italic">
-                  Note: Ensure a stable connection and camera/mic access before starting.
+                  Note: Ensure a stable connection and camera/mic access before
+                  starting.
                 </p>
-              </div>
-
+              </div> */}
             </div>
           </div>
-        </div>
-
-        <div className="py-12 md:py-20 text-center px-8 md:px-3">
-          <p className=" text-slate-500 text-xs md:text-base italic font-light">
-            "Explore a long-term career opportunity in medical documentation, data entry, and healthcare services with an international medical operations team."
-          </p>
         </div>
 
         {/* SUCCESS POPUP (Glassmorphism Style) */}
@@ -509,8 +529,13 @@ export default function JobApplicationForm()
                 {/* 1. STATUS HEADER */}
                 <div className="bg-[#133a41] p-4 flex justify-between items-center">
                   <div className="flex items-center gap-2">
-                    <Activity size={14} className="text-emerald-400 animate-pulse" />
-                    <span className="text-[9px] font-black text-white uppercase tracking-[0.3em]">System Transmission: Success</span>
+                    <Activity
+                      size={14}
+                      className="text-emerald-400 animate-pulse"
+                    />
+                    <span className="text-[9px] font-black text-white uppercase tracking-[0.3em]">
+                      System Transmission: Success
+                    </span>
                   </div>
                 </div>
 
@@ -523,40 +548,45 @@ export default function JobApplicationForm()
                   </div>
 
                   {/* 3. CLINICAL COPY */}
-                  <h3 className="text-2xl font-bold text-slate-900 tracking-tighter uppercase mb-3">
+                  <h3 className="text-2xl font-bold text-themeColor tracking-tighter uppercase ">
                     Application Recieved.
                   </h3>
 
-                  <div className="space-y-4 mb-10">
-                    <p className="text-slate-500 text-sm leading-relaxed md:px-4">
-                      Your credentials have been successfully uploaded to our <span className="text-[#133a41] font-bold">Database</span>. <br />
-
-
-                      <p className="italic text-xs text-slate-400">
-                        Our recruitment team will review your profile and contact shortlisted candidates.
+                  <div className="space-y-4 mb-4">
+                    <p className="text-slate-900 text-sm leading-relaxed md:px-4">
+                      Your credentials have been successfully uploaded to our{" "}
+                      <span className="text-[#133a41] font-bold">Database</span>
+                      . <br />
+                      <p className="italic text-xs text-emerald-700 pt-4">
+                        Our recruitment team will review your profile and
+                        contact shortlisted candidates.
                       </p>
                     </p>
 
                     {/* Fake Transaction ID for Authenticity */}
                     <div className="bg-slate-50 py-3 px-4 inline-block border border-slate-100 rounded-sm">
-                      <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1 text-center">Reference Ticket</p>
+                      <p className="text-[9px] font-black text-emerald-700 uppercase tracking-widest mb-1 text-center">
+                        Reference Ticket
+                      </p>
                       <p className="text-xs font-mono font-bold text-slate-700 tracking-wider uppercase">
-                        VDS-{Math.random().toString(36).substr(2, 9).toUpperCase()}
+                        VDS-
+                        {Math.random().toString(36).substr(2, 9).toUpperCase()}
                       </p>
                     </div>
                   </div>
 
-
                   {/* 4. PROFESSIONAL ACTION */}
 
-                  <Link to={'/application'}>
-
+                  <Link to={"/application"}>
                     <button
                       onClick={() => setShowSuccess(false)}
-                      className="group w-full py-4 bg-[#133a41] text-white font-black text-[11px] uppercase tracking-[0.2em] rounded-sm hover:bg-emerald-900 transition-all duration-500 flex items-center justify-center gap-3 shadow-xl shadow-[#133a41]/20"
+                      className="group w-full py-4 bg-[#133a41] text-white font-black text-[11px] uppercase tracking-[0.2em] rounded-sm hover:bg-emerald-900 transition-all duration-500 flex items-center justify-center gap-3 shadow-xl shadow-[#133a41]/20 cursor-pointer"
                     >
                       Return to Career Portal
-                      <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight
+                        size={16}
+                        className="group-hover:translate-x-1 transition-transform"
+                      />
                     </button>
                   </Link>
                 </div>
@@ -646,9 +676,12 @@ export default function JobApplicationForm()
       </AnimatePresence> */}
 
         <JobOpenings />
-
       </section>
 
+      <JobModal
+        job={showModal ? selectedJob : null}
+        onClose={() => setShowModal(false)}
+      />
     </>
   );
 }

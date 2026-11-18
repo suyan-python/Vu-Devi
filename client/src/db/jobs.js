@@ -381,6 +381,7 @@ export const JOB_DATA = [
   //     },
   //   ],
   // },
+
   // {
   //   id: "country-lead-nepal-peatch-ai",
   //   slug: "country-lead-nepal-peatch-ai",
@@ -495,4 +496,134 @@ export const JOB_DATA = [
   //     },
   //   ],
   // },
+
+
+
+{
+  id: "data-analyst",
+  slug: "data-analyst",
+  status: "OPEN",
+  title: "Data Analyst",
+  tag: "Data & Healthcare",
+  openings: "Not Specified",
+  company: "Vu Devi Services Pvt. Ltd.",
+  location: "Balkumari · Lalitpur, Nepal",
+  salary: "Negotiable (based on experience and skill)",
+  hiring: "Immediate Hiring",
+  schedule: "Full-time · Night Shift",
+  workHours: "8:00 AM – 5:00 PM CST (U.S. Time) | 7:45 PM – 4:45 AM (Nepal Time)",
+  workMode: "Office-based during training · Remote opportunities after successful completion of training",
+  holidays: "Saturday & Sunday · U.S. Public Holidays Only",
+  holidayNote: "Nepali public holidays, including Dashain and Tihar, are regular working days.",
+  probation: "3 Months",
+  serviceAgreement: "Minimum 2 Years",
+  datePosted: "",
+  validThrough: "",
+  employmentType: "FULL_TIME",
+  addressLocality: "Lalitpur",
+  addressCountry: "NP",
+
+  typingTest: {
+    label: "Take the Typing Test",
+    url: "https://typing.evolvevue.com.np/",
+    requirement: "Minimum 40 WPM"
+  },
+
+  core: [
+    "Bachelor's degree in Pharmacy, Health Assistant (HA), Healthcare Management, BBA, or MBA",
+    "Healthcare-related educational background preferred",
+    "Minimum typing speed of 40 words per minute",
+    "Strong written and verbal English communication skills",
+    "Proficiency in Microsoft Word and Excel",
+    "Ability to work night shifts aligned with U.S. business hours",
+    "Willingness to commit to a minimum two-year service agreement"
+  ],
+
+  sections: [
+    {
+      type: "overview",
+      title: "Job Overview",
+      content: [
+        "Vu Devi Services is seeking a detail-oriented and responsible Data Analyst to retrieve, review, organize, and enter client-provided medical data into designated systems according to specific client requirements.",
+        "The role involves working night shifts aligned with U.S. business hours, ensuring accuracy, timely data processing, and compliance with internal procedures and client standards. The ideal candidate should have strong attention to detail, good communication skills, and the ability to perform efficiently in a fast-paced, client-focused environment."
+      ]
+    },
+    {
+      type: "responsibilities",
+      title: "Key Responsibilities",
+      content: [
+        "Retrieve, review, and organize medical data from client servers while maintaining a high level of accuracy.",
+        "Enter and process data in designated systems, following required formats, instructions, and client-specific standards.",
+        "Identify data discrepancies, investigate inconsistencies, and draft professional emails to clients for clarification and resolution.",
+        "Respond promptly to client instructions, updates, and feedback during assigned shift hours.",
+        "Coordinate with internal teams and external stakeholders to maintain efficient workflows and meet daily productivity targets.",
+        "Accept feedback constructively and maintain professional communication at all times.",
+        "Manage assigned workloads effectively and remain composed in a fast-paced working environment.",
+        "Maintain strict adherence to assigned night-shift schedules aligned with U.S. business hours, including required U.S. holiday coverage."
+      ]
+    },
+    {
+      type: "requirements",
+      title: "Skills & Requirements",
+      content: [
+        "Bachelor's degree in Pharmacy, Health Assistant (HA), Healthcare Management, BBA, or MBA. Candidates with a healthcare-related academic background are preferred.",
+        "Minimum one year of relevant professional experience is preferred. Fresh graduates with a relevant educational background are encouraged to apply.",
+        "Minimum typing speed of 40 words per minute (WPM).",
+        "Proficiency in Microsoft Office applications, particularly Word and Excel.",
+        "Strong written and verbal English communication skills.",
+        "Good attention to detail with the ability to handle medical information accurately.",
+        "Ability to manage pressure, meet deadlines, and perform effectively in a fast-paced environment.",
+        "Willingness and ability to work night shifts without exception, following U.S. business hours.",
+        "Willingness to sign and fulfill a minimum two-year service agreement."
+      ]
+    },
+    {
+      type: "qualifications",
+      title: "Personal Attributes We Value",
+      content: [
+        "Detail-oriented with a strong commitment to accuracy.",
+        "Responsible, disciplined, and punctual.",
+        "Professional in written and verbal communication.",
+        "Adaptable and receptive to feedback.",
+        "Able to work independently and collaboratively.",
+        "Calm and focused when handling time-sensitive tasks.",
+        "Committed to long-term professional growth."
+      ]
+    },
+    {
+      type: "offer",
+      title: "What We Offer",
+      content: [
+        "Paid training and a structured onboarding program.",
+        "Opportunities for remote work upon successful completion of training.",
+        "Professional growth opportunities in a global client-focused working environment.",
+        "A supportive and collaborative team culture.",
+        "Practical experience working with international healthcare clients.",
+        "Opportunities to develop professional skills in medical data management and healthcare documentation."
+      ]
+    },
+    {
+      type: "schedule",
+      title: "Working Schedule & Holidays",
+      content: [
+        "Full-time night-shift position aligned with U.S. business hours.",
+        "U.S. working hours: 8:00 AM – 5:00 PM CST.",
+        "Nepal working hours: 7:45 PM – 4:45 AM.",
+        "The daily schedule includes eight working hours and a one-hour break. Timings may vary depending on client requirements.",
+        "Weekly holidays are Saturday and Sunday.",
+        "The company follows the U.S. public holiday calendar only. Nepali public holidays, including Dashain and Tihar, are regular working days."
+      ]
+    },
+    {
+      type: "probation",
+      title: "Probation & Employment Commitment",
+      content: [
+        "Selected candidates will undergo a three-month probation period.",
+        "A minimum two-year service agreement is required for this position."
+      ]
+    }
+  ]
+}
+
+
 ];
