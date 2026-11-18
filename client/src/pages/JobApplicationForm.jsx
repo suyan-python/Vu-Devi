@@ -10,6 +10,7 @@ import {
   ChevronRight,
   Activity,
   ShieldCheck,
+  ExternalLink,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { JOB_DATA } from "../db/jobs";
@@ -372,6 +373,19 @@ export default function JobApplicationForm() {
                     </label>
                   </div>
                 </div>
+
+                <a
+                  href="https://typing.evolvevue.com.np/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mb-2 inline-flex items-center gap-2 text-xs font-semibold text-[#133a41] hover:text-red-700 transition-colors duration-200"
+                >
+                  <span>Please test your typing speed before applying.</span>
+                  <span className="underline underline-offset-4">
+                    Take Typing Test
+                  </span>
+                  <ExternalLink size={13} />
+                </a>
 
                 <div className="mb-8">
                   <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-2">
